@@ -16,6 +16,33 @@
     if (text !== undefined) element.textContent = text;
     return element;
   };
+  function visualIcon(name, className = "") {
+    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    icon.setAttribute("viewBox", "0 0 32 32");
+    icon.setAttribute("aria-hidden", "true");
+    icon.setAttribute("focusable", "false");
+    if (className) icon.setAttribute("class", className);
+    const use = document.createElementNS(icon.namespaceURI, "use");
+    use.setAttribute("href", "#icon-" + name);
+    icon.appendChild(use);
+    return icon;
+  }
+  function revealQuestion() {
+    const body = $("question-body");
+    if (!body.animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    body.getAnimations().forEach(animation => animation.cancel());
+    body.animate([{ opacity: 0, transform: "translateY(7px)" }, { opacity: 1, transform: "translateY(0)" }], { duration: 190, easing: "ease-out" });
+  }
+  function updateMilestones() {
+    const milestones = $("question-milestones");
+    if (milestones.children.length !== state.queue.length) {
+      milestones.replaceChildren(...state.queue.map(() => make("span", "question-milestone")));
+    }
+    [...milestones.children].forEach((dot, index) => {
+      dot.classList.toggle("is-answered", Boolean(state.answers[state.queue[index].id]));
+      dot.classList.toggle("is-current", index === state.step);
+    });
+  }
 
   async function readJSON(path) {
     const response = await fetch(path, { credentials: "omit", cache: "no-cache" });
@@ -82,6 +109,7 @@
       const active = button.dataset.answer === selected;
       button.setAttribute("aria-pressed", String(active));
       button.classList.toggle("selected", active);
+      button.classList.toggle("is-recording", active && advanceTimer !== null);
       button.disabled = advanceTimer !== null || (button.dataset.answer === "NA" && !q.optional);
     });
     setText("answer-feedback", selected ? "「" + answerLabels[selected] + "」を選択しています。" : "");
@@ -92,6 +120,7 @@
     $("question-progress").setAttribute("aria-valuenow", String(completed));
     $("question-progress").setAttribute("aria-valuemax", String(state.queue.length));
     $("question-progress").setAttribute("aria-valuetext", state.queue.length + "問のうち" + completed + "問に回答済み");
+    updateMilestones();
   }
 
   function cancelAdvance() {
@@ -105,6 +134,12 @@
     setText("question-course", laneLabels[state.lane] + " · " + assessmentLabels[state.scope]);
     setText("progress-text", "質問 " + (state.step + 1) + " / " + state.queue.length);
     setText("question-category", q.category);
+    const icon = /認証|アカウント|権限|認可/.test(q.category) ? "access"
+      : /復旧|バックアップ|緊急|困った|継続/.test(q.category) ? "recovery"
+      : /通信|ネットワーク|公開範囲/.test(q.category) ? "network"
+      : /開発|AI|入力|データと実行|依存/.test(q.category) ? "code"
+      : state.lane === "admin" ? "team" : "device";
+    $("question-topic-icon").querySelector("use").setAttribute("href", "#icon-" + icon);
     setText("question-text", q.question);
     setText("question-desc", q.description);
     $("question-source-details").open = false;
@@ -120,6 +155,7 @@
       ? "回答を選ぶと、チェック結果を表示します。"
       : "回答を選ぶと、自動で次の質問へ進みます。");
     updateAnswers();
+    revealQuestion();
   }
 
   function answer(value) {
@@ -232,10 +268,17 @@
     setText("result-summary", summaryText);
     const stats = $("result-stats");
     stats.replaceChildren();
+    const breakdown = $("result-breakdown");
+    breakdown.replaceChildren();
     Object.entries(summary.counts).forEach(([key, count]) => {
       const card = make("div", "stat-card stat-" + key.toLowerCase());
-      card.append(make("span", "stat-value", count + "件"), make("span", "stat-label", answerLabels[key]));
+      card.append(visualIcon({ YES: "check", NO: "adjust", UNKNOWN: "review", NA: "minus" }[key], "stat-icon"), make("span", "stat-value", count + "件"), make("span", "stat-label", { YES: "対策済み", NO: "見直し", UNKNOWN: "未確認", NA: "対象外" }[key]));
       stats.appendChild(card);
+      if (count) {
+        const segment = make("span", "breakdown-segment segment-" + key.toLowerCase());
+        segment.style.width = count / state.queue.length * 100 + "%";
+        breakdown.appendChild(segment);
+      }
     });
     const priorities = $("priority-list");
     const advice = $("advice-list");

@@ -14,6 +14,67 @@
   <script src="js/app.js" defer></script>
 </head>
 <body>
+  <svg class="visual-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><defs>
+    <symbol id="icon-network" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="3" width="10" height="8" rx="2"/><path d="M16 11v7M6 22v-4h20v4"/><rect x="2" y="22" width="8" height="7" rx="2"/><rect x="22" y="22" width="8" height="7" rx="2"/></g></symbol>
+    <symbol id="icon-access" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="13" width="20" height="15" rx="3"/><path d="M10 13V9a6 6 0 0 1 12 0v4M16 20v3"/><circle cx="16" cy="19" r="1"/></g></symbol>
+    <symbol id="icon-code" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="26" height="23" rx="3"/><path d="M3 11h26m-18 5-4 4 4 4m10-8 4 4-4 4m-3-9-4 10"/></g></symbol>
+    <symbol id="icon-recovery" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9a11 11 0 1 1-3 9M3 6v7h7M17 9v8l5 3"/></g></symbol>
+    <symbol id="icon-check" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m10 16 4 4 8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-review" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="14" cy="13" r="8"/><path d="m20 19 8 8M10 13h8m-4-4v8"/></g></symbol>
+    <symbol id="icon-adjust" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 4v24M16 4v24M25 4v24"/><rect x="3" y="9" width="8" height="5" rx="2" fill="var(--surface,white)"/><rect x="12" y="19" width="8" height="5" rx="2" fill="var(--surface,white)"/><rect x="21" y="7" width="8" height="5" rx="2" fill="var(--surface,white)"/></g></symbol>
+    <symbol id="icon-minus" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 16h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-answer" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M26 20a3 3 0 0 1-3 3H13l-7 5v-5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h17a3 3 0 0 1 3 3Z"/><path d="m9 13 4 4 7-7"/></g></symbol>
+    <symbol id="icon-device" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M12 20v5M7 25h10"/><rect x="21" y="11" width="9" height="17" rx="2"/><path d="M25 24h1"/></g></symbol>
+    <symbol id="icon-team" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="10" r="5"/><path d="M3 28v-4a9 9 0 0 1 18 0v4M23 6a5 5 0 0 1 0 10m2 4a7 7 0 0 1 4 6v2"/></g></symbol>
+    <symbol id="visual-personal" viewBox="0 0 240 180">
+      <ellipse cx="121" cy="95" rx="105" ry="70" fill="#eaf2e6"/><circle cx="205" cy="35" r="20" fill="#f4e7d3"/>
+      <rect x="27" y="44" width="142" height="99" rx="9" fill="#fffefa" stroke="#6e9780" stroke-width="2"/><rect x="36" y="53" width="124" height="77" rx="4" fill="#f2f7ed"/>
+      <path d="M16 143h165l-10 9H26Z" fill="#a8c5ac" stroke="#6e9780" stroke-width="2" stroke-linejoin="round"/>
+      <rect x="47" y="65" width="66" height="7" rx="3.5" fill="#cbdcc9"/><rect x="47" y="80" width="43" height="5" rx="2.5" fill="#dbe5d7"/>
+      <circle cx="73" cy="109" r="11" fill="#d3e5d3"/><path d="m68 109 4 4 7-8" fill="none" stroke="#48836f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="174" y="70" width="43" height="79" rx="8" fill="#fffefa" stroke="#6e9780" stroke-width="2"/><rect x="180" y="81" width="31" height="52" rx="3" fill="#dcebdd"/><path d="M191 141h9" stroke="#6e9780" stroke-width="2" stroke-linecap="round"/>
+      <g class="scene-accent"><path d="m139 72 25 10v18c0 15-9 25-25 33-16-8-25-18-25-33V82Z" fill="#5b977e" stroke="#3e705b" stroke-width="2"/><path d="m127 101 8 8 17-18" fill="none" stroke="#fffefa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+      <path d="M29 155h191" stroke="#cfddcb" stroke-width="2" stroke-linecap="round"/><path d="M39 29v10m-5-5h10M219 113v8m-4-4h8" stroke="#90af8b" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="visual-team" viewBox="0 0 240 180">
+      <ellipse cx="119" cy="101" rx="104" ry="62" fill="#f5eee3"/><rect x="81" y="29" width="81" height="119" rx="9" fill="#fffefa" stroke="#8e9d7e" stroke-width="2"/><path d="M102 29V18h39v11" fill="#dce6d4" stroke="#8e9d7e" stroke-width="2"/>
+      <g fill="#dce6d4"><rect x="94" y="46" width="17" height="15" rx="3"/><rect x="130" y="46" width="17" height="15" rx="3"/><rect x="94" y="74" width="17" height="15" rx="3"/><rect x="130" y="74" width="17" height="15" rx="3"/></g><rect x="111" y="113" width="22" height="35" rx="3" fill="#c8dcc4"/>
+      <circle cx="46" cy="101" r="15" fill="#e2cba8"/><path d="M22 149v-14a24 24 0 0 1 48 0v14" fill="#8eb39a" stroke="#5b826a" stroke-width="2"/>
+      <circle cx="194" cy="107" r="13" fill="#e2cba8"/><path d="M174 149v-12a20 20 0 0 1 40 0v12" fill="#d4e2cc" stroke="#7e9f7c" stroke-width="2"/>
+      <g class="scene-accent"><circle cx="189" cy="48" r="22" fill="#eaf4ed" stroke="#8fb39a" stroke-width="2"/><path d="m179 48 7 7 14-15" fill="none" stroke="#48836f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M19 153h200M32 45h10m-5-5v10" stroke="#c7d6bf" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="visual-system" viewBox="0 0 240 180">
+      <ellipse cx="120" cy="94" rx="102" ry="70" fill="#eaf1ed"/><g fill="none" stroke="#a2bca8" stroke-width="2"><path d="M54 52h34M54 129h34m65-77h34m-34 77h34M120 20v17m0 108v16"/><circle cx="43" cy="52" r="10" fill="#fffefa"/><circle cx="43" cy="129" r="10" fill="#fffefa"/><circle cx="198" cy="52" r="10" fill="#fffefa"/><circle cx="198" cy="129" r="10" fill="#fffefa"/></g>
+      <rect x="77" y="38" width="88" height="45" rx="8" fill="#fffefa" stroke="#6e9780" stroke-width="2"/><rect x="77" y="91" width="88" height="45" rx="8" fill="#fffefa" stroke="#6e9780" stroke-width="2"/>
+      <circle cx="93" cy="61" r="5" fill="#86ac90"/><circle cx="93" cy="114" r="5" fill="#86ac90"/><path d="M111 56h36m-36 9h25m-25 44h36m-36 9h25" stroke="#c5d8c4" stroke-width="4" stroke-linecap="round"/>
+      <g class="scene-accent"><circle cx="171" cy="91" r="22" fill="#5b977e" stroke="#3e705b" stroke-width="2"/><path d="m161 91 7 7 14-15" fill="none" stroke="#fffefa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M61 157h118" stroke="#c7d6bf" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="visual-build" viewBox="0 0 240 180">
+      <ellipse cx="121" cy="95" rx="107" ry="69" fill="#edf1e9"/><rect x="27" y="35" width="184" height="116" rx="10" fill="#fffefa" stroke="#6e9780" stroke-width="2"/><path d="M28 60h182" stroke="#bdcfba" stroke-width="2"/><g fill="#a8c5ac"><circle cx="42" cy="48" r="3"/><circle cx="53" cy="48" r="3"/><circle cx="64" cy="48" r="3"/></g><rect x="143" y="44" width="53" height="7" rx="3.5" fill="#e4ecdf"/>
+      <rect x="40" y="73" width="43" height="62" rx="5" fill="#eaf2e6"/><path d="M49 84h25m-25 10h18m-18 10h22m-22 10h14" stroke="#bed2ba" stroke-width="4" stroke-linecap="round"/>
+      <g fill="none" stroke="#5b826a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m116 86-15 16 15 16m53-32 15 16-15 16m-23-36-12 40"/></g>
+      <g class="scene-accent"><rect x="162" y="119" width="60" height="39" rx="8" fill="#e7eee0" stroke="#90af8b" stroke-width="2"/><path d="m179 137 6 6 13-14" fill="none" stroke="#48836f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M18 75v10m-5-5h10m190-60v10m-5-5h10" stroke="#bdcdb1" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="visual-study" viewBox="0 0 240 180">
+      <ellipse cx="120" cy="99" rx="100" ry="66" fill="#eaf2e6"/><circle cx="196" cy="39" r="23" fill="#f4e7d3"/>
+      <path d="M38 83c30-10 56-10 82 7 26-17 52-17 82-7v68c-31-9-57-8-82 7-25-15-51-16-82-7Z" fill="#fffefa" stroke="#6e9780" stroke-width="2" stroke-linejoin="round"/><path d="M120 90v67" stroke="#9fbb9f" stroke-width="2"/><path d="M54 99c17-3 32-1 47 6m-47 9c17-3 32-1 47 6m38-15c15-7 30-9 47-6m-47 21c15-7 30-9 47-6" fill="none" stroke="#c5d8c4" stroke-width="4" stroke-linecap="round"/>
+      <g class="scene-accent"><path d="M101 43a20 20 0 1 1 38 8c-6 7-9 9-9 18h-20c0-9-3-11-9-18Z" fill="#e8d6ae" stroke="#9e9166" stroke-width="2"/><path d="M110 76h20m-17 6h14M120 12V5M87 28l-6-4m72 4 6-4" stroke="#9e9166" stroke-width="2" stroke-linecap="round"/></g><path d="m48 46-9 9 9 9m17-18 9 9-9 9" fill="none" stroke="#91b198" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="visual-celebrate" viewBox="0 0 240 180">
+      <ellipse cx="120" cy="98" rx="96" ry="65" fill="#eaf2e6"/><path d="m91 110-13 49 28-10 15 19 10-45m18-13 13 49-28-10-15 19-10-45" fill="#a8c5ac" stroke="#6e9780" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="120" cy="77" r="48" fill="#f4e7d3" stroke="#bbab7d" stroke-width="2"/><circle cx="120" cy="77" r="36" fill="#fffefa" stroke="#d9ca9e" stroke-width="2"/><path d="m101 77 13 13 26-28" fill="none" stroke="#48836f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="m53 53-8-5m143 5 8-5M53 107l-9 4m143-4 9 4M78 19l-4-7m88 7 4-7" stroke="#a2b69b" stroke-width="3" stroke-linecap="round"/><circle cx="34" cy="78" r="4" fill="#d4c197"/><circle cx="204" cy="78" r="4" fill="#d4c197"/>
+    </symbol>
+    <symbol id="visual-review" viewBox="0 0 240 180">
+      <ellipse cx="120" cy="99" rx="98" ry="65" fill="#f5eee3"/><rect x="62" y="34" width="110" height="121" rx="9" fill="#fffefa" stroke="#8caa8e" stroke-width="2"/><rect x="89" y="25" width="57" height="18" rx="6" fill="#cbdcc9" stroke="#8caa8e" stroke-width="2"/>
+      <path d="M79 65h64m-64 15h50m-50 15h36m-36 15h41" stroke="#c5d8c4" stroke-width="5" stroke-linecap="round"/><g class="scene-accent"><circle cx="164" cy="112" r="33" fill="#eaf4ed" stroke="#8fb39a" stroke-width="2"/><path d="M151 102a18 18 0 1 1-3 20m0-27v12h12" fill="none" stroke="#48836f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g><path d="m34 74 5 5 10-11M195 45v10m-5-5h10" fill="none" stroke="#a9bca0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="visual-checklist" viewBox="0 0 240 180">
+      <ellipse cx="118" cy="99" rx="101" ry="64" fill="#edf4e9"/><rect x="65" y="27" width="113" height="130" rx="10" fill="#fffefa" stroke="#8caa8e" stroke-width="2"/><rect x="92" y="19" width="59" height="19" rx="6" fill="#cbdcc9" stroke="#8caa8e" stroke-width="2"/>
+      <g fill="none" stroke="#5b977e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m81 63 5 5 10-12m-15 35 5 5 10-12"/></g><rect x="80" y="112" width="17" height="17" rx="4" fill="#f5eee3" stroke="#c8cfb5" stroke-width="1.5"/><path d="M109 61h49m-49 28h49m-49 30h38" stroke="#d2dfcb" stroke-width="5" stroke-linecap="round"/>
+      <path d="M37 158v-34m0 12c-17-1-22-9-21-20 15 0 23 6 21 20Zm0-6c0-18 8-25 22-24 1 15-6 24-22 24Z" fill="#a5c5a4" stroke="#7e9f7c" stroke-width="1.5"/><path d="M24 158h26M193 64v10m-5-5h10" stroke="#a9bca0" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </defs></svg>
   <a class="skip-link" href="#main-content">本文へ移動</a>
   <div class="app-container">
     <header class="app-header">
@@ -34,10 +95,8 @@
             <div class="intro-points"><span><span aria-hidden="true">✓</span> 専門知識はなくても大丈夫</span><span><span aria-hidden="true">✓</span> 「わからない」も立派な回答</span></div>
           </div>
           <div class="intro-art" aria-hidden="true">
-            <span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span>
-            <div class="art-note note-back"><span class="art-line"></span><span class="art-line short"></span></div>
-            <div class="art-note note-front"><span class="art-note-heading">ひとつずつ、確認。</span><span class="art-check-row"><i>✓</i><span></span></span><span class="art-check-row"><i>✓</i><span></span></span><span class="art-check-row pending"><i></i><span></span></span></div>
-            <span class="art-sprout"><svg viewBox="0 0 64 64" fill="none"><path d="M32 59V27" stroke="#48836f" stroke-width="3" stroke-linecap="round"/><path d="M32 40C13 40 8 30 10 19c15-1 24 5 22 21Z" fill="#9dc5ac"/><path d="M32 30C30 13 40 6 54 7c1 14-7 24-22 23Z" fill="#5b977e"/></svg></span>
+            <svg class="intro-illustration" viewBox="0 0 240 180" focusable="false"><use href="#visual-personal"/></svg>
+            <span class="hero-status"><svg viewBox="0 0 32 32"><use href="#icon-check"/></svg>ひとつずつ、確認。</span>
           </div>
         </div>
 
@@ -48,19 +107,19 @@
           <div id="load-error" class="notice notice-error hidden" role="alert" hidden><p>質問や参考資料を読み込めませんでした。もう一度お試しください。</p><p class="load-error-help">ファイルを直接開いている場合は、HTTPで配信して利用してください。</p><button id="retry-load" class="text-button" type="button" data-action="retry-load">もう一度読み込む <span aria-hidden="true">↻</span></button></div>
           <div class="lane-buttons">
             <button class="lane-btn lane-personal" type="button" data-action="start" data-lane="personal" disabled>
-              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="9" y="3.5" width="14" height="25" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M13 7h6m-4 17.5h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span class="lane-count" data-lane-count="personal">12問から</span></span>
+              <span class="lane-top"><span class="lane-scene" aria-hidden="true"><svg viewBox="0 0 240 180" focusable="false"><use href="#visual-personal"/></svg></span><span class="lane-count" data-lane-count="personal">12問から</span></span>
               <span class="lane-name">PC・スマホを使う方</span><span class="lane-sub">自分と家族の、身近なデジタル習慣</span><span class="lane-topics">アカウント ／ 詐欺への備え ／ データの保護</span><span class="lane-bottom">個人向けコース <span aria-hidden="true">↗</span></span>
             </button>
             <button class="lane-btn lane-admin" type="button" data-action="start" data-lane="admin" disabled>
-              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="6" y="8" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M12 8V4h8v4M11 14h3m4 0h3m-10 5h3m4 0h3m-7 9v-4h4v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lane-count" data-lane-count="admin">12問から</span></span>
+              <span class="lane-top"><span class="lane-scene" aria-hidden="true"><svg viewBox="0 0 240 180" focusable="false"><use href="#visual-team"/></svg></span><span class="lane-count" data-lane-count="admin">12問から</span></span>
               <span class="lane-name">会社・チームの管理者</span><span class="lane-sub">専門知識がなくても、組織の備えを確認</span><span class="lane-topics">社内ルール ／ 情報共有 ／ もしもの連絡先</span><span class="lane-bottom">組織の管理者向けコース <span aria-hidden="true">↗</span></span>
             </button>
             <button class="lane-btn lane-it" type="button" data-action="start" data-lane="it" disabled>
-              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="5" y="4" width="22" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="5" y="18" width="22" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M10 9h.1M10 23h.1M16 9h6m-6 14h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span class="lane-count" data-lane-count="it">12問から</span></span>
+              <span class="lane-top"><span class="lane-scene" aria-hidden="true"><svg viewBox="0 0 240 180" focusable="false"><use href="#visual-system"/></svg></span><span class="lane-count" data-lane-count="it">12問から</span></span>
               <span class="lane-name">システム・IT担当者</span><span class="lane-sub">会社の端末やサーバーを守る、日々の運用</span><span class="lane-topics">更新と権限 ／ 監視 ／ バックアップと復旧</span><span class="lane-bottom">システム運用向けコース <span aria-hidden="true">↗</span></span>
             </button>
             <button class="lane-btn lane-dev" type="button" data-action="start" data-lane="dev" disabled>
-              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="3.5" y="5.5" width="25" height="21" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="m11 12-4 4 4 4m10-8 4 4-4 4m-3-9-4 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lane-count" data-lane-count="dev">12問から</span></span>
+              <span class="lane-top"><span class="lane-scene" aria-hidden="true"><svg viewBox="0 0 240 180" focusable="false"><use href="#visual-build"/></svg></span><span class="lane-count" data-lane-count="dev">12問から</span></span>
               <span class="lane-name">アプリ・AIの開発者</span><span class="lane-sub">つくるとき、公開するときの見落としを確認</span><span class="lane-topics">認証とAPI ／ 依存関係 ／ AIの安全な利用</span><span class="lane-bottom">開発者向けコース <span aria-hidden="true">↗</span></span>
             </button>
           </div>
@@ -68,9 +127,10 @@
           <p class="reference-note">CISA・NIST・CIS・OWASPなどの公開資料を参考にした、独自の質問です。</p>
         </div>
 
-        <aside class="how-it-works" aria-label="セルフチェックの流れ"><span class="step-label">こんな流れで進みます</span><ol><li><span>01</span> 質問に答える</li><li><span>02</span> いまの備えを知る</li><li><span>03</span> できる対策を選ぶ</li></ol></aside>
+        <aside class="how-it-works" aria-label="セルフチェックの流れ"><span class="step-label">こんな流れで進みます</span><ol><li><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#icon-answer"/></svg></span><span class="step-copy"><small>01</small>質問に答える</span></li><li><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#icon-review"/></svg></span><span class="step-copy"><small>02</small>いまの備えを知る</span></li><li><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#icon-adjust"/></svg></span><span class="step-copy"><small>03</small>できる対策を選ぶ</span></li></ol></aside>
         <p class="scope-note">これは、回答から対策の状況を振り返るためのセルフチェックです。端末やシステムに接続して脆弱性を検査するものではありません。</p>
         <section class="knowledge-promo" aria-labelledby="knowledge-promo-title">
+          <svg class="knowledge-illustration" viewBox="0 0 240 180" aria-hidden="true" focusable="false"><use href="#visual-study"/></svg>
           <div><p class="eyebrow">学んだことを、力試し。</p><h2 id="knowledge-promo-title">セキュリティ基礎チャレンジ</h2><p>ネットワークからWebアプリ開発まで、全80問から分野別に20問を出題。直近の問題を避けて再挑戦できます。100点満点、90点以上で合格です。</p><span class="knowledge-promo-note">自己チェックとは別の知識テストです。このアプリの学習用判定で、公式資格の認定ではありません。</span></div>
           <button type="button" class="btn btn-primary" data-action="start-challenge">知識チャレンジへ <span aria-hidden="true">→</span></button>
         </section>
@@ -79,13 +139,14 @@
       <section id="question-card" class="main-card question-panel hidden" aria-labelledby="question-text" hidden>
         <div class="question-topline"><span id="question-course" class="course-label">個人向けコース</span><button class="text-button muted" type="button" data-action="request-reset">コース選択へ戻る</button></div>
         <div class="progress-section"><div class="progress-header"><span id="progress-text">質問 1 / 40</span><span id="progress-percent">0%</span></div><div id="question-progress" class="progress-bar-bg" role="progressbar" aria-label="回答の進み具合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-bar-fill" class="progress-bar-fill"></div></div></div>
-        <div class="question-body"><span id="question-category" class="category-tag">身近なセキュリティ</span><h2 id="question-text" class="question-title" tabindex="-1">質問を読み込んでいます…</h2><p id="question-desc" class="question-desc"></p></div>
+        <div id="question-milestones" class="question-milestones" aria-hidden="true"></div>
+        <div id="question-body" class="question-body"><div class="question-context"><svg id="question-topic-icon" class="question-topic-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#icon-device"/></svg><span id="question-category" class="category-tag">身近なセキュリティ</span></div><h2 id="question-text" class="question-title" tabindex="-1">質問を読み込んでいます…</h2><p id="question-desc" class="question-desc"></p></div>
         <details id="question-source-details" class="details-panel question-references"><summary>この質問の参考資料</summary><div id="question-sources"></div></details>
         <fieldset class="answer-fieldset"><legend id="answer-instructions">回答を選ぶと、自動で次の質問へ進みます。</legend><div class="button-group">
-          <button class="answer-option" type="button" data-action="answer" data-answer="YES" aria-pressed="false"><span class="answer-radio" aria-hidden="true"></span><span><span class="answer-label">はい</span><span class="answer-sub">対策できています</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
-          <button class="answer-option" type="button" data-action="answer" data-answer="NO" aria-pressed="false"><span class="answer-radio" aria-hidden="true"></span><span><span class="answer-label">いいえ</span><span class="answer-sub">これから見直したいです</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
-          <button class="answer-option" type="button" data-action="answer" data-answer="UNKNOWN" aria-pressed="false"><span class="answer-radio" aria-hidden="true"></span><span><span class="answer-label">わからない</span><span class="answer-sub">あとで確認したいです</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
-          <button id="answer-na" class="answer-option hidden" type="button" data-action="answer" data-answer="NA" aria-pressed="false" hidden><span class="answer-radio" aria-hidden="true"></span><span><span class="answer-label">対象外</span><span class="answer-sub">自分には当てはまらない</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
+          <button class="answer-option" type="button" data-action="answer" data-answer="YES" aria-pressed="false"><span class="answer-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#icon-check"/></svg></span><span><span class="answer-label">はい</span><span class="answer-sub">対策できています</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
+          <button class="answer-option" type="button" data-action="answer" data-answer="NO" aria-pressed="false"><span class="answer-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#icon-adjust"/></svg></span><span><span class="answer-label">いいえ</span><span class="answer-sub">これから見直したいです</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
+          <button class="answer-option" type="button" data-action="answer" data-answer="UNKNOWN" aria-pressed="false"><span class="answer-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#icon-review"/></svg></span><span><span class="answer-label">わからない</span><span class="answer-sub">あとで確認したいです</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
+          <button id="answer-na" class="answer-option hidden" type="button" data-action="answer" data-answer="NA" aria-pressed="false" hidden><span class="answer-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use href="#icon-minus"/></svg></span><span><span class="answer-label">対象外</span><span class="answer-sub">自分には当てはまらない</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
         </div></fieldset>
         <p id="answer-feedback" class="answer-feedback" role="status" aria-live="polite"></p>
         <p id="question-hint" class="question-hint">迷ったときは「わからない」で大丈夫。結果で確認のヒントをお伝えします。</p>
@@ -94,8 +155,8 @@
       </section>
 
       <section id="result-card" class="main-card result-content hidden" aria-labelledby="result-title" hidden>
-        <div class="result-header"><span class="completion-mark" aria-hidden="true">✓</span><p class="eyebrow">おつかれさまでした</p><p id="result-scope" class="assessment-badge">重要12問の結果</p><h2 id="result-title" tabindex="-1">いまの備えと、次の一歩</h2><p class="result-intro">できていることを大切に。見直せることから、ひとつずつ。</p></div>
-        <div class="result-overview"><div class="score-display"><span class="score-caption">対策済みの割合</span><div class="score-number"><span id="result-score">0</span><span class="score-unit">%</span></div><span class="score-label">対象外を除く回答ベース</span></div><div id="result-stats" class="result-stats" aria-label="回答の内訳"></div></div>
+        <div class="result-header"><svg class="result-illustration" viewBox="0 0 240 180" aria-hidden="true" focusable="false"><use href="#visual-checklist"/></svg><p class="eyebrow">おつかれさまでした</p><p id="result-scope" class="assessment-badge">重要12問の結果</p><h2 id="result-title" tabindex="-1">いまの備えと、次の一歩</h2><p class="result-intro">できていることを大切に。見直せることから、ひとつずつ。</p></div>
+        <div class="result-overview"><div class="score-display"><span class="score-caption">対策済みの割合</span><div class="score-number"><span id="result-score">0</span><span class="score-unit">%</span></div><span class="score-label">対象外を除く回答ベース</span></div><div class="result-distribution"><p class="result-breakdown-label">回答の内訳（対象外を含む）</p><div id="result-breakdown" class="result-breakdown" aria-hidden="true"></div></div><div id="result-stats" class="result-stats" aria-label="回答の内訳"></div></div>
         <p id="result-summary" class="result-summary-text"></p><p id="result-coverage" class="result-limit"></p><p class="result-limit">この割合は安全性の保証や、攻撃を受ける確率を示すものではありません。未確認の項目も、次に確かめるための手がかりです。</p>
         <aside id="continue-check" class="continue-check"><div><h3>もう少し、詳しく確かめますか？</h3><p>今の12問の回答を引き継いで、残り28問も確認できます。</p></div><button class="btn btn-primary" type="button" data-action="continue-full">残り28問も確認する <span aria-hidden="true">→</span></button></aside>
         <section class="advice-section" aria-labelledby="priority-title"><div class="section-heading"><div><p class="eyebrow">最初の一歩に</p><h3 id="priority-title">まず取り組みたいこと</h3></div><span class="small-note">優先度の高い順に、最大3件</span></div><div id="priority-list" class="priority-list advice-list"></div></section>

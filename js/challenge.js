@@ -3,6 +3,12 @@
   const engine = window.SecurityChallenge;
   const ADVANCE_DELAY = 320;
   const HISTORY_KEY = "security-challenge-question-history-v1";
+  const categoryVisuals = Object.freeze({
+    "ネットワークの基礎": { symbol: "icon-network", tone: "network" },
+    "Webとアクセス制御": { symbol: "icon-access", tone: "access" },
+    "安全なWeb開発": { symbol: "icon-code", tone: "code" },
+    "運用と復旧": { symbol: "icon-recovery", tone: "recovery" }
+  });
   const state = { data: null, queue: [], answers: {}, step: 0, phase: "idle", timer: null, locked: false, generation: 0, controller: null, confirming: false, result: null, sort: "mistakes", history: [], historyLoaded: false, historyPersistent: true };
   const mount = () => document.getElementById("challenge-card");
   const make = (tag, className, text) => {
@@ -11,6 +17,33 @@
     if (text !== undefined) element.textContent = text;
     return element;
   };
+  function visual(symbol, className, illustration = false) {
+    const namespace = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(namespace, "svg");
+    svg.setAttribute("viewBox", illustration ? "0 0 240 180" : "0 0 32 32");
+    svg.setAttribute("class", className);
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    const use = document.createElementNS(namespace, "use");
+    use.setAttribute("href", "#" + symbol);
+    svg.appendChild(use);
+    return svg;
+  }
+  function categoryIcon(category, className = "challenge-topic-icon") {
+    const item = categoryVisuals[category];
+    return visual(item.symbol, className + " challenge-tone-" + item.tone);
+  }
+  function progressMarks() {
+    const marks = make("div", "challenge-progress-marks");
+    marks.setAttribute("aria-hidden", "true");
+    state.queue.forEach((question, index) => {
+      const mark = make("span", "challenge-progress-mark", String(index + 1));
+      mark.classList.toggle("is-answered", Object.hasOwn(state.answers, question.id));
+      mark.classList.toggle("is-current", index === state.step);
+      marks.appendChild(mark);
+    });
+    return marks;
+  }
   const button = (label, action, className = "challenge-secondary") => {
     const element = make("button", "challenge-button " + className, label);
     element.type = "button";
@@ -114,25 +147,33 @@
   }
   function renderIntro() {
     const panel = shell("基礎知識を、クエスト感覚で。", "20問の知識チャレンジ");
-    panel.appendChild(make("p", "challenge-description", "ネットワークからWeb開発、運用と復旧まで。状況に合う対応を4つの選択肢から選び、基本の考え方を確かめましょう。"));
+    panel.querySelector(".challenge-title").replaceChildren(make("span", "", "基礎知識を、"), make("span", "", "クエスト感覚で。"));
+    const hero = make("div", "challenge-intro-hero");
+    const copy = make("div", "challenge-intro-copy");
+    copy.append(panel.querySelector(".challenge-eyebrow"), panel.querySelector(".challenge-title"),
+      make("p", "challenge-description", "ネットワークからWeb開発、運用と復旧まで。状況に合う対応を4つの選択肢から選び、基本の考え方を確かめましょう。"));
+    hero.append(copy, visual("visual-study", "challenge-illustration challenge-intro-visual", true));
+    panel.appendChild(hero);
     const rules = make("div", "challenge-rules");
     [["20問", "4択・1問5点"], ["90点以上", "18問以上正解で合格"], ["10〜15分", "目安・時間制限なし"]].forEach(([value, label]) => {
       const card = make("div", "challenge-rule");
       card.append(make("strong", "challenge-rule-value", value), make("span", "challenge-rule-label", label));
       rules.appendChild(card);
     });
-    panel.append(rules, make("p", "challenge-description", "答えを選ぶと約0.3秒で次へ進みます。前の問題へ戻って選び直せます。正解と解説は、20問すべてに答えた後で確認できます。"));
+    panel.append(rules, button("チャレンジを始める →", "begin", "challenge-primary challenge-start"), make("p", "challenge-description", "答えを選ぶと約0.3秒で次へ進みます。前の問題へ戻って選び直せます。正解と解説は、20問すべてに答えた後で確認できます。"));
     const topics = make("div", "challenge-topic-grid");
     engine.CATEGORY_PLAN.forEach(plan => {
       const topic = make("div", "challenge-topic");
       const count = state.data.questions.filter(question => question.category === plan.category).length;
-      topic.append(make("strong", "", plan.category), make("span", "", count + "問から" + plan.count + "問"));
+      const label = make("div", "challenge-topic-copy");
+      label.append(make("strong", "", plan.category), make("span", "", count + "問から" + plan.count + "問"));
+      topic.append(categoryIcon(plan.category), label);
       topics.appendChild(topic);
     });
     panel.append(make("h3", "challenge-section-title", "全" + state.data.questions.length + "問から、分野ごとに抽選"), topics,
       make("p", "challenge-note", "まだ出ていない問題を優先します。ひと通り解いた後も、直近2回の問題を避けて組み合わせます。問題と選択肢の順番も毎回変わります。"));
     const note = make("p", "challenge-note", "合格はこのアプリの学習用基準です。公式資格の認定や、実務能力・システムの安全性を保証するものではありません。");
-    panel.append(note, button("チャレンジを始める →", "begin", "challenge-primary"), make("p", "challenge-privacy", "登録不要・回答の外部送信なし。回答と得点は、ページを閉じると消えます。重複を避けるため、出題した問題のIDだけをこのブラウザに保存します。"));
+    panel.append(note, make("p", "challenge-privacy", "登録不要・回答の外部送信なし。回答と得点は、ページを閉じると消えます。重複を避けるため、出題した問題のIDだけをこのブラウザに保存します。"));
     const historyActions = make("div", "challenge-history-actions");
     const clear = button("出題履歴をリセット", "clear-history", "challenge-link");
     clear.disabled = state.history.length === 0;
@@ -161,6 +202,10 @@
     cancelAdvance();
     const question = state.queue[state.step];
     const panel = shell(question.question, question.category);
+    panel.classList.add("is-quiz");
+    const category = panel.querySelector(".challenge-eyebrow");
+    category.classList.add("challenge-question-category");
+    category.prepend(categoryIcon(question.category, "challenge-question-icon"));
     const progress = make("div", "challenge-progress");
     const progressText = make("div", "challenge-progress-text");
     const count = Object.keys(state.answers).length;
@@ -174,7 +219,7 @@
     const fill = make("div", "challenge-progress-fill");
     fill.style.width = count / 20 * 100 + "%";
     track.appendChild(fill);
-    progress.append(progressText, track);
+    progress.append(progressText, track, progressMarks());
     panel.querySelector(".challenge-eyebrow").before(progress);
     panel.appendChild(make("p", "challenge-help", "もっとも適切なものを1つ選んでください。"));
     const options = make("div", "challenge-options");
@@ -207,12 +252,15 @@
     state.locked = true;
     mount().querySelectorAll('[data-challenge-action="answer"]').forEach(choice => {
       choice.setAttribute("aria-pressed", String(choice.dataset.optionId === optionId));
+      choice.classList.toggle("is-chosen", choice.dataset.optionId === optionId);
       choice.disabled = true;
     });
     const count = Object.keys(state.answers).length;
     mount().querySelector(".challenge-progress-text").lastElementChild.textContent = count + "問 回答済み";
     mount().querySelector(".challenge-progress-track").setAttribute("aria-valuenow", String(count));
     mount().querySelector(".challenge-progress-fill").style.width = count / 20 * 100 + "%";
+    const mark = mount().querySelectorAll(".challenge-progress-mark")[state.step];
+    mark?.classList.add("is-answered", "is-recent");
     mount().querySelector(".challenge-answer-status").textContent = state.step === 19 ? "選択しました。全問の回答を確認して採点します。" : "選択しました。次の問題へ進みます。";
     mount().querySelector('[data-challenge-action="next"]').disabled = true;
     const generation = state.generation;
@@ -254,10 +302,12 @@
     cancelAdvance();
     const panel = shell(result.passed ? "合格！ 基礎チャレンジ達成" : "不合格 — 復習して、もう一度。", "全20問の結果");
     const score = make("div", "challenge-score " + (result.passed ? "is-pass" : "is-fail"));
+    score.classList.add("has-visual");
     const badge = make("strong", "challenge-result-badge", result.passed ? "合格" : "不合格");
     const number = make("div", "challenge-score-number");
     number.append(make("strong", "", String(result.score)), make("span", "", " / 100点"));
-    score.append(badge, number, make("p", "challenge-score-detail", result.correctCount + " / 20問 正解・合格ライン 90点以上"));
+    score.append(visual(result.passed ? "visual-celebrate" : "visual-review", "challenge-illustration challenge-result-visual", true),
+      badge, number, make("p", "challenge-score-detail", result.correctCount + " / 20問 正解・合格ライン 90点以上"));
     panel.append(score, make("p", "challenge-description", result.passed ? "18問以上に正解しました。誤答や迷った問題の解説を読み、基本を使える知識につなげましょう。" : "合格にはあと" + (18 - result.correctCount) + "問の正解が必要でした。間違えた問題から確認して、理解できたら別の問題で再挑戦できます。"), make("p", "challenge-note", "この合否は、このアプリの学習用基準です。公式資格認定や実務能力・システムの安全性の保証ではありません。"));
     const actions = make("div", "challenge-result-actions");
     actions.append(button("別の問題でもう一度挑戦", "retry", "challenge-primary"), button("ホームへ戻る", "exit"));
@@ -270,7 +320,9 @@
     result.categories.forEach(category => {
       const row = make("div", "challenge-category-row");
       const labels = make("div", "challenge-category-labels");
-      labels.append(make("span", "", category.category), make("strong", "", category.correct + " / " + category.total + "問"));
+      const label = make("span", "challenge-category-name", category.category);
+      label.prepend(categoryIcon(category.category, "challenge-category-icon"));
+      labels.append(label, make("strong", "", category.correct + " / " + category.total + "問"));
       const track = make("div", "challenge-category-track");
       const fill = make("div", "challenge-category-fill");
       fill.style.width = category.percent + "%";
