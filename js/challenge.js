@@ -2,7 +2,8 @@
   "use strict";
   const engine = window.SecurityChallenge;
   const ADVANCE_DELAY = 320;
-  const state = { data: null, queue: [], answers: {}, step: 0, phase: "idle", timer: null, locked: false, generation: 0, controller: null, confirming: false, result: null, sort: "mistakes" };
+  const HISTORY_KEY = "security-challenge-question-history-v1";
+  const state = { data: null, queue: [], answers: {}, step: 0, phase: "idle", timer: null, locked: false, generation: 0, controller: null, confirming: false, result: null, sort: "mistakes", history: [], historyLoaded: false, historyPersistent: true };
   const mount = () => document.getElementById("challenge-card");
   const make = (tag, className, text) => {
     const element = document.createElement(tag);
@@ -56,6 +57,7 @@
     ready.then(data => {
       if (generation !== state.generation) return;
       state.data = data;
+      loadHistory();
       state.phase = "intro";
       renderIntro();
     }).catch(error => {
@@ -75,8 +77,40 @@
     if (!response.ok) throw new Error("Question data HTTP " + response.status);
     const data = await response.json();
     if (!data || !/^\d{4}-\d{2}-\d{2}$/.test(data.updatedAt)) throw new Error("Missing content review date");
-    engine.validateQuestions(data.questions);
+    engine.validateBank(data.questions);
     return data;
+  }
+  function loadHistory() {
+    if (!state.historyLoaded) {
+      try {
+        const stored = JSON.parse(localStorage.getItem(HISTORY_KEY) || "null");
+        state.history = stored?.version === 1 && Array.isArray(stored.ids) && stored.ids.length <= 10000 ? stored.ids : [];
+      } catch {
+        state.historyPersistent = false;
+      }
+      state.historyLoaded = true;
+    }
+    state.history = engine.normalizeHistory(state.data.questions, state.history);
+  }
+  function saveHistory() {
+    try {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify({ version: 1, ids: state.history }));
+      state.historyPersistent = true;
+    } catch {
+      state.historyPersistent = false;
+    }
+  }
+  function clearHistory() {
+    if (state.phase !== "intro") return;
+    state.history = [];
+    let removed = true;
+    try { localStorage.removeItem(HISTORY_KEY); } catch { state.historyPersistent = false; removed = false; }
+    renderIntro();
+    const status = make("p", "challenge-note", removed
+      ? "出題履歴を消去しました。次回はすべての問題から抽選します。"
+      : "このページ内の履歴をリセットしました。ブラウザに保存された履歴は削除できませんでした。");
+    status.setAttribute("role", "status");
+    mount().querySelector(".challenge-history-actions").after(status);
   }
   function renderIntro() {
     const panel = shell("基礎知識を、クエスト感覚で。", "20問の知識チャレンジ");
@@ -88,15 +122,32 @@
       rules.appendChild(card);
     });
     panel.append(rules, make("p", "challenge-description", "答えを選ぶと約0.3秒で次へ進みます。前の問題へ戻って選び直せます。正解と解説は、20問すべてに答えた後で確認できます。"));
+    const topics = make("div", "challenge-topic-grid");
+    engine.CATEGORY_PLAN.forEach(plan => {
+      const topic = make("div", "challenge-topic");
+      const count = state.data.questions.filter(question => question.category === plan.category).length;
+      topic.append(make("strong", "", plan.category), make("span", "", count + "問から" + plan.count + "問"));
+      topics.appendChild(topic);
+    });
+    panel.append(make("h3", "challenge-section-title", "全" + state.data.questions.length + "問から、分野ごとに抽選"), topics,
+      make("p", "challenge-note", "まだ出ていない問題を優先します。ひと通り解いた後も、直近2回の問題を避けて組み合わせます。問題と選択肢の順番も毎回変わります。"));
     const note = make("p", "challenge-note", "合格はこのアプリの学習用基準です。公式資格の認定や、実務能力・システムの安全性を保証するものではありません。");
-    panel.append(note, button("チャレンジを始める →", "begin", "challenge-primary"), make("p", "challenge-privacy", "登録不要・回答の外部送信なし。ページを閉じると回答は消えます。"));
+    panel.append(note, button("チャレンジを始める →", "begin", "challenge-primary"), make("p", "challenge-privacy", "登録不要・回答の外部送信なし。回答と得点は、ページを閉じると消えます。重複を避けるため、出題した問題のIDだけをこのブラウザに保存します。"));
+    const historyActions = make("div", "challenge-history-actions");
+    const clear = button("出題履歴をリセット", "clear-history", "challenge-link");
+    clear.disabled = state.history.length === 0;
+    historyActions.append(make("span", "", "出題済み " + state.history.length + " / " + state.data.questions.length + "問"), clear);
+    panel.appendChild(historyActions);
+    if (!state.historyPersistent) panel.appendChild(make("p", "challenge-note", "このブラウザでは履歴を保存できないため、ページを開いている間だけ重複を避けます。"));
     focusTitle();
   }
   function begin() {
     if (!state.data || !["intro", "result"].includes(state.phase)) return;
     cancelAdvance();
     state.generation++;
-    state.queue = engine.shuffleQuestions(state.data.questions);
+    state.queue = engine.selectQuestions(state.data.questions, state.history);
+    state.history = engine.updateHistory(state.data.questions, state.history, state.queue);
+    saveHistory();
     state.answers = {};
     state.step = 0;
     state.phase = "quiz";
@@ -207,10 +258,13 @@
     const number = make("div", "challenge-score-number");
     number.append(make("strong", "", String(result.score)), make("span", "", " / 100点"));
     score.append(badge, number, make("p", "challenge-score-detail", result.correctCount + " / 20問 正解・合格ライン 90点以上"));
-    panel.append(score, make("p", "challenge-description", result.passed ? "18問以上に正解しました。誤答や迷った問題の解説を読み、基本を使える知識につなげましょう。" : "合格にはあと" + (18 - result.correctCount) + "問の正解が必要でした。間違えた問題から確認して、理解できたら新しい順番で再挑戦できます。"), make("p", "challenge-note", "この合否は、このアプリの学習用基準です。公式資格認定や実務能力・システムの安全性の保証ではありません。"));
+    panel.append(score, make("p", "challenge-description", result.passed ? "18問以上に正解しました。誤答や迷った問題の解説を読み、基本を使える知識につなげましょう。" : "合格にはあと" + (18 - result.correctCount) + "問の正解が必要でした。間違えた問題から確認して、理解できたら別の問題で再挑戦できます。"), make("p", "challenge-note", "この合否は、このアプリの学習用基準です。公式資格認定や実務能力・システムの安全性の保証ではありません。"));
     const actions = make("div", "challenge-result-actions");
-    actions.append(button("新しい順番でもう一度挑戦", "retry", "challenge-primary"), button("ホームへ戻る", "exit"));
+    actions.append(button("別の問題でもう一度挑戦", "retry", "challenge-primary"), button("ホームへ戻る", "exit"));
     panel.appendChild(actions);
+    panel.appendChild(make("p", "challenge-note", state.historyPersistent
+      ? "出題履歴はこのブラウザに保存しています。再挑戦では未出題を優先し、直近2回と重ならない問題を出題します。"
+      : "履歴を保存できないため、このページを開いている間だけ重複を避けます。"));
     const categoryHeading = make("h3", "challenge-section-title", "分野ごとの振り返り");
     const categories = make("div", "challenge-categories");
     result.categories.forEach(category => {
@@ -327,6 +381,7 @@
     switch (action) {
       case "begin": case "retry": begin(); break;
       case "reload": start(); break;
+      case "clear-history": clearHistory(); break;
       case "answer": selectAnswer(control.dataset.optionId); break;
       case "next": advance(); break;
       case "previous": previous(); break;

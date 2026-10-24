@@ -667,6 +667,1986 @@
           "publisher": "OWASP"
         }
       ]
+    },
+    {
+      "id": "network-subnet",
+      "category": "ネットワークの基礎",
+      "question": "PC Aは172.16.8.10/24、PC Bは172.16.9.20/24です。特別な経路設定がない場合、この2台の関係として正しいのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "先頭の172.16が同じなので、必ず同じサブネットとして直接通信する。"
+        },
+        {
+          "id": "option-2",
+          "text": "異なるサブネットに属するため、通信には通常ルーターなどの経路が必要になる。"
+        },
+        {
+          "id": "option-3",
+          "text": "末尾の番号が異なるため、どのルーターを使っても通信できない。"
+        },
+        {
+          "id": "option-4",
+          "text": "サブネットが異なれば、アクセス制御を設定しなくても情報は暗号化される。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "/24は先頭24ビットをネットワーク部として扱う指定です。この例では172.16.8.0/24と172.16.9.0/24に分かれます。経路の確保と、通信を許可するアクセス制御は別に考えます。",
+      "references": [
+        {
+          "title": "RFC 1122: Requirements for Internet Hosts — Communication Layers",
+          "url": "https://www.rfc-editor.org/rfc/rfc1122.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "3.3.1.1 Local/Remote Decision"
+        }
+      ]
+    },
+    {
+      "id": "network-gateway",
+      "category": "ネットワークの基礎",
+      "question": "あるPCは同じサブネットの共有サーバーには届きますが、外部ネットワークへの経路がありません。外向きの通常の経路を確認する設定はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "画面ロックの待ち時間。"
+        },
+        {
+          "id": "option-2",
+          "text": "共有サーバーのファイル名の拡張子。"
+        },
+        {
+          "id": "option-3",
+          "text": "デフォルトゲートウェイとルーティングテーブル。"
+        },
+        {
+          "id": "option-4",
+          "text": "ブラウザに保存したログイン用パスワード。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "直接つながっていないネットワークへのパケットは、ルーティングテーブルに従って次の中継先へ送ります。より具体的な経路がない宛先にはデフォルト経路を使います。DNSの問題と、IPパケットの経路の問題は分けて調べます。",
+      "references": [
+        {
+          "title": "RFC 1122: Requirements for Internet Hosts — Communication Layers",
+          "url": "https://www.rfc-editor.org/rfc/rfc1122.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "3.3.1.2 Gateway Selection"
+        }
+      ]
+    },
+    {
+      "id": "network-port-meaning",
+      "category": "ネットワークの基礎",
+      "question": "監視画面に「宛先TCPポート443」と表示されました。この情報だけで判断してはいけないことはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "宛先のトランスポート層ポート番号が443であること。"
+        },
+        {
+          "id": "option-2",
+          "text": "TCPの通信として記録されていること。"
+        },
+        {
+          "id": "option-3",
+          "text": "ポート番号を通信調査の手がかりにできること。"
+        },
+        {
+          "id": "option-4",
+          "text": "通信が正規のHTTPSで、内容も無害であると断定すること。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "登録されたポート番号でも、別のプロトコルや不正な通信が使われることがあります。443という番号だけでTLSの利用や通信内容の安全を証明できません。実際のプロトコルや接続先、アプリの動作も確認します。",
+      "references": [
+        {
+          "title": "RFC 6335: Service Name and Transport Protocol Port Number Registry",
+          "url": "https://www.rfc-editor.org/rfc/rfc6335.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "9. Security Considerations"
+        }
+      ]
+    },
+    {
+      "id": "network-dual-stack",
+      "category": "ネットワークの基礎",
+      "question": "サーバーはIPv4とIPv6の両方で待ち受けています。IPv4側だけに厳しいファイアウォール規則を設定した場合、確認すべきことはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "IPv6側にも同じ意図のアクセス制御が適用されているか確かめる。"
+        },
+        {
+          "id": "option-2",
+          "text": "IPv6は新しい方式なので、IPv4の規則が自動的に引き継がれるとみなす。"
+        },
+        {
+          "id": "option-3",
+          "text": "IPv4のアドレスを非公開にすれば、IPv6側の規則は不要になる。"
+        },
+        {
+          "id": "option-4",
+          "text": "IPv6のアドレスが長いので、認証を省略してよいと判断する。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "デュアルスタックでは両方の経路を保護します。一方の規則だけが緩いと、そこから意図しない通信が成立します。公開状態や監視についてもIPv4とIPv6の両方を確認します。",
+      "references": [
+        {
+          "title": "RFC 9099: Operational Security Considerations for IPv6 Networks",
+          "url": "https://www.rfc-editor.org/rfc/rfc9099.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "2.7.1 Dual Stack"
+        }
+      ]
+    },
+    {
+      "id": "network-dnssec",
+      "category": "ネットワークの基礎",
+      "question": "DNSSECの署名を正しく検証できました。DNSSECが主に提供する保護はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "検索したドメイン名を、DNSサーバーの運営者にも隠す。"
+        },
+        {
+          "id": "option-2",
+          "text": "DNS応答の出所とデータの完全性を検証する。"
+        },
+        {
+          "id": "option-3",
+          "text": "応答に含まれるWebサイトの商品の品質を審査する。"
+        },
+        {
+          "id": "option-4",
+          "text": "Webアプリの通信本文を、DNSサーバーが暗号化する。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "DNSSECはDNSデータの署名により、出所と改ざんの有無を検証する仕組みです。DNS問い合わせの秘密性や、リンク先コンテンツの安全性を保証するものではありません。",
+      "references": [
+        {
+          "title": "RFC 4033: DNS Security Introduction and Requirements",
+          "url": "https://www.rfc-editor.org/rfc/rfc4033.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "3. Services Provided by DNS Security / 4. Services Not Provided by DNS Security"
+        }
+      ]
+    },
+    {
+      "id": "network-doh-scope",
+      "category": "ネットワークの基礎",
+      "question": "ブラウザでDNS over HTTPS（DoH）を使う設定にしました。保護される範囲の説明として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "利用するすべてのアプリの通信が、同じDoHサーバーへのVPNに変わる。"
+        },
+        {
+          "id": "option-2",
+          "text": "DNSの接続先が、Webサイト運営者の善意まで保証する。"
+        },
+        {
+          "id": "option-3",
+          "text": "DoHクライアントと選んだDoHサーバーとの間のDNSのやり取りをHTTPSで保護する。"
+        },
+        {
+          "id": "option-4",
+          "text": "選んだDoHサーバーにも、問い合わせる名前が一切分からなくなる。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "DoHはDNS問い合わせと応答をHTTPS上で運ぶ方式です。選んだリゾルバーには問い合わせ内容が見えます。Webの通信先の確認や、組織のDNS方針への適合は別に検討します。",
+      "references": [
+        {
+          "title": "RFC 8484: DNS Queries over HTTPS (DoH)",
+          "url": "https://www.rfc-editor.org/rfc/rfc8484.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "3. Selection of DoH Server / 8. Privacy Considerations"
+        }
+      ]
+    },
+    {
+      "id": "network-vpn-scope",
+      "category": "ネットワークの基礎",
+      "question": "会社のVPNへ接続できました。VPNの役割と限界の説明として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "端末内の悪意あるソフトも、VPNへ接続すると自動で除去される。"
+        },
+        {
+          "id": "option-2",
+          "text": "VPN利用中なら、メールの添付ファイルは検査せずに開ける。"
+        },
+        {
+          "id": "option-3",
+          "text": "分割トンネルでも、すべての宛先が必ずVPN内を通る。"
+        },
+        {
+          "id": "option-4",
+          "text": "設定された区間や経路を保護するが、端末の感染やアプリの権限管理は別の対策が必要になる。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "VPNが保護するのは構成されたトンネル内の通信です。分割トンネルでは対象外の経路もあります。接続後も端末の更新、本人確認、アプリの認可などが必要です。",
+      "references": [
+        {
+          "title": "NIST SP 800-41 Rev. 1: Guidelines on Firewalls and Firewall Policy",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41r1.pdf",
+          "publisher": "NIST",
+          "section": "2.1.6 Virtual Private Networking"
+        }
+      ]
+    },
+    {
+      "id": "network-ssh-host-key",
+      "category": "ネットワークの基礎",
+      "question": "いつも使うサーバーへSSHで接続したところ「ホスト鍵が変わった」という警告が出ました。適切な対応はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "接続を止め、既知の管理者や信頼済みの別経路で鍵の変更と指紋を確認する。"
+        },
+        {
+          "id": "option-2",
+          "text": "警告を消すため、保存された鍵を削除して新しい鍵を無条件に信頼する。"
+        },
+        {
+          "id": "option-3",
+          "text": "利用者のパスワードが合っていれば、接続先の鍵は確認しない。"
+        },
+        {
+          "id": "option-4",
+          "text": "ポート番号を変えて再接続すれば、接続先の確認は済んだとみなす。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "ホスト鍵はSSHの接続先を確認する手がかりです。正当な再構築でも変わりますが、接続先の取り違えや中間者の可能性もあるため、警告の接続画面とは別の信頼できる経路で確認します。",
+      "references": [
+        {
+          "title": "RFC 4251: The Secure Shell (SSH) Protocol Architecture",
+          "url": "https://www.rfc-editor.org/rfc/rfc4251.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "4.1 Host Keys / 9.3.4 Man-in-the-middle"
+        }
+      ]
+    },
+    {
+      "id": "network-dhcp",
+      "category": "ネットワークの基礎",
+      "question": "新しく接続したPCがDHCPでIPアドレスを受け取りました。DHCPの基本的な役割はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "接続した人に、全社ファイルへの閲覧権限を付与する。"
+        },
+        {
+          "id": "option-2",
+          "text": "IPアドレスなど、ネットワーク利用に必要な設定を配る。"
+        },
+        {
+          "id": "option-3",
+          "text": "Webサーバーの証明書の失効状態を検証する。"
+        },
+        {
+          "id": "option-4",
+          "text": "割り当てた端末のOSに最新の修正を適用する。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "DHCPはアドレスなどのネットワーク設定を配布する仕組みです。IPアドレスを受け取れたことは、アプリの利用権限や端末の安全性を証明しません。配布するサーバーと設定の管理も必要です。",
+      "references": [
+        {
+          "title": "RFC 2131: Dynamic Host Configuration Protocol",
+          "url": "https://www.rfc-editor.org/rfc/rfc2131.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "1. Introduction / 7. Security Considerations"
+        }
+      ]
+    },
+    {
+      "id": "network-loopback",
+      "category": "ネットワークの基礎",
+      "question": "開発用HTTPサーバーを、そのPC自身からだけ利用したいと考えています。待ち受けアドレスの説明として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "0.0.0.0は、そのPC内からの接続だけを表す。"
+        },
+        {
+          "id": "option-2",
+          "text": "127.0.0.1は、同じLAN上の全PCへ公開するためのアドレスである。"
+        },
+        {
+          "id": "option-3",
+          "text": "127.0.0.1はループバックで、通常はそのPC自身の内部で使われる。"
+        },
+        {
+          "id": "option-4",
+          "text": "待ち受けアドレスを決めれば、別途の転送や公開トンネルも必ず無効になる。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "127.0.0.0/8は内部ループバック用で、127.0.0.1は代表的なアドレスです。全インターフェースでの待ち受けとは異なります。ただし別途設定したプロキシやトンネルによる公開は、別に確認する必要があります。",
+      "references": [
+        {
+          "title": "RFC 1122: Requirements for Internet Hosts — Communication Layers",
+          "url": "https://www.rfc-editor.org/rfc/rfc1122.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "3.2.1.3 Addressing"
+        }
+      ]
+    },
+    {
+      "id": "network-stateful",
+      "category": "ネットワークの基礎",
+      "question": "社内PCから外向きに開始した通信の応答だけを許し、外からの新規接続は制限したい場合、ステートフル検査が参照するのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "通信する人の画面に表示された会社ロゴだけ。"
+        },
+        {
+          "id": "option-2",
+          "text": "ファイル名に含まれる安全という文字。"
+        },
+        {
+          "id": "option-3",
+          "text": "宛先ポートの番号が偶数か奇数か。"
+        },
+        {
+          "id": "option-4",
+          "text": "確立した通信の状態や、その通信に対応するパケットかどうか。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "ステートフルなファイアウォールは、既存の通信の状態に照らしてパケットを扱います。応答を許可する規則と、新規の接続を許可する規則を区別できます。通信の内容や利用者の権限をすべて判定する仕組みではありません。",
+      "references": [
+        {
+          "title": "NIST SP 800-41 Rev. 1: Guidelines on Firewalls and Firewall Policy",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41r1.pdf",
+          "publisher": "NIST",
+          "section": "2.1.2 Stateful Inspection"
+        }
+      ]
+    },
+    {
+      "id": "network-egress",
+      "category": "ネットワークの基礎",
+      "question": "サーバーの外向き通信は無制限で、侵害時のデータ持ち出しが心配です。見直しとして適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "業務で必要な宛先・方式を整理し、外向き通信にも制限と監視を設ける。"
+        },
+        {
+          "id": "option-2",
+          "text": "受信側を制限していれば、外向きの通信経路は確認しない。"
+        },
+        {
+          "id": "option-3",
+          "text": "外部へのアップロード先は、名前にcloudが付けば一律に許可する。"
+        },
+        {
+          "id": "option-4",
+          "text": "外向き通信はすべて利用者の操作なので、サーバー侵害とは関係しないと考える。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "送信方向も被害の拡大や持ち出しの経路になります。更新など必要な通信を把握したうえで、外向きの制御と監視を設計します。暗号化されているだけで、送信先や送信目的を信頼しないことが大切です。",
+      "references": [
+        {
+          "title": "NIST SP 800-41 Rev. 1: Guidelines on Firewalls and Firewall Policy",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41r1.pdf",
+          "publisher": "NIST",
+          "section": "4.1 Policies Based on IP Addresses and Protocols"
+        }
+      ]
+    },
+    {
+      "id": "network-dns-ttl",
+      "category": "ネットワークの基礎",
+      "question": "DNSの接続先を変更しましたが、一部の利用者は旧アドレスを使っています。原因として確認する情報はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "Webサイトのログインパスワードの文字数。"
+        },
+        {
+          "id": "option-2",
+          "text": "変更前のDNS応答のTTLと、利用者側やリゾルバーのキャッシュ。"
+        },
+        {
+          "id": "option-3",
+          "text": "利用者のデスクトップの壁紙。"
+        },
+        {
+          "id": "option-4",
+          "text": "公開しているHTMLの見出しの数。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "DNSのレコードはTTLに応じてキャッシュされます。変更直後にすべてのキャッシュが消えるとは限らないため、変更前のTTLや参照先を確認します。DNSの更新とWebの表示キャッシュも分けて調べます。",
+      "references": [
+        {
+          "title": "RFC 1035: Domain Names — Implementation and Specification",
+          "url": "https://www.rfc-editor.org/rfc/rfc1035.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "3.2.1 Format — TTL"
+        }
+      ]
+    },
+    {
+      "id": "network-mdns",
+      "category": "ネットワークの基礎",
+      "question": "社内LANでプリンターの「名前.local」が見つかりました。この名前だけで信用してはいけない理由はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": ".localという名前は、公開認証局が運営者の身元を審査した証明書と同じ意味だから。"
+        },
+        {
+          "id": "option-2",
+          "text": "名前が見つかった時点で、印刷した文書が暗号化されていると分かるから。"
+        },
+        {
+          "id": "option-3",
+          "text": "ローカルでの名前の発見自体は、機器が正規品で管理者の承認済みだという証明ではないから。"
+        },
+        {
+          "id": "option-4",
+          "text": "名前が.localなら、同じネットワーク以外の設定や転送を一切確認できないから。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "マルチキャストDNSはローカルリンク内で名前を見つけるための仕組みです。応答した機器が会社の正規の機器かは、資産台帳や管理手順、接続時の認証などで別に確かめます。",
+      "references": [
+        {
+          "title": "RFC 6762: Multicast DNS",
+          "url": "https://www.rfc-editor.org/rfc/rfc6762.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "3. Multicast DNS Names / 21. Security Considerations"
+        }
+      ]
+    },
+    {
+      "id": "web-authentication-factors",
+      "category": "Webとアクセス制御",
+      "question": "ログイン時にパスワードと、もう1つの暗記した秘密の答えを入力させています。多要素認証について適切な説明はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "入力欄が2つあれば、必ず異なる認証要素を使ったことになる。"
+        },
+        {
+          "id": "option-2",
+          "text": "両方とも知識に基づく確認なので、2種類の要素を組み合わせたことにはならない。"
+        },
+        {
+          "id": "option-3",
+          "text": "秘密の答えを毎月変えれば、自動的に所持要素になる。"
+        },
+        {
+          "id": "option-4",
+          "text": "同じパスワードを別の画面で再入力すれば、所持と生体の2要素になる。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "多要素認証は、知っていること、持っているもの、身体的特徴など、異なる種類の要素を組み合わせます。知識に基づく質問を増やすだけでは、異なる要素にはなりません。",
+      "references": [
+        {
+          "title": "NIST SP 800-63B-4: Authentication and Authenticator Management",
+          "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+          "publisher": "NIST",
+          "section": "2.2 Authentication Assurance Level 2 / Glossary: multi-factor authentication"
+        }
+      ]
+    },
+    {
+      "id": "web-passkey-phishing",
+      "category": "Webとアクセス制御",
+      "question": "偽のログイン画面へ認証情報を入力させる攻撃に備えるとき、適切な説明はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "手入力するワンタイムコードは、偽サイトへ中継されることがない。"
+        },
+        {
+          "id": "option-2",
+          "text": "SMSを毎回使えば、端末内の情報窃取もすべて防げる。"
+        },
+        {
+          "id": "option-3",
+          "text": "WebAuthnを使うパスキーなどは接続先に認証を結び付けるため、フィッシングへの耐性を持つ。"
+        },
+        {
+          "id": "option-4",
+          "text": "ログイン通知を繰り返し承認すれば、接続先が本物であると確認できる。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "WebAuthnは認証先の名前に結び付いた暗号学的な確認を行います。手入力のOTPは偽サイトから中継され得ます。ただし、フィッシングへの耐性は端末感染や盗まれたセッションまで防ぐ保証ではありません。",
+      "references": [
+        {
+          "title": "NIST SP 800-63B-4: Authentication and Authenticator Management",
+          "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+          "publisher": "NIST",
+          "section": "3.2.5 Phishing Resistance / Verifier Name Binding"
+        }
+      ]
+    },
+    {
+      "id": "web-recovery-token",
+      "category": "Webとアクセス制御",
+      "question": "パスワード再設定用リンクのトークンを設計します。適切な条件はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "利用者のメールアドレスをBase64化し、期限を設けない。"
+        },
+        {
+          "id": "option-2",
+          "text": "一度使ったトークンを、問い合わせ対応のため何度でも再利用できるようにする。"
+        },
+        {
+          "id": "option-3",
+          "text": "トークンを全利用者で共通にし、URLを長くする。"
+        },
+        {
+          "id": "option-4",
+          "text": "推測しにくい値を利用者に結び付け、期限と単回使用の制約を設ける。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "再設定トークンはアカウントを取り戻す権限を持つため、推測・再利用を防ぎます。十分なランダム性、対象の利用者、有効期限、使用後の失効をサーバー側で検証します。",
+      "references": [
+        {
+          "title": "Forgot Password Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Methods / General Security Practices / URL Tokens"
+        }
+      ]
+    },
+    {
+      "id": "web-login-enumeration",
+      "category": "Webとアクセス制御",
+      "question": "ログイン失敗時に「そのメールは未登録です」と「パスワードだけ違います」を返しています。見直しの主な目的はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "アカウントの存在を第三者が調べにくくするため、失敗の応答や処理時間の差を抑える。"
+        },
+        {
+          "id": "option-2",
+          "text": "利用者に原因を表示しなければ、パスワードの推測自体が不可能になる。"
+        },
+        {
+          "id": "option-3",
+          "text": "失敗時にはすべてのアカウントを削除して、照会を防ぐ。"
+        },
+        {
+          "id": "option-4",
+          "text": "登録済みかどうかをURLに含めれば、本文の表示差は問題なくなる。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "エラーメッセージ、HTTP応答、時間の差から登録の有無を調べられる場合があります。利用者を支援する復旧手順は設けつつ、認証前の相手へ不要な区別を漏らさない応答を設計します。",
+      "references": [
+        {
+          "title": "Authentication Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Authentication and Error Messages"
+        }
+      ]
+    },
+    {
+      "id": "web-login-throttling",
+      "category": "Webとアクセス制御",
+      "question": "多数のIPアドレスから同じ利用者名へのログイン試行が続いています。対策として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "送信元IPごとの回数だけを数えれば、分散した試行も必ず防げる。"
+        },
+        {
+          "id": "option-2",
+          "text": "アカウント等に結び付いた試行制限も設け、利用妨害にならない復旧・解除手順と併せて設計する。"
+        },
+        {
+          "id": "option-3",
+          "text": "1回の失敗で永久にアカウントを消去する。"
+        },
+        {
+          "id": "option-4",
+          "text": "CAPTCHAを表示したら、サーバー側の回数制限を外す。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "IPだけの制限は分散した試行に弱い場合があります。アカウント単位の制限や遅延、MFAなどを組み合わせます。一方、他人をロックする攻撃もあり得るため、解除や本人の復旧も考慮します。",
+      "references": [
+        {
+          "title": "Authentication Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Login Throttling / Account Lockout"
+        }
+      ]
+    },
+    {
+      "id": "web-cookie-httponly",
+      "category": "Webとアクセス制御",
+      "question": "セッションCookieへHttpOnly属性を付けました。この属性の効果の説明として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "ブラウザはそのCookieを、通常の認証済みリクエストにも一切送らなくなる。"
+        },
+        {
+          "id": "option-2",
+          "text": "Cookieの値が自動的に暗号化され、盗まれても失効処理が不要になる。"
+        },
+        {
+          "id": "option-3",
+          "text": "ページのJavaScriptからCookieを直接読むことを制限するが、XSSによる他の操作まで防ぐわけではない。"
+        },
+        {
+          "id": "option-4",
+          "text": "HTTP通信をすべてHTTPSへ書き換える。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "HttpOnlyはdocument.cookieなどからの直接の読み取りを制限します。ただしブラウザは条件に合うリクエストにCookieを付けるため、XSSを利用した操作やCSRFの対策も別に必要です。",
+      "references": [
+        {
+          "title": "Session Management Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Cookies / HttpOnly Attribute"
+        }
+      ]
+    },
+    {
+      "id": "web-session-fixation",
+      "category": "Webとアクセス制御",
+      "question": "ログイン前に使っていたセッションIDを、ログイン後も同じまま使っています。セッション固定攻撃への基本対策はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "IDを画面から非表示にするだけにする。"
+        },
+        {
+          "id": "option-2",
+          "text": "IDを利用者のメールアドレスへ置き換える。"
+        },
+        {
+          "id": "option-3",
+          "text": "ログイン前のIDに文字列LOGINを足すだけにする。"
+        },
+        {
+          "id": "option-4",
+          "text": "ログインなど権限が変わる時点で、新しいセッションIDを発行し古いものを無効にする。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "攻撃者が事前に把握したIDをログイン後も使わせると、セッションを乗っ取られる場合があります。フレームワークの機能でIDを更新し、古いIDを保護された操作で受け付けないことを確認します。",
+      "references": [
+        {
+          "title": "Session Management Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Renew the Session ID After Any Privilege Level Change"
+        }
+      ]
+    },
+    {
+      "id": "web-cors-boundary",
+      "category": "Webとアクセス制御",
+      "question": "APIがCORSで自社Webサイトだけを許可しています。APIの認証・認可について適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "CORSはブラウザの読取制御なので、API自体でもリクエストごとに認証・認可が必要になる。"
+        },
+        {
+          "id": "option-2",
+          "text": "CORSがあるので、ブラウザ以外からAPIを呼ぶことはできない。"
+        },
+        {
+          "id": "option-3",
+          "text": "Originヘッダーに自社サイトの文字列があれば、それだけで管理者と判定してよい。"
+        },
+        {
+          "id": "option-4",
+          "text": "公開データにCORSのワイルドカードを使うことも、一律に認証回避を意味する。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "CORSは主にブラウザが他のOriginの応答を読めるかを制御します。APIへの通信そのものをすべて遮断する境界ではありません。保護するデータや操作には、サーバー側の認証・認可が必要です。",
+      "references": [
+        {
+          "title": "HTML5 Security Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Cross Origin Resource Sharing"
+        }
+      ]
+    },
+    {
+      "id": "web-jwt-validation",
+      "category": "Webとアクセス制御",
+      "question": "受け取ったJWTをデコードすると「role: admin」と表示されました。管理操作を許可する前に必要なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "JSONとして読めたので、そのroleをそのまま信頼する。"
+        },
+        {
+          "id": "option-2",
+          "text": "信頼済みの鍵と許可した方式で署名等を検証し、発行者・宛先・期限などの条件も検証する。"
+        },
+        {
+          "id": "option-3",
+          "text": "JWT内に書かれた鍵の取得先を無条件で信頼し、その鍵で検証する。"
+        },
+        {
+          "id": "option-4",
+          "text": "Base64部分の長さが十分なら、署名の検証を省略する。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "デコードは検証ではありません。信頼する発行者と鍵、方式、利用先や期限を決めて検証し、その後にアプリの認可を行います。トークン内の情報だけに、信頼する鍵の決定を任せないことも大切です。",
+      "references": [
+        {
+          "title": "RFC 8725: JSON Web Token Best Current Practices",
+          "url": "https://www.rfc-editor.org/rfc/rfc8725.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "3.1 Perform Algorithm Verification / 3.8 Validate Issuer and Subject / 3.9 Use and Validate Audience"
+        }
+      ]
+    },
+    {
+      "id": "web-oidc-token-purpose",
+      "category": "Webとアクセス制御",
+      "question": "OpenID Connectでログインし、IDトークンとアクセストークンを受け取りました。基本的な用途の説明はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "2つは常に同じ内容なので、どのAPIでも交換して使える。"
+        },
+        {
+          "id": "option-2",
+          "text": "IDトークンがあれば、利用者に全APIの権限を与えてよい。"
+        },
+        {
+          "id": "option-3",
+          "text": "IDトークンはクライアントが認証結果を確認するためのもので、API呼出しのアクセストークンとは用途を分ける。"
+        },
+        {
+          "id": "option-4",
+          "text": "アクセストークンは、ブラウザにログイン画面を描くためだけの情報である。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "IDトークンは誰の認証が行われたかをクライアントが確認するために使います。APIを利用する権限を表すアクセストークンとは、宛先や検証条件が異なります。受信側は自分向けの正しい種類のトークンか確認します。",
+      "references": [
+        {
+          "title": "OpenID Connect Core 1.0 incorporating errata set 2",
+          "url": "https://openid.net/specs/openid-connect-core-1_0.html",
+          "publisher": "OpenID Foundation",
+          "section": "2. ID Token / 3.1.3.7 ID Token Validation / 3.1.3.8 Access Token Validation"
+        }
+      ]
+    },
+    {
+      "id": "web-oauth-pkce",
+      "category": "Webとアクセス制御",
+      "question": "OAuthの認可コード方式でPKCEを利用する主な目的はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "利用者のパスワードを、認可コードへそのまま変換するため。"
+        },
+        {
+          "id": "option-2",
+          "text": "APIのすべてのレスポンス本文を暗号化するため。"
+        },
+        {
+          "id": "option-3",
+          "text": "リダイレクト先を登録せず、任意のURLへコードを渡せるようにするため。"
+        },
+        {
+          "id": "option-4",
+          "text": "コードの発行と交換を同じクライアントの秘密の検証値に結び付け、盗まれたコードの悪用を抑えるため。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "PKCEは最初の要求でチャレンジを送り、コード交換時に対応する検証値を確認します。コードの横取り対策になりますが、リダイレクト先の厳密な照合など、フロー全体の対策も必要です。",
+      "references": [
+        {
+          "title": "RFC 9700: Best Current Practice for OAuth 2.0 Security",
+          "url": "https://www.rfc-editor.org/rfc/rfc9700.html",
+          "publisher": "IETF / RFC Editor",
+          "section": "2.1.1 Authorization Code Grant / 4.5 Authorization Code Injection"
+        }
+      ]
+    },
+    {
+      "id": "web-deny-on-error",
+      "category": "Webとアクセス制御",
+      "question": "権限を確認するサービスで障害が起き、対象データを読んでよいか判断できません。保護された操作の基本方針はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "許可を確認できない操作は拒否し、障害を記録・通知する。"
+        },
+        {
+          "id": "option-2",
+          "text": "利用者の利便性のため、障害中はすべての閲覧と変更を許可する。"
+        },
+        {
+          "id": "option-3",
+          "text": "URLが社内用に見えれば、確認せずに実行する。"
+        },
+        {
+          "id": "option-4",
+          "text": "確認不能を「一般利用者」ではなく「管理者」として扱う。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "認可の失敗や確認不能で、権限が広がる設計にしません。拒否を既定にし、必要な可用性対策は別の設計や手順で用意します。例外処理や障害時の動作も認可テストの対象です。",
+      "references": [
+        {
+          "title": "Authorization Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Deny by Default / Exit Safely when Authorization Checks Fail"
+        }
+      ]
+    },
+    {
+      "id": "web-tenant-cache",
+      "category": "Webとアクセス制御",
+      "question": "複数社が使うアプリで、顧客ごとに違う請求書を同じキャッシュキーで保存しています。適切な修正はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "キャッシュの有効期間を短くすれば、キーの分離も権限確認も不要になる。"
+        },
+        {
+          "id": "option-2",
+          "text": "顧客や利用者など結果が変わる条件でキーを分け、保護されたキャッシュを読む前にも認可する。"
+        },
+        {
+          "id": "option-3",
+          "text": "キャッシュサーバーの名前だけを顧客ごとに変える。"
+        },
+        {
+          "id": "option-4",
+          "text": "初回だけ認可していれば、他社向けにキャッシュした値を返してもよい。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "キャッシュも顧客間の境界に含まれます。結果や権限が変わる単位をキーへ反映し、認可を省略しないことが必要です。権限変更時の破棄や更新条件も決めます。",
+      "references": [
+        {
+          "title": "Multi Tenant Security Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "4. Cache & Session Isolation"
+        }
+      ]
+    },
+    {
+      "id": "web-sensitive-reauth",
+      "category": "Webとアクセス制御",
+      "question": "ログイン済みの利用者が、復旧用メールアドレスを変更しようとしています。適切な追加の備えはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "Cookieがある限り、どの端末からでも追加確認なしで変更する。"
+        },
+        {
+          "id": "option-2",
+          "text": "変更後の新しいメールアドレスだけへ確認を送り、現在の本人確認を省略する。"
+        },
+        {
+          "id": "option-3",
+          "text": "既存の認証手段などで再認証し、変更を本人へ通知する。"
+        },
+        {
+          "id": "option-4",
+          "text": "メールアドレスの文字数を長くすれば、本人確認を省略できる。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "復旧先の変更は、アカウントを奪う足掛かりになり得ます。リスクに応じた再認証と通知を設け、攻撃者が持ち込んだ新しい連絡先だけを本人確認の根拠にしないことが大切です。",
+      "references": [
+        {
+          "title": "Authentication Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Require Re-authentication for Sensitive Features / Changing A User's Registered Email Address"
+        }
+      ]
+    },
+    {
+      "id": "web-transaction-binding",
+      "category": "Webとアクセス制御",
+      "question": "送金の承認画面を表示した後、送信先と金額をブラウザ側で変更できる設計でした。適切な対策はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "承認画面の見た目を銀行のロゴにすればよい。"
+        },
+        {
+          "id": "option-2",
+          "text": "利用者が1回承認すれば、その後の別の送金にも承認を流用する。"
+        },
+        {
+          "id": "option-3",
+          "text": "HTTPSを利用し、承認対象との照合は行わない。"
+        },
+        {
+          "id": "option-4",
+          "text": "利用者が確認した送信先と金額を承認に結び付け、実行時に同じ内容かサーバー側で確認する。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "承認は、具体的な取引内容に対応している必要があります。対象や金額の差し替えを受け付けず、変更された場合は必要な確認をやり直します。ログイン成功と個々の重要操作の承認は分けて考えます。",
+      "references": [
+        {
+          "title": "Transaction Authorization Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "1.1 Significant transaction data / 2.3 Transaction verification data should be generated server-side"
+        }
+      ]
+    },
+    {
+      "id": "web-hsts-purpose",
+      "category": "Webとアクセス制御",
+      "question": "HTTPSサイトでHSTSを有効にする主な目的はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "ブラウザに一定期間HTTPSでの接続を求め、HTTPへのダウングレードを抑える。"
+        },
+        {
+          "id": "option-2",
+          "text": "Webページに含まれるSQL文を自動的に検証する。"
+        },
+        {
+          "id": "option-3",
+          "text": "証明書の期限が切れても、利用者へ安全にアクセスを許可する。"
+        },
+        {
+          "id": "option-4",
+          "text": "初回の接続を含め、すべての端末がその場で必ず規則を学習済みになる。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "HSTSを学習したブラウザはHTTPをHTTPSへ置き換えるなどの保護を行います。初回接続の制約やサブドメインへの影響もあるため、証明書の継続運用と適用範囲を確認して設定します。",
+      "references": [
+        {
+          "title": "Strict-Transport-Security header",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security",
+          "publisher": "MDN Web Docs",
+          "section": "Description / Insecure HTTP requests / Strict-Transport-Security example scenario"
+        }
+      ]
+    },
+    {
+      "id": "app-file-upload",
+      "category": "安全なWeb開発",
+      "question": "画像をアップロードする機能を作ります。利用者が送ったファイル名とContent-Typeを信頼しない設計はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "画像の拡張子があれば、そのファイルを公開フォルダーで実行可能にする。"
+        },
+        {
+          "id": "option-2",
+          "text": "Content-Typeはブラウザが送るため、値が画像なら内容の検証は不要とする。"
+        },
+        {
+          "id": "option-3",
+          "text": "許可する形式や容量を検証し、サーバーが決めた名前で実行されない保存先へ置く。"
+        },
+        {
+          "id": "option-4",
+          "text": "ファイル名から空白だけを消し、保存先と実行権限は変更しない。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "ファイル名やContent-Typeは偽装され得ます。必要な形式に絞って内容を検証し、容量や処理負荷も制限します。保存時は上書きや実行を避け、取得にも必要な認可を設けます。",
+      "references": [
+        {
+          "title": "File Upload Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Extension Validation / Content-Type Validation / File Storage Location"
+        }
+      ]
+    },
+    {
+      "id": "app-path-traversal",
+      "category": "安全なWeb開発",
+      "question": "利用者が指定したファイル名で、サーバーから書類を取得する機能があります。意図した保存場所の外を読ませない設計はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "ファイル名が長ければ安全と判断する。"
+        },
+        {
+          "id": "option-2",
+          "text": "画面の入力欄だけでスラッシュを禁止し、APIでは確認しない。"
+        },
+        {
+          "id": "option-3",
+          "text": "文字列に会社名が含まれていれば、どの絶対パスも許可する。"
+        },
+        {
+          "id": "option-4",
+          "text": "可能なら書類IDを許可済みの保存先へ対応付け、パスを使う場合も解決後の範囲と閲覧権限を検証する。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "パスの連結だけでは、相対パスや別の表記によって範囲外を指すことがあります。入力を制限し、必要なら正規化・解決した保存先が許可範囲か検証します。ファイルごとの認可も省略しません。",
+      "references": [
+        {
+          "title": "Path Traversal",
+          "url": "https://owasp.org/www-community/attacks/Path_Traversal",
+          "publisher": "OWASP",
+          "section": "How to Avoid Path Traversal Vulnerabilities / How to protect yourself"
+        }
+      ]
+    },
+    {
+      "id": "app-command-injection",
+      "category": "安全なWeb開発",
+      "question": "利用者が指定した値を使って、サーバーでファイル変換を行います。OSコマンドインジェクションを防ぐ基本方針はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "まず専用APIを検討し、外部コマンドが必要なら固定した処理へ検証済みの引数を分離して渡す。"
+        },
+        {
+          "id": "option-2",
+          "text": "利用者の文字列をシェルの命令文へ連結し、失敗時だけ記録する。"
+        },
+        {
+          "id": "option-3",
+          "text": "処理を非同期にすれば、入力値の検証は不要になる。"
+        },
+        {
+          "id": "option-4",
+          "text": "命令文をBase64にしてからシェルへ渡せば、検証は不要になる。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "可能ならOSコマンドを使わないAPIを選びます。必要な場合は命令と引数を分け、許可する値や引数の形式を検証します。シェルを使わなくても、意図しないオプションの指定などには注意が必要です。",
+      "references": [
+        {
+          "title": "OS Command Injection Defense Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Primary Defenses / Defense option 1: Avoid calling OS commands directly / Defense option 3: Parameterization in conjunction with Input Validation"
+        }
+      ]
+    },
+    {
+      "id": "app-deserialization",
+      "category": "安全なWeb開発",
+      "question": "外部から受け取ったデータを、プログラム内部のオブジェクトへ戻す機能を設計します。安全性を高める方針はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "データ内で指定された任意のクラスを生成できるようにする。"
+        },
+        {
+          "id": "option-2",
+          "text": "単純なデータ形式を使い、許可した項目や型を検証し、任意のクラスの復元を避ける。"
+        },
+        {
+          "id": "option-3",
+          "text": "HTTPSで届いたデータなら、どの復元処理も安全と判断する。"
+        },
+        {
+          "id": "option-4",
+          "text": "復元時に発生した処理を高速化すれば、入力内容の制限を省略できる。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "危険なネイティブ形式の復元は、予期しないオブジェクト生成や処理実行につながります。単純なデータ形式と専用の入力用オブジェクトで扱う範囲を絞り、読み取った後にも型・値・認可を検証します。",
+      "references": [
+        {
+          "title": "Deserialization Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Language-Agnostic Methods for Deserializing Safely / Using Alternative Data Formats"
+        }
+      ]
+    },
+    {
+      "id": "app-mass-assignment",
+      "category": "安全なWeb開発",
+      "question": "プロフィール更新APIが、届いたJSONの全項目を利用者オブジェクトへ自動で反映しています。管理者フラグの変更を防ぐ設計はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "管理者フラグの入力欄だけをWeb画面から消す。"
+        },
+        {
+          "id": "option-2",
+          "text": "JSONに含まれる管理者フラグを、文字列に変換してから保存する。"
+        },
+        {
+          "id": "option-3",
+          "text": "利用者が変更できる項目だけを専用の入力モデルで受け取り、サーバー側で許可する。"
+        },
+        {
+          "id": "option-4",
+          "text": "項目名を推測しにくくし、受け付ける項目は制限しない。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "画面にない項目もAPIへ直接送られる場合があります。変更可能な項目を許可リストやDTOで明示します。項目の制限に加えて、対象の利用者や操作への権限確認も必要です。",
+      "references": [
+        {
+          "title": "Mass Assignment Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Solutions / General Solutions"
+        }
+      ]
+    },
+    {
+      "id": "app-open-redirect",
+      "category": "安全なWeb開発",
+      "question": "ログイン後の移動先を、URLのnextパラメーターで自由に指定できます。偽サイトへの誘導を抑える設計はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "移動先URLにhttpsが含まれていれば、すべて許可する。"
+        },
+        {
+          "id": "option-2",
+          "text": "移動前のページが公式ドメインなら、その後の移動先は検証しない。"
+        },
+        {
+          "id": "option-3",
+          "text": "リンクの文字色を変えて、移動先の検証は省略する。"
+        },
+        {
+          "id": "option-4",
+          "text": "サーバー側で許可した移動先IDなどに限定し、外部URLを扱う場合も厳密に検証する。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "公式サイトを経由する自由な転送は、信用されたリンクを悪用する材料になります。必要な移動先だけを管理し、文字列の一部が一致するという理由だけでURLを許可しない設計にします。",
+      "references": [
+        {
+          "title": "Unvalidated Redirects and Forwards Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Preventing Unvalidated Redirects and Forwards / Validating URLs"
+        }
+      ]
+    },
+    {
+      "id": "app-regex-dos",
+      "category": "安全なWeb開発",
+      "question": "入力検証に使う正規表現が、特定の長い文字列で極端に遅くなります。適切な見直しはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "式や処理方式を見直し、入力長・処理時間などにも上限を設ける。"
+        },
+        {
+          "id": "option-2",
+          "text": "正規表現は検証用なので、利用者の入力による負荷は発生しないと考える。"
+        },
+        {
+          "id": "option-3",
+          "text": "タイムアウトを無限にして、どの入力も最後まで処理させる。"
+        },
+        {
+          "id": "option-4",
+          "text": "HTTPの本文を暗号化すれば、正規表現の計算量も一定になると考える。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "正規表現の実装や式によっては、入力長に対して処理量が急増する場合があります。式やエンジンの選択を見直し、過大な入力や長時間処理を制限します。検証のための処理自体も攻撃対象になります。",
+      "references": [
+        {
+          "title": "Regular expression Denial of Service — ReDoS",
+          "url": "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS",
+          "publisher": "OWASP",
+          "section": "Introduction / Description"
+        }
+      ]
+    },
+    {
+      "id": "app-xml-entities",
+      "category": "安全なWeb開発",
+      "question": "外部からXML文書を取り込みますが、外部ファイルやURLの参照は業務で不要です。XXE対策として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "XMLのファイル名にxmlという文字があれば、そのまま処理する。"
+        },
+        {
+          "id": "option-2",
+          "text": "利用するパーサーでDTDや外部実体の解決を無効にし、必要な機能だけを許可する。"
+        },
+        {
+          "id": "option-3",
+          "text": "XMLの受信にHTTPSを使えば、サーバー内のファイル参照も安全になる。"
+        },
+        {
+          "id": "option-4",
+          "text": "構文エラーがなければ、文書内で指定された外部URLへ自由に接続する。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "外部実体の解決により、ファイルの読み取りやサーバーからの通信が起こる場合があります。不要なDTDや外部実体を無効にし、使用するパーサーの版と設定で実際に禁止できているか確かめます。",
+      "references": [
+        {
+          "title": "XML External Entity Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Introduction / General Guidance"
+        }
+      ]
+    },
+    {
+      "id": "app-encryption-key-separation",
+      "category": "安全なWeb開発",
+      "question": "顧客データを暗号化してDBへ保存します。復号用の鍵の管理として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "暗号文と鍵を同じ公開テーブルに入れ、暗号化済みなので安全と判断する。"
+        },
+        {
+          "id": "option-2",
+          "text": "鍵をBase64で表示すれば、どこへ置いても秘密を守れる。"
+        },
+        {
+          "id": "option-3",
+          "text": "鍵管理サービスなどを利用し、暗号文だけへのアクセスでは鍵も入手できないよう権限と保管を分ける。"
+        },
+        {
+          "id": "option-4",
+          "text": "鍵をフロントエンドのJavaScriptへ埋め込み、必要な人だけが読むことを期待する。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "暗号文と復号に必要な鍵を一緒に取得できると、暗号化の効果が弱まります。構成に応じて鍵とデータの保管・権限を分離し、交換や復旧の手順も管理します。独自の暗号方式で代用しません。",
+      "references": [
+        {
+          "title": "Cryptographic Storage Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Key Storage / Separation of Keys and Data"
+        }
+      ]
+    },
+    {
+      "id": "app-secure-random",
+      "category": "安全なWeb開発",
+      "question": "推測されると困る一時トークンを作ります。乱数の選び方として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "現在時刻に利用者番号を足して、十分に長い文字列へする。"
+        },
+        {
+          "id": "option-2",
+          "text": "連番をBase64に変換して、ランダムに見せる。"
+        },
+        {
+          "id": "option-3",
+          "text": "見た目が複雑なら、ゲーム用などの一般的な乱数でも必ず安全と判断する。"
+        },
+        {
+          "id": "option-4",
+          "text": "OSや保守されたライブラリの暗号学的に安全な乱数生成機能を使う。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "トークンには長さだけでなく、攻撃者から見た予測の難しさが必要です。暗号用途向けの乱数生成機能を利用し、必要な長さや期限などは用途に合わせて設定します。時刻や符号化は乱数の代わりになりません。",
+      "references": [
+        {
+          "title": "Cryptographic Storage Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Secure Random Number Generation"
+        }
+      ]
+    },
+    {
+      "id": "app-ai-indirect-injection",
+      "category": "安全なWeb開発",
+      "question": "メールを要約するAIが、本文に書かれた指示を読み、外部へ情報を送ろうとしました。設計上の適切な備えはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "外部本文を命令として信頼せず、ツールの接続先・権限を制限し、重要な送信は実行前に確認する。"
+        },
+        {
+          "id": "option-2",
+          "text": "本文に「システムからの指示」と書かれていれば、利用者の権限より優先させる。"
+        },
+        {
+          "id": "option-3",
+          "text": "AIへの最初の指示に「絶対安全に」と書けば、送信の制御は不要になる。"
+        },
+        {
+          "id": "option-4",
+          "text": "要約が自然な日本語なら、外部へ送る宛先の検証を省略する。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "AIが読む文書にも操作を誘導する内容が入り得ます。外部情報を権限の根拠にせず、実際に動作するツール側で範囲や承認を強制します。プロンプトの注意書きだけを唯一の防御にしません。",
+      "references": [
+        {
+          "title": "LLM Prompt Injection Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "Indirect Prompt Injection / Human-in-the-Loop (HITL) Controls / Least Privilege"
+        }
+      ]
+    },
+    {
+      "id": "app-ai-system-prompt-secret",
+      "category": "安全なWeb開発",
+      "question": "AIアプリの管理機能を、システムプロンプトに書いた秘密の合言葉だけで制限しようとしています。適切な判断はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "システムプロンプトは利用者に見えないため、合言葉が認可の代わりになる。"
+        },
+        {
+          "id": "option-2",
+          "text": "認可はサーバーやツール側で行い、プロンプトに秘密を置いたことだけをアクセス制御の根拠にしない。"
+        },
+        {
+          "id": "option-3",
+          "text": "合言葉を長い日本語にすれば、サーバー側の権限確認は不要になる。"
+        },
+        {
+          "id": "option-4",
+          "text": "AIが拒否する文章を返したら、裏側の管理APIが呼べても安全と判断する。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "プロンプトやモデルの振る舞いは、認可を強制する境界の代わりになりません。秘密の漏出や指示の誘導を想定し、管理操作を実行する側で利用者と権限を確認します。",
+      "references": [
+        {
+          "title": "LLM Prompt Injection Prevention Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "System Prompt Extraction / Agent-Specific Defenses / Least Privilege"
+        }
+      ]
+    },
+    {
+      "id": "app-ci-untrusted-pr",
+      "category": "安全なWeb開発",
+      "question": "外部の協力者が送ったPRをCIでテストします。本番への書込みトークンがあるジョブについて適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "PRにテストと書かれていれば、そのコードに本番トークンを渡してよい。"
+        },
+        {
+          "id": "option-2",
+          "text": "ログで秘密を伏せる設定があれば、外部コードへ秘密を渡しても流出しない。"
+        },
+        {
+          "id": "option-3",
+          "text": "信頼できないコードを実行するジョブから本番の秘密や強い権限を分離する。"
+        },
+        {
+          "id": "option-4",
+          "text": "失敗したジョブだけ秘密を使えるようにすれば、コードの信頼性は確認不要になる。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "外部コードはビルドやテストの中で実行されます。秘密へアクセスできる強い権限のジョブで無条件に実行しません。イベント、コードの取得先、成果物やキャッシュを含む権限の境界を確認します。",
+      "references": [
+        {
+          "title": "Secure use reference — GitHub Actions",
+          "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+          "publisher": "GitHub",
+          "section": "Mitigating the risks of untrusted code checkout"
+        }
+      ]
+    },
+    {
+      "id": "app-container-permissions",
+      "category": "安全なWeb開発",
+      "question": "Webアプリをコンテナに入れました。侵害時の影響を抑える実行設定はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "コンテナという名前が付けば、ホストの管理ソケットを公開しても問題ない。"
+        },
+        {
+          "id": "option-2",
+          "text": "すべての権限とホストの全ファイルを与えれば、隔離が強くなる。"
+        },
+        {
+          "id": "option-3",
+          "text": "rootでの実行だけを理由に、入力検証や更新は不要になる。"
+        },
+        {
+          "id": "option-4",
+          "text": "必要なら非特権の利用者で動かし、追加する権限・マウント・管理ソケットへの接続を絞る。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "コンテナ化だけで権限が最小になるわけではありません。実行する利用者、capabilities、マウントなどを必要な範囲に限定します。ホストやイメージの更新も継続します。",
+      "references": [
+        {
+          "title": "Docker Security Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html",
+          "publisher": "OWASP",
+          "section": "RULE #1: Docker daemon socket / RULE #2: Set a user / RULE #3: Limit capabilities"
+        }
+      ]
+    },
+    {
+      "id": "ops-asset-inventory",
+      "category": "運用と復旧",
+      "question": "公開サーバーの緊急更新が必要になりました。対象機器の見落としを減らすうえで、日頃から整えておくものはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "機器・ソフト・クラウドサービスと、利用中の版・所有担当を確認できる資産台帳。"
+        },
+        {
+          "id": "option-2",
+          "text": "購入時の請求書だけを集めた一覧。クラウドは請求書があるので台帳から外す。"
+        },
+        {
+          "id": "option-3",
+          "text": "現在の公開IPアドレスだけの一覧。ソフトの版と担当者は障害時に調べる。"
+        },
+        {
+          "id": "option-4",
+          "text": "担当者が個別に覚えている構成。最新の変更は台帳より記憶を優先する。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "管理対象と所有者がわからないと、更新や調査の対象を漏らしやすくなります。社内機器だけでなく、仮想環境・クラウド・外部サービスも含め、利用中のソフトや版、担当者を把握して変更に追従します。",
+      "references": [
+        {
+          "title": "The NIST Cybersecurity Framework (CSF) 2.0",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+          "section": "Appendix A: ID.AM-01 / ID.AM-02 / ID.AM-04 / ID.AM-08"
+        }
+      ]
+    },
+    {
+      "id": "ops-end-of-support",
+      "category": "運用と復旧",
+      "question": "更新提供が終了したOSで業務アプリが動いています。基本となる対応方針はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "現状で起動することを確認したので、今後も更新されるOSと同じ扱いで継続する。"
+        },
+        {
+          "id": "option-2",
+          "text": "移行・置き換えを計画し、それまでの期限とリスクを管理して接続制限などの暫定対策を取る。"
+        },
+        {
+          "id": "option-3",
+          "text": "ウイルス対策ソフトの定義が新しければ、OSの保守終了は管理対象から外す。"
+        },
+        {
+          "id": "option-4",
+          "text": "OSの製品名を台帳から消し、脆弱性スキャンで警告されないようにする。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "保守が終了すると、新たな脆弱性を修正できない場合があります。業務上すぐ移行できない場合も、責任者・期限・例外の理由を決め、利用範囲の制限等でリスクを下げながら移行を進めます。対策ソフトだけで保守終了を補えるとは限りません。",
+      "references": [
+        {
+          "title": "The NIST Cybersecurity Framework (CSF) 2.0",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+          "section": "Appendix A: PR.PS-02 / ID.AM-08 / ID.RA-07"
+        }
+      ]
+    },
+    {
+      "id": "ops-rpo-rto",
+      "category": "運用と復旧",
+      "question": "障害後の目標を「データ損失は最大15分分、システム復旧は4時間以内」と決めました。RPOとRTOの対応として正しいのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "RPOが4時間、RTOが15分。RPOは作業時間、RTOは失ってよいデータの期間を表す。"
+        },
+        {
+          "id": "option-2",
+          "text": "RPOもRTOも4時間。データの古さは、復旧時間の目標が決まれば同じ値になる。"
+        },
+        {
+          "id": "option-3",
+          "text": "RPOが15分、RTOが4時間。戻せるデータの時点と、復旧にかけられる時間を区別する。"
+        },
+        {
+          "id": "option-4",
+          "text": "RPOもRTOも15分。バックアップ間隔を短くすれば、復旧作業も同じ時間で終わる。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "RPO（目標復旧時点）はどの時点までデータを戻す必要があるか、RTO（目標復旧時間）はどれくらいの時間でシステムを復旧する必要があるかを扱います。バックアップ頻度だけでは実際の復旧時間は決まりません。業務への影響を基に両方を設計・検証します。",
+      "references": [
+        {
+          "title": "NIST SP 800-34 Rev. 1",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf",
+          "section": "3.2.1 Determine Business Processes and Recovery Criticality (RPO / RTO)"
+        }
+      ]
+    },
+    {
+      "id": "ops-evidence-provenance",
+      "category": "運用と復旧",
+      "question": "調査担当者から、感染が疑われる端末の証拠を保全するよう依頼されました。記録の信頼性を保つ方法として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "見やすいよう原本の時刻を書き換え、編集後のファイルだけを証拠として残す。"
+        },
+        {
+          "id": "option-2",
+          "text": "調査が速くなるよう、収集したデータは個人の公開ストレージで共有する。"
+        },
+        {
+          "id": "option-3",
+          "text": "結論に必要な部分だけを担当者の記憶に残し、元データと収集履歴は削除する。"
+        },
+        {
+          "id": "option-4",
+          "text": "定めた手順で収集し、取得者・時刻・取扱履歴を残し、原本やコピーの完全性とアクセスを保護する。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "証拠は内容だけでなく、どこから誰がどの手順で取得・取り扱ったかも重要です。組織の保全手順に従い、取得時刻、取扱履歴、完全性と出所を保護します。必要に応じてハッシュ等も利用しますが、ハッシュ値だけで取得者や収集手順まで証明できるわけではありません。",
+      "references": [
+        {
+          "title": "NIST SP 800-61 Rev. 3",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+          "section": "Table 3: RS.AN-06 / RS.AN-07"
+        }
+      ]
+    },
+    {
+      "id": "ops-clean-recovery",
+      "category": "運用と復旧",
+      "question": "ランサムウェア被害後、バックアップからファイルを戻せました。本番利用を再開する前に、さらに必要な確認はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "復元元と復元後の環境に侵害の兆候がないか、侵入原因が対処済みか、サービスが正常かを確認する。"
+        },
+        {
+          "id": "option-2",
+          "text": "ファイル名と件数が元通りなら、安全性の確認は再開後まで保留する。"
+        },
+        {
+          "id": "option-3",
+          "text": "復元した時刻が新しければ、侵入経路の調査結果を待たず全公開を再開する。"
+        },
+        {
+          "id": "option-4",
+          "text": "復旧が完了したと判断するため、再開直前に監視と調査用ログを停止する。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "ファイルが戻ることと、安全に業務を再開できることは別です。復元に使うデータや環境の完全性、侵害の兆候、原因となった弱点への対処、業務の動作を確認します。復旧後も監視し、同じ原因で再侵害されることを防ぎます。",
+      "references": [
+        {
+          "title": "NIST SP 800-61 Rev. 3",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+          "section": "Table 3: RC.RP-03 / RC.RP-04 / RC.RP-05"
+        }
+      ]
+    },
+    {
+      "id": "ops-tabletop-exercise",
+      "category": "運用と復旧",
+      "question": "インシデント対応手順書はありますが、担当者は実際に使ったことがありません。まず行う訓練として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "手順書のページ数を増やして配布し、受領した人数だけで対応能力を評価する。"
+        },
+        {
+          "id": "option-2",
+          "text": "想定事例を使う机上演習で判断・連絡・役割を確認し、見つかった不足を手順へ反映する。"
+        },
+        {
+          "id": "option-3",
+          "text": "準備なしに本番システムへ実際のマルウェアを投入し、担当者の反応を見る。"
+        },
+        {
+          "id": "option-4",
+          "text": "担当者の所属名を暗記する試験だけを行い、連絡手段と判断手順の確認を省く。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "机上演習では、事例に沿って誰が判断し、誰へ連絡し、どの手順を使うかを確認できます。停止や実害を伴う方法から始める必要はありません。委託先も必要に応じて参加し、演習で見つかった不足を改善します。",
+      "references": [
+        {
+          "title": "NIST SP 800-61 Rev. 3",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+          "section": "Table 2: ID.IM-02"
+        }
+      ]
+    },
+    {
+      "id": "ops-alternate-communications",
+      "category": "運用と復旧",
+      "question": "社内メールの乗っ取りが疑われ、攻撃者が連絡を読んでいる可能性があります。対応チームの連絡方法として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "攻撃者に気づかれないよう、同じメール環境で件名だけを変えて調査内容を送る。"
+        },
+        {
+          "id": "option-2",
+          "text": "突然メールで案内された新しいチャットへ移り、そこに調査資料を集約する。"
+        },
+        {
+          "id": "option-3",
+          "text": "事前に用意した別の安全な連絡経路を使い、既知の連絡先で相手を確認する。"
+        },
+        {
+          "id": "option-4",
+          "text": "連絡を止めて各担当者が単独で復旧し、通常メールが直るまで情報を共有しない。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "侵害された連絡基盤を使い続けると、調査内容や復旧計画が相手に伝わる場合があります。安全な代替経路と既知の連絡先を事前に整え、相手を確認して利用します。インシデント中に届いた未確認の案内をそのまま信用しないことも大切です。",
+      "references": [
+        {
+          "title": "CIS Control 17: Incident Response Management",
+          "publisher": "Center for Internet Security",
+          "url": "https://cas.docs.cisecurity.org/en/latest/source/Controls17/",
+          "section": "v8.1 Safeguards 17.2 / 17.6: Contact information / Primary and secondary communication mechanisms"
+        }
+      ]
+    },
+    {
+      "id": "ops-provider-coordination",
+      "category": "運用と復旧",
+      "question": "会社のシステムは外部サービス上で動いています。障害や侵害への備えとして、利用企業が確認すべきことはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "提供者がセキュリティ対策を宣言していれば、自社の設定や利用者権限の確認は省く。"
+        },
+        {
+          "id": "option-2",
+          "text": "自社が利用料を払っているので、提供者側のログは必要なときに必ず全て入手できると考える。"
+        },
+        {
+          "id": "option-3",
+          "text": "外部サービスでは自社の対応計画を作らず、障害発生後に窓口と担当範囲を調べ始める。"
+        },
+        {
+          "id": "option-4",
+          "text": "自社と提供者の責任範囲、連絡先、取得できるログや復旧・通知の手順を事前に確認する。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "外部へ委託しても、自社の設定や運用を含め、誰が何を担うかの確認は必要です。連絡窓口、連携方法、利用できる記録、復旧条件などを事前に合意し、対応計画や訓練にも反映します。契約やサービスの範囲を超えてログ等が入手できると決めつけません。",
+      "references": [
+        {
+          "title": "NIST SP 800-61 Rev. 3",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+          "section": "Table 2: GV.SC-02 / GV.SC-05 / GV.SC-08"
+        }
+      ]
+    },
+    {
+      "id": "ops-recovery-priorities",
+      "category": "運用と復旧",
+      "question": "複数のサービスが停止し、一度に全ては復旧できません。復旧順序の決め方として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "業務への影響とサービス間の依存関係を基に、必要な基盤を含めて優先順位を決める。"
+        },
+        {
+          "id": "option-2",
+          "text": "復旧できそうな順だけで進め、重要業務や他サービスの依存先は後から考える。"
+        },
+        {
+          "id": "option-3",
+          "text": "利用者から最初に苦情が来たサービスを優先し、業務上の重要度の評価は省く。"
+        },
+        {
+          "id": "option-4",
+          "text": "各担当者が自分の管理機器だけを同時に戻し、共通の認証・DNS等の基盤は最後にする。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "重要な業務でも、認証・名前解決・データベースなどの依存先が動かなければ使えません。業務影響分析と構成情報を基に、復旧の前提条件や順序を決めます。単に復旧しやすい機器から戻すだけでは、必要な業務の再開が遅れることがあります。",
+      "references": [
+        {
+          "title": "NIST SP 800-34 Rev. 1",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf",
+          "section": "3.2 Conduct the Business Impact Analysis / 3.2.3 Identify System Resource Recovery Priorities / 4.3.1"
+        }
+      ]
+    },
+    {
+      "id": "ops-lessons-learned",
+      "category": "運用と復旧",
+      "question": "インシデント対応が終わりました。次の被害を減らすための振り返りとして適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "処理したチケット数だけを報告し、原因や判断の遅れは次の発生時に再確認する。"
+        },
+        {
+          "id": "option-2",
+          "text": "原因と対応上の課題を整理し、改善の担当者・期限を決めて手順や監視へ反映する。"
+        },
+        {
+          "id": "option-3",
+          "text": "担当者個人の注意不足だけで説明し、仕組みや手順の問題は対象から外す。"
+        },
+        {
+          "id": "option-4",
+          "text": "復旧できたので記録を破棄し、改善策を決めずに同じ手順をそのまま継続する。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "振り返りでは、原因だけでなく検知・判断・連絡・復旧のどこに不足があったかを確認します。人を責めることを目的にせず、具体的な改善を担当者と期限に結び付けて実行し、手順や技術対策を更新します。",
+      "references": [
+        {
+          "title": "NIST SP 800-61 Rev. 3",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+          "section": "Table 2: ID.IM-03 / Table 3: RC.RP-06"
+        }
+      ]
+    },
+    {
+      "id": "ops-alert-triage",
+      "category": "運用と復旧",
+      "question": "海外からのログインを示す警告が1件届きました。初期の確認として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "海外IPの警告なので侵害と断定し、対象システムの記録を消して初期化する。"
+        },
+        {
+          "id": "option-2",
+          "text": "警告が1件だけなら誤検知と決め、関連するログイン成功記録は確認しない。"
+        },
+        {
+          "id": "option-3",
+          "text": "ログイン記録や端末・利用状況などを照合し、手順に沿って影響と対応優先度を判断する。"
+        },
+        {
+          "id": "option-4",
+          "text": "利用者が出張中かもしれないので、今後同じ種類の警告はまとめて無効にする。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "警告は調査の手掛かりであり、その1件だけで侵害や安全を断定できません。認証や端末など複数の記録、利用状況と照合し、事前に定めた基準で評価します。緊急の保護措置が必要かも含め、決められた手順で判断します。",
+      "references": [
+        {
+          "title": "NIST SP 800-61 Rev. 3",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+          "section": "Table 3: DE.AE-02 / DE.AE-03 / DE.AE-07 / DE.AE-08"
+        }
+      ]
+    },
+    {
+      "id": "ops-change-control",
+      "category": "運用と復旧",
+      "question": "障害を避けるため、本番サーバーのアクセス設定を変更します。変更管理として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "変更が小さければ記録は残さず、問題が出たときだけ担当者へ手順を聞く。"
+        },
+        {
+          "id": "option-2",
+          "text": "元に戻しやすいよう変更前の設定だけ残し、影響の確認や変更後の検証は省く。"
+        },
+        {
+          "id": "option-3",
+          "text": "緊急対応を速くするため、例外変更は担当者・理由・期限の管理から一律に外す。"
+        },
+        {
+          "id": "option-4",
+          "text": "目的とリスク、検証結果、承認、戻す方法を記録し、変更後も想定どおりか確認する。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "設定変更はアクセスの広がりや業務停止を招くことがあります。目的、影響、検証、必要な承認、復旧方法を明確にし、変更後を確認します。緊急時の例外にも手順と記録を設け、後から確認・是正できるようにします。",
+      "references": [
+        {
+          "title": "The NIST Cybersecurity Framework (CSF) 2.0",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+          "section": "Appendix A: ID.RA-07 / PR.PS-01"
+        }
+      ]
+    },
+    {
+      "id": "ops-configuration-drift",
+      "category": "運用と復旧",
+      "question": "安全な標準設定で導入したサーバーでも、運用後に意図しない公開ポートが増えていました。再発防止の考え方として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "承認された設定の基準を管理し、変更や基準との差分を継続的に確認・是正する。"
+        },
+        {
+          "id": "option-2",
+          "text": "導入時のチェックに合格していれば十分とし、以後は設定変更の確認を不要にする。"
+        },
+        {
+          "id": "option-3",
+          "text": "基準との差分が出るたびに現在の設定を正しい基準として採用し、経緯は確認しない。"
+        },
+        {
+          "id": "option-4",
+          "text": "公開ポートの番号を変更して目立ちにくくし、許可された通信かどうかは調べない。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "構成は保守や障害対応によって変わるため、導入時だけの確認では足りません。承認された基準、変更履歴、実際の構成の差分を確認し、意図しない変更を評価して是正します。差分が全て不正とは限らないため、承認状況や業務上の必要性も確かめます。",
+      "references": [
+        {
+          "title": "The NIST Cybersecurity Framework (CSF) 2.0",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+          "section": "Appendix A: PR.PS-01 / ID.RA-07"
+        }
+      ]
+    },
+    {
+      "id": "ops-media-sanitization",
+      "category": "運用と復旧",
+      "question": "顧客データを保存していたPCを社外へ払い出します。記憶媒体の処理として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "ファイルを削除してごみ箱を空にしたことだけを確認し、媒体をそのまま渡す。"
+        },
+        {
+          "id": "option-2",
+          "text": "情報の機密性と媒体の種類に合う消去・破壊等の方法を選び、処理の成功を検証して記録する。"
+        },
+        {
+          "id": "option-3",
+          "text": "OSのログイン用パスワードを変更すれば、媒体上の過去のデータも消去されたと扱う。"
+        },
+        {
+          "id": "option-4",
+          "text": "ボリューム名を変更して業務用とわからなくし、以前のデータは受取人に消してもらう。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "通常のファイル削除だけでは、内容を復元できる場合があります。媒体や保護対象に適した、検証可能な消去・破壊などの手順を使います。暗号学的消去を使う場合にも、暗号化と鍵の管理等の条件が満たされるかを確認し、処理結果を記録します。",
+      "references": [
+        {
+          "title": "NIST SP 800-88 Rev. 2: Guidelines for Media Sanitization",
+          "publisher": "NIST",
+          "url": "https://csrc.nist.gov/pubs/sp/800/88/r2/final",
+          "section": "3. Summary of Sanitization Methods / 4.3.6 Sanitization and Disposal Decision / 4.5.1–4.5.2 Verification and Validation / Appendix C"
+        }
+      ]
+    },
+    {
+      "id": "ops-log-time-correlation",
+      "category": "運用と復旧",
+      "question": "別々のサーバーで記録されたログを時系列に並べると、出来事の順番が逆転します。まず見直す点として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "各ログの行番号だけで全サーバーを並べ替え、時刻のずれは比較対象から外す。"
+        },
+        {
+          "id": "option-2",
+          "text": "調査に都合のよい順番になるよう元のログ時刻を上書きし、修正履歴は残さない。"
+        },
+        {
+          "id": "option-3",
+          "text": "時計の同期状態、タイムゾーン、イベント発生時刻と収集時刻の違いを確認する。"
+        },
+        {
+          "id": "option-4",
+          "text": "同じ日付のログは順番に意味がないと判断し、時系列の検証を行わない。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "サーバーの時計のずれやタイムゾーン、転送の遅延があると、収集順が発生順と一致しないことがあります。可能な範囲で時刻を同期し、時刻の意味やずれを把握して比較します。分析用に補正する場合も、原本を変更せず根拠を残します。",
+      "references": [
+        {
+          "title": "Logging Cheat Sheet",
+          "publisher": "OWASP",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+          "section": "Event attributes / Event collection (time synchronization)"
+        }
+      ]
+    },
+    {
+      "id": "ops-incident-information-sharing",
+      "category": "運用と復旧",
+      "question": "調査ログに顧客情報や利用者の秘密が含まれています。外部の支援担当へ共有するときに適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "セキュリティ調査なら秘密も自由に共有できると考え、全ログを公開リンクで渡す。"
+        },
+        {
+          "id": "option-2",
+          "text": "支援担当を名乗る相手が送ってきたアップロード先へ、本人確認せず全記録を送る。"
+        },
+        {
+          "id": "option-3",
+          "text": "情報が不足しないよう利用者のパスワードも集め、ログと一緒に通常メールへ添付する。"
+        },
+        {
+          "id": "option-4",
+          "text": "共有相手・目的・必要範囲を確認し、秘密情報を除去または保護して、承認された経路で渡す。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "対応記録には個人情報、侵害された弱点、秘密情報が含まれることがあります。相手を確認し、目的に必要な情報へ絞り、マスキングや安全な受け渡しで機密性を守ります。元の証拠の保全と、共有用コピーの加工は区別して行います。",
+      "references": [
+        {
+          "title": "NIST SP 800-61 Rev. 3",
+          "publisher": "NIST",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+          "section": "Table 3: RS.AN-06 / RS.CO-03"
+        }
+      ]
     }
   ]
 }
