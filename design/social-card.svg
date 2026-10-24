@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">セキュリティのセルフチェック</title>
+  <desc id="description">重要12問から始める、登録不要・回答の送信なしのセキュリティ自己チェック。個人・管理者・IT担当者・開発者向け。</desc>
+  <rect width="1200" height="630" fill="#f7f9f5"/>
+  <rect x="26" y="26" width="1148" height="578" rx="28" fill="#fffefa" stroke="#dce5dc" stroke-width="2"/>
+  <circle cx="976" cy="291" r="178" fill="#eaf2e6"/>
+  <circle cx="1092" cy="121" r="38" fill="#f4e7d3"/>
+  <g transform="translate(71 63)">
+    <rect width="42" height="42" rx="12" fill="#e6efe5"/>
+    <path d="m21 8-11 5v8c0 7 4 12 11 15 7-3 11-8 11-15v-8Z" fill="none" stroke="#3e705b" stroke-width="2" stroke-linejoin="round"/>
+    <path d="m16 21 4 4 7-8" fill="none" stroke="#3e705b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g font-family="Meiryo, 'Yu Gothic', sans-serif">
+    <text x="130" y="92" font-size="24" font-weight="700" fill="#236b57">登録不要・回答の送信なし</text>
+    <text x="72" y="212" font-size="66" font-weight="700" fill="#233c36">セキュリティの</text>
+    <text x="72" y="294" font-size="66" font-weight="700" fill="#236b57">セルフチェック</text>
+    <text x="76" y="352" font-size="27" fill="#586c64">質問に答えて、できる対策を見つけよう。</text>
+    <g font-size="22" font-weight="700" text-anchor="middle">
+      <rect x="72" y="395" width="170" height="52" rx="14" fill="#eaf4ed" stroke="#d5e2d3"/>
+      <text x="157" y="430" fill="#236b57">重要12問から</text>
+      <rect x="255" y="395" width="155" height="52" rx="14" fill="#f5eee3" stroke="#e5dcc9"/>
+      <text x="332.5" y="430" fill="#806337">40問まで</text>
+      <rect x="423" y="395" width="220" height="52" rx="14" fill="#edf1e9" stroke="#dce5dc"/>
+      <text x="533" y="430" fill="#416b4e">知識チャレンジ</text>
+    </g>
+    <path d="M72 500h1056" stroke="#dce5dc" stroke-width="2"/>
+    <text x="76" y="545" font-size="23" font-weight="700" fill="#3e705b">個人・管理者・IT担当者・開発者に。</text>
+    <text x="76" y="578" font-size="17" fill="#637664">security-diagnostic-tool.kei2026.workers.dev</text>
+    <text x="1125" y="561" text-anchor="end" font-size="22" fill="#586c64">できることから、ひとつずつ。</text>
+  </g>
+  <g transform="translate(744 159) scale(1.6)">
+    <ellipse cx="121" cy="95" rx="105" ry="70" fill="#eaf2e6"/>
+    <rect x="27" y="44" width="142" height="99" rx="9" fill="#fffefa" stroke="#6e9780" stroke-width="2"/>
+    <rect x="36" y="53" width="124" height="77" rx="4" fill="#f2f7ed"/>
+    <path d="M16 143h165l-10 9H26Z" fill="#a8c5ac" stroke="#6e9780" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="47" y="65" width="66" height="7" rx="3.5" fill="#cbdcc9"/>
+    <rect x="47" y="80" width="43" height="5" rx="2.5" fill="#dbe5d7"/>
+    <circle cx="73" cy="109" r="11" fill="#d3e5d3"/>
+    <path d="m68 109 4 4 7-8" fill="none" stroke="#48836f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="174" y="70" width="43" height="79" rx="8" fill="#fffefa" stroke="#6e9780" stroke-width="2"/>
+    <rect x="180" y="81" width="31" height="52" rx="3" fill="#dcebdd"/>
+    <path d="M191 141h9" stroke="#6e9780" stroke-width="2" stroke-linecap="round"/>
+    <path d="m139 72 25 10v18c0 15-9 25-25 33-16-8-25-18-25-33V82Z" fill="#5b977e" stroke="#3e705b" stroke-width="2"/>
+    <path d="m127 101 8 8 17-18" fill="none" stroke="#fffefa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M29 155h191" stroke="#cfddcb" stroke-width="2" stroke-linecap="round"/>
+    <path d="M39 29v10m-5-5h10M219 113v8m-4-4h8" stroke="#90af8b" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

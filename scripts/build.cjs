@@ -14,6 +14,10 @@ const publicFiles = Object.freeze([
   "js/challenge-engine.js",
   "js/challenge.js",
   "data/challenge.json",
+  "assets/social-card-v1.png",
+  "assets/favicon.svg",
+  "robots.txt",
+  "_headers",
 ]);
 const maxAssetBytes = 25 * 1024 * 1024;
 

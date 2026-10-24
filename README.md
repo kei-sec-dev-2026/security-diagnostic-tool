@@ -14,12 +14,12 @@ npm start
 
 表示された `http://127.0.0.1:8787` をブラウザで開きます。終了はターミナルで Ctrl+C。
 HTMLをダブルクリックする `file://` では質問JSONを読み込めないため、HTTPサーバーを利用してください。
-静的HTTPSホスティングでも、`index.html` と `css/`・`js/`・`data/` を同じ構成で配信すれば動きます。
+静的HTTPSホスティングでは、`npm run build` で作った `dist/` を配信してください。HTTPヘッダーの設定方法は配信サービスに依存します。
 ローカルプレビュー用サーバーは127.0.0.1だけで待ち受けます。
 
 ## Cloudflare Workersへの公開
 
-公開フォルダーは `dist/` です。`npm run build` で、アプリが使うHTML・CSS・JavaScript・JSONの10ファイルだけを出力します。
+公開フォルダーは `dist/` です。`npm run build` で、HTML・CSS・JavaScript・JSON・SNS画像・アイコン・`robots.txt`・`_headers` の14ファイルだけを出力します。`_headers` はCloudflareが解釈する配信設定で、ファイル自体は公開されません。
 `wrangler.json` がこのフォルダーを指定します。リポジトリ全体の `.` を公開フォルダーに指定しないでください。
 `node_modules/` にはWrangler自身の大きな実行ファイルが含まれ、Workersの1ファイル25 MiB制限で失敗する原因になります。
 
@@ -28,8 +28,8 @@ Git連携したWorkers Buildsの設定は次のとおりです。
 | 設定 | 値 |
 | --- | --- |
 | ルートディレクトリ | この `package.json` と `wrangler.json` があるフォルダー（リポジトリ直下なら空欄または `/`） |
-| ビルドコマンド | 空欄（次のデプロイコマンドの先頭でビルドする） |
-| デプロイコマンド | `node scripts/build.cjs && npx wrangler deploy --config ./wrangler.json --assets ./dist` |
+| ビルドコマンド | `npm run build` |
+| デプロイコマンド | `npx wrangler deploy --config ./wrangler.json --assets ./dist` |
 | Worker名 | `security-diagnostic-tool`（`wrangler.json` と一致させる） |
 
 設定とソースをGitリポジトリへ反映してから再ビルドしてください。`dist/` はビルドで生成するためGitには含めません。
@@ -39,7 +39,7 @@ Git連携したWorkers Buildsの設定は次のとおりです。
 Cloudflareのログで `Detected Project Settings` とともに `Output Directory: .` が表示され、新しい `wrangler.jsonc` が自動生成される場合は、実行場所で修正済みの設定が見つかっていません。
 連携ブランチの `wrangler.json`、`scripts/build.cjs`、更新した `package.json` をGitHub上で確認してください。PC内の編集はGitHubやCloudflareへ自動反映されません。
 コマンドの `--config` と `--assets` で設定ファイルと公開フォルダーを明示し、不足があればリポジトリ全体を公開せず停止するようにしています。
-成功時は、デプロイの前に `Built 10 public files in dist/` と表示されます。
+成功時は、デプロイの前に `Built 14 public files in dist/` と表示されます。
 
 CLIで公開する場合は、Cloudflareへの認証を済ませてから `npm run deploy` を実行します。このスクリプトは先にビルドします。
 通常のアプリ実行・ビルドに追加パッケージは不要ですが、公開時には `npx` がWranglerを取得する場合があります。
@@ -47,6 +47,18 @@ CLIで公開する場合は、Cloudflareへの認証を済ませてから `npm r
 Cloudflare Pagesを選ぶ場合も、ビルドコマンドは `npm run build`、ビルド出力ディレクトリは `dist` です。PagesのGit連携では上記Workers用のデプロイコマンドは設定しません。
 
 参考：[Workers Buildsの設定](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/)、[静的アセットの公開フォルダー](https://developers.cloudflare.com/workers/static-assets/binding/)。
+
+## SNS共有と配信の保護
+
+公開URLは `https://security-diagnostic-tool.kei2026.workers.dev/` です。HTMLの先頭にOGPとX向けのタイトル・説明・画像URLを設定しています。
+SNS画像は `assets/social-card-v1.png`（1200×630）。編集用データは `design/social-card.svg` です。画像はビルド時に生成せず、保存済みPNGを配信します。
+SNSごとの表示やキャッシュの確認手順は [docs/SOCIAL_SHARING.md](docs/SOCIAL_SHARING.md) に記載します。
+
+`index.html` のCSPと、Cloudflareの静的配信が読む `_headers` で、外部スクリプトやインラインコードの実行、他サイトによる埋め込み、不要な機器権限などを制限します。
+ローカルプレビューも同じ共通ヘッダーを読み込みます。ただしHTTP接続なのでHSTSは付けません。
+これらの設定で侵入やDoSを完全に防げるわけではありません。DoS/DDoSへの対応はCloudflareなどの配信基盤で行います。
+現在の `workers.dev` 公開URLに、独自ドメインのゾーンで使うWAF・レート制限ルールをこのファイルだけで設定することはできません。
+本番での確認項目、Cloudflare側の設定範囲、独自ドメインを使う場合の手順は [docs/SECURITY_DEPLOYMENT.md](docs/SECURITY_DEPLOYMENT.md) を参照してください。
 
 ## 質問と結果の設計
 
