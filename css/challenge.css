@@ -53,7 +53,10 @@
 .challenge-progress-mark.is-recent { animation: challenge-progress-record .26s ease-out both; }
 .challenge-options { display: grid; gap: 12px; }
 .challenge-option { display: flex; align-items: flex-start; justify-content: flex-start; text-align: left; padding: 18px; gap: 15px; color: #233c36; background: #fff; border: 1px solid #d6e1d5; font-weight: 400; font-size: 16px; line-height: 1.9; }
-.challenge-option:not(:disabled):hover { border-color: #82a78b; background: #f7faf4; }
+/* Keep a retained touch hover from resembling a saved answer. */
+@media (hover: hover) and (pointer: fine) {
+  .challenge-option[aria-pressed="false"]:not(:disabled):hover { border-color: #82a78b; background: #f7faf4; }
+}
 .challenge-option[aria-pressed="true"] { background: #edf5eb; border-color: #236b57; box-shadow: inset 0 0 0 1px #236b57; }
 .challenge-option.is-chosen { animation: challenge-choice-settle .26s ease-out both; }
 .challenge-option:disabled { cursor: default; opacity: 1; }
