@@ -12,6 +12,17 @@
   },
   {
     "lane": "personal",
+    "id": "q_p_ai_phishing",
+    "category": "AI詐欺・フィッシング対策",
+    "question": "AIで生成された巧妙な日本語の偽SMS（宅配や銀行を装う通知）や、知人の声を模した不審な連絡を疑わずリンクを踏んでいませんか？",
+    "description": "生成AIの普及により、文脈の自然な詐欺メッセージが急増しています。",
+    "deductPointsOn": "YES",
+    "points": 15,
+    "adviceTitle": "AI生成による巧妙なフィッシングの危険",
+    "adviceText": "不審なURLは直接踏まず、公式アプリや公式サイトから改めてログイン・確認する習慣をつけましょう。"
+  },
+  {
+    "lane": "personal",
     "id": "q_p_card_save",
     "category": "決済情報",
     "question": "あまり利用頻度の高くないECサイトやアプリにクレジットカード情報を常時保存させていますか？",
@@ -20,6 +31,17 @@
     "points": 15,
     "adviceTitle": "マイナーサイトへのカード情報常時保存",
     "adviceText": "利用頻度の低いサイトでは保存せず、都度入力するかApple Pay等の安全な決済を使いましょう。"
+  },
+  {
+    "lane": "personal",
+    "id": "q_p_device_profile",
+    "category": "端末のセキュリティ",
+    "question": "スマホやPCに、出所が不明なプロファイル（証明書や設定ファイル）や野良アプリを安易にインストールしていませんか？",
+    "description": "悪意あるプロファイルによって、通信が丸ごとハイジャックされるサイバー攻撃があります。",
+    "deductPointsOn": "YES",
+    "points": 20,
+    "adviceTitle": "不審なプロファイル・野良アプリによる乗っ取りリスク",
+    "adviceText": "端末の設定から見覚えのない構成プロファイルがないか確認し、不要なものは直ちに削除してください。"
   },
   {
     "lane": "personal",
@@ -57,6 +79,17 @@
   },
   {
     "lane": "admin",
+    "id": "q_a_shadow_ai",
+    "category": "AI利用のガバナンス（シャドーAI）",
+    "question": "社員が社内規定やガイドラインを定めないまま、業務上の機密データや顧客情報を外部の無料AIサービス（ChatGPT等）に入力していませんか？",
+    "description": "入力データがAIの学習モデルに吸収され、別のユーザーへの回答として機密が漏洩するリスクがあります。",
+    "deductPointsOn": "YES",
+    "points": 20,
+    "adviceTitle": "野良AI利用（シャドーAI）による機密流出",
+    "adviceText": "社内での生成AI利用ルールを策定し、オプトアウト（学習拒否）設定がされたエンタープライズ版の利用を義務付けてください。"
+  },
+  {
+    "lane": "admin",
     "id": "q_a_retired_account",
     "category": "退職者・外注アカウント管理",
     "question": "退職した従業員や契約終了した外部委託先のSaaSアカウント（Slack, Google Workspace等）を削除せず放置していませんか？",
@@ -65,6 +98,17 @@
     "points": 20,
     "adviceTitle": "退職者・契約終了者のアクセス権の放置",
     "adviceText": "退職日や契約終了日当日に、アカウントの一括無効化・削除を管理フローとして徹底してください。"
+  },
+  {
+    "lane": "admin",
+    "id": "q_a_ai_phishing_defense",
+    "category": "標的型攻撃への対策",
+    "question": "ハッカーがAIを使って自動生成する「役員や取引先になりすました極めて自然な偽メール・音声指示」に対する社内訓練や検証を行っていませんか？",
+    "description": "近年のランサムウェアやBEC（ビジネスメール詐欺）はAIにより完璧にローカライズされています。",
+    "deductPointsOn": "NO",
+    "points": 15,
+    "adviceTitle": "AI駆動型の高度なビジネスメール詐欺（BEC）対策の欠如",
+    "adviceText": "送金や機密データのやり取りが発生する際は、メールだけでなく別経路（電話や対面）での二重確認ルールを徹底しましょう。"
   },
   {
     "lane": "admin",
@@ -94,22 +138,44 @@
     "id": "q_d_env_git",
     "category": "ソースコード・認証情報管理",
     "question": "APIキーやDB接続文字列をソースコード内に直接記述したり、.envファイルを誤ってGit（GitHub）にコミットした経験や危険性はありませんか？",
-    "description": "GitHub公開リポジトリからAPIキーが漏れると、高額請求や不正利用の原因になります。",
+    "description": "GitHub公開リポジトリからAPIキーが漏れると、ボットに自動回収されて高額請求やサーバー乗っ取りの原因になります。",
     "deductPointsOn": "YES",
     "points": 30,
     "adviceTitle": ".env や SecretsのGit誤露出（最高危険度）",
-    "adviceText": ".gitignore に .env を確実に追加し、Secret Scanning ツール等を導入してビルド時に鍵を漏出させないパイプラインを構築してください。"
+    "adviceText": ".gitignore に .env を確実に追加し、Secret Scanning ツールや自動検知をリポジトリに導入してください。"
   },
   {
     "lane": "dev",
     "id": "q_d_prompt_injection",
-    "category": "AI/LLMシステム設計",
-    "question": "AIに入力されるプロンプト（ユーザー入力値やRAGデータ）をサニタイズ（エスケープ処理）せずに、そのままLLMやシステム命令に渡していませんか？",
-    "description": "プロンプトインジェクション攻撃により、システム内部の指示（System Prompt）や個人情報が不正抽出される危険があります。",
+    "category": "AI/LLMシステム防衛",
+    "question": "AIアプリケーション開発において、ユーザー入力値がシステム命令を書き換える「プロンプトインジェクション」や「ジェイルブレイク（脱獄）」への対策（ガードレール）を怠っていませんか？",
+    "description": "悪意あるユーザーがAIを誘導し、意図しないコードの実行や機密データの抽出を行うサイバー攻撃が急増しています。",
     "deductPointsOn": "YES",
     "points": 25,
-    "adviceTitle": "プロンプトインジェクション防御の欠如",
-    "adviceText": "入力値の検証・フィルタリング層（Guardrails）を挟み、システム命令とユーザー入力を完全に分離する設計を行ってください。"
+    "adviceTitle": "プロンプトインジェクション・ジェイルブレイクの脆弱性",
+    "adviceText": "入力値とシステムプロンプトの境界を厳密に定義し、AIの出力結果を検証するバリデーション層（Guardrails）を必ず実装してください。"
+  },
+  {
+    "lane": "dev",
+    "id": "q_d_ai_api_abuse",
+    "category": "AI API・レートリミット設計",
+    "question": "公開している自社AIボットやAPIに、レートリミット（回数制限）やボット対策（CAPTCHA等）をかけずに無制限でアクセスさせていませんか？",
+    "description": "攻撃者にAPIを悪用されて無限に大量リクエストを送られ、数時間で莫大なAPI利用料金が請求される被害が発生しています。",
+    "deductPointsOn": "YES",
+    "points": 25,
+    "adviceTitle": "API乱用（API Abuse）およびDDoSリスク",
+    "adviceText": "IPアドレスごとのレートリミット、トークン消費制限、異常検知アラートをCloudflareやサーバー側で必ず設定してください。"
+  },
+  {
+    "lane": "dev",
+    "id": "q_d_data_poisoning",
+    "category": "RAG・データインジェクション",
+    "question": "RAG（社内データ検索拡張）システムにおいて、外部から取得した信頼性の低いWebページやユーザーからのアップロードファイルを検証なしにそのままAIのコンテキスト（参照データ）に組み込んでいませんか？",
+    "description": "汚染されたデータや悪意ある指示が含まれていた場合、AIがハッカーの意図する誤った処理を実行してしまう恐れがあります。",
+    "deductPointsOn": "YES",
+    "points": 20,
+    "adviceTitle": "間接的プロンプトインジェクション・データ汚染リスク",
+    "adviceText": "外部から取得した参照データは必ずサニタイジングし、信頼できるソースのみをインデックス化するパイプラインを構築してください。"
   },
   {
     "lane": "dev",
