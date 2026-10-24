@@ -1,0 +1,13 @@
+{
+  "name": "security-diagnostic-tool",
+  "version": "1.0.0",
+  "private": true,
+  "description": "登録不要・ブラウザ内で回答を処理するセキュリティ自己チェック",
+  "license": "MIT",
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "check": "node --check js/app.js && node --check js/diagnostic.js && node --check scripts/serve.cjs"
+  },
+  "engines": { "node": ">=22" }
+}

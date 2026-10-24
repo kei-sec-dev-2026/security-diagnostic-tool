@@ -1,0 +1,197 @@
+{
+  "updatedAt": "2026-10-24",
+  "sources": [
+    {
+      "id": "ipa2026",
+      "title": "情報セキュリティ10大脅威 2026",
+      "url": "https://www.ipa.go.jp/security/10threats/10threats2026.html",
+      "publisher": "IPA"
+    },
+    {
+      "id": "ipa-sme",
+      "title": "中小企業の情報セキュリティ対策ガイドライン 第4.0版",
+      "url": "https://www.ipa.go.jp/security/guide/sme/about.html",
+      "publisher": "IPA"
+    },
+    {
+      "id": "ipa-basic",
+      "title": "情報セキュリティ6か条（2026年4月）",
+      "url": "https://www.ipa.go.jp/security/security-action/download/infosec6to-dos.pdf",
+      "publisher": "IPA"
+    },
+    {
+      "id": "nco-basic",
+      "title": "サイバーセキュリティ対策9か条",
+      "url": "https://security-portal.cyber.go.jp/guidance/cybersecurity9principles.html",
+      "publisher": "国家サイバー統括室・IPA"
+    },
+    {
+      "id": "ipa-ai",
+      "title": "AI利用者のためのセキュリティ豆知識（2026年4月公表）",
+      "url": "https://www.ipa.go.jp/digital/ai/security/ai_security_tips.html",
+      "publisher": "IPA"
+    },
+    {
+      "id": "cisa-ransom",
+      "title": "#StopRansomware Guide",
+      "url": "https://www.cisa.gov/stopransomware/ransomware-guide",
+      "publisher": "CISAほか"
+    },
+    {
+      "id": "cisa-kev",
+      "title": "Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "publisher": "CISA"
+    },
+    {
+      "id": "ncsc-clickfix",
+      "title": "Compromised Websites Serving ClickFix Pages（2026年9月）",
+      "url": "https://www.ncsc.govt.nz/alerts/compromised-websites-serving-clickfix-pages/",
+      "publisher": "ニュージーランド NCSC"
+    },
+    {
+      "id": "ncsc-cookie",
+      "title": "Insight: Someone stole my cookie!",
+      "url": "https://www.ncsc.govt.nz/insights-and-research/insights-reports/quarter-three-cyber-security-insights/progressive-web-apps-2/",
+      "publisher": "ニュージーランド NCSC"
+    },
+    {
+      "id": "nist-auth",
+      "title": "NIST SP 800-63B-4: Authentication and Authenticator Management",
+      "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+      "publisher": "NIST"
+    },
+    {
+      "id": "nist-csf",
+      "title": "NIST Cybersecurity Framework 2.0: Small Business Quick-Start Guide",
+      "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=957322",
+      "publisher": "NIST"
+    },
+    {
+      "id": "nist-email",
+      "title": "Trustworthy Email",
+      "url": "https://www.nist.gov/publications/trustworthy-email-0",
+      "publisher": "NIST"
+    },
+    {
+      "id": "cisa-ddos",
+      "title": "Understanding and Responding to Distributed Denial-of-Service Attacks",
+      "url": "https://www.cisa.gov/sites/default/files/publications/understanding-and-responding-to-ddos-attacks_508c.pdf",
+      "publisher": "CISA・FBI・MS-ISAC"
+    },
+    {
+      "id": "owasp-asvs",
+      "title": "Application Security Verification Standard 5.0",
+      "url": "https://asvs.owasp.org/",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-authz",
+      "title": "Authorization Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-session",
+      "title": "Session Management Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-secrets",
+      "title": "Secrets Management Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-supply",
+      "title": "Software Supply Chain Security Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Software_Supply_Chain_Security_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-ci",
+      "title": "CI/CD Security Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-llm",
+      "title": "OWASP Top 10 for LLM Applications 2026（公式公開ソース）",
+      "url": "https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/blob/main/2026/README.md",
+      "publisher": "OWASP GenAI Security Project"
+    },
+    {
+      "id": "owasp-oauth",
+      "title": "OAuth 2.0 Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/OAuth2_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-sql",
+      "title": "SQL Injection Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-xss",
+      "title": "Cross Site Scripting Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-csrf",
+      "title": "Cross-Site Request Forgery Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-ssrf",
+      "title": "Server Side Request Forgery Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-upload",
+      "title": "File Upload Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-rest",
+      "title": "REST Security Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "mdn-cors",
+      "title": "Cross-Origin Resource Sharing (CORS)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+      "publisher": "MDN Web Docs"
+    },
+    {
+      "id": "owasp-headers",
+      "title": "HTTP Headers Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-password",
+      "title": "Password Storage Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-logging",
+      "title": "Logging Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    },
+    {
+      "id": "owasp-docker",
+      "title": "Docker Security Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html",
+      "publisher": "OWASP"
+    }
+  ]
+}

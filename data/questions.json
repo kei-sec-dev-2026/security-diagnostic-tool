@@ -2,1323 +2,2588 @@
   {
     "lane": "personal",
     "id": "q_p_01",
-    "category": "通信の安全性",
-    "question": "Webサイト等で個人情報を入力する際、アドレスバーの「鍵マーク（HTTPS）」を確認していますか？",
-    "description": "暗号化されていないサイトでの入力は盗聴リスクがあります。",
+    "category": "まずは端末の基本",
+    "question": "PC・スマホの自動更新を有効にしていますか？",
+    "description": "OSやブラウザの更新は、すでに知られている攻撃の入口をふさぎます。",
     "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "暗号化（HTTPS）の確認不足",
-    "adviceText": "鍵マークのないサイトでの個人情報入力は避けましょう。"
+    "adviceTitle": "自動更新を確認する",
+    "adviceText": "設定の「ソフトウェア更新」を開き、自動更新を有効にしましょう。再起動待ちの更新も済ませてください。",
+    "priority": "high",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_02",
-    "category": "AI詐欺・フィッシング",
-    "question": "AIで生成された巧妙な日本語の偽SMS（宅配や銀行を装う通知）や、知人の声を模した不審な連絡を疑わずリンクを踏んでいませんか？",
-    "description": "生成AIの普及により、文脈の自然な詐欺メッセージが急増しています。",
-    "deductPointsOn": "YES",
+    "category": "まずは端末の基本",
+    "question": "使っているPC・スマホは、メーカーの安全性に関する更新を受けられますか？",
+    "description": "サポートが終了した端末は、新しい問題が修正されないことがあります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "AI生成による巧妙なフィッシングの危険",
-    "adviceText": "不審なURLは直接踏まず、公式アプリや公式サイトから改めてログイン・確認する習慣をつけましょう。"
+    "adviceTitle": "端末のサポート期限を確認する",
+    "adviceText": "メーカーの公式ページで機種やOSのサポート状況を確認し、終了している場合は更新・買い替えを計画しましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_03",
-    "category": "決済情報",
-    "question": "利用頻度の高くないECサイトやアプリにクレジットカード情報を常時保存させていませんか？",
-    "description": "サイトがハッキングされた際にカード情報が一括流出する危険があります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "マイナーサイトへのカード情報常時保存",
-    "adviceText": "利用頻度の低いサイトでは保存せず、都度入力するか安全な決済サービスを使いましょう。"
+    "category": "まずは端末の基本",
+    "question": "PC・スマホに自動の画面ロックを設定していますか？",
+    "description": "短時間の置き忘れでも、画面から大切な情報を見られることがあります。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "画面ロックを設定する",
+    "adviceText": "指紋・顔認証や十分な長さのPINを設定し、操作しない時間が続いたら自動でロックする設定にしましょう。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_04",
-    "category": "端末セキュリティ",
-    "question": "スマホやPCに、出所が不明なプロファイル（証明書）や野良アプリを安易にインストールしていませんか？",
-    "description": "悪意あるプロファイルによって、通信が丸ごとハイジャックされるおそれがあります。",
-    "deductPointsOn": "YES",
+    "category": "まずは端末の基本",
+    "question": "端末の標準のセキュリティ保護機能を有効にしていますか？",
+    "description": "OS標準の保護機能も役立ちます。有料ソフトの購入だけが対策ではありません。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "不審なプロファイル・野良アプリによる乗っ取りリスク",
-    "adviceText": "端末の設定から見覚えのない構成プロファイルがないか確認し、不要なものは削除してください。"
+    "adviceTitle": "標準の保護機能を確認する",
+    "adviceText": "PCのウイルス対策・ファイアウォールやスマホの危険なアプリの警告機能を確認し、更新を有効にしましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_05",
-    "category": "アカウント管理",
-    "question": "使わなくなったアプリやサイトを退会せずに「アプリ削除のみ」で放置していませんか？",
-    "description": "サーバー上にあなたの個人情報が残存し続けます。",
-    "deductPointsOn": "YES",
+    "category": "まずは端末の基本",
+    "question": "アプリは、公式ストアや開発元の公式サイトから入れていますか？",
+    "description": "偽の配布サイトや海賊版には、情報を盗むソフトが混ざることがあります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "退会処理を行わない「放置アカウント」の存在",
-    "adviceText": "アプリ削除前に設定画面等から必ず「退会（アカウント物理削除）」を実行してください。"
+    "adviceTitle": "配布元を確認してから入れる",
+    "adviceText": "検索広告だけを頼りにせず、開発元の公式案内から入手しましょう。安全機能を無効にするよう求められたら中断してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nco-basic",
+      "ncsc-clickfix"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_06",
-    "category": "パスワード衛生",
-    "question": "複数のサービスで同じパスワードを使い回していますか？",
-    "description": "1箇所から流出しただけで他のサービスにも不正ログインされる危険があります。",
-    "deductPointsOn": "YES",
+    "category": "アカウントを守る",
+    "question": "サービスごとに違うパスワードを使っていますか？",
+    "description": "1つ漏れても、別のサービスに被害が広がりにくくなります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "パスワードの使い回し（最高危険度）",
-    "adviceText": "パスワード管理ツールを活用し、すべてのサイトで異なるランダムなパスワードを設定してください。"
+    "adviceTitle": "パスワードの使い回しを減らす",
+    "adviceText": "まずメールとお金に関わるサービスから、長く固有のパスワードにしましょう。パスワード管理機能の生成・保存も利用できます。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_07",
-    "category": "認証設定",
-    "question": "主要なアカウント（Google, Apple, SNS, 銀行など）で二段階認証（2FA/MFA）を設定していますか？",
-    "description": "パスワードが漏れても、二段階認証があれば不正アクセスを防げます。",
+    "category": "アカウントを守る",
+    "question": "大切なアカウントで追加の本人確認を有効にしていますか？",
+    "description": "メールや銀行などの二段階認証です。利用できる認証方法はサービスごとに異なります。",
     "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "主要アカウントの二段階認証未設定",
-    "adviceText": "認証アプリやハードウェアキーを用いた二段階認証を必ず有効化してください。"
+    "adviceTitle": "二段階認証を有効にする",
+    "adviceText": "メール、Apple・Google、銀行などの設定で二段階認証を有効にしましょう。使える場合はパスキーやセキュリティキーを優先してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_08",
-    "category": "ソフトウェア更新",
-    "question": "OSやブラウザ、スマホアプリのアップデート通知を長期間放置していませんか？",
-    "description": "古いバージョンには既知の脆弱性（セキュリティホール）が残っていることが多いです。",
-    "deductPointsOn": "YES",
+    "category": "アカウントを守る",
+    "question": "対応している大切なサービスでは、パスキーを利用していますか？",
+    "description": "パスキーは偽サイトへのログインに強い方法です。端末が感染した後の情報窃取まで防ぐものではありません。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "OS・アプリのアップデート放置",
-    "adviceText": "自動アップデートを有効にし、常に最新のパッチを適用状態に保ちましょう。"
+    "adviceTitle": "パスキーの設定を確認する",
+    "adviceText": "公式アプリのセキュリティ設定で対応を確認し、利用できる場合は設定しましょう。対応サービスを使っていない場合は対象外です。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-auth",
+      "ncsc-cookie"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_09",
-    "category": "バックアップ",
-    "question": "スマホの写真や重要データを、クラウドや外部メディアへ定期的にバックアップしていますか？",
-    "description": "ランサムウェア感染や端末の故障時にデータが全損するリスクを防げます。",
+    "category": "アカウントを守る",
+    "question": "頼んでいないログイン承認の通知は拒否するようにしていますか？",
+    "description": "通知が何度も来ても、承認して止めると不正ログインにつながります。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "重要データのバックアップ不足",
-    "adviceText": "クラウドストレージ等を利用して、自動バックアップの仕組みを構築しておきましょう。"
+    "points": 3,
+    "adviceTitle": "身に覚えのない承認を断る",
+    "adviceText": "心当たりのない通知は拒否し、通知のリンクではなく公式アプリからログイン履歴を確認しましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_10",
-    "category": "Wi-Fi利用",
-    "question": "カフェやホテルなどの鍵のかかっていないパブリックWi-Fiを、暗号化なし（VPNなし）で利用していますか？",
-    "description": "通信内容が同一ネットワーク上の第三者に傍受される危険があります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "無防備なフリーWi-Fiの利用",
-    "adviceText": "フリーWi-Fiを利用する際は信頼できるVPNを有効にするか、スマホのテザリングを使用しましょう。"
+    "category": "アカウントを守る",
+    "question": "認証コードを、電話やチャットの相手に教えないようにしていますか？",
+    "description": "本物の担当者を装って、ログインや送金の確認コードを聞き出す手口があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "認証コードは自分の操作だけに使う",
+    "adviceText": "コードは自分で開いた公式の確認画面だけに入力しましょう。相手に伝えた場合は公式窓口へ連絡してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_11",
-    "category": "SNSプライバシー",
-    "question": "SNSに自宅の場所が特定できる写真や、自身の詳細なスケジュール・個人情報を公開していませんか？",
-    "description": "ストーカー被害や空き巣などのリアルな犯罪に悪用されるおそれがあります。",
-    "deductPointsOn": "YES",
+    "category": "アカウントを守る",
+    "question": "アカウントを復旧するための連絡先を確認していますか？",
+    "description": "古い電話番号や使えないメールのままだと、乗っ取り時に取り戻しにくくなります。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "SNSへの高精度な個人情報・位置情報の露出",
-    "adviceText": "投稿の公開範囲を制限し、位置情報（EXIFデータ含む）の紐付けに注意してください。"
+    "adviceTitle": "復旧用の連絡先を見直す",
+    "adviceText": "メールなど主要サービスの復旧用連絡先を更新しましょう。予備の認証手段や回復コードは、他人が見られない場所に保管してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_12",
-    "category": "メールセキュリティ",
-    "question": "迷惑メールフィルターや、怪しい差出人の画像を自動表示しない設定をオフにしていませんか？",
-    "description": "画像の自動読み込みによって、メールアドレスがアクティブであると攻撃者に知られます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "メールの不安全な初期設定",
-    "adviceText": "メールクライアントの画像自動読み込みを無効にし、スパムフィルターを厳格に設定しましょう。"
+    "category": "アカウントを守る",
+    "question": "大切なサービスの、ログイン中の端末を確認していますか？",
+    "description": "パスワード以外に、ログイン状態を保つ情報が盗まれる場合もあります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "ログイン中の端末を点検する",
+    "adviceText": "公式のアカウント設定で、覚えのない端末をログアウトさせましょう。感染が疑われる場合は安全な別の端末から操作してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ncsc-cookie"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_13",
-    "category": "SNS乗っ取り対策",
-    "question": "SNSやチャットアプリで、友人アカウントから送られてきた「お金を貸して」「投票して」といった不審なURLを安易にクリックしていませんか？",
-    "description": "友人のアカウントが乗っ取りを受け、詐欺の踏み台にされているケースがあります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "知人アカウントからの乗っ取りリンクの踏み抜き",
-    "adviceText": "不審な依頼を受けた場合は、必ず別の連絡手段（電話など）で本人確認を行ってください。"
+    "category": "連絡・詐欺への備え",
+    "question": "銀行や宅配などの通知は、公式アプリを自分で開いて確認していますか？",
+    "description": "自然な日本語や本物らしい見た目でも、偽の通知の可能性があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "通知の内容を公式アプリで確かめる",
+    "adviceText": "SMSやメールのリンクからログインせず、いつもの公式アプリや保存したブックマークから確認しましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa2026",
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_14",
-    "category": "物理セキュリティ",
-    "question": "外出時や自宅にいる際、スマホやPCの画面ロック（PIN・指紋・顔認証）を設定せず放置していませんか？",
-    "description": "端末を紛失したり一時的に目を離した隙に、中のデータやウォレットが不正利用されます。",
-    "deductPointsOn": "YES",
+    "category": "連絡・詐欺への備え",
+    "question": "お金や個人情報を求める連絡は、知っている連絡先で本人に確かめていますか？",
+    "description": "AIで家族・知人の声や映像をまねることもできます。声だけで判断しないことが大切です。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "端末の画面ロック未設定",
-    "adviceText": "短時間の操作なしで自動ロックがかかるよう設定を必ず有効にしてください。"
+    "adviceTitle": "別の連絡手段で本人を確かめる",
+    "adviceText": "届いた番号へそのまま折り返すのではなく、登録済みの電話番号など別の連絡先で確認してから対応しましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-ai"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_15",
-    "category": "SNS連携アプリ",
-    "question": "Twitter(X)やGoogleなどのアカウントでログインする際、見ず知らずの外部アプリやゲームに過剰な権限（全権アクセス等）を与えていませんか？",
-    "description": "連携アプリが乗っ取られた際、勝手にスパム投稿や個人情報の抜取りを行われます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "不審な外部アプリへの過剰な権限付与",
-    "adviceText": "定期的にアカウント設定から連携アプリの一覧を見直し、不要なものは連携を解除しましょう。"
+    "category": "連絡・詐欺への備え",
+    "question": "「人間の確認」などを理由にコマンドの貼り付けを求められたら、中断できますか？",
+    "description": "偽の確認画面でPCの操作をさせ、情報を盗むソフトを入れるClickFixという手口があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "確認画面の指示でコマンドを実行しない",
+    "adviceText": "Webページから「実行」「ターミナル」などへの貼り付けを求められたら閉じましょう。実行済みなら、別の安全な端末で相談先を確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ncsc-clickfix"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_16",
-    "category": "Bluetooth設定",
-    "question": "Bluetoothを常時「検出可能（ペアリングモード）」にしたまま公共の場を歩いていませんか？",
-    "description": "ブルージャッキング等を通じて端末に不正アクセスを試みられるリスクがあります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "Bluetoothの無防備な常時開放",
-    "adviceText": "使用しない時はBluetoothをオフにするか、検出不可の設定にしておきましょう。"
+    "category": "連絡・詐欺への備え",
+    "question": "突然出たウイルス警告は、画面の電話番号へ連絡せずに確認できますか？",
+    "description": "偽の警告から遠隔操作や支払いへ誘導する場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "偽のサポート警告に備える",
+    "adviceText": "表示された番号へ電話せず、ブラウザを閉じましょう。困ったら端末メーカーの公式窓口や信頼できる人へ相談してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_17",
-    "category": "ワンタイムパスワード",
-    "question": "SMSで届く認証コード（ワンタイムパスワード）を、電話口の相手やチャットの質問者にそのまま伝えてしまったことがありますか？",
-    "description": "アカウントの乗っ取りを狙う古典的かつ極めて効果的な詐欺の手口です。",
-    "deductPointsOn": "YES",
+    "category": "連絡・詐欺への備え",
+    "question": "予想していない添付ファイルは、送信者に確認してから開いていますか？",
+    "description": "知人や取引先のアカウントが乗っ取られ、ファイルが送られることもあります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "認証コードの口頭・チャットでの漏洩",
-    "adviceText": "いかなる理由があっても、SMS認証コードを他人に教えることは絶対に避けましょう。"
+    "adviceTitle": "添付ファイルは開く前にひと呼吸",
+    "adviceText": "別の連絡手段で送った理由を確認しましょう。「マクロを有効にする」「保護を解除する」といった指示にもそのまま従わないでください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_18",
-    "category": "中古・処分端末",
-    "question": "古いスマホやPC、USBメモリを処分・売却する際、完全消去や初期化をせずそのまま手放していませんか？",
-    "description": "専用ソフトを用いることで、消去したはずの写真やログイン情報が復元されるおそれがあります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "処分端末のデータ完全消去不足",
-    "adviceText": "ストレージの暗号化や専用の完全消去ツールを使用して、データが復元できない状態にしてから手放しましょう。"
+    "category": "連絡・詐欺への備え",
+    "question": "アプリや通販サイトへ進む前に、公式の案内とURLを確かめていますか？",
+    "description": "検索広告やQRコードからも、よく似た偽サイトへ誘導されることがあります。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "検索結果・QRコードの行き先を確認する",
+    "adviceText": "公式の案内から目的のページへ進みましょう。表示名やロゴだけで判断せず、申し込みや支払いの前にドメインを確認してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_19",
-    "category": "ルーターセキュリティ",
-    "question": "自宅のWi-Fiルーターの管理パスワードを、初期設定（admin/password等）のまま使用していませんか？",
-    "description": "外部からルーターの管理画面に侵入され、通信内容を改ざんされる危険があります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "自宅Wi-Fiルーターの初期パスワード放置",
-    "adviceText": "ルーターの管理画面にログインし、推測困難な強力なパスワードに変更してください。"
+    "category": "連絡・詐欺への備え",
+    "question": "個人情報を入力するページで、通信の警告が出ていないか確認していますか？",
+    "description": "HTTPSは通信を暗号化しますが、サイト運営者が本物だという保証ではありません。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "通信の警告と行き先を確認する",
+    "adviceText": "ブラウザの証明書や安全性の警告を無視して進まないでください。HTTPSでも、入力先が利用するサービスの公式サイトか確かめましょう。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_20",
-    "category": "スマート家電",
-    "question": "自宅のスマートスピーカーやWebカメラ等のIoT家電に初期設定のままアクセス権を与えていますか？",
-    "description": "脆弱性を突かれて外部から室内の様子を覗き見られたり、踏み台にされるケースがあります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "IoT家電・スマートデバイスのセキュリティ設定不足",
-    "adviceText": "IoT機器のファームウェアを常に最新にし、デフォルトのパスワードを変更して利用しましょう。"
+    "category": "データとバックアップ",
+    "question": "失いたくない写真や書類のコピーを、端末とは別の場所に残していますか？",
+    "description": "故障や紛失、ランサムウェアに備えて、元のデータ以外のコピーを用意します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "大切なデータのコピーを用意する",
+    "adviceText": "写真・連絡先・書類など、失うと困るデータのバックアップを設定しましょう。クラウドの場合は保存対象と最終の保存日時も確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_21",
-    "category": "ブラウザ拡張機能",
-    "question": "出所の怪しい、あるいは評価の定まっていないブラウザ拡張機能（プラグイン）を多数インストールしていませんか？",
-    "description": "悪意ある拡張機能によって、閲覧中のページ上のパスワードや個人情報が密かに盗み出されます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "信頼性の低いブラウザ拡張機能の導入",
-    "adviceText": "ブラウザの拡張機能は必要最小限にとどめ、信頼できる公式ストアの評価の高いものだけを使いましょう。"
+    "category": "データとバックアップ",
+    "question": "バックアップに、元のデータと一緒に消されにくいコピーがありますか？",
+    "description": "単なる同期では、誤削除や暗号化も反映される場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "消されにくいバックアップを持つ",
+    "adviceText": "使うときだけ接続する外付け媒体や、履歴・復元機能のある保存先を用意しましょう。コピーが元の端末の操作で一緒に消えないか確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_22",
-    "category": "フリーソフト・クラック",
-    "question": "有料ソフトのクラック版（海賊版）や、出所の分からない野良フリーソフトをダウンロードして実行していませんか？",
-    "description": "マルウェアやキーロガー、情報窃取ウイルスが同梱されている確率が非常に高いです。",
-    "deductPointsOn": "YES",
+    "category": "データとバックアップ",
+    "question": "バックアップからファイルを戻せることを試していますか？",
+    "description": "保存できたつもりでも、復元できないと役立ちません。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "海賊版ソフト・不審なフリーソフトの利用",
-    "adviceText": "ソフトウェアは必ず公式の信頼できるルートから入手し、海賊版の使用は避けましょう。"
+    "adviceTitle": "少量のファイルで復元を試す",
+    "adviceText": "写真や書類を1つ、元のデータを消さずに別の場所へ復元してみましょう。開けるか、必要な日時まで戻せるか確かめてください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_23",
-    "category": "セキュリティソフト",
-    "question": "PCやスマホにアンチウイルス・セキュリティ対策ソフトを導入せず、OS標準機能だけで済ませていますか？",
-    "description": "巧妙化するゼロデイ攻撃やマルウェアに対する多層防御が不足するおそれがあります。",
+    "category": "データとバックアップ",
+    "question": "写真や書類の共有リンクを、必要な相手だけが開ける設定にしていますか？",
+    "description": "「リンクを知っている全員」の設定では、転送先の人も見られる場合があります。",
     "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "サードパーティ製セキュリティソフトの未導入",
-    "adviceText": "信頼できるセキュリティ対策ソフトを導入し、リアルタイムスキャンを常時有効にしましょう。"
+    "adviceTitle": "共有リンクの公開範囲を見直す",
+    "adviceText": "クラウドの共有一覧を開き、相手を指定した共有へ切り替えましょう。使わなくなった共有は終了してください。共有機能を使わない場合は対象外です。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-basic"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_24",
-    "category": "検索エンジン・広告",
-    "question": "ネット検索の際、最上部に表示される「スポンサー広告（リスティング広告）」の偽サイトリンクを疑わずクリックしていませんか？",
-    "description": "仮想通貨ウォレットや銀行の「偽の広告リンク」を仕掛けるフィッシング詐欺が多発しています。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "検索広告経由のフィッシング誘導リスク",
-    "adviceText": "重要なサービスにログインする際は、広告リンクではなく公式ブックマークからアクセスする習慣をつけましょう。"
+    "category": "データとバックアップ",
+    "question": "使わなくなったアカウントの整理をしていますか？",
+    "description": "アプリを消すだけでは、サービス側のアカウントは残ることがあります。",
+    "deductPointsOn": "NO",
+    "points": 1,
+    "adviceTitle": "不要なアカウントを整理する",
+    "adviceText": "必要なデータを取り出してから公式の退会手順を確認しましょう。保存期間などの規約も確認してください。退会で全データが即時消去されるとは限りません。",
+    "priority": "low",
+    "sourceIds": [
+      "ipa-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_25",
-    "category": "公共充電器",
-    "question": "駅や空港にある無料のUSB充電スタンド（ジュースジャッキングの恐れがある場所）に、直接ケーブルを挿して充電していませんか？",
-    "description": "充電器の端子を通じて端末からデータが不正に抜き取られるリスクがあります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "公共USB充電器によるデータ盗難リスク",
-    "adviceText": "公共の場ではACアダプター（コンセント）を使用するか、データ転送防止用のアダプターを使いましょう。"
+    "category": "アプリとAIの使い方",
+    "question": "外部アプリと連携するとき、許可する内容を読んでいますか？",
+    "description": "「Googleなどでログイン」の後、メールやファイルの読取権限を求めるアプリもあります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "外部アプリのアクセス権を確認する",
+    "adviceText": "必要以上の許可は断り、アカウント設定から使っていない連携を解除しましょう。連携機能を使わない場合は対象外です。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-basic",
+      "nist-auth"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_26",
-    "category": "物理メディア",
-    "question": "道端やカフェに落ちていたUSBメモリを「中身が気になって」自分のPCに挿してしまったことがありますか？",
-    "description": "挿した瞬間に悪意あるプログラムが自動実行され、PCが乗っ取られる古典的なサイバー攻撃の手口です。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "拾得したUSBメモリの無防備な接続",
-    "adviceText": "出所の分からないUSBメモリや外部メディアは、絶対に自分の端末に接続しないでください。"
+    "category": "アプリとAIの使い方",
+    "question": "ブラウザの追加機能を、必要なものに絞っていますか？",
+    "description": "拡張機能には、閲覧中の情報を読める権限が付くものもあります。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "追加機能の権限を点検する",
+    "adviceText": "ブラウザの拡張機能の一覧で、不要なものを削除しましょう。配布元や読取範囲を確認し、全サイトへのアクセスは必要性を検討してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_27",
-    "category": "プライバシー設定",
-    "question": "スマホの各アプリに対して、必要のない「位置情報」「連絡先」「マイク・カメラ」への常時アクセスを許可していませんか？",
-    "description": "アプリがバックグラウンドで個人情報を収集し、外部サーバーに送信している場合があります。",
-    "deductPointsOn": "YES",
+    "category": "アプリとAIの使い方",
+    "question": "アプリの位置情報・写真などの許可を、必要な範囲にしていますか？",
+    "description": "使い方に合わない広い許可を減らすと、情報の渡しすぎを防げます。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "アプリへの過剰な権限常時許可",
-    "adviceText": "端末のプライバシー設定から、アプリごとのアクセス権限を「使用中のみ」または「拒否」に制限しましょう。"
+    "adviceTitle": "アプリの許可を見直す",
+    "adviceText": "端末のプライバシー設定で、位置情報は利用中だけ、写真は必要なものだけなどに調整しましょう。使わないアプリの許可も解除してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_28",
-    "category": "メール添付ファイル",
-    "question": "見覚えのない差出人から届いた「請求書」「注文確認」「重要なお知らせ」などのZIPや実行ファイルを即座に開いていませんか？",
-    "description": "ランサムウェアやウイルスに感染する最も一般的な入り口の一つです。",
-    "deductPointsOn": "YES",
+    "category": "アプリとAIの使い方",
+    "question": "AIへ入力する前に、個人情報や秘密が含まれていないか確かめていますか？",
+    "description": "入力した文章やファイルの扱いは、サービスの契約や設定によって異なります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "不審な添付ファイルの無防備な開封",
-    "adviceText": "心当たりのないメールの添付ファイルやリンクは絶対に開かず、そのまま削除してください。"
+    "adviceTitle": "AIに渡す情報を選ぶ",
+    "adviceText": "個人番号、パスワード、顧客情報などは安易に入力しないでください。必要な場合は利用条件や保存・学習設定を確認し、識別できる部分を除きましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-ai"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_29",
-    "category": "SNSのDM・リンク",
-    "question": "SNSのDMで送られてきた「動画にあなた写っていませんか？」といった短縮URLを気軽タップしていませんか？",
-    "description": "アカウントの認証情報を詐取するフィッシングサイトへ誘導されます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "SNSのDM経由のフィッシング誘導",
-    "adviceText": "友人や知人からであっても、突如送られてきた不審な短縮URLは開かないようにしましょう。"
+    "category": "アプリとAIの使い方",
+    "question": "AIにメールやファイル操作を任せるとき、実行前に内容を確かめていますか？",
+    "description": "AIが読むWebページや文書に、操作を誘導する指示が隠されることがあります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "AIの実行権限を小さくする",
+    "adviceText": "接続先を必要最小限にし、送信・購入・削除などは実行前に確認する設定を使いましょう。操作を任せるAIを使わない場合は対象外です。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-ai",
+      "owasp-llm"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_30",
-    "category": "オンラインショッピング",
-    "question": "極端に安すぎる海外の海外通販サイトや、会社概要が怪しいショップでクレカ決済を行ったことがありますか？",
-    "description": "クレジットカード情報がそのまま犯罪グループに渡り、不正利用される被害が後を絶ちません。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "不審なECサイトでのクレジットカード決済",
-    "adviceText": "聞いたことのない格安サイトを利用する際は、バーチャルカードや代金引換、信頼できる決済サービスを使いましょう。"
+    "category": "アプリとAIの使い方",
+    "question": "知らない相手の案内で、遠隔操作アプリの利用を始めないようにしていますか？",
+    "description": "遠隔操作を許すと、画面の情報やアカウントを相手に操作されることがあります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "遠隔操作を許す相手を確かめる",
+    "adviceText": "突然の電話や警告から遠隔操作を始めないでください。必要なサポートは公式窓口へ自分から連絡し、操作の範囲を確認しましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_31",
-    "category": "クラウドストレージ公開",
-    "question": "個人用のGoogleドライブやOneDriveに保存したプライベートな写真や書類の共有リンクを、誰でもアクセスできる状態にしていませんか？",
-    "description": "リンクが外部に漏れた場合、プライベートなデータが世界中に公開されてしまいます。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "個人用クラウドの公開共有リンク放置",
-    "adviceText": "クラウド上のファイル共有設定は必要最小限にし、不要になったリンクは速やかに削除しましょう。"
+    "category": "通信と暮らしの設定",
+    "question": "外出先のWi-Fiは、提供者が案内する正しい接続先か確かめていますか？",
+    "description": "似た名前の偽Wi-Fiもあります。HTTPSやVPNだけで偽サイトへの入力を防げるわけではありません。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "Wi-Fiの接続先を確かめる",
+    "adviceText": "施設の公式案内で接続先を確認しましょう。不安なときは携帯回線を使い、通信警告が出たら入力を中断してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_32",
-    "category": "ブラウザ履歴・キャッシュ",
-    "question": "共用パソコンやネットカフェの端末で、ブラウザの「ログイン情報の保存」や「閲覧履歴」を残したままにしていませんか？",
-    "description": "次にその端末を使う他人に、あなたの各種アカウントへ勝手にログインされてしまいます。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "共用端末での個人情報・ログイン情報の残存",
-    "adviceText": "共用端末を使う際は必ずシークレットモードを使用し、利用後は確実にサインアウトしてください。"
+    "category": "通信と暮らしの設定",
+    "question": "自宅ルーターの管理用パスワードを、自分で管理していますか？",
+    "description": "Wi-Fi接続用のパスワードとは別に、機器の設定を変えるためのパスワードがあります。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "ルーターの管理用パスワードを確認する",
+    "adviceText": "メーカーの案内に沿って、初期の共通パスワードなら変更しましょう。管理権限がない共用回線などは、管理者に確認してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_33",
-    "category": "通知設定",
-    "question": "スマホのロック画面に、LINEやメッセージの本文・通知内容がそのまま全表示される設定にしていませんか？",
-    "description": "端末を机に置いた際や他人に覗き見られた時に、二段階認証コードやプライベートな内容が知られてしまいます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "ロック画面での通知内容プレビュー露出",
-    "adviceText": "ロック画面では通知のプレビューを非表示にする（またはロック解除時のみ表示）設定に変更しましょう。"
+    "category": "通信と暮らしの設定",
+    "question": "自宅ルーターの更新とサポート期限を確認していますか？",
+    "description": "端末だけでなく、通信機器も攻撃の入口になることがあります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "ルーターも更新する",
+    "adviceText": "公式の管理画面やメーカーの案内で更新を確認し、自動更新があれば有効にしましょう。サポート終了機器は交換を検討してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_34",
-    "category": "位置情報共有アプリ",
-    "question": "友人や家族間での位置情報共有アプリ（Zenlyの代替等）を、信頼関係の薄い人や知り合ったばかりの人とも繋がったままにしていませんか？",
-    "description": "あなたのリアルタイムの居場所が常に監視・把握されるプライバシー上の大きなリスクになります。",
-    "deductPointsOn": "YES",
+    "category": "通信と暮らしの設定",
+    "question": "自宅のカメラなどの機器を、必要な人だけが使える設定にしていますか？",
+    "description": "ネットにつながる家電も、初期の認証情報や公開設定の見直しが必要です。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "位置情報共有アプリの過剰な繋がり",
-    "adviceText": "位置情報を共有する相手は信頼できる家族や親しい友人のみに厳選し、定期的に見直しましょう。"
+    "adviceTitle": "家電・カメラのアクセスを見直す",
+    "adviceText": "公式アプリで利用者と外部からの接続設定を確認しましょう。不要な公開を止め、共通の初期パスワードがあれば変更してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_35",
-    "category": "生体認証の管理",
-    "question": "スマホの顔認証や指紋認証に、家族や他人の生体データを追加で登録許可していませんか？",
-    "description": "本人以外の意図しないタイミングで端末内のデータや決済機能にアクセスされるおそれがあります。",
-    "deductPointsOn": "YES",
+    "category": "通信と暮らしの設定",
+    "question": "紛失した端末を探したり利用停止したりする方法を確認していますか？",
+    "description": "なくしてから慌てないよう、別の端末から使う手順を把握します。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "生体認証への他人データの登録",
-    "adviceText": "スマホやPCの生体認証（指紋・顔）の登録者は、本人のみに徹底管理してください。"
+    "adviceTitle": "紛失時の手順を用意する",
+    "adviceText": "公式の端末探索機能と通信会社の利用停止窓口を確認しましょう。回復用情報は端末だけに保存しないでください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_36",
-    "category": "DNS設定",
-    "question": "インターネット接続時のDNSサーバーを、プロバイダ標準のままセキュリティ機能のない設定で使っていませんか？",
-    "description": "悪意あるフィッシングサイトへのアクセスをブロックするDNSフィルター機能が働きません。",
+    "category": "通信と暮らしの設定",
+    "question": "SNSで公開する情報の範囲を確認していますか？",
+    "description": "住所や行動予定などが、本人へのなりすましや詐欺の材料になる場合があります。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "セキュアなDNS（Cloudflare/Google等）の未活用",
-    "adviceText": "マルウェアやフィッシングサイトを自動ブロックする信頼性の高いパブリックDNSの利用を検討しましょう。"
+    "points": 1,
+    "adviceTitle": "SNSの公開範囲を選ぶ",
+    "adviceText": "プロフィールと過去の投稿の公開先を確認しましょう。自宅の場所が分かる写真、身分証、詳しい予定の投稿は控えてください。",
+    "priority": "low",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_37",
-    "category": "音声アシスタント",
-    "question": "スマートスピーカーやスマホの音声アシスタントを、ロック画面や遠隔から誰でも呼び出せる設定にしていませんか？",
-    "description": "窓の外や悪意ある第三者から音声で勝手にスマートロックを開けられたり、メッセージを送られるリスクがあります。",
-    "deductPointsOn": "YES",
+    "category": "通信と暮らしの設定",
+    "question": "共用のPCでは、大切なアカウントへのログインを避けていますか？",
+    "description": "保存しない設定でも、端末に入ったソフトまでは確認できません。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "音声アシスタントの無防備な常時応答設定",
-    "adviceText": "ロック画面からの音声アシスタントの呼び出しを制限し、セキュリティを確保しましょう。"
+    "adviceTitle": "大切な操作は自分の端末で行う",
+    "adviceText": "銀行や主要メールの操作は自分で管理する端末から行いましょう。共用端末で使った場合はログアウトし、自分の端末からログイン履歴を確認してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "ncsc-cookie"
+    ],
+    "optional": true
   },
   {
     "lane": "personal",
     "id": "q_p_38",
-    "category": "アプリのアクセス権見直し",
-    "question": "スマホにインストールしたまま長期間使っていないアプリの権限設定を、そのまま放置していませんか？",
-    "description": "使っていないアプリがバックグラウンドで不要なデータ収集を続けている可能性があります。",
-    "deductPointsOn": "YES",
+    "category": "通信と暮らしの設定",
+    "question": "端末を手放すときは、公式の消去手順を確認していますか？",
+    "description": "ファイルをゴミ箱から消すだけでは、データやアカウント情報が残る場合があります。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "放置アプリによるバックグラウンドデータ収集",
-    "adviceText": "利用していないアプリはアンインストールし、定期的にアプリの権限状況を監査しましょう。"
+    "adviceTitle": "売却・廃棄前にデータを消す",
+    "adviceText": "バックアップを確かめてから、メーカーの案内に沿ってアカウント解除と端末の消去を行いましょう。会社の端末は担当者へ相談してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_39",
-    "category": "パスワード管理ツール",
-    "question": "すべてのパスワードを紙のノートやスマホのメモアプリ（暗号化なし）に平文で書き留めていませんか？",
-    "description": "ノートの紛失や、メモアプリがクラウド経由でハッキングされた際にすべてのパスワードが一網打尽になります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "パスワードの平文メモ保存（高リスク）",
-    "adviceText": "パスワードの管理は、マスターパスワードで暗号化される信頼性の高い専用のパスワードマネージャーを使用してください。"
+    "category": "困ったときの備え",
+    "question": "身に覚えのない利用や請求に気づけるよう、通知を設定していますか？",
+    "description": "早く気づくことで、被害の拡大を抑えやすくなります。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "利用通知を有効にする",
+    "adviceText": "銀行・カードや主要アカウントの公式設定で、利用・ログイン通知を確認しましょう。通知のリンクからではなく公式アプリで内容を確かめてください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nco-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "personal",
     "id": "q_p_40",
-    "category": "セキュリティ意識",
-    "question": "「自分は一般人だからハッカーに狙われるはずがない」という油断から、基本的なセキュリティ対策を怠っていませんか？",
-    "description": "サイバー攻撃の多くは自動化ボットによる無差別なものであり、誰でも標的になります。",
-    "deductPointsOn": "YES",
+    "category": "困ったときの備え",
+    "question": "不審な操作をしてしまったときの相談先を決めていますか？",
+    "description": "誰でも迷う場面があります。早めに相談できる準備が役立ちます。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "セキュリティに対する「自分は大丈夫」という過信",
-    "adviceText": "「狙われる理由がない」ではなく、「誰でも標的になり得る」というゼロトラストの意識を持ちましょう。"
+    "adviceTitle": "相談先を控えておく",
+    "adviceText": "家族、会社の窓口、サービスの公式サポートなどを控えておきましょう。感染が疑われる端末はネット接続を外し、別の安全な端末から相談してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
-
   {
     "lane": "admin",
     "id": "q_a_01",
-    "category": "クラウド共有設定",
-    "question": "GoogleドライブやDropbox等で、顧客リストや社内資料の共有範囲を「リンクを知っている全員（パブリック）」にしていませんか？",
-    "description": "リンクが第三者に漏れた場合、検索エンジン経由等で社内機密が一括流出します。",
-    "deductPointsOn": "YES",
+    "category": "役割と基本方針",
+    "question": "セキュリティ対策を決める責任者が決まっていますか？",
+    "description": "専任の担当がいない会社でも、判断する人と相談先を決めておくことが出発点です。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "クラウドストレージの無制限アクセス権限",
-    "adviceText": "共有設定を「指定されたユーザーのみ」に変更し、不要になった過去の共有リンクは無効化してください。"
+    "adviceTitle": "判断する人を決める",
+    "adviceText": "経営者を含めて責任者と代行者を決め、困ったときの連絡先を社内へ知らせましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-sme",
+      "nist-csf"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_02",
-    "category": "AI利用のガバナンス（シャドーAI）",
-    "question": "社員が社内規定やガイドラインを定めないまま、業務上の機密データや顧客情報を外部の無料AIサービス（ChatGPT等）に入力していませんか？",
-    "description": "入力データがAIの学習モデルに吸収され、別のユーザーへの回答として機密が漏洩するリスクがあります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "野良AI利用（シャドーAI）による機密流出",
-    "adviceText": "社内での生成AI利用ルールを策定し、オプトアウト（学習拒否）設定がされたエンタープライズ版の利用を義務付けてください。"
+    "category": "役割と基本方針",
+    "question": "止まると困る業務を、会社として把握していますか？",
+    "description": "システム名より先に、受発注や支払いなど、事業への影響を整理します。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "守る業務の優先順位を決める",
+    "adviceText": "止まると困る業務、その業務で使う情報やサービスを一覧にし、復旧の優先順位を話し合いましょう。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_03",
-    "category": "アカウント管理",
-    "question": "退職した従業員や契約終了した外部委託先のSaaSアカウント（Slack, Google Workspace等）を削除せず放置していませんか？",
-    "description": "元従業員からの不正アクセスや不正データ持ち出しのリスクになります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "退職者・契約終了者のアクセス権の放置",
-    "adviceText": "退職日や契約終了日当日に、アカウントの一括無効化・削除を管理フローとして徹底してください。"
+    "category": "役割と基本方針",
+    "question": "会社で使う端末・サービスの一覧がありますか？",
+    "description": "使っているものが分かると、更新漏れや放置された契約を見つけやすくなります。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "利用中の機器・サービスを一覧にする",
+    "adviceText": "PC、スマホ、クラウドサービスごとに、利用者・管理者・契約先を記録しましょう。個人契約の業務利用も確認してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_04",
-    "category": "標的型攻撃への対策",
-    "question": "ハッカーがAIを使って自動生成する「役員や取引先になりすました極めて自然な偽メール・音声指示」に対する社内訓練や検証を行っていませんか？",
-    "description": "近年のランサムウェアやBEC（ビジネスメール詐欺）はAIにより完璧にローカライズされています。",
+    "category": "役割と基本方針",
+    "question": "個人情報や重要書類を、どこに保管しているか把握していますか？",
+    "description": "何を守るかが分からないと、共有範囲や復旧方法も決められません。",
     "deductPointsOn": "NO",
-    "points": 3,
-    "adviceTitle": "AI駆動型の高度なビジネスメール詐欺（BEC）対策の欠如",
-    "adviceText": "送金や機密データのやり取りが発生する際は、メールだけでなく別経路（電話や対面）での二重確認ルールを徹底しましょう。"
+    "points": 2,
+    "adviceTitle": "重要な情報の保管場所を確認する",
+    "adviceText": "顧客・従業員の情報、契約書などを挙げ、保管先と管理する人を整理しましょう。診断画面に実際の情報を入力する必要はありません。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_05",
-    "category": "リモートワーク環境",
-    "question": "社員がカフェ等のフリーWi-Fi環境からVPN等を通さずに直接社内共有フォルダーや管理画面にアクセスしていますか？",
-    "description": "フリーWi-Fiの暗号化の隙をつかれ、通信が盗聴・改ざんされるおそれがあります。",
-    "deductPointsOn": "YES",
+    "category": "アカウントと権限",
+    "question": "会社の主要サービスで、二段階認証を必須にしていますか？",
+    "description": "メールや会計などで、パスワードだけに頼らない本人確認を使います。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "フリーWi-Fi利用時の安全対策不足",
-    "adviceText": "社外からの接続には必ず会社指定のVPNを使用させるか、テザリングの利用をルール化してください。"
+    "adviceTitle": "会社の二段階認証を確認する",
+    "adviceText": "担当者や委託先へ、全利用者への適用状況を確認しましょう。管理者から先に、対応するパスキーやセキュリティキーの導入を検討してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_06",
-    "category": "認証セキュリティ",
-    "question": "社内で利用している主要なクラウドサービス（メール、会計、顧客管理など）で二要素認証（2FA）を必須化していませんか？",
-    "description": "ID/PWが流出しただけで即座に社内システムに乗っ取られる原因になります。",
+    "category": "アカウントと権限",
+    "question": "会社で使うパスワードの使い回しを防ぐ方法がありますか？",
+    "description": "複雑さを強いるだけでなく、長く固有のパスワードを扱える仕組みが役立ちます。",
     "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "主要クラウドサービスの二要素認証（2FA）未適用",
-    "adviceText": "管理者権限および一般アカウント含め、すべてのクラウドサービスで2FAを強制適用に設定してください。"
+    "adviceTitle": "パスワードを安全に管理する方法を用意する",
+    "adviceText": "会社で認めるパスワード管理方法を案内しましょう。根拠のない定期変更を強制するより、流出が疑われたときに速やかに変更できる運用を整えてください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_07",
-    "category": "バックアップ・BCP",
-    "question": "ランサムウェア（身代金要求ウイルス）によるデータ暗号化に備え、ネットワークから物理的に切り離された「オフライン・バックアップ」を取得していますか？",
-    "description": "ネットワークに常時接続されたバックアップは、ランサムウェアに同時に暗号化されて全滅します。",
+    "category": "アカウントと権限",
+    "question": "退職や契約終了に合わせて、アカウントを停止する手順がありますか？",
+    "description": "退職後のアクセスや、委託先の放置アカウントを減らします。",
     "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "ランサムウェア対策としてのオフラインバックアップ不足",
-    "adviceText": "書き換え不可能なクラウドストレージや、物理的に切り離した外付けHDDへの定期バックアップを運用しましょう。"
+    "adviceTitle": "退職時のアカウント停止を手順にする",
+    "adviceText": "人事と担当者で終了日を共有し、メール、クラウド、遠隔接続などを停止する確認表を用意しましょう。データの引継ぎも先に決めてください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_08",
-    "category": "シャドーIT管理",
-    "question": "従業員が会社の許可を得ていない個人のUSBメモリやフリーソフト、個人用クラウドを業務に勝手に使用することを黙認していませんか？",
-    "description": "ウイルス感染経路となるだけでなく、企業のデータガバナンスが完全に崩壊します。",
-    "deductPointsOn": "YES",
+    "category": "アカウントと権限",
+    "question": "役割が変わった人のアクセス権を見直していますか？",
+    "description": "在籍中でも、以前の部署の情報を見られる権限が残る場合があります。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "シャドーITの野放し状態",
-    "adviceText": "情報セキュリティ規程を明確にし、許可されていないツールや媒体の業務利用を厳禁としてください。"
+    "adviceTitle": "異動・担当変更時に権限を見直す",
+    "adviceText": "異動時と定期点検で、必要なファイルやサービスだけを使えるか、本人と管理者に確認してもらいましょう。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_09",
-    "category": "脆弱性管理",
-    "question": "社内で利用しているPC、サーバー、ルーター等のファームウェアやOSの脆弱性アップデート（パッチ適用）を計画的に行っていませんか？",
-    "description": "既知の脆弱性を狙ったサイバー攻撃（ゼロデイに近い既知の穴を突く攻撃）の格好の標的になります。",
+    "category": "アカウントと権限",
+    "question": "システムの管理操作は、担当者ごとのアカウントで行っていますか？",
+    "description": "管理者用のIDを共用すると、停止や操作の確認が難しくなります。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "端末・システムのパッチ適用プロセスの欠如",
-    "adviceText": "定期的な脆弱性スキャンと、速やかなセキュリティアップデート適用体制を構築しましょう。"
+    "points": 3,
+    "adviceTitle": "管理用アカウントの共用を減らす",
+    "adviceText": "担当者別の管理用アカウントを用意し、日常業務のアカウントと分けましょう。例外の緊急用IDは使用記録と保管方法を決めてください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_10",
-    "category": "アクセス権限（最小権限の原則）",
-    "question": "全社員がほとんどすべての社内ファイルサーバーや顧客データベースにアクセスできる状態（過剰な権限付与）になっていませんか？",
-    "description": "1人のアカウントが乗っ取られただけで、企業全体の全機密データが流出します。",
-    "deductPointsOn": "YES",
+    "category": "アカウントと権限",
+    "question": "パスワード再発行の依頼で、決められた本人確認をしていますか？",
+    "description": "声や役職名だけで本人と判断すると、なりすましに利用されることがあります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "過剰なアクセス権限（最小権限の原則違反）",
-    "adviceText": "役職や業務に必要な最小限の範囲にのみアクセス権を絞る「最小権限の原則」を徹底してください。"
+    "adviceTitle": "再発行の本人確認を決める",
+    "adviceText": "社内に登録済みの連絡手段で確認するなど、担当者が急かされても省略しない手順を作りましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth",
+      "ipa-ai"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_11",
-    "category": "インシデントレスポンス",
-    "question": "万が一、ランサムウェア感染や情報漏洩が発生した際の「緊急連絡網・対応手順（インシデントレスポンスプラン）」が未策定ですか？",
-    "description": "いざという時に初動が遅れ、被害の拡大や顧客への報告遅れによる信頼失墜を招きます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "インシデント対応手順（BCP）の未策定",
-    "adviceText": "被害発生時の初動対応フロー、連絡先、外部専門機関への相談窓口をまとめたマニュアルを作成しましょう。"
+    "category": "端末と更新の運用",
+    "question": "端末やソフトの更新を確認する担当者が決まっていますか？",
+    "description": "自動更新が止まったり、再起動待ちになったりすることもあります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "更新状況を確認する担当を決める",
+    "adviceText": "誰が、どの端末の更新を、いつ確認するかを決めましょう。委託している場合も、完了したことを報告してもらってください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_12",
-    "category": "物理セキュリティ（オフィス）",
-    "question": "来訪者が受付を通さずにオフィスの執務エリアやサーバー室に自由に入り込める状態になっていませんか？",
-    "description": "物理的な盗聴器の設置や、PCを持ち出される「物理セキュリティ侵害」のリスクがあります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "オフィス・サーバー室の入退室管理の不備",
-    "adviceText": "ICカードや鍵による入退室管理を徹底し、来訪者の単独行動を禁止するルールを設けましょう。"
+    "category": "端末と更新の運用",
+    "question": "サポートが終わる機器・ソフトの交換計画がありますか？",
+    "description": "PCだけでなく、ルーターや業務ソフトにも期限があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "サポート期限を予算に組み込む",
+    "adviceText": "一覧にサポート期限を追記し、終了前に更新できるよう費用と移行期間を確保しましょう。対象がない場合も確認した日を残してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_13",
-    "category": "パスワードポリシー",
-    "question": "社内のパスワードポリシーにおいて、「使い回しの禁止」「最低文字数（12文字以上）」「定期変更の廃止（※NISTガイドライン準拠）」などの現代的な基準が未整備ですか？",
-    "description": "古いポリシー（頻繁な強制変更など）は逆に脆弱なパスワードを生む原因になります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "時代遅れのパスワードポリシー運用",
-    "adviceText": "NIST等の最新ガイドラインに基づき、長文化・使い回し禁止を軸とした合理的なパスワードポリシーを策定しましょう。"
+    "category": "端末と更新の運用",
+    "question": "社員のPC・スマホに、会社が定めた保護設定を適用していますか？",
+    "description": "画面ロック、更新、端末保護などの基本設定を、利用者任せにしないための確認です。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "業務端末の基本設定をそろえる",
+    "adviceText": "担当者と基本設定を決め、配布時と定期点検で適用状況を確認しましょう。OS標準機能の活用も含め、運用できる方法を選んでください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-basic"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_14",
-    "category": "委託先管理（サプライチェーン）",
-    "question": "システム開発や保守を委託している協力会社（ベンダー）のセキュリティ対策状況を、一度も監査・確認していない状態ですか？",
-    "description": "セキュリティの最も脆弱な「サプライチェーンの委託先」を踏み台にして、本丸が攻撃される事例が急増しています。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "委託先（サプライチェーン）のセキュリティ監査不足",
-    "adviceText": "委託先のセキュリティ基準を確認・契約に盛り込み、定期的なチェックを行う仕組みを導入してください。"
+    "category": "端末と更新の運用",
+    "question": "私物端末を業務で使う場合のルールがありますか？",
+    "description": "私物端末を認めない方針でもかまいません。利用範囲を曖昧にしないことが大切です。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "私物端末の利用範囲を決める",
+    "adviceText": "利用の可否、扱える情報、紛失時の連絡先を決めましょう。個人の情報と会社の情報をどう分けるかも確認してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_15",
-    "category": "フィッシング訓練",
-    "question": "従業員を対象にした「標的型攻撃メール（偽装訓練）」の模擬訓練を一度も実施したことがありませんか？",
-    "description": "どれだけ注意を呼びかけても、訓練を行っていなければ実際の巧妙な攻撃メールを見抜くことは困難です。",
+    "category": "端末と更新の運用",
+    "question": "社員がソフトや外部サービスを導入する前に相談できる仕組みがありますか？",
+    "description": "無断利用を見つけて責めるより、必要な道具を安全に選べる導線を用意します。",
     "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "標的型攻撃メール訓練の未実施",
-    "adviceText": "定期的に社内向けの模擬フィッシングメール訓練を実施し、従業員の警戒意識を高めましょう。"
+    "adviceTitle": "導入の相談窓口を用意する",
+    "adviceText": "相談先と確認にかかる目安を案内しましょう。用途、扱う情報、権限、契約条件を確認して導入を判断してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_16",
-    "category": "ログの監査・保管",
-    "question": "社内システムやクラウドへのアクセスログ、管理者権限の操作ログを記録・保存・定期監査していませんか？",
-    "description": "不正アクセスや内部不正があった際、証拠が残らず原因究明や被害範囲の特定が不可能になります。",
+    "category": "詐欺と情報共有",
+    "question": "振込先の変更依頼を、登録済みの連絡先で確かめていますか？",
+    "description": "本物らしいメールやAIによる音声・映像でも、依頼者本人とは限りません。",
     "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "アクセスログの保存・監査体制の不備",
-    "adviceText": "主要なシステムやクラウドの操作ログを一定期間保存し、異常がないか定期的に確認する体制を作りましょう。"
+    "adviceTitle": "振込先変更は別の経路で確認する",
+    "adviceText": "メールに書かれた番号ではなく、すでに登録している取引先の番号へ確認しましょう。承認前の確認を経理の手順に組み込んでください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa2026",
+      "ipa-ai"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_17",
-    "category": "デバイス管理（MDM）",
-    "question": "従業員に貸与しているスマートフォンやPCの端末管理（MDM導入や遠隔ワイプ設定）を行っていませんか？",
-    "description": "端末を紛失した際に、中の機密データや顧客リストがそのまま外部に流出します。",
+    "category": "詐欺と情報共有",
+    "question": "急ぎの送金にも、通常の承認手順を適用していますか？",
+    "description": "「社長の指示」「秘密の案件」と急かされる場面でも使える手順にします。",
     "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "貸与端末のモバイルデバイス管理（MDM）未導入",
-    "adviceText": "MDMを導入し、紛失時の位置情報追跡や遠隔からのデータ消去（リモートワイプ）ができるようにしましょう。"
+    "adviceTitle": "急ぎでも承認を省略しない",
+    "adviceText": "金額などに応じた承認者を決め、依頼者と実行者が1人で完結しないようにしましょう。承認者不在時の代行手順も用意してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa2026"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_18",
-    "category": "ペーパーレス・物理書類",
-    "question": "顧客の個人情報や契約書などの重要機密が記載された紙の書類を、机の上に放置したり鍵のかからない書庫で管理していませんか？",
-    "description": "内部不正やオフィス内での盗難リスクのほか、シュレッダー忘れによるゴミからの情報漏洩に繋がります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "物理的な重要書類のずさんな管理",
-    "adviceText": "クリーンデスクポリシーを徹底し、機密書類は必ず施錠管理および溶解処理を行ってください。"
+    "category": "詐欺と情報共有",
+    "question": "不審なメールや操作を、すぐ報告できる窓口がありますか？",
+    "description": "早く報告が届くほど、アカウント停止などの初動につなげやすくなります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "報告先を分かりやすくする",
+    "adviceText": "電話や社内チャットなど、利用しやすい窓口を案内しましょう。クリックした後でも責めずに受け付ける方針を明示してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_19",
-    "category": "メールセキュリティ（SPF/DKIM/DMARC）",
-    "question": "自社のドメイン名が悪用され、取引先に対して「自社になりすました偽メール」が送信されるリスク対策（SPF/DKIM/DMARCの設定）を完了していませんか？",
-    "description": "取引先がなりすましメールに騙され、巨額の金銭詐欺やウイルス感染に巻き込まれる原因になります。",
+    "category": "詐欺と情報共有",
+    "question": "偽の警告や確認画面への対処を、社員に案内していますか？",
+    "description": "ウイルス警告からの電話や、コマンドを実行させる偽の人間確認が使われます。",
     "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "送信ドメイン認証（SPF/DKIM/DMARC）の未設定",
-    "adviceText": "DMARCを含む送信ドメイン認証を正しく設定し、なりすましメールの流通を防止しましょう。"
+    "adviceTitle": "最近の偽画面の手口を共有する",
+    "adviceText": "「画面の番号へ電話しない」「指示されたコマンドを貼り付けない」「社内窓口へ相談する」を、短い例とともに知らせましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "ncsc-clickfix"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_20",
-    "category": "AIエージェント・自動化ツール",
-    "question": "社内の業務自動化ツール（ZapierやRPA、社内AIボットなど）に、顧客データベースやメーラーへのフルアクセス権限を安易に与えていませんか？",
-    "description": "自動化ツールがハッキングされた際、連携しているすべての基幹システムへ芋づる式に侵入されます。",
-    "deductPointsOn": "YES",
+    "category": "詐欺と情報共有",
+    "question": "クラウドの共有先を、必要な相手に限定していますか？",
+    "description": "資料を送るときは、公開リンクより相手を指定した共有が適切な場合があります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "自動化ツール・AIエージェントへの過剰権限付与",
-    "adviceText": "自動化ツールやAI連携ボットがアクセスできるデータ範囲は、業務に必要な最小限に制限してください。"
+    "adviceTitle": "資料の共有範囲を点検する",
+    "adviceText": "顧客情報などの共有設定を確認し、誰でも開けるリンクを見直しましょう。共有が不要になったら終了する担当者も決めてください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_21",
-    "category": "パブリックWi-Fi（社内ゲスト）",
-    "question": "社内のゲスト用Wi-Fiと、社内基幹システムに繋がるメインの社内ネットワークを同じルーターで分割せずに運用していませんか？",
-    "description": "ゲストWi-Fi経由で侵入された場合、社内のメインサーバーやPCへ簡単に横移動（ラテラルムーブメント）されます。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "ゲスト用と社内用ネットワークの未分離（VLAN未設定）",
-    "adviceText": "ネットワークのセグメンテーション（VLAN分割）を行い、ゲスト端末から社内リソースにアクセスできないよう隔離してください。"
+    "category": "詐欺と情報共有",
+    "question": "業務に不要となった個人情報を整理するルールがありますか？",
+    "description": "不要な情報を持ち続けないことも、漏えいしたときの影響を小さくします。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "情報の保管期間を決める",
+    "adviceText": "契約や必要な保存期間を確認し、保管する目的・場所・廃棄の手順を決めましょう。実際の個人情報をこの診断へ入力する必要はありません。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_22",
-    "category": "オープンソース・SaaS選定",
-    "question": "コストや利便性だけで、十分なセキュリティ実績や信頼性の確認が取れていない無料の海外製SaaSやマイナーなツールを社内導入していませんか？",
-    "description": "バックドアが仕込まれていたり、データ保護基準が不十分なサービスによって組織全体が危険に晒されます。",
-    "deductPointsOn": "YES",
+    "category": "AIと外部サービス",
+    "question": "業務で使ってよいAIサービスが決まっていますか？",
+    "description": "無料・有料や提供国だけで判断せず、情報の扱いと契約を確認します。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "信頼性の検証不足な海外製SaaS・ツールの導入",
-    "adviceText": "SaaS導入時は、SOC2認証やISO 27001などのセキュリティ認証を取得しているか必ず確認しましょう。"
+    "adviceTitle": "AIの利用先を決める",
+    "adviceText": "担当者と用途を整理し、保存・学習への利用・共有設定などの条件を確認したうえで、認めるサービスを案内しましょう。AI利用を認めない方針でもかまいません。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-ai"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_23",
-    "category": "セキュリティ教育・研修",
-    "question": "新入社員や中途採用者、既存の従業員に対して、定期的なセキュリティ意識向上トレーニング（研修）を実施していませんか？",
-    "description": "人間の心理的隙（ソーシャルエンジニアリング）を突く攻撃に対し、教育を受けていない従業員が最大の弱点になります。",
+    "category": "AIと外部サービス",
+    "question": "AIへ入力してよい情報の範囲を、社員に案内していますか？",
+    "description": "顧客情報や社外秘資料を入力できるか、利用者が迷わないようにします。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "従業員向けの定期セキュリティ研修の欠如",
-    "adviceText": "定期的なセキュリティ教育を実施し、最新のサイバー攻撃の手口や社内ルールの周知を徹底しましょう。"
+    "points": 3,
+    "adviceTitle": "AIへ渡せる情報を具体例で示す",
+    "adviceText": "入力できる例・相談が必要な例・入力しない例を、社内の情報区分に合わせて示しましょう。AIを使う予定がない場合は対象外です。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-ai"
+    ],
+    "optional": true
   },
   {
     "lane": "admin",
     "id": "q_a_24",
-    "category": "外部メディアの持ち込み",
-    "question": "社外から持ち込まれたUSBメモリや外付けHDDなどを、会社管理のPCにノーチェックで接続することを許可していませんか？",
-    "description": "持ち込みメディア経由でマルウェアが社内LANに一気に拡散する原因になります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "外部メディアの無検査持ち込み許可",
-    "adviceText": "原則として私物や外部のUSBメモリの社内PCへの接続を禁止するか、ウイルススキャンを義務付けてください。"
+    "category": "AIと外部サービス",
+    "question": "AIや業務自動化ツールに与えるアクセス権を確認していますか？",
+    "description": "便利な連携機能には、メール送信やファイル削除の権限が付く場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "自動化ツールの権限を確認する",
+    "adviceText": "担当者と接続先と権限を一覧にし、必要なものに絞りましょう。送信・購入・削除などの重要操作に承認を付けることも検討してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-llm",
+      "ipa-ai"
+    ],
+    "optional": true
   },
   {
     "lane": "admin",
     "id": "q_a_25",
-    "category": "マルチクラウド管理",
-    "question": "AWS, Azure, Google Cloudなどの複数クラウド環境において、設定ミス（公開設定やセキュリティグループの誤り）の監査を怠っていませんか？",
-    "description": "クラウド設定の単純なヒューマンエラー（S3バケットの公開等）が、企業の機密流出事故の圧倒的な原因になっています。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "クラウド環境（AWS/GCP等）の設定ミス放置",
-    "adviceText": "CSPM（クラウドセキュリティ態勢管理）ツールや定期的な設定監査を実施し、意図しない公開を防ぎましょう。"
+    "category": "AIと外部サービス",
+    "question": "利用中のクラウドサービスの契約・管理担当者が分かりますか？",
+    "description": "担当者が不明なサービスは、設定変更や障害時の対応が遅れやすくなります。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "クラウドサービスの担当者を明確にする",
+    "adviceText": "サービスごとに契約、設定、問い合わせを行う人を記録し、退職や異動に合わせて引き継ぎましょう。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_26",
-    "category": "BYOD（私物端末の業務利用）",
-    "question": "従業員の私物スマートフォンやPCを業務利用（BYOD）させる際、セキュリティアプリや管理ルールの強制（MDM等）を行っていませんか？",
-    "description": "マルウェアに感染した私物端末から社内メールやクラウドにアクセスされることで、二次感染が起きます。",
+    "category": "AIと外部サービス",
+    "question": "外部アプリとの連携を、定期的に見直していますか？",
+    "description": "使わなくなった連携にも、メールやファイルを読む許可が残ることがあります。",
     "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "BYOD（私物端末）における管理・セキュリティ対策不足",
-    "adviceText": "BYODを許可する場合は、セキュリティソフトの導入や仮想デスクトップ（VDI）経由のアクセスに限定しましょう。"
+    "adviceTitle": "不要な外部連携を終了する",
+    "adviceText": "担当者へ連携一覧の確認を依頼し、利用者・用途・権限を見直しましょう。利用を終えた連携は権限を取り消してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-sme",
+      "ncsc-cookie"
+    ],
+    "optional": true
   },
   {
     "lane": "admin",
     "id": "q_a_27",
-    "category": "プレスリリース・広報",
-    "question": "システム構成や導入しているサーバーの種類、ネットワークの内部仕様などを、広報資料やブログで詳細に外部公開していませんか？",
-    "description": "ハッカーに「攻撃の設計図」を自らプレゼントしているようなものであり、標的型攻撃のターゲットにされやすくなります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "広報・技術ブログ等でのシステム構成の過剰露出",
-    "adviceText": "外部公開する技術情報には、具体的なバージョンや内部IP、脆弱性を推測させる詳細な構成を含めないよう検閲しましょう。"
+    "category": "AIと外部サービス",
+    "question": "委託先との契約に、事故が起きたときの連絡方法を定めていますか？",
+    "description": "委託先の被害が、自社の情報や業務に影響する場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "委託先の緊急連絡を確認する",
+    "adviceText": "情報へのアクセス範囲、事故の報告先、連絡の期限、契約終了時の扱いを確認しましょう。委託先を使っていない場合は対象外です。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa2026",
+      "ipa-sme"
+    ],
+    "optional": true
   },
   {
     "lane": "admin",
     "id": "q_a_28",
-    "category": "プリンター・複合機",
-    "question": "オフィスのネットワークプリンターや複合機のファームウェアを初期設定のまま放置し、外部インターネットに直接接続していませんか？",
-    "description": "プリンターの脆弱性を踏み台にして社内ネットワークへの侵入を許す事件が実際に発生しています。",
-    "deductPointsOn": "YES",
+    "category": "AIと外部サービス",
+    "question": "サービス提供会社に、自社と相手の管理範囲を確認していますか？",
+    "description": "クラウドを契約しても、利用者設定や自社データの復旧は自社側の役割の場合があります。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "ネットワークプリンター・複合機のセキュリティ放置",
-    "adviceText": "プリンターは社内セグメントに限定し、外部からの直接アクセスを遮断するとともにファームウェアを更新してください。"
+    "adviceTitle": "管理と復旧の分担を確認する",
+    "adviceText": "アカウント管理、共有設定、バックアップ、復旧依頼の範囲を確認し、自社で行う作業の担当を決めましょう。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_29",
-    "category": "特権アカウント管理（PAM）",
-    "question": "システム管理者のアカウント（特権ID）を複数の担当者で「使い回し」したり、パスワードを共有していませんか？",
-    "description": "誰がどのような操作を行ったか追跡できなくなり、内部不正やアカウント乗っ取りの温床になります。",
-    "deductPointsOn": "YES",
+    "category": "復旧と緊急時の準備",
+    "question": "重要データのバックアップを、消されにくい場所にも保管していますか？",
+    "description": "ランサムウェアは、共有されたバックアップも暗号化・削除する場合があります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "管理者アカウント（特権ID）の共有・使い回し",
-    "adviceText": "特権IDは必ず個人ごとに発行し、パスワードの厳重な管理と操作ログの常時記録を徹底してください。"
+    "adviceTitle": "バックアップを分けて守る",
+    "adviceText": "担当者や委託先へ、オフライン保管や変更できない保存期間など、通常のアカウントから一緒に消されない仕組みがあるか確認しましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_30",
-    "category": "物理廃棄・シュレッダー",
-    "question": "顧客情報や社内機密が記載された書類や古いハードディスクを、破壊や溶解処理を行わずに通常のゴミとして捨てていませんか？",
-    "description": "ゴミ捨て場からの「トラッシング（ゴミ漁り）」による情報漏洩リスクに繋がります。",
-    "deductPointsOn": "YES",
+    "category": "復旧と緊急時の準備",
+    "question": "バックアップから業務を戻す練習をしていますか？",
+    "description": "データだけ戻っても、必要なソフトや設定がなく業務を再開できないことがあります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "機密書類・記録メディアの不安全な廃棄",
-    "adviceText": "機密文書は専門の溶解業者を利用し、HDDやSSDは物理破壊または専用ソフトによる磁気消去を行いましょう。"
+    "adviceTitle": "復元を試し、結果を確認する",
+    "adviceText": "担当者と重要業務を選び、復元できた範囲と時間を記録しましょう。元の環境を壊さない方法で試し、足りない情報を整えてください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_31",
-    "category": "社内チャット（Slack/Teams）管理",
-    "question": "社内チャットツール（Slack等）のパブリックチャンネルに、APIキーやパスワード、顧客の個人情報を誤って書き込む社員を放置していませんか？",
-    "description": "のちに参加した外部ゲストや、アカウント乗っ取り時にチャット履歴から機密情報が一網打尽に抜かれます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "社内チャットへの機密情報・APIキーの平文書き込み",
-    "adviceText": "チャットでのパスワードや個人情報のやり取りを禁止し、情報共有には専用の安全なストレージを使用させましょう。"
+    "category": "復旧と緊急時の準備",
+    "question": "システムが止まったときの代わりの業務手順がありますか？",
+    "description": "復旧までの間、連絡や受注などをどう続けるかを決めます。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "停止中の業務手順を用意する",
+    "adviceText": "重要な業務から、電話連絡や手作業などの代替方法と担当者を決めましょう。連絡先は普段のシステムが使えなくても読める形で保管してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_32",
-    "category": "API・外部連携の棚卸し",
-    "question": "過去に業務連携のため外部サービスに発行したAPIトークンやOAuth連携を、長期間見直し（棚卸し）せず放置していませんか？",
-    "description": "すでに使わなくなった連携アプリを踏み台にして、現在のシステムへ不正アクセスされるリスクがあります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "外部サービス連携・APIトークンの放置",
-    "adviceText": "定期的にシステム全体の外部連携を棚卸しし、不要になったトークンやAPIキーは速やかに無効化してください。"
+    "category": "復旧と緊急時の準備",
+    "question": "感染や情報漏えいが疑われたときの初動手順がありますか？",
+    "description": "感染端末の扱いや連絡先を、現場で迷わず選べるようにします。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "初動の連絡・対応手順をまとめる",
+    "adviceText": "ネット接続の切離し、社内への連絡、証拠の保全などを担当者と決めましょう。初期化やログ削除を急がず、専門家へ相談できる手順にしてください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_33",
-    "category": "経営層のセキュリティ関与",
-    "question": "経営層がセキュリティ対策を「現場のIT担当者に丸投げ」しており、セキュリティ投資や方針決定に関与していませんか？",
-    "description": "サイバー攻撃が経営リスク（事業停止・損害賠償）に直結する現代において、経営層のガバナンス欠如は致命傷になります。",
-    "deductPointsOn": "YES",
+    "category": "復旧と緊急時の準備",
+    "question": "緊急連絡先を、普段のメールが使えなくても確認できますか？",
+    "description": "メールや社内クラウドが停止すると、連絡先の一覧も見られなくなる場合があります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "経営層のセキュリティガバナンス・投資の欠如",
-    "adviceText": "経営陣が主導してセキュリティ基本方針を策定し、必要な予算とリソースを継続的に割り当ててください。"
+    "adviceTitle": "連絡先を別の場所にも備える",
+    "adviceText": "責任者、委託先、公式サポートなどの連絡先を、適切に管理した紙やオフラインの資料でも参照できるようにしましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_34",
-    "category": "オープン・無線LAN（来客用）",
-    "question": "来客用オープン無線LANの電波が、オフィスの外や隣のテナントまで強く漏れ出している状態を放置していませんか？",
-    "description": "オフィスの外から電波を傍受され、不正なネットワーク侵入の足がかりにされます。",
-    "deductPointsOn": "YES",
+    "category": "復旧と緊急時の準備",
+    "question": "顧客や関係先への連絡を判断する担当者が決まっていますか？",
+    "description": "事実確認と連絡の判断を、システム担当だけに集中させないための準備です。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "来客用Wi-Fi電波の過剰な屋外漏洩",
-    "adviceText": "Wi-Fiの電波出力を調整するか、来客用ネットワークにはアクセス時間制限や強力な暗号化を適用しましょう。"
+    "adviceTitle": "事故時の説明・連絡の役割を決める",
+    "adviceText": "顧客対応、広報、法務など、必要な相談先と判断者を整理しましょう。適用される報告義務や契約は担当の専門家と確認してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme",
+      "nist-csf"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_35",
-    "category": "ヘルプデスク認証（ソーシャルエンジニアリング）",
-    "question": "社内のITヘルプデスクや総務において、電話やチャットでの「パスワード再発行依頼」の本人確認が甘く、簡単に口頭で新パスワードを伝えていませんか？",
-    "description": "攻撃者が社員になりすましてヘルプデスクに電話をかけ、アカウントを乗っ取る「ソーシャルエンジニアリング攻撃」の常套手段です。",
-    "deductPointsOn": "YES",
+    "category": "日々の点検",
+    "question": "遠隔接続の安全対策を、担当者から報告してもらっていますか？",
+    "description": "社外からつなぐ入口は、ランサムウェアの侵入経路になることがあります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "ヘルプデスクでの本人確認プロセスの不備",
-    "adviceText": "パスワード再発行やアカウントリセット時は、対面や厳格な事前登録済み別経路での本人確認をルール化しましょう。"
+    "adviceTitle": "遠隔接続の管理状況を確認する",
+    "adviceText": "担当者へ、入口の一覧、認証方法、更新状況、不要な接続の停止を確認しましょう。技術的な設定はシステム担当者コースで点検できます。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_36",
-    "category": "ソフトウェア資産管理（SAM）",
-    "question": "組織内で稼働しているPCやサーバーに、どのようなソフトウェアやバージョンがインストールされているか正確に把握・管理（資産管理）できていませんか？",
-    "description": "管理されていない野良ソフト（シャドーITやサポート切れソフト）に脆弱性が発見されても気づくことができません。",
+    "category": "日々の点検",
+    "question": "不審なログインや大量の情報取得に気づく担当者がいますか？",
+    "description": "記録を残すだけでなく、通知を誰が確認するかも決めておきます。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "ソフトウェア資産（SAM）の把握・管理不足",
-    "adviceText": "組織内のハードウェア・ソフトウェアの構成資産（IT資産台帳）を常に最新の状態に維持してください。"
+    "points": 3,
+    "adviceTitle": "通知を受け取り対応する人を決める",
+    "adviceText": "主要サービスの通知先と確認頻度を決めましょう。委託している場合は、どの異常をいつ連絡してもらえるか確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_37",
-    "category": "リモートデスクトップ（RDP）公開",
-    "question": "社内のWindowsサーバーやPCの「リモートデスクトップ（RDP: ポート3389）」を、ファイアウォールやVPNなしで直接インターネット上に公開していませんか？",
-    "description": "ランサムウェアグループが最も好んで狙う脆弱性であり、公開した瞬間に総当たり攻撃（ブルートフォース）の標的になります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "リモートデスクトップ（RDP）の直接公開（最高危険度）",
-    "adviceText": "RDPの直接公開は直ちに中止し、必ずVPN接続を経由させるかセキュアなリモートアクセス環境を構築してください。"
+    "category": "日々の点検",
+    "question": "機器や書類の廃棄方法を決めていますか？",
+    "description": "端末、記録媒体、紙の書類を、情報が残らないように手放すための確認です。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "廃棄の担当と方法を決める",
+    "adviceText": "機器の公式消去手順や、書類の裁断・適切な委託処理などを定めましょう。外部へ委託する場合は実施記録も確認してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_38",
-    "category": "AIツールの業務利用ルール",
-    "question": "社内で商用AI（ChatGPT, Copilot, Claude等）を導入する際、どのデータまでなら入力して良いかの「分類・白黒基準」が従業員に周知されていませんか？",
-    "description": "「公開情報・非機密ならOKだが個人情報や未公開特許はNG」などの境界線が曖昧だと、知らずに機密が入力されます。",
+    "category": "日々の点検",
+    "question": "入社時や担当変更時に、必要なセキュリティの説明をしていますか？",
+    "description": "短い具体例と相談先があると、忙しい現場でも行動に移しやすくなります。",
     "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "AI利用時における機密データの許容範囲ガイドラインの欠如",
-    "adviceText": "入力してよい情報・いけない情報の具体例を挙げたAI利用ガイドラインを作成し、全社員に徹底しましょう。"
+    "adviceTitle": "役割に合わせた説明を続ける",
+    "adviceText": "偽連絡、情報の共有、報告先など、担当業務に関係する内容から案内しましょう。ミスを隠さず相談できることも伝えてください。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_39",
-    "category": "インシデント報告の心理的安全性",
-    "question": "従業員が「怪しいリンクを踏んだ」「ミスしてしまった」と気づいた際、怒られるのを恐れて上司や管理者に報告しづらい雰囲気（罰する文化）になっていませんか？",
-    "description": "報告の遅れがランサムウェアや情報漏洩の被害を何倍にも拡大させる最大の原因になります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "インシデント報告を躊躇させる組織風土",
-    "adviceText": "ミスやインシデントの早期報告を賞賛し、迅速に対処できる「心理的安全性」の高い報告体制を作りましょう。"
+    "category": "日々の点検",
+    "question": "改善項目に、担当者と実施時期を決めていますか？",
+    "description": "チェックで終わらせず、できる対策から進めるための確認です。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "次の対策の担当と日付を決める",
+    "adviceText": "診断結果から影響の大きい項目を選び、担当者と実施予定を記録しましょう。「わからない」は担当者に確認する項目として扱ってください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
   },
   {
     "lane": "admin",
     "id": "q_a_40",
-    "category": "ゼロトラスト移行の検討",
-    "question": "「社内ネットワークの内側なら安全」という従来の境界型防御のままで、ゼロトラスト（すべてのアクセスを検証する）の概念を導入する計画がありませんか？",
-    "description": "一度社内に侵入されると、すべてのシステムが無防備にフリーパスになってしまう危険な状態です。",
+    "category": "日々の点検",
+    "question": "利用環境の変化に合わせて、対策を見直す機会がありますか？",
+    "description": "新しいAIやクラウドの導入、拠点や委託先の変更で、必要な対策も変わります。",
     "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "境界型防御からの脱却（ゼロトラスト移行）の遅れ",
-    "adviceText": "「信用するな、すべてを検証せよ」を基本理念とするゼロトラスト・アーキテクチャへの段階的な移行を検討しましょう。"
+    "adviceTitle": "変化があったときに再点検する",
+    "adviceText": "定期的な見直し日に加え、新サービスや働き方が変わるタイミングでも確認しましょう。前回の改善項目が完了したかも確かめてください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
   },
-
+  {
+    "lane": "it",
+    "id": "q_i_01",
+    "category": "資産と公開範囲",
+    "question": "管理対象の端末・サーバー・クラウド資産を一覧化していますか？",
+    "description": "所有者、用途、バージョン、公開状況が分かる台帳を確認します。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "資産一覧を更新する",
+    "adviceText": "未管理の機器や契約も含めて棚卸しし、所有者と確認日を記録しましょう。自動検出の結果と台帳を照合すると漏れを見つけやすくなります。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_02",
+    "category": "資産と公開範囲",
+    "question": "インターネットから到達できる入口を把握していますか？",
+    "description": "VPN、リモート管理、公開アプリなど、社外からの入口を確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "外部へ公開している入口を確認する",
+    "adviceText": "許可された資産の公開IP・ドメイン・サービスを一覧化し、想定した公開範囲と突き合わせましょう。使わない入口は閉じてください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_03",
+    "category": "資産と公開範囲",
+    "question": "RDP・SSHなどの管理接続を、承認した経路に限定していますか？",
+    "description": "管理ポートを無制限に公開せず、接続元や認証を管理します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "管理接続の公開範囲を絞る",
+    "adviceText": "直接公開を見直し、適切に保護した管理経路、接続元制限、強い認証を組み合わせましょう。VPNを使う場合も更新と認証の管理が必要です。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_04",
+    "category": "資産と公開範囲",
+    "question": "VPNやファイアウォールのセキュリティ更新を優先して適用していますか？",
+    "description": "外部と接する機器は、更新の遅れが侵入の入口になることがあります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "境界機器の更新漏れを確認する",
+    "adviceText": "メーカーの注意喚起と稼働バージョンを確認し、緊急更新の期限と担当を決めましょう。更新できない場合は公式の緩和策や一時停止を判断してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-kev"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_05",
+    "category": "資産と公開範囲",
+    "question": "実際に悪用されている脆弱性を、更新の優先順位に反映していますか？",
+    "description": "深刻度の点数だけでなく、公開範囲と悪用状況も判断材料にします。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "悪用状況を更新の判断へ反映する",
+    "adviceText": "メーカー、JPCERT/CC、CISA KEVなどの情報を対象資産と照合し、対応期限と例外理由を管理しましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-kev"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_06",
+    "category": "資産と公開範囲",
+    "question": "サポート切れの機器・ソフトに、移行計画がありますか？",
+    "description": "すぐに交換できないものも、放置せず対応を決めます。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "サポート切れ資産の移行を管理する",
+    "adviceText": "期限・担当・移行先を記録しましょう。移行までの間は公開停止や接続制限などを行い、代替措置の限界を責任者と共有してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_07",
+    "category": "認証とアクセス制御",
+    "question": "メール・VPN・管理画面で、フィッシングに強い認証を適用していますか？",
+    "description": "FIDO/WebAuthnのパスキーやセキュリティキーなど、利用可能な方式を確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "重要な入口から認証を強化する",
+    "adviceText": "管理者と外部接続から適用を進めましょう。対応できないサービスは、ほかのMFAや接続制限を使い、例外と見直し計画を記録してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_08",
+    "category": "認証とアクセス制御",
+    "question": "古い認証方式を無効にしていますか？",
+    "description": "追加の本人確認を通らない経路が残ると、認証強化の効果が下がります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "認証の抜け道を確認する",
+    "adviceText": "メールなどのレガシー認証、アプリパスワード、不要な認証経路を確認しましょう。依存する業務を洗い出して移行し、不要な方式を停止してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_09",
+    "category": "認証とアクセス制御",
+    "question": "特権アカウントを日常業務のアカウントと分離していますか？",
+    "description": "メール閲覧などで使うアカウントに、常時管理権限を付けない構成を確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "管理者の普段使いを分ける",
+    "adviceText": "担当者別の管理用IDを用意し、必要なときだけ権限を使う運用にしましょう。管理端末と接続先も可能な範囲で限定してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_10",
+    "category": "認証とアクセス制御",
+    "question": "退職・契約終了時に、セッションやトークンも失効させていますか？",
+    "description": "アカウントを停止しても、連携先や発行済みトークンに権限が残る場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "停止時の失効範囲を確認する",
+    "adviceText": "SSO、ローカルアカウント、APIトークン、外部連携、ログイン中のセッションを停止手順に含めましょう。停止後にアクセスできないことを確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-session",
+      "owasp-secrets"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_11",
+    "category": "認証とアクセス制御",
+    "question": "サービスアカウントの権限と有効期間を管理していますか？",
+    "description": "人が操作しないアカウントも、乗っ取りの足がかりになる場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "サービス用の権限を棚卸しする",
+    "adviceText": "用途、所有者、権限、失効方法を記録しましょう。不要な管理権限を外し、使える場合は短期の資格情報を利用してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-secrets"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_12",
+    "category": "認証とアクセス制御",
+    "question": "緊急用アカウントの利用を監視していますか？",
+    "description": "認証基盤の障害時に使うIDは、保管方法と使用時の検知が重要です。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "緊急用IDの運用を確認する",
+    "adviceText": "通常は使わない形で保管し、利用時は通知されるようにしましょう。定期的に、緊急時に利用できることと使用後の見直し手順を確認してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "owasp-secrets"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_13",
+    "category": "端末と横展開の対策",
+    "question": "管理対象の端末で、保護機能が動作していることを確認していますか？",
+    "description": "対策ソフトやEDRは、導入の有無だけでなく停止や更新失敗も確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "端末保護の稼働状況を確認する",
+    "adviceText": "未導入・停止・長期間未接続の端末を把握しましょう。検知通知を受ける担当と、隔離・調査の手順も確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-basic",
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_14",
+    "category": "端末と横展開の対策",
+    "question": "承認されていないスクリプトやプログラムの実行を制限していますか？",
+    "description": "利用者に実行させるClickFixや、不正な実行ファイルへの備えです。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "実行制御を業務に合わせて整える",
+    "adviceText": "承認したアプリやスクリプトを管理し、インターネット由来のマクロなどを制限しましょう。業務影響を検証し、例外申請と記録の仕組みを用意してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ncsc-clickfix"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_15",
+    "category": "端末と横展開の対策",
+    "question": "通常の利用者に、不要な端末管理権限を与えない設定ですか？",
+    "description": "端末が感染した場合の影響を抑えるため、普段使う権限を絞ります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "端末の管理者権限を見直す",
+    "adviceText": "標準ユーザーを基本にし、必要なインストールは承認した方法で行いましょう。ローカル管理者のパスワードを端末間で共用しない仕組みも検討してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_16",
+    "category": "端末と横展開の対策",
+    "question": "重要システムと一般端末の間の通信を制限していますか？",
+    "description": "1台の被害が社内全体へ広がるのを抑えるための分離です。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "必要な通信だけを通す",
+    "adviceText": "サーバー、管理系、一般端末、ゲスト・IoTなどを用途に応じて分け、必要な通信を許可しましょう。境界の設定が意図どおりか確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_17",
+    "category": "端末と横展開の対策",
+    "question": "不要なファイル共有・遠隔管理のサービスを停止していますか？",
+    "description": "端末間やサーバーへの移動に使われる入口を減らします。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "不要な社内サービスを止める",
+    "adviceText": "SMBなどの利用状況を確認し、不要な機能と古いプロトコルを停止しましょう。必要なサービスも、利用者と接続元を限定してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_18",
+    "category": "端末と横展開の対策",
+    "question": "持ち出す端末のストレージを暗号化していますか？",
+    "description": "紛失・盗難で媒体を抜き取られたときの情報漏えいを抑えます。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "持出し端末の暗号化を確認する",
+    "adviceText": "端末暗号化の適用状況を管理し、復旧キーを権限のある担当者だけが使える場所に保管しましょう。持出し端末がない場合は対象外です。",
+    "priority": "medium",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_19",
+    "category": "クラウド・メールの設定",
+    "question": "クラウドの保存領域を、意図した相手だけが利用できる設定にしていますか？",
+    "description": "ストレージ、スナップショット、共有リンクなどの公開設定を確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "クラウドの公開設定を点検する",
+    "adviceText": "公開が必要なデータと非公開データを分け、公開設定の変更を検知しましょう。許可した範囲から実際にどう見えるかも検証してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-sme"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_20",
+    "category": "クラウド・メールの設定",
+    "question": "メールの転送ルールや外部アプリの許可を見直していますか？",
+    "description": "乗っ取り後に転送や外部連携を設定され、情報を取り続けられる場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "メールと外部連携の権限を点検する",
+    "adviceText": "不審な受信ルール、社外への自動転送、OAuthアプリの許可を確認しましょう。変更を記録し、想定外の許可を取り消す手順を用意してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ncsc-cookie"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_21",
+    "category": "クラウド・メールの設定",
+    "question": "自社ドメインに、送信元を確かめるメール認証を設定していますか？",
+    "description": "SPF・DKIM・DMARCは、ドメインのなりすましを減らすための仕組みです。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "メール認証を段階的に整える",
+    "adviceText": "正規の送信元を棚卸しし、認証結果とDMARCレポートを確認しながら隔離・拒否の方針へ進めましょう。似たドメインや乗っ取られた正規アカウントまでは防げません。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-email"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_22",
+    "category": "クラウド・メールの設定",
+    "question": "業務端末からのクラウド接続を、端末の状態に応じて制御していますか？",
+    "description": "未管理端末や保護機能が停止した端末からの接続をどう扱うか確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "接続条件を明確にする",
+    "adviceText": "管理済み・更新済みなど必要な条件を定め、利用できる条件付きアクセスを適用しましょう。利用できない場合は、代替の制限と例外を管理してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_23",
+    "category": "クラウド・メールの設定",
+    "question": "委託先の遠隔接続を、必要な期間と対象に限定していますか？",
+    "description": "ベンダー経由の侵入で、広範囲な権限が悪用される場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "委託先の接続権限を絞る",
+    "adviceText": "個人別アカウント、MFA、対象制限、接続の記録を確認しましょう。作業終了や契約終了時には、接続権限を取り消してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa2026",
+      "cisa-ransom"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_24",
+    "category": "監視と初動",
+    "question": "重要な認証・管理操作のログを集約していますか？",
+    "description": "事故が疑われたときに、複数のサービスの記録を追えるようにします。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "調査に必要な記録を集める",
+    "adviceText": "認証、管理操作、VPN、端末、クラウドなど必要なログを選び、保存期間を決めましょう。閲覧権限を絞り、機密情報を不用意に記録しないでください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_25",
+    "category": "監視と初動",
+    "question": "不審なログインや権限変更を通知する設定がありますか？",
+    "description": "記録があっても、異常に気づけなければ初動が遅れます。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "異常通知の条件と受信先を確認する",
+    "adviceText": "MFAの変更、新しい管理者、通常と違うログイン、大量取得などに通知を設定しましょう。試験的な操作で通知が担当者へ届くことを確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_26",
+    "category": "監視と初動",
+    "question": "ログが攻撃者に消されにくい保存方法ですか？",
+    "description": "侵入先の管理権限で、調査用の記録まで消されない構成を確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "ログの保管先を分離する",
+    "adviceText": "本番とは別の権限で管理する保存先を使い、変更・削除の制限を設定しましょう。時刻の同期と必要な記録の欠落も定期的に確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_27",
+    "category": "監視と初動",
+    "question": "アカウント侵害時に、発行済みのセッションを取り消せますか？",
+    "description": "パスワード変更だけでは、盗まれたログイン状態が残る場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "セッション失効の手順を試す",
+    "adviceText": "安全な端末からアカウント停止、全セッション失効、トークンの取消しを行う手順を整理しましょう。許可したテストアカウントで効果を確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ncsc-cookie",
+      "owasp-session"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_28",
+    "category": "監視と初動",
+    "question": "端末の感染が疑われたときに、隔離して調査する手順がありますか？",
+    "description": "情報を盗むソフトでは、端末の対応とアカウントの対応を並行して考えます。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "感染端末と認証情報を一緒に対処する",
+    "adviceText": "ネットワーク隔離、証拠保全、調査、再構築の判断を決めましょう。安全な端末からセッション・資格情報を失効させ、影響した範囲を確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom",
+      "ncsc-cookie"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_29",
+    "category": "監視と初動",
+    "question": "営業時間外のセキュリティ通知を、誰が確認するか決まっていますか？",
+    "description": "夜間や休日の侵害にも、優先度に応じた判断ができる準備です。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "時間外の連絡手順を決める",
+    "adviceText": "緊急度、当番、代行者、委託先への連絡条件を整理しましょう。担当者1人に依存せず、通知と引継ぎを実際に試してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_30",
+    "category": "バックアップと復旧",
+    "question": "重要なシステム・設定を、必要な頻度でバックアップしていますか？",
+    "description": "ファイルだけでなく、認証基盤や構成情報も復旧に必要です。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "復旧に必要な対象を洗い出す",
+    "adviceText": "業務上許容できるデータ損失に合わせて対象と頻度を定め、失敗を検知しましょう。SaaSも契約だけで十分な履歴が残るか確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_31",
+    "category": "バックアップと復旧",
+    "question": "バックアップに、オフラインまたは変更できないコピーがありますか？",
+    "description": "ランサムウェアによる、バックアップの削除や暗号化にも備えます。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "本番から消せないコピーを用意する",
+    "adviceText": "オフライン保管やイミュータブル保存などを使い、保持期間中は本番の管理権限でも消されないか確認しましょう。クラウドの同期だけで代替しないでください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_32",
+    "category": "バックアップと復旧",
+    "question": "バックアップの管理資格情報を、本番環境と分離していますか？",
+    "description": "同じ管理者の乗っ取りで、元データとコピーが同時に失われるのを抑えます。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "バックアップの権限を分離する",
+    "adviceText": "専用の管理IDと認証を使い、本番からの削除権限を外しましょう。復旧用の鍵や認証情報も、安全で取り出せる場所に保管してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-secrets"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_33",
+    "category": "バックアップと復旧",
+    "question": "隔離した環境で、復元手順を検証していますか？",
+    "description": "感染した構成を戻して再感染しないよう、復旧時の確認も必要です。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "復元と再開の条件を確認する",
+    "adviceText": "重要システムを選び、元データを壊さず復元を試しましょう。復旧時間、データの整合性、侵入原因の修正、再接続前の確認を記録してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_34",
+    "category": "バックアップと復旧",
+    "question": "復旧手順を、通常の認証基盤が使えなくても参照できますか？",
+    "description": "認証基盤や社内クラウドが停止した場面を想定します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "復旧用の資料を別の経路で確保する",
+    "adviceText": "構成図、連絡先、必要なライセンス・鍵、優先順位を管理したオフライン資料などにも保管し、参照する人と更新担当を決めましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_35",
+    "category": "可用性と継続的な改善",
+    "question": "公開サービスに、DDoS攻撃への備えがありますか？",
+    "description": "大量の通信で停止する攻撃には、上流の事業者との連携も必要です。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "DDoS時の支援と制限を確認する",
+    "adviceText": "ホスティング・回線事業者の保護範囲と連絡先を確認しましょう。通信量の通知、CDNなどの緩和策、障害時の案内手段を業務に合わせて準備してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "cisa-ddos"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_36",
+    "category": "可用性と継続的な改善",
+    "question": "ドメイン・DNSの管理アカウントを保護していますか？",
+    "description": "ドメインや名前解決の変更が、偽サイト誘導やサービス停止につながる場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "ドメイン管理の権限を確認する",
+    "adviceText": "登録事業者のMFAと更新通知を確認し、管理権限を必要な人に限定しましょう。期限切れや想定外のDNS変更に気づける通知も設定してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth",
+      "ipa-sme"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_37",
+    "category": "可用性と継続的な改善",
+    "question": "システム変更の前に、セキュリティ設定への影響を確認していますか？",
+    "description": "急な設定変更で、非公開だった入口が開く場合があります。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "変更時に公開・権限の差分を確認する",
+    "adviceText": "変更内容、確認者、戻し方を記録しましょう。公開範囲と権限、ログ、バックアップへの影響を検証してから反映してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_38",
+    "category": "可用性と継続的な改善",
+    "question": "許可された範囲で、脆弱性や設定の点検を続けていますか？",
+    "description": "自動検査だけに頼らず、重要度と業務への影響も判断します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "点検結果を対応まで管理する",
+    "adviceText": "管理者の許可した対象と手順で点検し、結果に担当・期限・再確認を付けましょう。重要な変更や新しい侵入経路にも点検を行ってください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-kev"
+    ],
+    "optional": false
+  },
+  {
+    "lane": "it",
+    "id": "q_i_39",
+    "category": "可用性と継続的な改善",
+    "question": "AI連携に、必要なデータと操作だけを許可していますか？",
+    "description": "AIが読む外部情報から、不要な操作や情報送信を誘導される場合があります。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "AIの接続先と操作権限を絞る",
+    "adviceText": "エージェントや連携サーバーの所有者・権限を管理し、重要操作へ人の承認を付けましょう。未確認の連携を本番の権限で動かさないでください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-llm"
+    ],
+    "optional": true
+  },
+  {
+    "lane": "it",
+    "id": "q_i_40",
+    "category": "可用性と継続的な改善",
+    "question": "インシデント対応の手順を、関係者で練習していますか？",
+    "description": "手順書を作っただけでは分からない、連絡や判断の抜けを確認します。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "小さな想定で対応を試す",
+    "adviceText": "アカウント侵害やランサムウェアを想定し、隔離・連絡・証拠保全・復旧判断を確認しましょう。見つかった課題には担当者と期限を付けて見直してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "nist-csf"
+    ],
+    "optional": false
+  },
   {
     "lane": "dev",
     "id": "q_d_01",
-    "category": "認証情報管理",
-    "question": "APIキーやDB接続文字列をソースコード内に直接記述したり、.envファイルを誤ってGit（GitHub）にコミットした経験や危険性はありませんか？",
-    "description": "GitHub公開リポジトリからAPIキーが漏れると、ボットに自動回収されて高額請求やサーバー乗っ取りの原因になります。",
-    "deductPointsOn": "YES",
+    "category": "開発環境と秘密情報",
+    "question": "APIキーなどの秘密情報を、ソースコードとは別に管理していますか？",
+    "description": "コード、ブラウザへ配るファイル、履歴から秘密が漏れない構成を確認します。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": ".env や SecretsのGit誤露出（最高危険度）",
-    "adviceText": ".gitignore に .env を確実に追加し、Secret Scanning ツールや自動検知をリポジトリに導入してください。"
+    "adviceTitle": "秘密情報を配布物から分離する",
+    "adviceText": "シークレット管理機能を使い、クライアントのビルドや公開リポジトリへ含まれないか確認しましょう。環境変数でも、公開用の変数やログへの展開に注意してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-secrets"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_02",
-    "category": "AI/LLMシステム防衛",
-    "question": "AIアプリケーション開発において、ユーザー入力値がシステム命令を書き換える「プロンプトインジェクション」や「ジェイルブレイク（脱獄）」への対策（ガードレール）を怠っていませんか？",
-    "description": "悪意あるユーザーがAIを誘導し、意図しないコードの実行や機密データの抽出を行うサイバー攻撃が急増しています。",
-    "deductPointsOn": "YES",
+    "category": "開発環境と秘密情報",
+    "question": "秘密情報が漏れたとき、失効・交換する手順がありますか？",
+    "description": "Git履歴や投稿から消しただけでは、コピー済みのキーは使える場合があります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "プロンプトインジェクション・ジェイルブレイクの脆弱性",
-    "adviceText": "入力値とシステムプロンプトの境界を厳密に定義し、AIの出力結果を検証するバリデーション層（Guardrails）を必ず実装してください。"
+    "adviceTitle": "漏れたキーをまず失効させる",
+    "adviceText": "キーの利用範囲を確認し、失効・交換とアクセス履歴の調査を行う手順を用意しましょう。コードからの削除だけで対応を終えないでください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-secrets"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_03",
-    "category": "API・レートリミット",
-    "question": "公開している自社AIボットやAPIに、レートリミット（回数制限）やボット対策（CAPTCHA等）をかけずに無制限でアクセスさせていませんか？",
-    "description": "攻撃者にAPIを悪用されて無限に大量リクエストを送られ、数時間で莫大なAPI利用料金が請求される被害が発生しています。",
-    "deductPointsOn": "YES",
+    "category": "開発環境と秘密情報",
+    "question": "アプリ用のアカウントに、必要最小限の権限を与えていますか？",
+    "description": "DBやクラウドへ接続するアプリ用IDが対象です。管理者のIDと兼用せず、必要なデータや操作に絞ります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "API乱用（API Abuse）およびDDoSリスク",
-    "adviceText": "IPアドレスごとのレートリミット、トークン消費制限、異常検知アラートをCloudflareやサーバー側で必ず設定してください。"
+    "adviceTitle": "アプリの権限を絞る",
+    "adviceText": "環境・用途別のIDを用意し、不要な管理権限を外しましょう。利用できる場合は短期の資格情報を使い、用途と所有者を記録してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-secrets"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_04",
-    "category": "RAG・データインジェクション",
-    "question": "RAG（社内データ検索拡張）システムにおいて、外部から取得した信頼性の低いWebページやユーザーからのアップロードファイルを検証なしにそのままAIのコンテキスト（参照データ）に組み込んでいませんか？",
-    "description": "汚染されたデータや悪意ある指示が含まれていた場合、AIがハッカーの意図する誤った処理を実行してしまう恐れがあります。",
-    "deductPointsOn": "YES",
+    "category": "開発環境と秘密情報",
+    "question": "リポジトリや配布先のアカウントに、強い本人確認を設定していますか？",
+    "description": "開発者アカウントの乗っ取りは、利用者へ配るコードの改ざんにもつながります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "間接的プロンプトインジェクション・データ汚染リスク",
-    "adviceText": "外部から取得した参照データは必ずサニタイジングし、信頼できるソースのみをインデックス化するパイプラインを構築してください。"
+    "adviceTitle": "開発者アカウントを保護する",
+    "adviceText": "リポジトリ、パッケージ公開先、クラウドなどにMFAを設定し、対応するパスキー・セキュリティキーを優先しましょう。回復手段も安全に管理してください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_05",
-    "category": "Web API・アクセス制御",
-    "question": "APIのCORS設定で Access-Control-Allow-Origin を '*'（全許可）にしたまま本番運用していませんか？",
-    "description": "悪意あるサードパーティサイトのJavaScriptからAPIを不正に呼び出される脆弱性になります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "CORSの過剰共有設定（'*' 許可）",
-    "adviceText": "本番環境では許可する信頼されたオリジン（ドメイン）のみを明示的に指定するようにCORSヘッダーを制限してください。"
+    "category": "依存関係と配布経路",
+    "question": "利用するライブラリと実行環境の脆弱性を追跡していますか？",
+    "description": "直接使うパッケージ以外に、間接依存やコンテナの基盤も対象です。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "依存関係の更新を運用にする",
+    "adviceText": "依存一覧やロックファイルを管理し、脆弱性通知を確認しましょう。利用条件と悪用状況に応じて対応を決め、修正後の動作も確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-supply",
+      "cisa-kev"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_06",
-    "category": "データログ・プライバシー衛生",
-    "question": "ユーザーの入力データやAIへの送信ログ（プロンプト等）を、個人情報やAPIキーが含まれたままサーバーのプレーンテキストログに記録していませんか？",
-    "description": "ログファイルが漏洩した際に、二次被害として深刻な個人情報漏洩事故につながります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "ログへの機密情報・個人情報のプレーン出力",
-    "adviceText": "ログ記録前にマスキング処理（難読化）を施すか、個人情報に該当するパラメータはログ出力から除外してください。"
+    "category": "依存関係と配布経路",
+    "question": "新しいパッケージを入れる前に、配布元と必要性を確かめていますか？",
+    "description": "似た名前のパッケージや、AIが提案した実在しない名前への依存も避けます。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "依存追加の前に由来を確かめる",
+    "adviceText": "公式リポジトリ、管理者、配布履歴、実行されるインストール処理を確認しましょう。AIの提案も検証し、不要な依存を増やさない判断をしてください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-supply"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_07",
-    "category": "インジェクション対策（SQL/NoSQL）",
-    "question": "データベースへのクエリ構築において、ユーザーからの入力を文字列結合でそのままSQLやNoSQLに埋め込んでいませんか？",
-    "description": "SQLインジェクション攻撃を受け、データベースの中身が全改ざん・流出する危険があります。",
-    "deductPointsOn": "YES",
+    "category": "依存関係と配布経路",
+    "question": "CI/CDのトークン権限を、ジョブに必要な範囲に限定していますか？",
+    "description": "ビルド工程で使う権限が広いと、パイプライン侵害の影響が大きくなります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "SQLインジェクションの脆弱性",
-    "adviceText": "必ずプレースホルダーを用いたプリペアドステートメントを使用し、動的な文字列結合を排除してください。"
+    "adviceTitle": "ビルド工程の権限を絞る",
+    "adviceText": "読み取りを既定にし、書込みやデプロイ権限は必要なジョブへ限定しましょう。利用できる場合は短期トークンを使い、長期秘密情報の配置を減らしてください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-ci"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_08",
-    "category": "依存関係の脆弱性（Supply Chain）",
-    "question": "npm, pip, composer等のサードパーティライブラリ（依存パッケージ）の脆弱性チェック（npm audit等）を自動化せず放置していませんか？",
-    "description": "依存しているオープンソースライブラリに致命的な脆弱性（サプライチェーン攻撃）が潜んでいるケースが多いです。",
+    "category": "依存関係と配布経路",
+    "question": "外部の変更提案を、秘密情報に触れない環境で検証していますか？",
+    "description": "信頼していないPRやIssueの内容が、ビルド工程の命令として扱われないようにします。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "サードパーティ製パッケージの脆弱性チェック不足",
-    "adviceText": "CI/CDパイプラインに Dependabot や Snyk などの依存関係脆弱性スキャンツールを組み込んでください。"
+    "points": 3,
+    "adviceTitle": "外部PRと本番権限を分離する",
+    "adviceText": "外部コードを実行するジョブに本番キーを渡さないでください。イベント種別、チェックアウトするコード、入力のコマンド展開を確認し、必要な承認を設けましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-ci"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_09",
-    "category": "認証・認可の不備",
-    "question": "APIエンドポイントや管理画面において、URLを知っていれば誰でもアクセスできる状態（認証・認可チェックの抜け：BOLA/IDOR）になっていませんか？",
-    "description": "IDを連番で書き換えるだけで他人のデータや管理機能にアクセスできてしまう重大な脆弱性になります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "不十分な認可制御（BOLA / IDOR脆弱性）",
-    "adviceText": "すべてのエンドポイントでリクエスト送信者がそのリソースに対する正当な権限を持っているかをサーバー側で必ず検証してください。"
+    "category": "依存関係と配布経路",
+    "question": "配布・実行する成果物の由来を確認できますか？",
+    "description": "利用するアクションやイメージのタグは、後から中身が変わる場合があります。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "成果物の由来と変更を管理する",
+    "adviceText": "重要な外部アクションやイメージは固定したリビジョン・ダイジェストを検討し、更新をレビューしましょう。ビルドから配布までの記録や署名の検証も環境に合わせて整えてください。",
+    "priority": "medium",
+    "sourceIds": [
+      "owasp-supply"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_10",
-    "category": "セキュリティヘッダー",
-    "question": "Webアプリケーションのレスポンスヘッダーに、CSP (Content Security Policy) や HSTS などの基本的なセキュリティヘッダーを設定していませんか？",
-    "description": "XSS（クロスサイトスクリプティング）や中間者攻撃を防ぐためのブラウザ側の防御壁が機能しません。",
+    "category": "認証と認可",
+    "question": "保護する操作ごとに、サーバー側で権限を確認していますか？",
+    "description": "アカウントやアクセス制限を持つ機能が対象です。公開情報だけを配るサイトでは対象外です。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "重要セキュリティヘッダー（CSP/HSTS等）の未設定",
-    "adviceText": "適切なContent Security Policy（CSP）やHSTSヘッダーを付与し、XSS等の攻撃リスクを軽減しましょう。"
+    "points": 3,
+    "adviceTitle": "認可をすべての対象操作で検証する",
+    "adviceText": "一覧、詳細、更新、削除、ダウンロードごとに認可を実装しましょう。画面上の非表示やURLの分かりにくさを、権限制御の代わりにしないでください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-authz"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_11",
-    "category": "XSS対策（出力エスケープ）",
-    "question": "ユーザーが入力したテキストをWeb画面上にレンダリングする際、エスケープ処理（サニタイジング）を怠ってそのままHTMLに埋め込んでいませんか？",
-    "description": "悪意あるJavaScriptを実行されるクロスサイトスクリプティング（XSS）により、セッションハイジャックされます。",
-    "deductPointsOn": "YES",
+    "category": "認証と認可",
+    "question": "他の利用者や組織のデータへアクセスできないことを検証していますか？",
+    "description": "IDの差し替え、検索、ファイル共有などで、境界を越えないか確認します。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "クロスサイトスクリプティング（XSS）の脆弱性",
-    "adviceText": "フレームワーク標準のエスケープ機能を正しく利用し、ユーザー入力をそのままDOMに直接挿入しないようにしましょう。"
+    "adviceTitle": "利用者・組織の境界をテストする",
+    "adviceText": "異なる権限や組織のテストアカウントで、IDを変えたアクセスが拒否されるか確認しましょう。検索結果、キャッシュ、エクスポートも対象にしてください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-authz"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_12",
-    "category": "CSRF対策",
-    "question": "状態を変更するリクエスト（POST/PUT/DELETE等）において、CSRFトークンによる検証やSameSite Cookie属性の設定を行っていませんか？",
-    "description": "悪意ある別サイトからユーザーの権限を勝手に借用して不正な操作を実行されるCSRF攻撃に繋がります。",
+    "category": "認証と認可",
+    "question": "ログイン機能に、保守されている認証の仕組みを使っていますか？",
+    "description": "認証は独自実装の抜けが影響しやすい領域です。標準機能でも設定確認は必要です。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "CSRF（クロスサイト・リクエスト・フォージェリ）対策の不備",
-    "adviceText": "すべての状態変更APIにCSRFトークン検証を実装するか、Cookieの SameSite 属性を適切に設定してください。"
+    "points": 3,
+    "adviceTitle": "認証方式と設定を見直す",
+    "adviceText": "信頼できるフレームワークや認証基盤を利用し、管理操作の強い認証、失敗時の制限、重要操作の再認証を確認しましょう。認証不要の公開情報だけなら対象外です。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth",
+      "owasp-asvs"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_13",
-    "category": "JWT（JSON Web Token）の安全性",
-    "question": "JWTの署名検証に脆弱なアルゴリズム（'none'の許可や推測しやすい秘密鍵）を使用していませんか？",
-    "description": "トークンを偽造されて任意のユーザーや管理者権限になりすまされる危険があります。",
-    "deductPointsOn": "YES",
+    "category": "認証と認可",
+    "question": "アカウント復旧で、通常のログインと同等に本人を確認していますか？",
+    "description": "パスワード再設定や認証器の変更が、弱い入口にならないか確認します。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "JWTの不安全な署名検証・実装",
-    "adviceText": "強力な秘密鍵（または公開鍵暗号）を使用し、アルゴリズムの固定（'none'の拒否）を確実に実装してください。"
+    "adviceTitle": "復旧経路の本人確認を点検する",
+    "adviceText": "短い有効期限と単回使用の復旧トークンを使い、変更を本人へ通知しましょう。メールや電話の申告だけでMFAを解除しない手順を設けてください。",
+    "priority": "high",
+    "sourceIds": [
+      "nist-auth"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_14",
-    "category": "エラーハンドリング・情報露出",
-    "question": "本番環境のエラー画面やAPIレスポンスに、スタックトレース（内部のファイルパス、DB構造、ライブラリのバージョン等）をそのまま詳細に露出させていませんか？",
-    "description": "攻撃者にシステムの内部構造を詳らかに教えてしまい、次の攻撃のヒントを与えてしまいます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "本番環境でのスタックトレース・内部エラーの詳細露出",
-    "adviceText": "本番環境では詳細なエラー出力はサーバー内部のログにのみ記録し、ユーザーには汎用的なエラーメッセージを返してください。"
+    "category": "認証と認可",
+    "question": "ログイン状態を保つCookieに、安全な属性を設定していますか？",
+    "description": "Cookieの扱いを、ブラウザとアプリの構成に合わせて確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "セッションCookieを保護する",
+    "adviceText": "Secure、HttpOnly、適切なSameSiteと有効期限を設定しましょう。Cookieの範囲を必要最小限にし、ログイン時にはセッションを更新してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-session"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_15",
-    "category": "ファイルアップロードの脆弱性",
-    "question": "ユーザーからのファイルアップロード機能において、拡張子やMIMEタイプの検証を行わずにサーバーへ直接保存・実行させていませんか？",
-    "description": "Webシェル（悪意あるスクリプトファイル）をアップロードされ、サーバーを完全にリモート乗っ取られます。",
-    "deductPointsOn": "YES",
+    "category": "認証と認可",
+    "question": "ログアウトやアカウント停止で、既存セッションを失効できますか？",
+    "description": "端末からCookieを消すだけでは、攻撃者が持つコピーが残る場合があります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "ファイルアップロード機能の検証不足（リモートコード実行リスク）",
-    "adviceText": "アップロードファイルの拡張子とMIMEタイプを厳格にホワイトリスト方式で検証し、保存先ディレクトリでのスクリプト実行権限を剥奪してください。"
+    "adviceTitle": "セッションをサーバー側でも失効する",
+    "adviceText": "ログアウト、パスワード変更、侵害対応の際に必要なセッション・更新トークンを取り消しましょう。期限、再認証条件、失効後の動作をテストしてください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-session"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_16",
-    "category": "SSRF（サーバー側リクエスト偽造）",
-    "question": "ユーザーから入力されたURLに対して、サーバー側から自動でHTTPリクエストを送信する機能（プレビュー生成やWebスクレイピング等）で、内部IPへのアクセス制限を怠っていませんか？",
-    "description": "AWSメタデータサービスや内部の管理画面にサーバーを踏み台にしてアクセスされるSSRF脆弱性になります。",
-    "deductPointsOn": "YES",
+    "category": "認証と認可",
+    "question": "外部ログインを、標準の安全なフローで実装していますか？",
+    "description": "OAuth/OIDCの設定ミスで、トークンやアカウントが漏れる場合があります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "SSRF（サーバー側リクエスト偽造）の脆弱性",
-    "adviceText": "サーバーからのアウトバウンドリクエスト先として、プライベートIPアドレスやローカルホストへのアクセスを厳格にブロックしましょう。"
+    "adviceTitle": "外部ログインのフローを検証する",
+    "adviceText": "保守されたライブラリを使い、PKCE、必要なstate・nonceの検証、登録済みリダイレクト先の厳密な照合を確認しましょう。トークンの検証も省略しないでください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-oauth"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_17",
-    "category": "AIモデルのデータ汚染（Data Poisoning）",
-    "question": "独自にファインチューニングや学習を行うAIモデルの訓練データセットの収集・加工において、データの出所の正当性や改ざんチェックを怠っていませんか？",
-    "description": "悪意あるデータが混入されることで、特定の条件下で誤動作やバックドアを誘発するモデルになってしまいます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "AI訓練データのデータ汚染（Data Poisoning）対策不足",
-    "adviceText": "AIモデルの学習データセットは信頼できるソースのみから収集し、データセットのインテグリティ（完全性）を検証しましょう。"
+    "category": "入力とブラウザの保護",
+    "question": "DB操作で、入力を命令と分離していますか？",
+    "description": "SQLやNoSQLなどで、利用者の値をそのままクエリの命令として扱わない設計を確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "クエリに入力値を直接連結しない",
+    "adviceText": "パラメーター化クエリや安全なAPIを使いましょう。列名や並び順など値のパラメーターにできない箇所は、許可した候補だけを選べるようにしてください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-sql"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_18",
-    "category": "機密情報のハードコード",
-    "question": "データベースのパスワードや暗号化用のマスターキー（Salt等）を、コード内にベタ書き（ハードコード）していませんか？",
-    "description": "リポジトリのアクセス権を持つ開発者や、コンパイル後のバイナリ解析から機密が簡単に漏洩します。",
-    "deductPointsOn": "YES",
+    "category": "入力とブラウザの保護",
+    "question": "画面へ出す外部入力を、表示先に合わせて安全に扱っていますか？",
+    "description": "AI出力や保存済みの文章も、ブラウザにとっては外部入力です。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "ソースコードへの機密情報のハードコード",
-    "adviceText": "機密情報はすべて環境変数や安全な秘密情報管理サービス（AWS Secrets Manager, Vault等）から動的に読み込ませてください。"
+    "adviceTitle": "表示時のXSS対策を確認する",
+    "adviceText": "テンプレートの自動エスケープを使い、HTMLを許可する場合だけ適切にサニタイズしましょう。HTML、URL、JavaScriptなどの文脈に合った扱いを確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-xss"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_19",
-    "category": "セッション管理の不備",
-    "question": "ログインセッションのCookieに `Secure`, `HttpOnly`, `SameSite` 属性を付与せずに発行していませんか？",
-    "description": "JavaScriptからCookieが容易に読み取られ、XSS等によるセッションハイジャックの被害に直結します。",
-    "deductPointsOn": "YES",
+    "category": "入力とブラウザの保護",
+    "question": "Cookie認証で状態を変更する操作に、CSRF対策がありますか？",
+    "description": "別のサイトから、本人が意図しない更新や送信をされないための対策です。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "セッションCookieのセキュリティ属性（HttpOnly等）の未設定",
-    "adviceText": "Cookie発行時は必ず `Secure`, `HttpOnly`, `SameSite=Lax/Strict` の各属性を有効にしてください。"
+    "adviceTitle": "状態変更のCSRF対策を確認する",
+    "adviceText": "フレームワークのCSRF保護を使い、トークンやOrigin検証を構成に合わせて適用しましょう。SameSite属性だけに依存せず、GETで状態を変更しないでください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-csrf"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_20",
-    "category": "コンテナセキュリティ（Docker）",
-    "question": "Docker等のコンテナイメージを構築する際、root権限のままコンテナを実行したり、ベースイメージの脆弱性放置を行っていませんか？",
-    "description": "コンテナの脱出（Container Escape）脆弱性を突かれた際、ホストOSまで丸ごと乗っ取られます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "コンテナのroot権限実行・脆弱なベースイメージの利用",
-    "adviceText": "コンテナは専用の非特権ユーザー（non-root）で実行し、ベースイメージは定期的に脆弱性スキャンを行って更新しましょう。"
+    "category": "入力とブラウザの保護",
+    "question": "サーバーが取得する外部URLの行き先を制限していますか？",
+    "description": "プレビュー生成などから、内部サービスやクラウド管理情報へ接続されるSSRFに備えます。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "URL取得の接続先を制限する",
+    "adviceText": "許可する方式と接続先を絞り、内部・ループバック・リンクローカルへの到達を防ぎましょう。DNS解決後やリダイレクト先も検証し、送信側の通信制限を併用してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-ssrf"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_21",
-    "category": "CI/CDパイプラインの安全性",
-    "question": "GitHub ActionsなどのCI/CDパイプラインにおいて、外部からのプルリクエストに対して無防備にシークレット（秘密情報）を露出させるワークフローになっていませんか？",
-    "description": "悪意あるプルリクエスト経由でCI環境からAPIキーやデプロイ権限が抜き取られる事件が多発しています。",
-    "deductPointsOn": "YES",
+    "category": "入力とブラウザの保護",
+    "question": "アップロードしたファイルを、実行されない場所で扱っていますか？",
+    "description": "拡張子やMIMEタイプの申告だけで、安全と判断しないようにします。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "CI/CDパイプライン（GitHub Actions等）の権限設計不備",
-    "adviceText": "外部からのPRに対するシークレットの参照を制限し、セキュリティイベントに応じた安全なワークフローを構築してください。"
+    "adviceTitle": "アップロードの保存・処理を分離する",
+    "adviceText": "許可形式と容量を制限し、ファイル内容を検証しましょう。ランダムな保存名と実行できない保存先を使い、変換処理の権限・時間・容量も制限してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-upload"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_22",
-    "category": "暗号化アルゴリズムの選定",
-    "question": "パスワードのハッシュ化や機密データの暗号化に、MD5やSHA-1、古いRC4などの「現在では安全ではない暗号アルゴリズム」を使用していませんか？",
-    "description": "レインボーテーブルや計算能力の向上により、簡単にハッシュが逆算されてパスワードが平文化されます。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "推奨されない旧式・脆弱な暗号アルゴリズムの利用",
-    "adviceText": "パスワードハッシュには必ず bcrypt, Argon2, PBKDF2 を使用し、データ暗号化にはAES-256等の強固な方式を採用してください。"
+    "category": "入力とブラウザの保護",
+    "question": "CORSの設定を、公開する情報の範囲に合わせていますか？",
+    "description": "CORSはブラウザの読取制御であり、APIの認証や認可の代わりにはなりません。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "CORSと認可をそれぞれ確認する",
+    "adviceText": "機密情報を返すAPIは許可Originを明示し、資格情報の扱いを検証しましょう。誰でも読む公開データのワイルドカードを一律に危険とせず、用途で判断してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "owasp-rest",
+      "mdn-cors"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_23",
-    "category": "Websocketのセキュリティ",
-    "question": "WebSocketを用いたリアルタイム通信において、接続時の認証（Originチェックやトークン検証）を省略・簡略化していませんか？",
-    "description": "悪意あるサイトからユーザーのWebSocketセッションを不正にハイジャックされる危険があります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "WebSocket接続時の認証・オリジン検証の欠如",
-    "adviceText": "WebSocket接続確立時にも通常のHTTPリクエストと同様の厳格な認証とオリジン検証を必ず実施してください。"
+    "category": "入力とブラウザの保護",
+    "question": "機密情報を扱う通信を、TLSで保護していますか？",
+    "description": "機密情報をネットワーク経由で送受信する機能が対象です。通信しないローカルアプリなどは対象外です。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "通信経路の暗号化を確認する",
+    "adviceText": "HTTPSなどのTLSを適切に構成し、証明書の検証を無効にしないでください。HTTPへの戻りや、機密情報を含むURLの記録も見直しましょう。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-rest"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_24",
-    "category": "GraphQLの脆弱性対策",
-    "question": "GraphQL APIの開発において、クエリの深さ制限（Depth Limiting）や複雑度制限（Complexity Analysis）を設けず運用していませんか？",
-    "description": "ネストの深い複雑なクエリを大量に送られることで、サーバーのCPU・メモリが枯渇するDoS攻撃を受けます。",
-    "deductPointsOn": "YES",
+    "category": "入力とブラウザの保護",
+    "question": "Web画面に、構成に合ったセキュリティヘッダーを設定していますか？",
+    "description": "CSPなどは攻撃の影響を抑える補助策です。入力処理の修正も必要です。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "GraphQLのクエリ深度制限・複雑度制限の未設定",
-    "adviceText": "GraphQLサーバーにクエリの深さ制限やコスト制限、イントロスペクション（構造の自動列挙）の制御を実装しましょう。"
+    "adviceTitle": "CSPなどの応答設定を確認する",
+    "adviceText": "Content-Security-Policyやフレーム制限を設計し、必要な機能が動くことを確認しましょう。HSTSは証明書更新や適用するドメインの運用を確認してから有効にしてください。",
+    "priority": "medium",
+    "sourceIds": [
+      "owasp-headers"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_25",
-    "category": "AIモデルの機密流出・抽出攻撃",
-    "question": "自社でホスティングしているLLMやファインチューニング済みモデルに対して、モデルのパラメータや機密データを逆算して抽出する攻撃（Model Extraction）への対策を行っていませんか？",
-    "description": "多大なコストをかけて開発したAIモデルの知財や、埋め込まれた機密が外部に盗み出されます。",
+    "category": "データと実行環境",
+    "question": "パスワードを保存する場合、適切な専用ハッシュを使っていますか？",
+    "description": "一般的な高速ハッシュや、復号できる暗号での保存とは目的が異なります。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "AIモデル抽出・逆算攻撃に対する防御策の不足",
-    "adviceText": "出力のランダム化、レートリミット、類似クエリの監視など、モデルへの過剰なプローブ攻撃を検知する仕組みを入れましょう。"
+    "points": 3,
+    "adviceTitle": "パスワード保存の方式を確認する",
+    "adviceText": "Argon2idなど推奨される方式と、環境に合う負荷設定を使いましょう。保守された実装でソルトを扱い、古い方式からの移行手順も用意してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-password"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_26",
-    "category": "デバッグ機能の残存",
-    "question": "本番環境のビルドやデプロイ時に、開発用のデバッグツール（Django Debug Toolbar, Expressのdebugログ、Swagger UIなど）を有効にしたまま公開していませんか？",
-    "description": "誰でもシステムの内部データやAPI仕様を自由に閲覧・操作できる状態で公開していることになります。",
-    "deductPointsOn": "YES",
+    "category": "データと実行環境",
+    "question": "ログに、秘密情報や不要な個人情報を残さない設計ですか？",
+    "description": "APIキー、セッショントークン、AIへの入力などがデバッグ出力に含まれる場合があります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "本番環境へのデバッグツール・APIドキュメント（Swagger等）の残存",
-    "adviceText": "本番環境では開発・デバッグ用ツールを確実に無効化し、APIドキュメント等も認証保護を行ってください。"
+    "adviceTitle": "ログの内容と閲覧権限を見直す",
+    "adviceText": "記録項目を明示し、機密値を除去・マスクしましょう。閲覧権限と保存期間を決め、例外や障害時のログにも同じ扱いが適用されるか確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-logging"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_27",
-    "category": "ファイルパーミッション管理",
-    "question": "サーバー上のアプリケーションファイルや設定ファイルのパーミッション（アクセス権）が誰でも書き込み可能（777等）な状態になっていませんか？",
-    "description": "万が一Webアプリの別の脆弱性を突かれた際、プログラムファイルを直接書き換えられて完全に乗っ取られます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "サーバー上ファイルの過剰なパーミッション（777等）",
-    "adviceText": "ファイルとディレクトリのパーミッションは最小限の権限（読み取り専用や所有者のみ書き込みなど）に厳格に設定してください。"
+    "category": "データと実行環境",
+    "question": "処理量や呼出し回数に、サーバー側の制限がありますか？",
+    "description": "APIや高負荷処理など、サーバーで動く機能が対象です。静的ファイルを配るだけの構成は対象外です。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "高負荷の入口に上限を設ける",
+    "adviceText": "利用者・組織・用途に応じて回数、並列数、時間、入力サイズなどの上限を決めましょう。IP制限やCAPTCHAだけに頼らず、上限超過時の動作を確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-rest"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_28",
-    "category": "OAuth2.0 / OIDCの実装不備",
-    "question": "ソーシャルログイン（OAuth2.0）の実装において、`state` パラメータの検証やリダイレクトURIのホワイトリスト制限を怠っていませんか？",
-    "description": "オープンリダイレクトやCSRFを組み合わされたOAuth乗っ取り攻撃を受け、ユーザーのアカウントが奪われます。",
-    "deductPointsOn": "YES",
+    "category": "データと実行環境",
+    "question": "実行環境を、不要な管理権限を持たない設定にしていますか？",
+    "description": "自分で設定するサーバー・コンテナなどの実行環境が対象です。実行権限を管理しない静的配信だけなら対象外です。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "OAuth2.0 / OIDC実装におけるstate検証・リダイレクト制限の不備",
-    "adviceText": "OAuthフローでは必ず推測不可能な `state` パラメータを検証し、リダイレクト先URIを厳格なホワイトリストで制限しましょう。"
+    "adviceTitle": "実行時の権限を小さくする",
+    "adviceText": "可能な範囲で非root実行とし、書込み先やマウントを限定しましょう。特権コンテナやホスト管理ソケットへの接続は、必要性を個別に確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-docker"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_29",
-    "category": "インフラ・クラウドの最小権限",
-    "question": "クラウド（AWS/GCP等）のIAMロールや権限設定で、必要以上の権限（AdministratorAccessなど）をアプリケーションやサービスアカウントに付与していませんか？",
-    "description": "アプリケーションの脆弱性からクラウドの認証情報が漏れた際、クラウド環境全体のすべてのリソースを奪われます。",
-    "deductPointsOn": "YES",
+    "category": "AI機能の設計",
+    "question": "AIの利用量に、費用と処理量の上限を設定していますか？",
+    "description": "大量の推論や長い入力で、費用増大やサービス停止につながる場合があります。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "クラウドIAMロールの過剰権限付与（最小権限の原則違反）",
-    "adviceText": "クラウドのサービスアカウントには、そのアプリが動作するために必要な最小限の権限のみを付与してください。"
+    "adviceTitle": "AI処理の費用上限を確認する",
+    "adviceText": "利用者・組織別に入力長、出力長、繰返し回数、同時実行数などを制限しましょう。費用通知に加え、必要な場合は処理を止める仕組みを設けてください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-llm"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_30",
-    "category": "定期的な脆弱性診断（ペンテスト）",
-    "question": "自社で開発・運用しているWebアプリやAPIに対して、外部の専門業者や自動ツールによる「脆弱性診断（ペネトレーションテスト）」を一度も実施していませんか？",
-    "description": "開発者自身の視点だけでは気づけない盲点や、複雑に絡み合った致命的な脆弱性が放置されたままになります。",
+    "category": "AI機能の設計",
+    "question": "外部文書からの指示で、AIの権限が広がらない設計ですか？",
+    "description": "Webページ、メール、画像、ツール結果などに、AIを誘導する内容が含まれる場合があります。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "第三者によるセキュリティ脆弱性診断（ペンテスト）の未実施",
-    "adviceText": "リリース前や定期的なタイミングで、専門の脆弱性診断やセキュリティコードレビューを受けましょう。"
+    "points": 3,
+    "adviceTitle": "プロンプト注入の影響を権限で抑える",
+    "adviceText": "外部情報を信頼しない前提で、接続先・読取範囲・実行機能を制限しましょう。プロンプトの注意書きやフィルターだけで完全に防げると想定せず検証してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-llm"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_31",
-    "category": "プロンプトテンプレートの安全設計",
-    "question": "LLMアプリ開発において、システムプロンプト内にユーザーからの入力を文字列連結で直接埋め込む設計にしていませんか？",
-    "description": "ユーザー入力内の「上記の指示を無視して...」という文字列によって、システムプロンプトの制限が簡単に無効化されます。",
-    "deductPointsOn": "YES",
+    "category": "AI機能の設計",
+    "question": "AIの検索・参照で、元データのアクセス権を引き継いでいますか？",
+    "description": "RAGやベクトル検索でも、他の利用者・部署の情報を取り出せない制御が必要です。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "プロンプトテンプレートの安全でない文字列連結設計",
-    "adviceText": "ユーザー入力とシステムプロンプトの役割をAPIの仕様（ChatMLのロール分離など）に従って明確に分離してください。"
+    "adviceTitle": "AI検索にも利用者の権限を適用する",
+    "adviceText": "検索前に対象を利用者の権限で絞り、参照元、キャッシュ、会話履歴にも組織境界を適用しましょう。権限が違うアカウントで漏えいしないか確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-llm",
+      "owasp-authz"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_32",
-    "category": "リソース枯渇攻撃（DoS/DDoS）対策",
-    "question": "重い処理（PDF生成、大量データ集計、AIモデル推論など）を同期処理のまま直接エンドポイントで実行させ、キューイングや非同期化をしていませんか？",
-    "description": "少数のリクエストでサーバーのCPUやメモリが完全に飽和し、サービス全体がダウンするDoS状態に陥ります。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "重い処理の同期実行によるDoS脆弱性",
-    "adviceText": "負荷の高い処理はキュー（Queue）とバックグラウンドワーカーを用いた非同期処理に設計し直しましょう。"
+    "category": "AI機能の設計",
+    "question": "AIによる重要な操作に、実行前の人の確認を設けていますか？",
+    "description": "送信、削除、購入、権限変更などは、誤動作の影響が大きい操作です。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "重要なAI操作を承認できる形にする",
+    "adviceText": "対象、送信先、内容を確認できる承認画面を用意しましょう。承認後に別の操作へ差し替わらないよう、実行内容を固定して権限を再確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-llm"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_33",
-    "category": "テストコード・テストデータの衛生",
-    "question": "リポジトリ内に実際のプロダクションで使用されている本物の顧客データや本番用APIキーをテスト用Fixtureとして混入させていませんか？",
-    "description": "テストコードやステージング環境を通じて、本番の機密データや鍵が外部に露出する原因になります。",
-    "deductPointsOn": "YES",
+    "category": "AI機能の設計",
+    "question": "AIの出力を、実行や表示の前に検証していますか？",
+    "description": "生成したコード、JSON、URL、HTMLなどを、そのまま信頼しない確認です。",
+    "deductPointsOn": "NO",
     "points": 3,
-    "adviceTitle": "テストコード内への本番機密データ・APIキーの混入",
-    "adviceText": "テストには必ずダミーデータ（Mock/Faker）を使用し、本番データや実キーがテストコードに含まれないよう徹底してください。"
+    "adviceTitle": "AI出力の利用先ごとに検証する",
+    "adviceText": "形式と値をスキーマで検証し、操作できる対象を許可リストで絞りましょう。生成結果をそのままコマンドやSQLとして実行せず、表示時のエスケープも行ってください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-llm"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_34",
-    "category": "リダイレクト機能の検証不備",
-    "question": "ログイン後やログアウト後のリダイレクト先URLを、ユーザーからのクエリパラメータ（`?next=...`）から検証なしにそのままジャンプさせていませんか？",
-    "description": "オープンリダイレクト脆弱性を悪用され、ユーザーを巧妙なフィッシングサイトに誘導する踏み台にされます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "オープンリダイレクトの脆弱性",
-    "adviceText": "リダイレクト先URLは自社ドメイン内の相対パスや厳格なホワイトリストに合致するものだけに制限してください。"
+    "category": "AI機能の設計",
+    "question": "AIへ渡すデータの保存・学習・共有条件を確認していますか？",
+    "description": "サービス名だけでなく、契約、エンドポイント、設定ごとの扱いを確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "AIのデータ経路を整理する",
+    "adviceText": "入力、検索データ、ログ、応答がどこへ渡るかを整理しましょう。秘密情報や不要な個人情報を除き、保持期間とアクセス権を用途に合わせて設定してください。",
+    "priority": "high",
+    "sourceIds": [
+      "ipa-ai",
+      "owasp-llm"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_35",
-    "category": "サードパーティ製SDKの安全性",
-    "question": "アプリやWebに組み込んでいるサードパーティ製SDK（アナリティクス、広告、決済等）の信頼性や最新パッチの適用状況を追跡していませんか？",
-    "description": "組み込んだ外部SDKの脆弱性を突かれて、アプリ全体が不正乗っ取りを受けるサプライチェーン被害に繋がります。",
+    "category": "AI機能の設計",
+    "question": "AIへ接続するツールやモデルの配布元と更新を管理していますか？",
+    "description": "MCPサーバー、プラグイン、モデルなどの変更が、権限や動作に影響する場合があります。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "組み込み型サードパーティSDKの管理・監査不足",
-    "adviceText": "利用するサードパーティSDKは必要最小限にし、提供元のセキュリティアップデート情報を常に追跡しましょう。"
+    "points": 3,
+    "adviceTitle": "AIの連携部品を管理する",
+    "adviceText": "配布元とバージョン、要求権限、実行環境を確認しましょう。必要な部品だけを隔離した環境で使い、更新時に権限や動作の変化をレビューしてください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-llm",
+      "owasp-supply"
+    ],
+    "optional": true
   },
   {
     "lane": "dev",
     "id": "q_d_36",
-    "category": "AI出力のバリデーション",
-    "question": "AI（LLM）が生成したテキストやコード、JSON構造を検証（バリデーション）せずに、そのままプログラムの実行やデータベース操作に利用していませんか？",
-    "description": "AIのハルシネーションや不正な出力によって、意図しないデータベースの書き換えやシステムエラーを引き起こします。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "AI生成出力（LLM Output）のバリデーション不足",
-    "adviceText": "AIの出力は信頼せず、PydanticやZod等のスキーマ検証ライブラリを用いて厳密に型や内容をバリデーションしてから処理してください。"
+    "category": "検証と運用",
+    "question": "開発・テスト環境を、本番のデータと権限から分離していますか？",
+    "description": "テスト用の公開環境や開発者端末から、本番へ被害が広がらないようにします。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "本番データと権限を分ける",
+    "adviceText": "テスト用の合成データと別の資格情報を使いましょう。本番データが必要な場合は承認、最小化、閲覧権限、期限、削除を管理してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-asvs"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_37",
-    "category": "セッションタイムアウトの欠如",
-    "question": "ユーザーが操作を停止した後も、ログインセッションが無期限（または数週間以上）にわたって維持される設計になっていませんか？",
-    "description": "端末から離れた隙や端末の紛失時に、他人にそのままアカウントを操作され続けます。",
-    "deductPointsOn": "YES",
-    "points": 2,
-    "adviceTitle": "適切なセッションタイムアウトの未設定",
-    "adviceText": "一定時間の操作がない場合は自動的にセッションが失効する（タイムアウトする）仕組みを実装しましょう。"
+    "category": "検証と運用",
+    "question": "公開前に、変更に応じたセキュリティ検証を行っていますか？",
+    "description": "AIが書いたコードも含め、認可や秘密情報の漏れなどを確認します。",
+    "deductPointsOn": "NO",
+    "points": 3,
+    "adviceTitle": "重要な変更をレビュー・検証する",
+    "adviceText": "設計とコードを見直し、権限境界、入力処理、依存関係などの重要項目を検証しましょう。自動検査を組み合わせ、見つかった課題を修正後に再確認してください。",
+    "priority": "high",
+    "sourceIds": [
+      "owasp-asvs"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_38",
-    "category": "コードレビュー体制",
-    "question": "自分一人だけでコードを書き、セキュリティ観点（セキュアコーディング）のコードレビューを経ずにそのまま本番デプロイしていませんか？",
-    "description": "開発者自身の見落としやバイアスにより、致命的なセキュリティバグがそのまま本番にリリースされます。",
-    "deductPointsOn": "YES",
+    "category": "検証と運用",
+    "question": "本番のエラー表示から、不要な内部情報を除いていますか？",
+    "description": "詳細な例外、接続先、設定値、デバッグ画面などが公開されないか確認します。",
+    "deductPointsOn": "NO",
     "points": 2,
-    "adviceTitle": "セキュリティ観点でのコードレビュープロセスの欠如",
-    "adviceText": "重要な変更や認証・認可に関するコードは、必ず他の開発者によるセキュアコーディングのレビューを経る体制にしましょう。"
+    "adviceTitle": "本番のエラーとデバッグ設定を確認する",
+    "adviceText": "利用者には一般的なエラーと問合せ用IDを返し、詳細はアクセスを制限したログへ記録しましょう。管理・デバッグ機能は必要な相手だけに公開してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "owasp-rest",
+      "owasp-logging"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_39",
-    "category": "シークレットのローテーション",
-    "question": "本番環境で長期間（1年以上）にわたって、同じAPIキーやDBパスワードを一度も更新（ローテーション）せずに使い続けていませんか？",
-    "description": "万が一どこかで鍵が漏洩していた場合、長期間にわたって不正利用され続けることになります。",
+    "category": "検証と運用",
+    "question": "サービスに必要なデータを、バックアップから戻せることを確認していますか？",
+    "description": "DBのコピーだけでなく、復旧に必要な構成や鍵も確認します。",
     "deductPointsOn": "NO",
-    "points": 2,
-    "adviceTitle": "APIキー・パスワードの定期ローテーション不足",
-    "adviceText": "重要なAPIキーや認証情報は、定期的なローテーション（定期更新）を行う運用プロセスを自動化・確立しましょう。"
+    "points": 3,
+    "adviceTitle": "復元できることまで確認する",
+    "adviceText": "本番を壊さない環境で復元を試し、データの整合性と復旧時間を記録しましょう。通常の管理権限では一緒に消されないコピーと、復旧用の鍵も確保してください。",
+    "priority": "high",
+    "sourceIds": [
+      "cisa-ransom",
+      "owasp-secrets"
+    ],
+    "optional": false
   },
   {
     "lane": "dev",
     "id": "q_d_40",
-    "category": "セキュア・バイ・デザインの意識",
-    "question": "「動けばいい（後からセキュリティを付け足す）」という開発アプローチになっており、設計段階からセキュリティを考慮する「セキュア・バイ・デザイン」の意識が欠けていませんか？",
-    "description": "後付けのセキュリティ対策は手戻りが大きく、根本的な脆弱性を解消できない原因になります。",
-    "deductPointsOn": "YES",
-    "points": 3,
-    "adviceTitle": "設計段階からのセキュリティ考慮（セキュア・バイ・デザイン）の欠如",
-    "adviceText": "要件定義やアーキテクチャ設計の初期段階から脅威モデリングを行い、セキュアな設計を大前提とした開発を進めましょう。"
+    "category": "検証と運用",
+    "question": "脆弱性の報告や侵害の兆候を受けて、修正する手順がありますか？",
+    "description": "利用者の連絡を受け付け、秘密情報の失効や修正の配布まで進められる準備です。",
+    "deductPointsOn": "NO",
+    "points": 2,
+    "adviceTitle": "報告から修正までの流れを用意する",
+    "adviceText": "連絡窓口、調査担当、緊急時の停止・失効・ロールバック、利用者への案内を整理しましょう。影響範囲を確認し、修正と再発防止を記録してください。",
+    "priority": "medium",
+    "sourceIds": [
+      "owasp-asvs",
+      "nist-csf"
+    ],
+    "optional": false
   }
 ]
