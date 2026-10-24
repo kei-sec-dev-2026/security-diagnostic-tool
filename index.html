@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>セキュリティ & データプライバシー衛生診断（個人向け）</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- ヘッダー -->
+    <header class="app-header">
+      <div class="privacy-badge">
+        <span class="badge-icon">🛡️</span>
+        <span>完全ローカル処理 / データ送信 0バイト</span>
+      </div>
+      <h1>セキュリティ & データ衛生診断</h1>
+      <p class="subtitle">個人情報の扱い・決済・アカウント削除後のリスクを徹底チェック</p>
+    </header>
+
+    <!-- メインコンテンツ領域 -->
+    <main class="main-card">
+      
+      <!-- プログレスバー -->
+      <div class="progress-section">
+        <div class="progress-header">
+          <span id="progress-text">準備中...</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <!-- 質問カード表示エリア -->
+      <div id="question-card" class="card-content">
+        <div class="category-tag" id="question-category">カテゴリ</div>
+        <h2 id="question-text" class="question-title">質問を読み込んでいます...</h2>
+        <p id="question-desc" class="question-desc"></p>
+
+        <!-- 回答ボタン群 -->
+        <div class="button-group">
+          <button class="btn btn-yes" onclick="answerQuestion('YES')">
+            <span class="btn-icon">⭕</span> はい (YES)
+          </button>
+          <button class="btn btn-no" onclick="answerQuestion('NO')">
+            <span class="btn-icon">❌</span> いいえ (NO)
+          </button>
+          <button class="btn btn-unk" onclick="answerQuestion('UNKNOWN')">
+            <span class="btn-icon">❓</span> わからない
+          </button>
+        </div>
+      </div>
+
+      <!-- 診断結果表示エリア（最初は非表示） -->
+      <div id="result-card" class="result-content hidden">
+        <div class="result-header">
+          <span id="result-rank" class="rank-badge">ランク -</span>
+          <h2>診断完了レポート</h2>
+        </div>
+        
+        <div class="score-display">
+          <div class="score-number" id="result-score">0</div>
+          <div class="score-label">安心度スコア / 100点</div>
+        </div>
+
+        <p id="result-summary" class="result-summary-text"></p>
+
+        <!-- 発見されたリスク・アドバイス一覧 -->
+        <div class="advice-section">
+          <h3>⚠️ 発見された注意点と改善アクション</h3>
+          <div id="advice-list" class="advice-list"></div>
+        </div>
+
+        <!-- アクションボタン -->
+        <div class="result-actions">
+          <button class="btn btn-primary" onclick="copyReport()">📋 診断レポートをコピー</button>
+          <button class="btn btn-secondary" onclick="restartDiagnostic()">🔄 再度診断する</button>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="app-footer">
+      <p>※本診断はブラウザ内（JavaScript）でのみ計算されます。外部サーバーへの通信やデータ保存は一切行われません。</p>
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
