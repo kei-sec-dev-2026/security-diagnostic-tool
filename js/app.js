@@ -1,7 +1,7 @@
 (function () {
   "use strict";
-  const { validateQuestions, summarize, buildReport, laneLabels, priorityLabels, answerLabels } = window.Diagnostic;
-  const state = { questions: [], sources: [], updatedAt: "", lane: null, queue: [], answers: {}, step: 0, view: "start", ready: false, loading: false, revision: 0 };
+  const { validateQuestions, validateSources, selectQuestions, summarize, buildReport, laneLabels, assessmentLabels, priorityLabels, answerLabels } = window.Diagnostic;
+  const state = { questions: [], sources: [], updatedAt: "", lane: null, scope: "quick", queue: [], answers: {}, step: 0, view: "start", ready: false, loading: false, revision: 0 };
   let advanceTimer = null;
   const $ = (id) => document.getElementById(id);
   const setText = (id, value) => { $(id).textContent = value; };
@@ -34,22 +34,13 @@
     try {
       const [questions, sourceData] = await Promise.all([readJSON("data/questions.json"), readJSON("data/sources.json")]);
       validateQuestions(questions);
-      if (!sourceData || !Array.isArray(sourceData.sources) || !/^\d{4}-\d{2}-\d{2}$/.test(sourceData.updatedAt)) {
-        throw new Error("出典データの形式を確認してください。");
-      }
-      const sourceIds = new Set();
-      for (const source of sourceData.sources) {
-        if (!source.id || sourceIds.has(source.id) || !source.title || !source.publisher ||
-            !/^https:\/\//.test(source.url)) throw new Error("出典データに不足があります。");
-        sourceIds.add(source.id);
-      }
-      if (questions.some((q) => q.sourceIds.some((id) => !sourceIds.has(id)))) throw new Error("質問に対応する出典がありません。");
+      validateSources(questions, sourceData);
       state.questions = questions;
       state.sources = sourceData.sources;
       state.updatedAt = sourceData.updatedAt;
       state.ready = true;
       document.querySelectorAll("[data-lane-count]").forEach((element) => {
-        element.textContent = questions.filter((q) => q.lane === element.dataset.laneCount).length + "問";
+        element.textContent = selectQuestions(questions, element.dataset.laneCount).length + "問から";
       });
       renderSources();
       document.querySelectorAll('[data-action="start"]').forEach((button) => { button.disabled = false; });
@@ -68,6 +59,7 @@
     toggle("lane-select-card", view === "start");
     toggle("question-card", view === "question");
     toggle("result-card", view === "result");
+    toggle("challenge-card", view === "challenge");
     if (focusId) $(focusId).focus();
   }
 
@@ -75,7 +67,8 @@
     if (!state.ready || !Object.hasOwn(laneLabels, lane)) return;
     state.revision++;
     state.lane = lane;
-    state.queue = state.questions.filter((q) => q.lane === lane);
+    state.scope = "quick";
+    state.queue = selectQuestions(state.questions, lane, state.scope);
     state.answers = {};
     state.step = 0;
     renderQuestion();
@@ -92,7 +85,7 @@
       button.disabled = advanceTimer !== null || (button.dataset.answer === "NA" && !q.optional);
     });
     setText("answer-feedback", selected ? "「" + answerLabels[selected] + "」を選択しています。" : "");
-    const completed = Object.keys(state.answers).length;
+    const completed = summarize(state.queue, state.answers).answered;
     const percent = Math.round(completed / state.queue.length * 100);
     setText("progress-percent", percent + "%");
     $("progress-bar-fill").style.width = percent + "%";
@@ -109,17 +102,20 @@
   function renderQuestion() {
     cancelAdvance();
     const q = state.queue[state.step];
-    setText("question-course", laneLabels[state.lane]);
+    setText("question-course", laneLabels[state.lane] + " · " + assessmentLabels[state.scope]);
     setText("progress-text", "質問 " + (state.step + 1) + " / " + state.queue.length);
     setText("question-category", q.category);
     setText("question-text", q.question);
     setText("question-desc", q.description);
+    $("question-source-details").open = false;
+    renderReferences(q, $("question-sources"));
     setText("question-hint", q.optional ? "使っていない機能・環境なら「対象外」を選べます。迷ったら「わからない」で大丈夫です。" : "設定をまだ確認していないときは「わからない」で大丈夫です。");
     const na = $("answer-na");
     na.hidden = !q.optional;
     na.classList.toggle("hidden", !q.optional);
     na.disabled = !q.optional;
     $("previous-button").disabled = state.step === 0;
+    toggle("return-results-button", summarize(state.queue, state.answers).answered === state.queue.length);
     setText("answer-instructions", state.step === state.queue.length - 1
       ? "回答を選ぶと、チェック結果を表示します。"
       : "回答を選ぶと、自動で次の質問へ進みます。");
@@ -168,13 +164,32 @@
     const list = $("sources-list");
     list.replaceChildren();
     list.appendChild(make("p", "source-updated", "質問・出典の見直し日：" + state.updatedAt.replaceAll("-", "/")));
-    const items = make("ul", "source-items");
-    state.sources.forEach((source) => {
-      const item = make("li", "source-item");
-      item.append(sourceLink(source), make("span", "source-publisher", " — " + source.publisher));
-      items.appendChild(item);
+    const groups = { government: "政府・公的機関の指針", standard: "公開基準・技術資料", vendor: "企業が公開した対策資料・攻撃調査" };
+    Object.entries(groups).forEach(([kind, title]) => {
+      const sources = state.sources.filter((source) => source.kind === kind);
+      if (!sources.length) return;
+      list.appendChild(make("h3", "source-group-title", title));
+      const items = make("ul", "source-items");
+      sources.forEach((source) => {
+        const item = make("li", "source-item");
+        item.append(sourceLink(source), make("span", "source-publisher", " — " + source.publisher));
+        items.appendChild(item);
+      });
+      list.appendChild(items);
     });
-    list.appendChild(items);
+  }
+
+  function renderReferences(question, container) {
+    container.replaceChildren();
+    const list = make("ul", "reference-list");
+    question.references.forEach((ref) => {
+      const source = state.sources.find((entry) => entry.id === ref.sourceId);
+      if (!source) return;
+      const item = make("li", "reference-item");
+      item.append(sourceLink(source), make("span", "reference-section", "参照箇所：" + ref.section));
+      list.appendChild(item);
+    });
+    container.appendChild(list);
   }
 
   function renderAction(action, index, compact) {
@@ -191,11 +206,7 @@
     body.appendChild(make("p", compact ? "priority-text" : "advice-text", q.adviceText));
     if (!compact) {
       const sources = make("div", "advice-sources");
-      sources.appendChild(make("span", "source-label", "参考："));
-      q.sourceIds.forEach((id) => {
-        const source = state.sources.find((entry) => entry.id === id);
-        if (source) sources.appendChild(sourceLink(source));
-      });
+      renderReferences(q, sources);
       body.appendChild(sources);
     }
     if (compact) item.appendChild(body);
@@ -203,9 +214,15 @@
   }
 
   function showResults() {
+    cancelAdvance();
     const summary = summarize(state.queue, state.answers);
     if (summary.answered !== state.queue.length) return;
     setText("result-title", laneLabels[state.lane] + "のチェック結果");
+    setText("result-scope", assessmentLabels[state.scope] + "の結果");
+    setText("result-coverage", state.scope === "quick"
+      ? "40問のうち重要12問だけを確認した結果です。残り28問はこの結果に含まれません。"
+      : "重要12問と追加28問を合わせた、40問の結果です。");
+    toggle("continue-check", state.scope === "quick");
     setText("result-score", summary.confirmedPercent === null ? "—" : String(summary.confirmedPercent));
     const summaryText = summary.applicable === 0
       ? "今回は対象となる項目がありませんでした。使っている環境に合うコースでも確認できます。"
@@ -236,7 +253,18 @@
     showView("result", "result-title");
   }
 
-  function report() { return buildReport(state.lane, summarize(state.queue, state.answers), state.updatedAt); }
+  function continueFull() {
+    if (state.view !== "result" || state.scope !== "quick" || summarize(state.queue, state.answers).answered !== 12) return;
+    state.revision++;
+    state.scope = "full";
+    state.queue = selectQuestions(state.questions, state.lane, state.scope);
+    state.step = 12;
+    $("report-fallback").value = "";
+    renderQuestion();
+    showView("question", "question-text");
+  }
+
+  function report() { return buildReport(state.lane, summarize(state.queue, state.answers), state.updatedAt, state.scope, state.sources); }
 
   async function copyReport() {
     if (state.view !== "result") return;
@@ -264,7 +292,7 @@
     const url = URL.createObjectURL(new Blob(["\uFEFF", report()], { type: "text/plain;charset=utf-8" }));
     const link = make("a");
     link.href = url;
-    link.download = "security-check-" + state.lane + ".txt";
+    link.download = "security-check-" + state.lane + "-" + state.scope + ".txt";
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -278,6 +306,7 @@
     const dialog = $("reset-dialog");
     if (dialog.open) dialog.close();
     state.lane = null;
+    state.scope = "quick";
     state.queue = [];
     state.answers = {};
     state.step = 0;
@@ -293,8 +322,16 @@
     if (!button || button.disabled || event.detail > 1) return;
     switch (button.dataset.action) {
       case "start": start(button.dataset.lane); break;
+      case "start-challenge":
+        state.revision++;
+        cancelAdvance();
+        showView("challenge");
+        window.KnowledgeChallenge.start();
+        break;
       case "answer": answer(button.dataset.answer); break;
       case "previous": previous(); break;
+      case "return-results": if (state.view === "question") showResults(); break;
+      case "continue-full": continueFull(); break;
       case "edit-answers":
         if (state.view !== "result") break;
         state.revision++;
@@ -305,6 +342,7 @@
         showView("question", "question-text");
         break;
       case "request-reset":
+        if (state.view === "challenge") { window.KnowledgeChallenge.requestExit(); break; }
         cancelAdvance();
         if (state.view === "question") updateAnswers();
         if (!Object.keys(state.answers).length) reset();
@@ -317,5 +355,6 @@
       case "download-report": downloadReport(); break;
     }
   });
+  document.addEventListener("challenge-exit", reset);
   document.addEventListener("DOMContentLoaded", loadQuestions);
 })();

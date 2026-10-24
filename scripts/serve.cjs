@@ -13,6 +13,10 @@ const routes = new Map([
   ["/js/diagnostic.js", ["js/diagnostic.js", "text/javascript; charset=utf-8"]],
   ["/data/questions.json", ["data/questions.json", "application/json; charset=utf-8"]],
   ["/data/sources.json", ["data/sources.json", "application/json; charset=utf-8"]],
+  ["/css/challenge.css", ["css/challenge.css", "text/css; charset=utf-8"]],
+  ["/js/challenge-engine.js", ["js/challenge-engine.js", "text/javascript; charset=utf-8"]],
+  ["/js/challenge.js", ["js/challenge.js", "text/javascript; charset=utf-8"]],
+  ["/data/challenge.json", ["data/challenge.json", "application/json; charset=utf-8"]],
 ]);
 if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error("PORT must be between 1 and 65535");
 const server = http.createServer(async (request, response) => {

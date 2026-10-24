@@ -7,7 +7,10 @@
   <meta name="theme-color" content="#f7f9f5">
   <title>セキュリティのセルフチェック | できることから、ひとつずつ。</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/challenge.css">
   <script src="js/diagnostic.js" defer></script>
+  <script src="js/challenge-engine.js" defer></script>
+  <script src="js/challenge.js" defer></script>
   <script src="js/app.js" defer></script>
 </head>
 <body>
@@ -40,38 +43,44 @@
 
         <div class="course-section">
           <div class="section-heading"><div><p class="eyebrow">まずは、コースを選びましょう</p><h2 class="lane-title">どんなことを確認しますか？</h2></div><span class="course-note">1コースずつ、気軽に。</span></div>
-          <p class="lane-desc">自分に近いものを選んでください。途中で戻って回答を見直せます。</p>
+          <p class="lane-desc">自分に近いものを選んで、まずは重要12問から。回答は途中で見直せます。</p>
           <p id="loading-status" class="load-status" role="status">質問を準備しています…</p>
           <div id="load-error" class="notice notice-error hidden" role="alert" hidden><p>質問や参考資料を読み込めませんでした。もう一度お試しください。</p><p class="load-error-help">ファイルを直接開いている場合は、HTTPで配信して利用してください。</p><button id="retry-load" class="text-button" type="button" data-action="retry-load">もう一度読み込む <span aria-hidden="true">↻</span></button></div>
           <div class="lane-buttons">
             <button class="lane-btn lane-personal" type="button" data-action="start" data-lane="personal" disabled>
-              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="9" y="3.5" width="14" height="25" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M13 7h6m-4 17.5h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span class="lane-count" data-lane-count="personal">40問</span></span>
+              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="9" y="3.5" width="14" height="25" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M13 7h6m-4 17.5h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span class="lane-count" data-lane-count="personal">12問から</span></span>
               <span class="lane-name">PC・スマホを使う方</span><span class="lane-sub">自分と家族の、身近なデジタル習慣</span><span class="lane-topics">アカウント ／ 詐欺への備え ／ データの保護</span><span class="lane-bottom">個人向けコース <span aria-hidden="true">↗</span></span>
             </button>
             <button class="lane-btn lane-admin" type="button" data-action="start" data-lane="admin" disabled>
-              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="6" y="8" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M12 8V4h8v4M11 14h3m4 0h3m-10 5h3m4 0h3m-7 9v-4h4v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lane-count" data-lane-count="admin">40問</span></span>
+              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="6" y="8" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M12 8V4h8v4M11 14h3m4 0h3m-10 5h3m4 0h3m-7 9v-4h4v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lane-count" data-lane-count="admin">12問から</span></span>
               <span class="lane-name">会社・チームの管理者</span><span class="lane-sub">専門知識がなくても、組織の備えを確認</span><span class="lane-topics">社内ルール ／ 情報共有 ／ もしもの連絡先</span><span class="lane-bottom">組織の管理者向けコース <span aria-hidden="true">↗</span></span>
             </button>
             <button class="lane-btn lane-it" type="button" data-action="start" data-lane="it" disabled>
-              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="5" y="4" width="22" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="5" y="18" width="22" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M10 9h.1M10 23h.1M16 9h6m-6 14h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span class="lane-count" data-lane-count="it">40問</span></span>
+              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="5" y="4" width="22" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><rect x="5" y="18" width="22" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M10 9h.1M10 23h.1M16 9h6m-6 14h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span class="lane-count" data-lane-count="it">12問から</span></span>
               <span class="lane-name">システム・IT担当者</span><span class="lane-sub">会社の端末やサーバーを守る、日々の運用</span><span class="lane-topics">更新と権限 ／ 監視 ／ バックアップと復旧</span><span class="lane-bottom">システム運用向けコース <span aria-hidden="true">↗</span></span>
             </button>
             <button class="lane-btn lane-dev" type="button" data-action="start" data-lane="dev" disabled>
-              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="3.5" y="5.5" width="25" height="21" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="m11 12-4 4 4 4m10-8 4 4-4 4m-3-9-4 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lane-count" data-lane-count="dev">40問</span></span>
+              <span class="lane-top"><span class="lane-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="3.5" y="5.5" width="25" height="21" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="m11 12-4 4 4 4m10-8 4 4-4 4m-3-9-4 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lane-count" data-lane-count="dev">12問から</span></span>
               <span class="lane-name">アプリ・AIの開発者</span><span class="lane-sub">つくるとき、公開するときの見落としを確認</span><span class="lane-topics">認証とAPI ／ 依存関係 ／ AIの安全な利用</span><span class="lane-bottom">開発者向けコース <span aria-hidden="true">↗</span></span>
             </button>
           </div>
-          <p class="course-footnote">各コースの目安は10〜15分。知らない言葉は説明を読みながら、自分のペースで進めてください。</p>
+          <p class="course-footnote">12問でいったん結果を確認できます。詳しく確認したい方は、回答を引き継いで残り28問へ進めます。</p>
+          <p class="reference-note">CISA・NIST・CIS・OWASPなどの公開資料を参考にした、独自の質問です。</p>
         </div>
 
         <aside class="how-it-works" aria-label="セルフチェックの流れ"><span class="step-label">こんな流れで進みます</span><ol><li><span>01</span> 質問に答える</li><li><span>02</span> いまの備えを知る</li><li><span>03</span> できる対策を選ぶ</li></ol></aside>
         <p class="scope-note">これは、回答から対策の状況を振り返るためのセルフチェックです。端末やシステムに接続して脆弱性を検査するものではありません。</p>
+        <section class="knowledge-promo" aria-labelledby="knowledge-promo-title">
+          <div><p class="eyebrow">学んだことを、力試し。</p><h2 id="knowledge-promo-title">セキュリティ基礎チャレンジ</h2><p>ネットワークからWebアプリ開発まで、必須の考え方を4択で確認。20問・100点満点、90点以上で合格です。</p><span class="knowledge-promo-note">自己チェックとは別の知識テストです。このアプリの学習用判定で、公式資格の認定ではありません。</span></div>
+          <button type="button" class="btn btn-primary" data-action="start-challenge">知識チャレンジへ <span aria-hidden="true">→</span></button>
+        </section>
       </section>
 
       <section id="question-card" class="main-card question-panel hidden" aria-labelledby="question-text" hidden>
         <div class="question-topline"><span id="question-course" class="course-label">個人向けコース</span><button class="text-button muted" type="button" data-action="request-reset">コース選択へ戻る</button></div>
         <div class="progress-section"><div class="progress-header"><span id="progress-text">質問 1 / 40</span><span id="progress-percent">0%</span></div><div id="question-progress" class="progress-bar-bg" role="progressbar" aria-label="回答の進み具合" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-bar-fill" class="progress-bar-fill"></div></div></div>
         <div class="question-body"><span id="question-category" class="category-tag">身近なセキュリティ</span><h2 id="question-text" class="question-title" tabindex="-1">質問を読み込んでいます…</h2><p id="question-desc" class="question-desc"></p></div>
+        <details id="question-source-details" class="details-panel question-references"><summary>この質問の参考資料</summary><div id="question-sources"></div></details>
         <fieldset class="answer-fieldset"><legend id="answer-instructions">回答を選ぶと、自動で次の質問へ進みます。</legend><div class="button-group">
           <button class="answer-option" type="button" data-action="answer" data-answer="YES" aria-pressed="false"><span class="answer-radio" aria-hidden="true"></span><span><span class="answer-label">はい</span><span class="answer-sub">対策できています</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
           <button class="answer-option" type="button" data-action="answer" data-answer="NO" aria-pressed="false"><span class="answer-radio" aria-hidden="true"></span><span><span class="answer-label">いいえ</span><span class="answer-sub">これから見直したいです</span></span><span class="answer-check" aria-hidden="true">✓</span></button>
@@ -80,24 +89,26 @@
         </div></fieldset>
         <p id="answer-feedback" class="answer-feedback" role="status" aria-live="polite"></p>
         <p id="question-hint" class="question-hint">迷ったときは「わからない」で大丈夫。結果で確認のヒントをお伝えします。</p>
-        <div class="question-actions"><button id="previous-button" class="btn btn-secondary" type="button" data-action="previous" disabled><span aria-hidden="true">←</span> 前の質問</button><span class="answer-edit-note">前の質問に戻って、回答を変更できます</span></div>
+        <div class="question-actions"><button id="previous-button" class="btn btn-secondary" type="button" data-action="previous" disabled><span aria-hidden="true">←</span> 前の質問</button><button id="return-results-button" class="btn btn-primary hidden" type="button" data-action="return-results" hidden>結果に戻る</button><span class="answer-edit-note">前の質問に戻って、回答を変更できます</span></div>
         <p class="local-note"><span class="status-dot" aria-hidden="true"></span>回答はこのブラウザ内だけで処理されます</p>
       </section>
 
       <section id="result-card" class="main-card result-content hidden" aria-labelledby="result-title" hidden>
-        <div class="result-header"><span class="completion-mark" aria-hidden="true">✓</span><p class="eyebrow">おつかれさまでした</p><h2 id="result-title" tabindex="-1">いまの備えと、次の一歩</h2><p class="result-intro">できていることを大切に。見直せることから、ひとつずつ。</p></div>
+        <div class="result-header"><span class="completion-mark" aria-hidden="true">✓</span><p class="eyebrow">おつかれさまでした</p><p id="result-scope" class="assessment-badge">重要12問の結果</p><h2 id="result-title" tabindex="-1">いまの備えと、次の一歩</h2><p class="result-intro">できていることを大切に。見直せることから、ひとつずつ。</p></div>
         <div class="result-overview"><div class="score-display"><span class="score-caption">対策済みの割合</span><div class="score-number"><span id="result-score">0</span><span class="score-unit">%</span></div><span class="score-label">対象外を除く回答ベース</span></div><div id="result-stats" class="result-stats" aria-label="回答の内訳"></div></div>
-        <p id="result-summary" class="result-summary-text"></p><p class="result-limit">この割合は安全性の保証や、攻撃を受ける確率を示すものではありません。未確認の項目も、次に確かめるための手がかりです。</p>
+        <p id="result-summary" class="result-summary-text"></p><p id="result-coverage" class="result-limit"></p><p class="result-limit">この割合は安全性の保証や、攻撃を受ける確率を示すものではありません。未確認の項目も、次に確かめるための手がかりです。</p>
+        <aside id="continue-check" class="continue-check"><div><h3>もう少し、詳しく確かめますか？</h3><p>今の12問の回答を引き継いで、残り28問も確認できます。</p></div><button class="btn btn-primary" type="button" data-action="continue-full">残り28問も確認する <span aria-hidden="true">→</span></button></aside>
         <section class="advice-section" aria-labelledby="priority-title"><div class="section-heading"><div><p class="eyebrow">最初の一歩に</p><h3 id="priority-title">まず取り組みたいこと</h3></div><span class="small-note">優先度の高い順に、最大3件</span></div><div id="priority-list" class="priority-list advice-list"></div></section>
         <details class="details-panel all-advice"><summary>見直し・確認したい項目をすべて見る</summary><div id="advice-list" class="advice-list"></div></details>
         <div class="result-actions"><button class="btn btn-primary" type="button" data-action="copy-report"><span aria-hidden="true">▣</span> 結果をコピー</button><button class="btn btn-secondary" type="button" data-action="download-report"><span aria-hidden="true">↓</span> テキストで保存</button></div><p id="report-status" class="report-status" role="status" aria-live="polite"></p><label class="sr-only" for="report-fallback">コピー用の診断結果</label><textarea id="report-fallback" class="report-fallback hidden" rows="8" readonly hidden></textarea>
         <div class="result-restart"><button class="text-button" type="button" data-action="edit-answers">回答を見直す</button><button class="text-button" type="button" data-action="request-reset">別のコースも確認する <span aria-hidden="true">→</span></button></div>
       </section>
+      <section id="challenge-card" class="hidden" hidden></section>
     </main>
 
     <footer class="app-footer">
       <details class="details-panel privacy-details"><summary>プライバシーと、このチェックについて</summary><div class="details-body"><p>ユーザー登録はありません。回答はブラウザ内で処理し、回答内容をサーバーへ送信しません。このアプリは回答をブラウザの保存領域に自動保存しません。ページを閉じたり再読み込みしたりすると回答は消えます。</p><p>ページと質問データを読み込むための通信は発生します。配信サービス側のアクセスログには、一般的なWebサイトと同様にIPアドレスなどが記録される場合があります。外部の出典リンクを開くと、リンク先へ移動します。</p><p>実際の脆弱性を測定する検査ではありません。パスワード、氏名、会社名、サーバーのアドレスなどの入力は求めません。コピー・保存した結果は、ご自身で管理してください。</p></div></details>
-      <details class="details-panel source-details"><summary>質問の参考資料・更新について</summary><div class="details-body"><p>公的機関やセキュリティ標準の公開情報を参考に、立場ごとに確認しやすい質問へ整理しています。攻撃手法やサービスの設定は変わるため、定期的な見直しにご活用ください。</p><div id="sources-list" class="sources-list"></div></div></details>
+      <details class="details-panel source-details"><summary>質問の参考資料・更新について</summary><div class="details-body"><p>CISA・NISTなどの公的指針、CIS・OWASPの公開基準、企業の対策資料・攻撃調査を区別して参考にしています。各質問の参考資料では、対応する節や対策番号も確認できます。</p><p>文面と質問の選定は本アプリ独自のものです。各機関の公式診断や認定ではなく、企業の調査結果もすべての利用者に当てはまる危険率を示すものではありません。</p><div id="sources-list" class="sources-list"></div></div></details>
       <div class="footer-bottom"><span>セキュリティのセルフチェック</span><span>回答はブラウザ内で処理 · 登録不要</span></div>
     </footer>
   </div>

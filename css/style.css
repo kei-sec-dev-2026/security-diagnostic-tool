@@ -191,6 +191,34 @@ main { outline: none; }
 .source-items { padding-left: 18px; margin: 8px 0 0; }
 .source-updated { font-size: 13px; }
 .source-items li + li { margin-top: 7px; }
+.reference-note { margin-top: 12px; color: var(--muted); font-size: 13px; }
+.source-group-title { font-size: 15px; margin-top: 22px; }
+.reference-list { margin: 0; padding-left: 20px; font-size: 13px; line-height: 1.9; }
+.reference-item + .reference-item { margin-top: 10px; }
+.reference-section { display: block; color: var(--muted); font-size: 13px; }
+.question-references { margin: -8px 0 25px; }
+.question-references summary { min-height: 44px; padding: 10px 0; }
+.question-references .reference-list { padding-bottom: 16px; }
+.assessment-badge { display: inline-block; padding: 3px 12px; margin-top: 12px; border: 1px solid var(--line); background: var(--mint); color: var(--primary); font-size: 14px; border-radius: 99px; }
+.continue-check { margin: 25px 0; padding: 23px; border: 1px solid #cbded0; background: #f1f7ef; border-radius: 13px; }
+.continue-check h3 { font-size: 18px; }
+.continue-check p { color: var(--muted); font-size: 14px; margin: 6px 0 15px; }
+.knowledge-promo { margin-top: 32px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 26px; padding: 29px 31px; border-radius: var(--radius); border: 1px solid #d9dfd1; background: #f6f2e8; }
+.knowledge-promo h2 { font-size: 24px; margin: 5px 0 9px; }
+.knowledge-promo p:not(.eyebrow) { font-size: 16px; color: var(--muted); }
+.knowledge-promo-note { display: block; font-size: 13px; color: var(--muted); margin-top: 12px; }
+.knowledge-promo .btn { white-space: nowrap; }
+@media (max-width: 780px) {
+  .knowledge-promo { grid-template-columns: 1fr; gap: 19px; padding: 24px; }
+  .knowledge-promo .btn { justify-self: start; }
+}
+@media (max-width: 560px) {
+  .knowledge-promo { padding: 23px 19px; }
+  .knowledge-promo h2 { font-size: 21px; }
+  .continue-check { padding: 18px; }
+  .continue-check .btn { width: 100%; }
+  .question-actions .answer-edit-note { text-align: center; }
+}
 .sources-list a { overflow-wrap: anywhere; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 15px; align-items: center; color: #637664; font-size: 13px; padding: 22px 0 30px; border-top: 1px solid var(--line); }
 .reset-dialog { max-width: 450px; width: calc(100% - 40px); background: #fff; color: var(--ink); border: 1px solid var(--line); padding: 30px; border-radius: 17px; box-shadow: 0 20px 90px #1b332a30; }

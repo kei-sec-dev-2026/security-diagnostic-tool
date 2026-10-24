@@ -21,6 +21,15 @@
 
 同じテーマでも、管理者には「実施する担当と報告があるか」、システム担当には「設定と動作を検証したか」を問います。管理者コースに製品設定や技術用語を過度に持ち込みません。複数の役割を兼ねる方は、必要なコースを別々に利用できます。
 
+## 重要12問から、希望者は40問へ
+
+最初は各コースの重要な12問で結果を表示します。更新、認証、詐欺への対応、権限、バックアップ・復元、初動などを、その立場で確認できる内容から選んでいます。
+12問という件数や選定は、本アプリの利用負担を抑えるための編集判断です。CISAやCISが定める公式な12問チェックリストではありません。
+
+結果の「残り28問も確認する」から、最初の回答を引き継いで40問の確認へ進めます。問題の並びは重要12問を先にし、その後に残り28問を元の順序で置きます。
+12問の結果には残り28問を含めず、画面とレポートに確認範囲を明示します。40問まで完了すると、12問を含む40問全体を集計します。
+自己チェックの対策済み割合と、別機能の知識チャレンジの合否・得点は混同しません。
+
 ## 見直しで重視したこと
 
 - AIによる音声・映像・自然な文章のなりすましには、登録済みの連絡先など別経路で確かめる行動を問う。
@@ -57,6 +66,8 @@
 | priority | high: 優先して確認、medium: 次に取り組む、low: 少しずつ整える |
 | optional | 機能・環境により「対象外」を選べる場合のみtrue |
 | sourceIds | 出典一覧のIDとの対応 |
+| references | sourceIdとsectionで、実際に対応する節・対策番号を示す |
+| quickCheck | 各コース12問のみtrue。標準チェックへの採用を示す |
 | deductPointsOn / points | 旧形式との互換用。NO、high=3 / medium=2 / low=1で保持 |
 
 優先度と重みは本アプリの編集上の目安です。公的な評価点、被害確率、CVSSではありません。現在の結果表示は旧形式の減点式の「安心度」やA/B/Cの評価を使いません。
@@ -80,6 +91,20 @@
 - [NZ NCSC ClickFix注意喚起](https://www.ncsc.govt.nz/alerts/compromised-websites-serving-clickfix-pages/)
 - [OWASP ASVS 5.0](https://asvs.owasp.org/)
 - [OWASP LLM Top 10 2026 公式公開ソース](https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/blob/main/2026/README.md)
+- [CIS Controls v8.1 Controls Navigator](https://www.cisecurity.org/controls/CIS-controls-navigator)
+- [CISA Cross-Sector CPG 2.0公開案内](https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ff7850)
+- [Microsoft ランサムウェア復旧の実施チェックリスト](https://learn.microsoft.com/en-us/security/ransomware/protect-against-ransomware-phase1)
+- [Microsoft パスキーを口実にしたソーシャルエンジニアリングの調査と対策](https://www.microsoft.com/en-us/security/blog/2026/09/09/passkey-themed-social-engineering-leads-identity-cloud-compromise/)
+- [Microsoft Entra IDのアクセス失効とアプリ側セッション](https://learn.microsoft.com/en-us/entra/identity/users/users-revoke-access)
+- [Google Mandiant M-Trends 2026](https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2026)
+
+2026-10-24の見直しでは全160問に172件の参照箇所を対応づけ、すべての質問に米国または国際的な一次資料を少なくとも1件含めています。日本の公的資料も、国内の状況を理解するために併用します。
+出典のkindはgovernment（政府・公的機関）、standard（公開基準・技術資料）、vendor（企業の対策資料・攻撃調査）です。現在44資料を20・20・4件に分類しています。
+
+公開基準は対策の構成と根拠、企業の実施チェックリストは確認すべき運用、攻撃調査は新しい侵入経路を見落とさないために使います。特定の企業の製品購入を対策済みの条件にはしません。
+M-Trendsの調査対象はMandiantが調査した事案であり、その割合を一般企業や個人全体の危険率へ置き換えません。パスキーを口実にした詐欺も、パスキーの暗号が破られたという意味にはしません。
+CIS v8.1の隔離バックアップ（11.4）はIG1ですが、復元試験（11.5）はIG2/3です。復元確認を本アプリで重視する判断と、IG1への所属は分けて記載します。
+セッション失効はID基盤の停止だけで即座にすべてのアプリCookieが無効になると説明せず、アプリ側のセッション取り消しと検証を含めます。
 
 LLM資料は、公式プロジェクトが公開する2026版ソースを参照しています。ほかの公式ページに2025版の表示が残る場合があるため、版と公開状態を明示した資料を優先します。CISAの一部ページは取得時にアクセス制限がありましたが、検索で確認できた公式ページおよび公式配布資料を参照しています。
 
@@ -90,6 +115,7 @@ LLM資料は、公式プロジェクトが公開する2026版ソースを参照�
 - 特定のCVEや製品バージョンを質問文に固定しすぎず、メーカーの情報と悪用状況で判断する習慣を問う。緊急情報は公式資料へ案内する。
 - 改訂時は「コースの難度」「YESの方向」「対象外の条件」「最初の改善行動」「出典の対応」を確認する。
 - JSONの構文、一意のID、各コース40問、必須フィールド、優先度、出典IDとHTTPSリンクを検証する。
+- 各コースの重要12問、referencesの参照先、出典のkind、12問から40問への回答引継ぎも検証する。
 - 旧IDの意味、優先度、対象外条件が大きく変わる場合は、変更内容を記録し、結果の単純比較を避ける。
 - 新しい質問を加える場合は40問に追加し続けず、重複や優先度の低い質問との入替えを検討する。
 

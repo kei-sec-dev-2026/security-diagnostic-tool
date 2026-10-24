@@ -5,193 +5,353 @@
       "id": "ipa2026",
       "title": "情報セキュリティ10大脅威 2026",
       "url": "https://www.ipa.go.jp/security/10threats/10threats2026.html",
-      "publisher": "IPA"
+      "publisher": "IPA",
+      "kind": "government",
+      "region": "JP"
     },
     {
       "id": "ipa-sme",
       "title": "中小企業の情報セキュリティ対策ガイドライン 第4.0版",
       "url": "https://www.ipa.go.jp/security/guide/sme/about.html",
-      "publisher": "IPA"
+      "publisher": "IPA",
+      "kind": "government",
+      "region": "JP"
     },
     {
       "id": "ipa-basic",
       "title": "情報セキュリティ6か条（2026年4月）",
       "url": "https://www.ipa.go.jp/security/security-action/download/infosec6to-dos.pdf",
-      "publisher": "IPA"
+      "publisher": "IPA",
+      "kind": "government",
+      "region": "JP"
     },
     {
       "id": "nco-basic",
       "title": "サイバーセキュリティ対策9か条",
       "url": "https://security-portal.cyber.go.jp/guidance/cybersecurity9principles.html",
-      "publisher": "国家サイバー統括室・IPA"
+      "publisher": "国家サイバー統括室・IPA",
+      "kind": "government",
+      "region": "JP"
     },
     {
       "id": "ipa-ai",
       "title": "AI利用者のためのセキュリティ豆知識（2026年4月公表）",
       "url": "https://www.ipa.go.jp/digital/ai/security/ai_security_tips.html",
-      "publisher": "IPA"
+      "publisher": "IPA",
+      "kind": "government",
+      "region": "JP"
     },
     {
       "id": "cisa-ransom",
       "title": "#StopRansomware Guide",
       "url": "https://www.cisa.gov/stopransomware/ransomware-guide",
-      "publisher": "CISAほか"
+      "publisher": "CISAほか",
+      "kind": "government",
+      "region": "US"
     },
     {
       "id": "cisa-kev",
       "title": "Known Exploited Vulnerabilities Catalog",
       "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-      "publisher": "CISA"
+      "publisher": "CISA",
+      "kind": "government",
+      "region": "US"
     },
     {
       "id": "ncsc-clickfix",
       "title": "Compromised Websites Serving ClickFix Pages（2026年9月）",
       "url": "https://www.ncsc.govt.nz/alerts/compromised-websites-serving-clickfix-pages/",
-      "publisher": "ニュージーランド NCSC"
+      "publisher": "ニュージーランド NCSC",
+      "kind": "government",
+      "region": "NZ"
     },
     {
       "id": "ncsc-cookie",
       "title": "Insight: Someone stole my cookie!",
       "url": "https://www.ncsc.govt.nz/insights-and-research/insights-reports/quarter-three-cyber-security-insights/progressive-web-apps-2/",
-      "publisher": "ニュージーランド NCSC"
+      "publisher": "ニュージーランド NCSC",
+      "kind": "government",
+      "region": "NZ"
     },
     {
       "id": "nist-auth",
       "title": "NIST SP 800-63B-4: Authentication and Authenticator Management",
       "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
-      "publisher": "NIST"
+      "publisher": "NIST",
+      "kind": "government",
+      "region": "US"
     },
     {
       "id": "nist-csf",
       "title": "NIST Cybersecurity Framework 2.0: Small Business Quick-Start Guide",
       "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=957322",
-      "publisher": "NIST"
+      "publisher": "NIST",
+      "kind": "government",
+      "region": "US"
     },
     {
       "id": "nist-email",
       "title": "Trustworthy Email",
       "url": "https://www.nist.gov/publications/trustworthy-email-0",
-      "publisher": "NIST"
+      "publisher": "NIST",
+      "kind": "government",
+      "region": "US"
     },
     {
       "id": "cisa-ddos",
       "title": "Understanding and Responding to Distributed Denial-of-Service Attacks",
       "url": "https://www.cisa.gov/sites/default/files/publications/understanding-and-responding-to-ddos-attacks_508c.pdf",
-      "publisher": "CISA・FBI・MS-ISAC"
+      "publisher": "CISA・FBI・MS-ISAC",
+      "kind": "government",
+      "region": "US"
     },
     {
       "id": "owasp-asvs",
       "title": "Application Security Verification Standard 5.0",
       "url": "https://asvs.owasp.org/",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-authz",
       "title": "Authorization Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-session",
       "title": "Session Management Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-secrets",
       "title": "Secrets Management Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-supply",
       "title": "Software Supply Chain Security Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Software_Supply_Chain_Security_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-ci",
       "title": "CI/CD Security Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-llm",
       "title": "OWASP Top 10 for LLM Applications 2026（公式公開ソース）",
       "url": "https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/blob/main/2026/README.md",
-      "publisher": "OWASP GenAI Security Project"
+      "publisher": "OWASP GenAI Security Project",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-oauth",
       "title": "OAuth 2.0 Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/OAuth2_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-sql",
       "title": "SQL Injection Prevention Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-xss",
       "title": "Cross Site Scripting Prevention Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-csrf",
       "title": "Cross-Site Request Forgery Prevention Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-ssrf",
       "title": "Server Side Request Forgery Prevention Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-upload",
       "title": "File Upload Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-rest",
       "title": "REST Security Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "mdn-cors",
       "title": "Cross-Origin Resource Sharing (CORS)",
       "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
-      "publisher": "MDN Web Docs"
+      "publisher": "MDN Web Docs",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-headers",
       "title": "HTTP Headers Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-password",
       "title": "Password Storage Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-logging",
       "title": "Logging Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
     },
     {
       "id": "owasp-docker",
       "title": "Docker Security Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html",
-      "publisher": "OWASP"
+      "publisher": "OWASP",
+      "kind": "standard",
+      "region": "international"
+    },
+    {
+      "id": "cisa-world",
+      "title": "Secure Our World: 4 Easy Ways To Stay Safe Online",
+      "url": "https://www.cisa.gov/sites/default/files/2024-09/Secure-Our-World-4-Easy-Ways-Stay-Safe-Online-Tip-Sheet.pdf",
+      "publisher": "CISA",
+      "kind": "government",
+      "region": "US"
+    },
+    {
+      "id": "cisa-cpg",
+      "title": "Cross-Sector Cybersecurity Performance Goals 2.0 公開案内（2025年12月）",
+      "url": "https://content.govdelivery.com/accounts/USDHSCISA/bulletins/3ff7850",
+      "publisher": "CISA",
+      "kind": "government",
+      "region": "US"
+    },
+    {
+      "id": "cis-v81",
+      "title": "CIS Critical Security Controls v8.1 — Controls Navigator",
+      "url": "https://www.cisecurity.org/controls/CIS-controls-navigator",
+      "publisher": "Center for Internet Security (CIS)",
+      "kind": "standard",
+      "region": "US"
+    },
+    {
+      "id": "ftc-personal",
+      "title": "Protect Your Personal Information From Hackers and Scammers",
+      "url": "https://consumer.ftc.gov/articles/protect-your-personal-information-hackers-and-scammers",
+      "publisher": "米国連邦取引委員会 (FTC)",
+      "kind": "government",
+      "region": "US"
+    },
+    {
+      "id": "ftc-scam",
+      "title": "How To Avoid a Scam",
+      "url": "https://consumer.ftc.gov/articles/how-avoid-scam",
+      "publisher": "米国連邦取引委員会 (FTC)",
+      "kind": "government",
+      "region": "US"
+    },
+    {
+      "id": "ftc-privacy",
+      "title": "How Websites and Apps Collect and Use Your Information",
+      "url": "https://consumer.ftc.gov/articles/how-websites-and-apps-collect-and-use-your-information",
+      "publisher": "米国連邦取引委員会 (FTC)",
+      "kind": "government",
+      "region": "US"
+    },
+    {
+      "id": "ftc-homewifi",
+      "title": "How To Secure Your Home Wi-Fi Network",
+      "url": "https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network",
+      "publisher": "米国連邦取引委員会 (FTC)",
+      "kind": "government",
+      "region": "US"
+    },
+    {
+      "id": "ftc-publicwifi",
+      "title": "Are Public Wi-Fi Networks Safe? What You Need To Know",
+      "url": "https://consumer.ftc.gov/articles/are-public-wi-fi-networks-safe-what-you-need-know",
+      "publisher": "米国連邦取引委員会 (FTC)",
+      "kind": "government",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-ransom",
+      "title": "Ransomware attack recovery plan — Implementation checklist",
+      "url": "https://learn.microsoft.com/en-us/security/ransomware/protect-against-ransomware-phase1",
+      "publisher": "Microsoft Learn",
+      "kind": "vendor",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-identity",
+      "title": "Passkey-themed social engineering leads to identity and cloud compromise（2026年9月）",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/09/passkey-themed-social-engineering-leads-identity-cloud-compromise/",
+      "publisher": "Microsoft Security Research",
+      "kind": "vendor",
+      "region": "US"
+    },
+    {
+      "id": "microsoft-revoke",
+      "title": "Revoke user access in Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/users/users-revoke-access",
+      "publisher": "Microsoft Learn",
+      "kind": "vendor",
+      "region": "US"
+    },
+    {
+      "id": "mandiant-2026",
+      "title": "M-Trends 2026: Data, Insights, and Strategies From the Frontlines",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2026",
+      "publisher": "Google Cloud / Mandiant",
+      "kind": "vendor",
+      "region": "US"
     }
   ]
 }

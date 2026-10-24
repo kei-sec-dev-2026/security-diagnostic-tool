@@ -11,9 +11,17 @@
     "adviceText": "設定の「ソフトウェア更新」を開き、自動更新を有効にしましょう。再起動待ちの更新も済ませてください。",
     "priority": "high",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "cisa-world"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cisa-world",
+        "section": "Update software"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -27,9 +35,17 @@
     "adviceText": "メーカーの公式ページで機種やOSのサポート状況を確認し、終了している場合は更新・買い替えを計画しましょう。",
     "priority": "high",
     "sourceIds": [
-      "ipa-basic"
+      "ipa-basic",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 2.2"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -43,25 +59,41 @@
     "adviceText": "指紋・顔認証や十分な長さのPINを設定し、操作しない時間が続いたら自動でロックする設定にしましょう。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 4.3"
+      }
+    ]
   },
   {
     "lane": "personal",
     "id": "q_p_04",
     "category": "まずは端末の基本",
     "question": "端末の標準のセキュリティ保護機能を有効にしていますか？",
-    "description": "OS標準の保護機能も役立ちます。有料ソフトの購入だけが対策ではありません。",
+    "description": "OS標準の保護機能も役立ちます。保護が停止していないことと更新状況を確認します。追加製品の購入だけが対策ではありません。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "標準の保護機能を確認する",
     "adviceText": "PCのウイルス対策・ファイアウォールやスマホの危険なアプリの警告機能を確認し、更新を有効にしましょう。",
     "priority": "high",
     "sourceIds": [
-      "ipa-basic"
+      "ipa-basic",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguards 10.1–10.2"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -76,9 +108,17 @@
     "priority": "high",
     "sourceIds": [
       "nco-basic",
-      "ncsc-clickfix"
+      "ncsc-clickfix",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 2.3"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -94,7 +134,14 @@
     "sourceIds": [
       "nist-auth"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "nist-auth",
+        "section": "Passwords / Usability Considerations by Authenticator Type"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -110,7 +157,14 @@
     "sourceIds": [
       "nist-auth"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "nist-auth",
+        "section": "Authentication Assurance Level 2"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -127,39 +181,62 @@
       "nist-auth",
       "ncsc-cookie"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-auth",
+        "section": "Phishing Resistance"
+      }
+    ]
   },
   {
     "lane": "personal",
     "id": "q_p_09",
     "category": "アカウントを守る",
-    "question": "頼んでいないログイン承認の通知は拒否するようにしていますか？",
-    "description": "通知が何度も来ても、承認して止めると不正ログインにつながります。",
+    "question": "頼んでいないログインや認証設定の承認依頼は、拒否していますか？",
+    "description": "「パスキーの更新」「本人確認」と言われても、自分で始めていない操作は確認が必要です。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "身に覚えのない承認を断る",
-    "adviceText": "心当たりのない通知は拒否し、通知のリンクではなく公式アプリからログイン履歴を確認しましょう。",
+    "adviceText": "心当たりのない承認は拒否し、届いたリンクではなく公式アプリを開いて確認しましょう。職場の設定変更を求められた場合は、既知の社内窓口へ別の経路で確かめてください。",
     "priority": "high",
     "sourceIds": [
-      "nist-auth"
+      "nist-auth",
+      "microsoft-identity"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "microsoft-identity",
+        "section": "Mitigation and protection guidance / Reduce future risk"
+      }
+    ]
   },
   {
     "lane": "personal",
     "id": "q_p_10",
     "category": "アカウントを守る",
     "question": "認証コードを、電話やチャットの相手に教えないようにしていますか？",
-    "description": "本物の担当者を装って、ログインや送金の確認コードを聞き出す手口があります。",
+    "description": "サポート担当を装って、ログインや送金の認証コードを聞き出す手口があります。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "認証コードは自分の操作だけに使う",
     "adviceText": "コードは自分で開いた公式の確認画面だけに入力しましょう。相手に伝えた場合は公式窓口へ連絡してください。",
     "priority": "high",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "microsoft-identity"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "microsoft-identity",
+        "section": "Attack chain overview / Step 1-2: Initial access: Passkey and SSO lures"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -175,7 +252,14 @@
     "sourceIds": [
       "nist-auth"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-auth",
+        "section": "Account Recovery"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -186,12 +270,20 @@
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "ログイン中の端末を点検する",
-    "adviceText": "公式のアカウント設定で、覚えのない端末をログアウトさせましょう。感染が疑われる場合は安全な別の端末から操作してください。",
+    "adviceText": "公式設定で覚えのない端末をログアウトし、身に覚えのない認証方法やアプリ連携も確認しましょう。感染が疑われる場合は安全な別の端末で操作し、公式窓口へ相談してください。",
     "priority": "high",
     "sourceIds": [
-      "ncsc-cookie"
+      "ncsc-cookie",
+      "microsoft-revoke"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "microsoft-revoke",
+        "section": "Session tokens (cookies)"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -206,9 +298,17 @@
     "priority": "high",
     "sourceIds": [
       "ipa2026",
-      "nco-basic"
+      "nco-basic",
+      "ftc-scam"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "ftc-scam",
+        "section": "How To Avoid a Scam"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -222,9 +322,17 @@
     "adviceText": "届いた番号へそのまま折り返すのではなく、登録済みの電話番号など別の連絡先で確認してから対応しましょう。",
     "priority": "high",
     "sourceIds": [
-      "ipa-ai"
+      "ipa-ai",
+      "ftc-scam"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "ftc-scam",
+        "section": "How To Avoid a Scam"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -238,9 +346,17 @@
     "adviceText": "Webページから「実行」「ターミナル」などへの貼り付けを求められたら閉じましょう。実行済みなら、別の安全な端末で相談先を確認してください。",
     "priority": "high",
     "sourceIds": [
-      "ncsc-clickfix"
+      "ncsc-clickfix",
+      "mandiant-2026"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "mandiant-2026",
+        "section": "The Collapse of the \"Hand-Off\" Window"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -254,9 +370,17 @@
     "adviceText": "表示された番号へ電話せず、ブラウザを閉じましょう。困ったら端末メーカーの公式窓口や信頼できる人へ相談してください。",
     "priority": "high",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "ftc-scam"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-scam",
+        "section": "Four Signs That It’s a Scam"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -270,9 +394,17 @@
     "adviceText": "別の連絡手段で送った理由を確認しましょう。「マクロを有効にする」「保護を解除する」といった指示にもそのまま従わないでください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cisa-world"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cisa-world",
+        "section": "Recognize & report phishing"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -286,9 +418,17 @@
     "adviceText": "公式の案内から目的のページへ進みましょう。表示名やロゴだけで判断せず、申し込みや支払いの前にドメインを確認してください。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "ftc-scam"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-scam",
+        "section": "How To Avoid a Scam"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -302,9 +442,17 @@
     "adviceText": "ブラウザの証明書や安全性の警告を無視して進まないでください。HTTPSでも、入力先が利用するサービスの公式サイトか確かめましょう。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "ftc-publicwifi"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-publicwifi",
+        "section": "How You Know Your Information Is Safe When You’re Using a Public Wi-Fi Network"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -318,25 +466,41 @@
     "adviceText": "写真・連絡先・書類など、失うと困るデータのバックアップを設定しましょう。クラウドの場合は保存対象と最終の保存日時も確認してください。",
     "priority": "high",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 11.2"
+      }
+    ]
   },
   {
     "lane": "personal",
     "id": "q_p_21",
     "category": "データとバックアップ",
     "question": "バックアップに、元のデータと一緒に消されにくいコピーがありますか？",
-    "description": "単なる同期では、誤削除や暗号化も反映される場合があります。",
+    "description": "単なる同期では、誤削除や暗号化も反映される場合があります。バックアップだけで情報の持出しまで防げるわけではありません。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "消されにくいバックアップを持つ",
     "adviceText": "使うときだけ接続する外付け媒体や、履歴・復元機能のある保存先を用意しましょう。コピーが元の端末の操作で一緒に消えないか確認してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "microsoft-ransom"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "microsoft-ransom",
+        "section": "Secure backups / Implementation checklist"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -350,9 +514,17 @@
     "adviceText": "写真や書類を1つ、元のデータを消さずに別の場所へ復元してみましょう。開けるか、必要な日時まで戻せるか確かめてください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "microsoft-ransom"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "microsoft-ransom",
+        "section": "Secure backups / Implementation checklist"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -366,9 +538,17 @@
     "adviceText": "クラウドの共有一覧を開き、相手を指定した共有へ切り替えましょう。使わなくなった共有は終了してください。共有機能を使わない場合は対象外です。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-basic"
+      "ipa-basic",
+      "cis-v81"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 3.3"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -382,9 +562,17 @@
     "adviceText": "必要なデータを取り出してから公式の退会手順を確認しましょう。保存期間などの規約も確認してください。退会で全データが即時消去されるとは限りません。",
     "priority": "low",
     "sourceIds": [
-      "ipa-basic"
+      "ipa-basic",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 5.3"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -399,9 +587,17 @@
     "priority": "high",
     "sourceIds": [
       "ipa-basic",
-      "nist-auth"
+      "nist-auth",
+      "microsoft-identity"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "microsoft-identity",
+        "section": "Mitigation and protection guidance / Reduce future risk"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -415,9 +611,17 @@
     "adviceText": "ブラウザの拡張機能の一覧で、不要なものを削除しましょう。配布元や読取範囲を確認し、全サイトへのアクセスは必要性を検討してください。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "cis-v81"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 9.4"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -431,9 +635,17 @@
     "adviceText": "端末のプライバシー設定で、位置情報は利用中だけ、写真は必要なものだけなどに調整しましょう。使わないアプリの許可も解除してください。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-basic"
+      "ipa-basic",
+      "ftc-privacy"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-privacy",
+        "section": "Adjust your privacy settings"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -447,9 +659,17 @@
     "adviceText": "個人番号、パスワード、顧客情報などは安易に入力しないでください。必要な場合は利用条件や保存・学習設定を確認し、識別できる部分を除きましょう。",
     "priority": "high",
     "sourceIds": [
-      "ipa-ai"
+      "ipa-ai",
+      "owasp-llm"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM02:2026 Sensitive Information Disclosure"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -466,7 +686,14 @@
       "ipa-ai",
       "owasp-llm"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM03:2026 Excessive Agency"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -480,25 +707,41 @@
     "adviceText": "突然の電話や警告から遠隔操作を始めないでください。必要なサポートは公式窓口へ自分から連絡し、操作の範囲を確認しましょう。",
     "priority": "high",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "ftc-scam"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-scam",
+        "section": "Four Signs That It’s a Scam"
+      }
+    ]
   },
   {
     "lane": "personal",
     "id": "q_p_31",
     "category": "通信と暮らしの設定",
     "question": "外出先のWi-Fiは、提供者が案内する正しい接続先か確かめていますか？",
-    "description": "似た名前の偽Wi-Fiもあります。HTTPSやVPNだけで偽サイトへの入力を防げるわけではありません。",
+    "description": "公衆Wi-FiでもHTTPSで通信は暗号化されます。似た接続名や偽サイトを避け、警告を無視しないことが大切です。",
     "deductPointsOn": "NO",
     "points": 2,
     "adviceTitle": "Wi-Fiの接続先を確かめる",
     "adviceText": "施設の公式案内で接続先を確認しましょう。不安なときは携帯回線を使い、通信警告が出たら入力を中断してください。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "ftc-publicwifi"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-publicwifi",
+        "section": "How You Know Your Information Is Safe When You’re Using a Public Wi-Fi Network"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -512,9 +755,17 @@
     "adviceText": "メーカーの案内に沿って、初期の共通パスワードなら変更しましょう。管理権限がない共用回線などは、管理者に確認してください。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "ftc-homewifi"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-homewifi",
+        "section": "How To Secure My Home Wi-Fi Network"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -528,9 +779,17 @@
     "adviceText": "公式の管理画面やメーカーの案内で更新を確認し、自動更新があれば有効にしましょう。サポート終了機器は交換を検討してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "ftc-homewifi"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-homewifi",
+        "section": "How To Secure My Home Wi-Fi Network"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -544,9 +803,17 @@
     "adviceText": "公式アプリで利用者と外部からの接続設定を確認しましょう。不要な公開を止め、共通の初期パスワードがあれば変更してください。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "ftc-homewifi"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-homewifi",
+        "section": "How To Secure My Home Wi-Fi Network"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -560,9 +827,17 @@
     "adviceText": "公式の端末探索機能と通信会社の利用停止窓口を確認しましょう。回復用情報は端末だけに保存しないでください。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 4.11"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -576,9 +851,17 @@
     "adviceText": "プロフィールと過去の投稿の公開先を確認しましょう。自宅の場所が分かる写真、身分証、詳しい予定の投稿は控えてください。",
     "priority": "low",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "ftc-privacy"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-privacy",
+        "section": "Adjust your privacy settings"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -592,9 +875,17 @@
     "adviceText": "銀行や主要メールの操作は自分で管理する端末から行いましょう。共用端末で使った場合はログアウトし、自分の端末からログイン履歴を確認してください。",
     "priority": "medium",
     "sourceIds": [
-      "ncsc-cookie"
+      "ncsc-cookie",
+      "owasp-session"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-session",
+        "section": "Manual Session Expiration / Web Content Caching and Clear-Site-Data"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -608,9 +899,17 @@
     "adviceText": "バックアップを確かめてから、メーカーの案内に沿ってアカウント解除と端末の消去を行いましょう。会社の端末は担当者へ相談してください。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 3.5"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -624,9 +923,17 @@
     "adviceText": "銀行・カードや主要アカウントの公式設定で、利用・ログイン通知を確認しましょう。通知のリンクからではなく公式アプリで内容を確かめてください。",
     "priority": "medium",
     "sourceIds": [
-      "nco-basic"
+      "nco-basic",
+      "ftc-personal"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-personal",
+        "section": "Know What To Do if Something Goes Wrong"
+      }
+    ]
   },
   {
     "lane": "personal",
@@ -640,9 +947,17 @@
     "adviceText": "家族、会社の窓口、サービスの公式サポートなどを控えておきましょう。感染が疑われる端末はネット接続を外し、別の安全な端末から相談してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "ftc-scam"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "ftc-scam",
+        "section": "How To Avoid a Scam"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -657,9 +972,21 @@
     "priority": "high",
     "sourceIds": [
       "ipa-sme",
-      "nist-csf"
+      "nist-csf",
+      "cisa-cpg"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "nist-csf",
+        "section": "GOVERN"
+      },
+      {
+        "sourceId": "cisa-cpg",
+        "section": "CPG 2.0 / governance・accountability"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -675,7 +1002,14 @@
     "sourceIds": [
       "nist-csf"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-csf",
+        "section": "IDENTIFY"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -689,9 +1023,17 @@
     "adviceText": "PC、スマホ、クラウドサービスごとに、利用者・管理者・契約先を記録しましょう。個人契約の業務利用も確認してください。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 1.1"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -705,9 +1047,17 @@
     "adviceText": "顧客・従業員の情報、契約書などを挙げ、保管先と管理する人を整理しましょう。診断画面に実際の情報を入力する必要はありません。",
     "priority": "medium",
     "sourceIds": [
-      "nist-csf"
+      "nist-csf",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 3.2"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -721,9 +1071,17 @@
     "adviceText": "担当者や委託先へ、全利用者への適用状況を確認しましょう。管理者から先に、対応するパスキーやセキュリティキーの導入を検討してください。",
     "priority": "high",
     "sourceIds": [
-      "nist-auth"
+      "nist-auth",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 6.3"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -739,7 +1097,14 @@
     "sourceIds": [
       "nist-auth"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-auth",
+        "section": "Passwords / Password Verifiers"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -750,12 +1115,20 @@
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "退職時のアカウント停止を手順にする",
-    "adviceText": "人事と担当者で終了日を共有し、メール、クラウド、遠隔接続などを停止する確認表を用意しましょう。データの引継ぎも先に決めてください。",
+    "adviceText": "終了日を人事と共有し、メール・クラウド・遠隔接続の停止とアプリ連携の解除を確認する表を用意しましょう。停止の反映や業務データの引継ぎも確認してください。",
     "priority": "high",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 6.2"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -769,9 +1142,17 @@
     "adviceText": "異動時と定期点検で、必要なファイルやサービスだけを使えるか、本人と管理者に確認してもらいましょう。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 6.8"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -785,16 +1166,24 @@
     "adviceText": "担当者別の管理用アカウントを用意し、日常業務のアカウントと分けましょう。例外の緊急用IDは使用記録と保管方法を決めてください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 5.4"
+      }
+    ]
   },
   {
     "lane": "admin",
     "id": "q_a_10",
     "category": "アカウントと権限",
     "question": "パスワード再発行の依頼で、決められた本人確認をしていますか？",
-    "description": "声や役職名だけで本人と判断すると、なりすましに利用されることがあります。",
+    "description": "IT担当者や役員を名乗る電話でも、声や役職名だけでは本人と確認できません。認証設定の更新を口実にする手口もあります。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "再発行の本人確認を決める",
@@ -802,9 +1191,17 @@
     "priority": "high",
     "sourceIds": [
       "nist-auth",
-      "ipa-ai"
+      "ipa-ai",
+      "mandiant-2026"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "mandiant-2026",
+        "section": "Voice Phishing and the SaaS Identity Crisis"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -818,9 +1215,17 @@
     "adviceText": "誰が、どの端末の更新を、いつ確認するかを決めましょう。委託している場合も、完了したことを報告してもらってください。",
     "priority": "high",
     "sourceIds": [
-      "ipa-basic"
+      "ipa-basic",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguards 7.3–7.4"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -834,9 +1239,17 @@
     "adviceText": "一覧にサポート期限を追記し、終了前に更新できるよう費用と移行期間を確保しましょう。対象がない場合も確認した日を残してください。",
     "priority": "high",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguards 2.2 / 12.1"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -850,9 +1263,17 @@
     "adviceText": "担当者と基本設定を決め、配布時と定期点検で適用状況を確認しましょう。OS標準機能の活用も含め、運用できる方法を選んでください。",
     "priority": "high",
     "sourceIds": [
-      "ipa-basic"
+      "ipa-basic",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 4.1"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -866,9 +1287,17 @@
     "adviceText": "利用の可否、扱える情報、紛失時の連絡先を決めましょう。個人の情報と会社の情報をどう分けるかも確認してください。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 4.12"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -882,9 +1311,17 @@
     "adviceText": "相談先と確認にかかる目安を案内しましょう。用途、扱う情報、権限、契約条件を確認して導入を判断してください。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 2.3 / CIS Control 15"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -899,9 +1336,17 @@
     "priority": "high",
     "sourceIds": [
       "ipa2026",
-      "ipa-ai"
+      "ipa-ai",
+      "ftc-scam"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "ftc-scam",
+        "section": "How To Avoid a Scam"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -915,9 +1360,17 @@
     "adviceText": "金額などに応じた承認者を決め、依頼者と実行者が1人で完結しないようにしましょう。承認者不在時の代行手順も用意してください。",
     "priority": "high",
     "sourceIds": [
-      "ipa2026"
+      "ipa2026",
+      "ftc-scam"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "ftc-scam",
+        "section": "Four Signs That It’s a Scam / How To Avoid a Scam"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -928,12 +1381,20 @@
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "報告先を分かりやすくする",
-    "adviceText": "電話や社内チャットなど、利用しやすい窓口を案内しましょう。クリックした後でも責めずに受け付ける方針を明示してください。",
+    "adviceText": "電話や社内チャットなど、すぐ使える窓口を案内しましょう。「クリックした」「電話で操作を頼まれた」段階でも責めずに受け付け、速やかに担当者へつなぐ手順を決めてください。",
     "priority": "high",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 17.3"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -947,9 +1408,17 @@
     "adviceText": "「画面の番号へ電話しない」「指示されたコマンドを貼り付けない」「社内窓口へ相談する」を、短い例とともに知らせましょう。",
     "priority": "high",
     "sourceIds": [
-      "ncsc-clickfix"
+      "ncsc-clickfix",
+      "mandiant-2026"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "mandiant-2026",
+        "section": "The Collapse of the \"Hand-Off\" Window"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -963,9 +1432,17 @@
     "adviceText": "顧客情報などの共有設定を確認し、誰でも開けるリンクを見直しましょう。共有が不要になったら終了する担当者も決めてください。",
     "priority": "high",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 3.3"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -979,9 +1456,17 @@
     "adviceText": "契約や必要な保存期間を確認し、保管する目的・場所・廃棄の手順を決めましょう。実際の個人情報をこの診断へ入力する必要はありません。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 3.4"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -995,9 +1480,17 @@
     "adviceText": "担当者と用途を整理し、保存・学習への利用・共有設定などの条件を確認したうえで、認めるサービスを案内しましょう。AI利用を認めない方針でもかまいません。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-ai"
+      "ipa-ai",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 CIS Control 15 - Service Provider Management"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1011,9 +1504,22 @@
     "adviceText": "入力できる例・相談が必要な例・入力しない例を、社内の情報区分に合わせて示しましょう。AIを使う予定がない場合は対象外です。",
     "priority": "high",
     "sourceIds": [
-      "ipa-ai"
+      "ipa-ai",
+      "cis-v81",
+      "owasp-llm"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 3.1"
+      },
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM02:2026 Sensitive Information Disclosure"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1030,7 +1536,14 @@
       "owasp-llm",
       "ipa-ai"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM03:2026 Excessive Agency"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1044,9 +1557,17 @@
     "adviceText": "サービスごとに契約、設定、問い合わせを行う人を記録し、退職や異動に合わせて引き継ぎましょう。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 15.1"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1061,9 +1582,17 @@
     "priority": "high",
     "sourceIds": [
       "ipa-sme",
-      "ncsc-cookie"
+      "ncsc-cookie",
+      "microsoft-identity"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "microsoft-identity",
+        "section": "Mitigation and protection guidance / Reduce future risk"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1078,9 +1607,17 @@
     "priority": "high",
     "sourceIds": [
       "ipa2026",
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 15.4"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1094,25 +1631,46 @@
     "adviceText": "アカウント管理、共有設定、バックアップ、復旧依頼の範囲を確認し、自社で行う作業の担当を決めましょう。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 CIS Control 15 - Service Provider Management"
+      }
+    ]
   },
   {
     "lane": "admin",
     "id": "q_a_29",
     "category": "復旧と緊急時の準備",
     "question": "重要データのバックアップを、消されにくい場所にも保管していますか？",
-    "description": "ランサムウェアは、共有されたバックアップも暗号化・削除する場合があります。",
+    "description": "ランサムウェアは、バックアップや復旧に必要な資料も狙います。バックアップだけでは情報の持出しは防げません。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "バックアップを分けて守る",
     "adviceText": "担当者や委託先へ、オフライン保管や変更できない保存期間など、通常のアカウントから一緒に消されない仕組みがあるか確認しましょう。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "microsoft-ransom",
+      "mandiant-2026"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "microsoft-ransom",
+        "section": "Secure backups / Implementation checklist"
+      },
+      {
+        "sourceId": "mandiant-2026",
+        "section": "Ransomware Evolves into Recovery Denial"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1123,12 +1681,20 @@
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "復元を試し、結果を確認する",
-    "adviceText": "担当者と重要業務を選び、復元できた範囲と時間を記録しましょう。元の環境を壊さない方法で試し、足りない情報を整えてください。",
+    "adviceText": "重要業務を選び、データや設定を戻せるか、再開まで何時間かかるかを担当者と確認しましょう。元の環境を壊さない方法で試し、事業に必要な時間と比べて不足を整えてください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "microsoft-ransom"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "microsoft-ransom",
+        "section": "Secure backups / Implementation checklist"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1144,7 +1710,14 @@
     "sourceIds": [
       "nist-csf"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-csf",
+        "section": "RECOVER"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1158,9 +1731,17 @@
     "adviceText": "ネット接続の切離し、社内への連絡、証拠の保全などを担当者と決めましょう。初期化やログ削除を急がず、専門家へ相談できる手順にしてください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 17.4"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1174,9 +1755,17 @@
     "adviceText": "責任者、委託先、公式サポートなどの連絡先を、適切に管理した紙やオフラインの資料でも参照できるようにしましょう。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 17.6"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1191,9 +1780,17 @@
     "priority": "medium",
     "sourceIds": [
       "ipa-sme",
-      "nist-csf"
+      "nist-csf",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 17.5"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1207,9 +1804,17 @@
     "adviceText": "担当者へ、入口の一覧、認証方法、更新状況、不要な接続の停止を確認しましょう。技術的な設定はシステム担当者コースで点検できます。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 CIS Control 12 - Network Infrastructure Management"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1223,9 +1828,17 @@
     "adviceText": "主要サービスの通知先と確認頻度を決めましょう。委託している場合は、どの異常をいつ連絡してもらえるか確認してください。",
     "priority": "high",
     "sourceIds": [
-      "nist-csf"
+      "nist-csf",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 8.11"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1239,9 +1852,17 @@
     "adviceText": "機器の公式消去手順や、書類の裁断・適切な委託処理などを定めましょう。外部へ委託する場合は実施記録も確認してください。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 3.5"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1255,9 +1876,17 @@
     "adviceText": "偽連絡、情報の共有、報告先など、担当業務に関係する内容から案内しましょう。ミスを隠さず相談できることも伝えてください。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 14.1"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1273,7 +1902,14 @@
     "sourceIds": [
       "nist-csf"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-csf",
+        "section": "GOVERN"
+      }
+    ]
   },
   {
     "lane": "admin",
@@ -1289,7 +1925,14 @@
     "sourceIds": [
       "nist-csf"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-csf",
+        "section": "GOVERN / IDENTIFY"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1303,9 +1946,17 @@
     "adviceText": "未管理の機器や契約も含めて棚卸しし、所有者と確認日を記録しましょう。自動検出の結果と台帳を照合すると漏れを見つけやすくなります。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 1.1"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1319,9 +1970,17 @@
     "adviceText": "許可された資産の公開IP・ドメイン・サービスを一覧化し、想定した公開範囲と突き合わせましょう。使わない入口は閉じてください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 4.8"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1335,9 +1994,17 @@
     "adviceText": "直接公開を見直し、適切に保護した管理経路、接続元制限、強い認証を組み合わせましょう。VPNを使う場合も更新と認証の管理が必要です。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 12.3"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1351,9 +2018,21 @@
     "adviceText": "メーカーの注意喚起と稼働バージョンを確認し、緊急更新の期限と担当を決めましょう。更新できない場合は公式の緩和策や一時停止を判断してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-kev"
+      "cisa-kev",
+      "cis-v81"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 12.1"
+      },
+      {
+        "sourceId": "cisa-kev",
+        "section": "Known Exploited Vulnerabilities Catalog"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1369,7 +2048,14 @@
     "sourceIds": [
       "cisa-kev"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cisa-kev",
+        "section": "Known Exploited Vulnerabilities Catalog"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1383,9 +2069,17 @@
     "adviceText": "期限・担当・移行先を記録しましょう。移行までの間は公開停止や接続制限などを行い、代替措置の限界を責任者と共有してください。",
     "priority": "high",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 2.2"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1399,9 +2093,21 @@
     "adviceText": "管理者と外部接続から適用を進めましょう。対応できないサービスは、ほかのMFAや接続制限を使い、例外と見直し計画を記録してください。",
     "priority": "high",
     "sourceIds": [
-      "nist-auth"
+      "nist-auth",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "nist-auth",
+        "section": "Phishing Resistance"
+      },
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguards 6.4–6.5"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1415,9 +2121,17 @@
     "adviceText": "メールなどのレガシー認証、アプリパスワード、不要な認証経路を確認しましょう。依存する業務を洗い出して移行し、不要な方式を停止してください。",
     "priority": "high",
     "sourceIds": [
-      "nist-auth"
+      "nist-auth",
+      "cisa-ransom"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cisa-ransom",
+        "section": "Initial Access Vector: Compromised Credentials"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1431,9 +2145,17 @@
     "adviceText": "担当者別の管理用IDを用意し、必要なときだけ権限を使う運用にしましょう。管理端末と接続先も可能な範囲で限定してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 5.4"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1444,13 +2166,26 @@
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "停止時の失効範囲を確認する",
-    "adviceText": "SSO、ローカルアカウント、APIトークン、外部連携、ログイン中のセッションを停止手順に含めましょう。停止後にアクセスできないことを確認してください。",
+    "adviceText": "SSOだけでなく各アプリのアカウント、独自Cookie、APIトークン、連携先を確認し、失効が反映されるまでの時間も把握しましょう。停止後にアクセスできないことを、許可したテスト用IDで検証してください。",
     "priority": "high",
     "sourceIds": [
       "owasp-session",
-      "owasp-secrets"
+      "owasp-secrets",
+      "microsoft-revoke",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "microsoft-revoke",
+        "section": "Session tokens (cookies) / When access is revoked"
+      },
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 6.2"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1466,7 +2201,14 @@
     "sourceIds": [
       "owasp-secrets"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-secrets",
+        "section": "General Secrets Management"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1482,7 +2224,14 @@
     "sourceIds": [
       "owasp-secrets"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-secrets",
+        "section": "General Secrets Management"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1497,9 +2246,17 @@
     "priority": "high",
     "sourceIds": [
       "ipa-basic",
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 10.6"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1513,9 +2270,17 @@
     "adviceText": "承認したアプリやスクリプトを管理し、インターネット由来のマクロなどを制限しましょう。業務影響を検証し、例外申請と記録の仕組みを用意してください。",
     "priority": "high",
     "sourceIds": [
-      "ncsc-clickfix"
+      "ncsc-clickfix",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 2.7"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1529,9 +2294,17 @@
     "adviceText": "標準ユーザーを基本にし、必要なインストールは承認した方法で行いましょう。ローカル管理者のパスワードを端末間で共用しない仕組みも検討してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 5.4"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1545,9 +2318,17 @@
     "adviceText": "サーバー、管理系、一般端末、ゲスト・IoTなどを用途に応じて分け、必要な通信を許可しましょう。境界の設定が意図どおりか確認してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 12.2"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1561,9 +2342,17 @@
     "adviceText": "SMBなどの利用状況を確認し、不要な機能と古いプロトコルを停止しましょう。必要なサービスも、利用者と接続元を限定してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 4.8"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1577,9 +2366,17 @@
     "adviceText": "端末暗号化の適用状況を管理し、復旧キーを権限のある担当者だけが使える場所に保管しましょう。持出し端末がない場合は対象外です。",
     "priority": "medium",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 3.6"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1593,9 +2390,17 @@
     "adviceText": "公開が必要なデータと非公開データを分け、公開設定の変更を検知しましょう。許可した範囲から実際にどう見えるかも検証してください。",
     "priority": "high",
     "sourceIds": [
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 3.3"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1606,12 +2411,20 @@
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "メールと外部連携の権限を点検する",
-    "adviceText": "不審な受信ルール、社外への自動転送、OAuthアプリの許可を確認しましょう。変更を記録し、想定外の許可を取り消す手順を用意してください。",
+    "adviceText": "不審な受信ルール、社外への自動転送、OAuthアプリの許可を確認しましょう。侵害時は見覚えのない認証方法の追加も調べ、セッション失効と不要な設定の除去を合わせて行ってください。",
     "priority": "high",
     "sourceIds": [
-      "ncsc-cookie"
+      "ncsc-cookie",
+      "microsoft-identity"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "microsoft-identity",
+        "section": "Mitigation and protection guidance / Contain and remediate"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1627,7 +2440,14 @@
     "sourceIds": [
       "nist-email"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-email",
+        "section": "Trustworthy Email（送信ドメインの認証）"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1641,9 +2461,17 @@
     "adviceText": "管理済み・更新済みなど必要な条件を定め、利用できる条件付きアクセスを適用しましょう。利用できない場合は、代替の制限と例外を管理してください。",
     "priority": "high",
     "sourceIds": [
-      "nist-auth"
+      "nist-auth",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 13.5"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1658,9 +2486,17 @@
     "priority": "high",
     "sourceIds": [
       "ipa2026",
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 6.4"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1674,25 +2510,46 @@
     "adviceText": "認証、管理操作、VPN、端末、クラウドなど必要なログを選び、保存期間を決めましょう。閲覧権限を絞り、機密情報を不用意に記録しないでください。",
     "priority": "high",
     "sourceIds": [
-      "nist-csf"
+      "nist-csf",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 8.9"
+      }
+    ]
   },
   {
     "lane": "it",
     "id": "q_i_25",
     "category": "監視と初動",
     "question": "不審なログインや権限変更を通知する設定がありますか？",
-    "description": "記録があっても、異常に気づけなければ初動が遅れます。",
+    "description": "認証方法の追加や、大量のクラウドAPI呼出しも手がかりになります。記録があるだけでなく担当者へ通知が届くか確かめます。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "異常通知の条件と受信先を確認する",
-    "adviceText": "MFAの変更、新しい管理者、通常と違うログイン、大量取得などに通知を設定しましょう。試験的な操作で通知が担当者へ届くことを確認してください。",
+    "adviceText": "新しい認証方法・管理者、通常と違うログイン、大量のファイル取得やAPIアクセスなどを通知しましょう。担当者へ届くことと、調査時に組み合わせるログを確認してください。",
     "priority": "high",
     "sourceIds": [
-      "nist-csf"
+      "nist-csf",
+      "microsoft-identity",
+      "mandiant-2026"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "microsoft-identity",
+        "section": "Mitigation and protection guidance / Reduce future risk"
+      },
+      {
+        "sourceId": "mandiant-2026",
+        "section": "Voice Phishing and the SaaS Identity Crisis"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1706,26 +2563,47 @@
     "adviceText": "本番とは別の権限で管理する保存先を使い、変更・削除の制限を設定しましょう。時刻の同期と必要な記録の欠落も定期的に確認してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 CIS Control 8 - Audit Log Management"
+      }
+    ]
   },
   {
     "lane": "it",
     "id": "q_i_27",
     "category": "監視と初動",
-    "question": "アカウント侵害時に、発行済みのセッションを取り消せますか？",
-    "description": "パスワード変更だけでは、盗まれたログイン状態が残る場合があります。",
+    "question": "侵害時に、アプリ側も含めてセッションを取り消す手順がありますか？",
+    "description": "ID基盤でアカウントを止めても、アプリ独自のログイン状態や一部のトークンが残る場合があります。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "セッション失効の手順を試す",
-    "adviceText": "安全な端末からアカウント停止、全セッション失効、トークンの取消しを行う手順を整理しましょう。許可したテストアカウントで効果を確認してください。",
+    "adviceText": "安全な端末から、ID基盤と各アプリのセッション・トークンを取り消す手順を整理しましょう。即時に失効しないものの期限や追加の停止策も把握し、許可したテスト用IDで反映を確かめてください。",
     "priority": "high",
     "sourceIds": [
       "ncsc-cookie",
-      "owasp-session"
+      "owasp-session",
+      "microsoft-revoke",
+      "microsoft-identity"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "microsoft-revoke",
+        "section": "Session tokens (cookies) / When access is revoked"
+      },
+      {
+        "sourceId": "microsoft-identity",
+        "section": "Mitigation and protection guidance / Contain and remediate"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1740,9 +2618,17 @@
     "priority": "high",
     "sourceIds": [
       "cisa-ransom",
-      "ncsc-cookie"
+      "ncsc-cookie",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 17.4"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1756,9 +2642,17 @@
     "adviceText": "緊急度、当番、代行者、委託先への連絡条件を整理しましょう。担当者1人に依存せず、通知と引継ぎを実際に試してください。",
     "priority": "medium",
     "sourceIds": [
-      "nist-csf"
+      "nist-csf",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguards 17.2 / 17.5"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1772,25 +2666,46 @@
     "adviceText": "業務上許容できるデータ損失に合わせて対象と頻度を定め、失敗を検知しましょう。SaaSも契約だけで十分な履歴が残るか確認してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "microsoft-ransom"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "microsoft-ransom",
+        "section": "Secure backups / Implementation checklist"
+      }
+    ]
   },
   {
     "lane": "it",
     "id": "q_i_31",
     "category": "バックアップと復旧",
     "question": "バックアップに、オフラインまたは変更できないコピーがありますか？",
-    "description": "ランサムウェアによる、バックアップの削除や暗号化にも備えます。",
+    "description": "バックアップの削除・暗号化への備えです。情報の持出しや漏えいを防ぐ対策は、アクセス制御・監視などで別に行います。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "本番から消せないコピーを用意する",
     "adviceText": "オフライン保管やイミュータブル保存などを使い、保持期間中は本番の管理権限でも消されないか確認しましょう。クラウドの同期だけで代替しないでください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "microsoft-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "microsoft-ransom",
+        "section": "Secure backups / Implementation checklist"
+      },
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 11.4"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1806,7 +2721,14 @@
     "sourceIds": [
       "owasp-secrets"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-secrets",
+        "section": "General Secrets Management"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1820,9 +2742,17 @@
     "adviceText": "重要システムを選び、元データを壊さず復元を試しましょう。復旧時間、データの整合性、侵入原因の修正、再接続前の確認を記録してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 11.5"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1833,12 +2763,20 @@
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "復旧用の資料を別の経路で確保する",
-    "adviceText": "構成図、連絡先、必要なライセンス・鍵、優先順位を管理したオフライン資料などにも保管し、参照する人と更新担当を決めましょう。",
+    "adviceText": "構成図、認証基盤や仮想環境の復旧手順、必要な鍵・ライセンス、連絡先を、管理したオフライン資料などにも保管しましょう。普段のシステムが止まっても参照できるかと、更新担当を確認してください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-ransom"
+      "cisa-ransom",
+      "microsoft-ransom"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "microsoft-ransom",
+        "section": "Secure backups / Implementation checklist"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1854,7 +2792,14 @@
     "sourceIds": [
       "cisa-ddos"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cisa-ddos",
+        "section": "Understanding and Responding to Distributed Denial-of-Service Attacks"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1869,9 +2814,17 @@
     "priority": "high",
     "sourceIds": [
       "nist-auth",
-      "ipa-sme"
+      "ipa-sme",
+      "cis-v81"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 6.5 - MFA for administrative access"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1885,9 +2838,17 @@
     "adviceText": "変更内容、確認者、戻し方を記録しましょう。公開範囲と権限、ログ、バックアップへの影響を検証してから反映してください。",
     "priority": "medium",
     "sourceIds": [
-      "nist-csf"
+      "nist-csf",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 4.1"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1901,9 +2862,17 @@
     "adviceText": "管理者の許可した対象と手順で点検し、結果に担当・期限・再確認を付けましょう。重要な変更や新しい侵入経路にも点検を行ってください。",
     "priority": "high",
     "sourceIds": [
-      "cisa-kev"
+      "cisa-kev",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguards 7.1 / 7.5–7.7 - vulnerability assessment and remediation"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1919,7 +2888,14 @@
     "sourceIds": [
       "owasp-llm"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM03:2026 Excessive Agency"
+      }
+    ]
   },
   {
     "lane": "it",
@@ -1933,9 +2909,17 @@
     "adviceText": "アカウント侵害やランサムウェアを想定し、隔離・連絡・証拠保全・復旧判断を確認しましょう。見つかった課題には担当者と期限を付けて見直してください。",
     "priority": "medium",
     "sourceIds": [
-      "nist-csf"
+      "nist-csf",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 17.7"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -1951,7 +2935,14 @@
     "sourceIds": [
       "owasp-secrets"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-secrets",
+        "section": "General Secrets Management"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -1967,7 +2958,14 @@
     "sourceIds": [
       "owasp-secrets"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-secrets",
+        "section": "Revocation"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -1983,7 +2981,14 @@
     "sourceIds": [
       "owasp-secrets"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-secrets",
+        "section": "General Secrets Management"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -1999,7 +3004,14 @@
     "sourceIds": [
       "nist-auth"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "nist-auth",
+        "section": "Phishing Resistance"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2014,9 +3026,17 @@
     "priority": "high",
     "sourceIds": [
       "owasp-supply",
-      "cisa-kev"
+      "cisa-kev",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguards 16.4–16.5"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2030,9 +3050,17 @@
     "adviceText": "公式リポジトリ、管理者、配布履歴、実行されるインストール処理を確認しましょう。AIの提案も検証し、不要な依存を増やさない判断をしてください。",
     "priority": "high",
     "sourceIds": [
-      "owasp-supply"
+      "owasp-supply",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 16.5"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2048,7 +3076,14 @@
     "sourceIds": [
       "owasp-ci"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-ci",
+        "section": "IAM / Least Privilege"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2064,7 +3099,14 @@
     "sourceIds": [
       "owasp-ci"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-ci",
+        "section": "Pipeline and Execution Environment / Secrets Management"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2078,9 +3120,17 @@
     "adviceText": "重要な外部アクションやイメージは固定したリビジョン・ダイジェストを検討し、更新をレビューしましょう。ビルドから配布までの記録や署名の検証も環境に合わせて整えてください。",
     "priority": "medium",
     "sourceIds": [
-      "owasp-supply"
+      "owasp-supply",
+      "owasp-ci"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-ci",
+        "section": "Integrity Assurance"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2096,7 +3146,14 @@
     "sourceIds": [
       "owasp-authz"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-authz",
+        "section": "Validate the Permissions on Every Request"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2112,7 +3169,14 @@
     "sourceIds": [
       "owasp-authz"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-authz",
+        "section": "Deny by Default / Validate the Permissions on Every Request"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2129,7 +3193,14 @@
       "nist-auth",
       "owasp-asvs"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-auth",
+        "section": "Authentication Assurance Level 2"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2145,7 +3216,14 @@
     "sourceIds": [
       "nist-auth"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "nist-auth",
+        "section": "Account Recovery"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2161,23 +3239,42 @@
     "sourceIds": [
       "owasp-session"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-session",
+        "section": "Cookies / Secure / HttpOnly / SameSite"
+      }
+    ]
   },
   {
     "lane": "dev",
     "id": "q_d_15",
     "category": "認証と認可",
     "question": "ログアウトやアカウント停止で、既存セッションを失効できますか？",
-    "description": "端末からCookieを消すだけでは、攻撃者が持つコピーが残る場合があります。",
+    "description": "ID基盤のアカウント停止だけでは、アプリ独自のCookieや発行済みトークンが残る場合があります。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "セッションをサーバー側でも失効する",
-    "adviceText": "ログアウト、パスワード変更、侵害対応の際に必要なセッション・更新トークンを取り消しましょう。期限、再認証条件、失効後の動作をテストしてください。",
+    "adviceText": "アプリ側セッションと更新トークンの失効方法・反映時間を確認し、侵害時に全端末を停止できる手順を設けましょう。ログアウト、パスワード変更、管理者による停止後に、失効対象の古いトークンが使えないか検証してください。",
     "priority": "high",
     "sourceIds": [
-      "owasp-session"
+      "owasp-session",
+      "microsoft-revoke"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-session",
+        "section": "Session Expiration / Manual Session Expiration"
+      },
+      {
+        "sourceId": "microsoft-revoke",
+        "section": "Session tokens (cookies) / When access is revoked"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2188,12 +3285,19 @@
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "外部ログインのフローを検証する",
-    "adviceText": "保守されたライブラリを使い、PKCE、必要なstate・nonceの検証、登録済みリダイレクト先の厳密な照合を確認しましょう。トークンの検証も省略しないでください。",
+    "adviceText": "保守されたライブラリで認可コードフローとPKCEを使い、必要なstate・nonce、登録済みリダイレクト先の厳密な照合を確認しましょう。Implicitフローを残している場合は移行を計画し、トークンの署名・対象・期限も検証してください。",
     "priority": "high",
     "sourceIds": [
       "owasp-oauth"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-oauth",
+        "section": "PKCE - Proof Key for Code Exchange Mechanism / Token Replay Prevention"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2209,7 +3313,14 @@
     "sourceIds": [
       "owasp-sql"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-sql",
+        "section": "Primary Defenses / Defense Option 1: Prepared Statements (with Parameterized Queries)"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2225,7 +3336,14 @@
     "sourceIds": [
       "owasp-xss"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-xss",
+        "section": "Output Encoding / HTML Sanitization"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2241,7 +3359,14 @@
     "sourceIds": [
       "owasp-csrf"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-csrf",
+        "section": "Token-Based Mitigation"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2257,7 +3382,14 @@
     "sourceIds": [
       "owasp-ssrf"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-ssrf",
+        "section": "Application layer / Network layer"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2273,7 +3405,14 @@
     "sourceIds": [
       "owasp-upload"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-upload",
+        "section": "File Upload Protection / File Storage Location"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2290,7 +3429,14 @@
       "owasp-rest",
       "mdn-cors"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "mdn-cors",
+        "section": "Requests with credentials"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2306,7 +3452,14 @@
     "sourceIds": [
       "owasp-rest"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-rest",
+        "section": "HTTPS"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2322,7 +3475,14 @@
     "sourceIds": [
       "owasp-headers"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-headers",
+        "section": "Security Headers"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2338,7 +3498,14 @@
     "sourceIds": [
       "owasp-password"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-password",
+        "section": "Argon2id"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2354,7 +3521,14 @@
     "sourceIds": [
       "owasp-logging"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-logging",
+        "section": "Data to exclude"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2370,7 +3544,14 @@
     "sourceIds": [
       "owasp-rest"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-rest",
+        "section": "API Keys / HTTP Return Code"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2386,7 +3567,14 @@
     "sourceIds": [
       "owasp-docker"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-docker",
+        "section": "RULE #2 - Set a user"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2402,7 +3590,14 @@
     "sourceIds": [
       "owasp-llm"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM06:2026 Unbounded Consumption"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2418,7 +3613,14 @@
     "sourceIds": [
       "owasp-llm"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM01:2026 Prompt Injection"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2435,7 +3637,14 @@
       "owasp-llm",
       "owasp-authz"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM09:2026 Vector and Embedding Weaknesses"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2451,7 +3660,14 @@
     "sourceIds": [
       "owasp-llm"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM03:2026 Excessive Agency"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2467,7 +3683,14 @@
     "sourceIds": [
       "owasp-llm"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM10:2026 Improper Output Handling"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2484,7 +3707,14 @@
       "ipa-ai",
       "owasp-llm"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM02:2026 Sensitive Information Disclosure"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2501,7 +3731,14 @@
       "owasp-llm",
       "owasp-supply"
     ],
-    "optional": true
+    "optional": true,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-llm",
+        "section": "LLM04:2026 Supply Chain"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2515,9 +3752,17 @@
     "adviceText": "テスト用の合成データと別の資格情報を使いましょう。本番データが必要な場合は承認、最小化、閲覧権限、期限、削除を管理してください。",
     "priority": "high",
     "sourceIds": [
-      "owasp-asvs"
+      "owasp-asvs",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 16.8"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2531,9 +3776,21 @@
     "adviceText": "設計とコードを見直し、権限境界、入力処理、依存関係などの重要項目を検証しましょう。自動検査を組み合わせ、見つかった課題を修正後に再確認してください。",
     "priority": "high",
     "sourceIds": [
-      "owasp-asvs"
+      "owasp-asvs",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguards 16.1 / 16.12"
+      },
+      {
+        "sourceId": "owasp-asvs",
+        "section": "Application Security Verification Standard 5.0"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2550,14 +3807,21 @@
       "owasp-rest",
       "owasp-logging"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "owasp-rest",
+        "section": "HTTP Return Code"
+      }
+    ]
   },
   {
     "lane": "dev",
     "id": "q_d_39",
     "category": "検証と運用",
     "question": "サービスに必要なデータを、バックアップから戻せることを確認していますか？",
-    "description": "DBのコピーだけでなく、復旧に必要な構成や鍵も確認します。",
+    "description": "DBのコピーだけでなく、復旧に必要な構成や鍵も確認します。バックアップは情報の持出しを防ぐ対策の代わりにはなりません。",
     "deductPointsOn": "NO",
     "points": 3,
     "adviceTitle": "復元できることまで確認する",
@@ -2565,9 +3829,22 @@
     "priority": "high",
     "sourceIds": [
       "cisa-ransom",
-      "owasp-secrets"
+      "owasp-secrets",
+      "microsoft-ransom",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": true,
+    "references": [
+      {
+        "sourceId": "microsoft-ransom",
+        "section": "Secure backups / Implementation checklist"
+      },
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 11.5"
+      }
+    ]
   },
   {
     "lane": "dev",
@@ -2582,8 +3859,16 @@
     "priority": "medium",
     "sourceIds": [
       "owasp-asvs",
-      "nist-csf"
+      "nist-csf",
+      "cis-v81"
     ],
-    "optional": false
+    "optional": false,
+    "quickCheck": false,
+    "references": [
+      {
+        "sourceId": "cis-v81",
+        "section": "v8.1 Safeguard 16.2"
+      }
+    ]
   }
 ]

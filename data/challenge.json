@@ -1,0 +1,672 @@
+{
+  "updatedAt": "2026-10-24",
+  "title": "セキュリティエンジニア基礎チャレンジ",
+  "questions": [
+    {
+      "id": "network-private",
+      "category": "ネットワークの基礎",
+      "question": "社内PCに「192.168.10.20」を割り当てました。このIPv4アドレスについて、正しい説明はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "プライベートアドレスであり、別の組織でも同じ番号を使える。外部公開の可否は経路や境界機器の設定も確認する。"
+        },
+        {
+          "id": "option-2",
+          "text": "世界中でこのPCだけに割り当てられた公開アドレスなので、追加設定なしで必ず外部から接続できる。"
+        },
+        {
+          "id": "option-3",
+          "text": "このアドレスなら通信は自動的に暗号化される。"
+        },
+        {
+          "id": "option-4",
+          "text": "このアドレスなら社内のすべての利用者を信頼してよい。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "192.168.0.0/16は私設ネットワーク用のIPv4範囲です。異なる私設ネットワークで同じアドレスを再利用できます。アドレスの種類は暗号化や認証の代わりにはならず、外部へ公開される経路・転送・アクセス制御は別に確認します。",
+      "references": [
+        {
+          "title": "RFC 1918",
+          "url": "https://www.rfc-editor.org/rfc/rfc1918.html",
+          "section": "3. Private Address Space",
+          "publisher": "IETF / RFC Editor"
+        }
+      ]
+    },
+    {
+      "id": "network-dns",
+      "category": "ネットワークの基礎",
+      "question": "PCでWebサイトを開くとき、DNSの主な役割はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "名前に対応するサーバーへ接続し、そのサーバーの運営者が信頼できるかを審査する。"
+        },
+        {
+          "id": "option-2",
+          "text": "ドメイン名に対応するIPアドレスなど、接続先を調べるための情報を問い合わせる。"
+        },
+        {
+          "id": "option-3",
+          "text": "ドメイン名に対応する通信内容を暗号化し、Webページへの改ざんを検出する。"
+        },
+        {
+          "id": "option-4",
+          "text": "利用者に割り当てるIPアドレスを選び、一定期間そのアドレスを貸し出す。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "DNSはドメイン名から接続先のIPアドレスなどを調べる仕組みです。ログインの本人確認、コンテンツの安全確認、通信の暗号化は、それぞれ別の仕組みで行います。",
+      "references": [
+        {
+          "title": "What is a Domain Name?",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name",
+          "section": "How does a DNS request work?",
+          "publisher": "MDN Web Docs"
+        }
+      ]
+    },
+    {
+      "id": "network-transport",
+      "category": "ネットワークの基礎",
+      "question": "TCPとUDPの違いを踏まえた設計として、適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "TCPは届いたデータの送信者を認証するため、ログイン認証の代わりとして利用する。"
+        },
+        {
+          "id": "option-2",
+          "text": "UDPはTCPより軽量だが、失われたデータの再送と順序の整列もプロトコル内で行う。"
+        },
+        {
+          "id": "option-3",
+          "text": "TCPは順序や再送を管理する。UDPで同様の保証が必要なら、上位の仕組みで補う。"
+        },
+        {
+          "id": "option-4",
+          "text": "TCPはWeb専用、UDPは音声専用なので、通信内容の種類だけで使い分ける。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "TCPはデータの順序や再送などを扱うトランスポートです。UDP自体は到達や順序を保証しません。QUICのようにUDPの上に信頼性を設けることもあります。どちらの名前だけでも、アプリの認証や通信の暗号化は保証されません。",
+      "references": [
+        {
+          "title": "TCP",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/TCP",
+          "section": "TCP",
+          "publisher": "MDN Web Docs"
+        },
+        {
+          "title": "UDP",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/UDP",
+          "section": "UDP (User Datagram Protocol)",
+          "publisher": "MDN Web Docs"
+        }
+      ]
+    },
+    {
+      "id": "network-tls",
+      "category": "ネットワークの基礎",
+      "question": "ブラウザが証明書エラーを出さず、HTTPSでサイトへ接続できました。ここから判断できることはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "証明書の発行者がサイトの運営内容も審査しており、表示された案内を信用する根拠になる。"
+        },
+        {
+          "id": "option-2",
+          "text": "サーバーが証明書を持つため、接続する利用者側の本人確認もTLSで済んでいる。"
+        },
+        {
+          "id": "option-3",
+          "text": "通信中の情報は保護されるので、到着したデータはアクセス権限の検証を省いて扱える。"
+        },
+        {
+          "id": "option-4",
+          "text": "接続先ドメインの証明書を検証し、通信を暗号化している。サイト内容の信用は別に判断する。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "TLSは通信の暗号化・改ざんの検知・接続先の認証を担います。一般的なWebのサーバー証明書は鍵とドメインを結び付けますが、商品の品質や運営者の善意、アプリの脆弱性がないことまで保証しません。",
+      "references": [
+        {
+          "title": "Transport Layer Security (TLS)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Transport_Layer_Security",
+          "section": "Server authentication",
+          "publisher": "MDN Web Docs"
+        }
+      ]
+    },
+    {
+      "id": "network-firewall",
+      "category": "ネットワークの基礎",
+      "question": "NATを使う社内ネットワークでサーバーを公開します。適切な考え方はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "アドレス変換とは別に、必要な接続先・ポート・方向だけを許可するファイアウォール方針を決める。"
+        },
+        {
+          "id": "option-2",
+          "text": "NATがあれば、通信を制御するルールは不要になる。"
+        },
+        {
+          "id": "option-3",
+          "text": "管理用ポートをすべて公開すると、障害対応が簡単なので安全性も高くなる。"
+        },
+        {
+          "id": "option-4",
+          "text": "通信先を許可するルールを作れば、サーバーの更新は不要になる。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "NATはアドレスを変換する仕組みで、ファイアウォールの方針そのものではありません。公開範囲と必要な通信を決め、原則拒否から必要分だけ許可し、管理画面も制限します。更新やアプリ側の対策も必要です。",
+      "references": [
+        {
+          "title": "NIST SP 800-41 Rev. 1",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41r1.pdf",
+          "section": "3.2 Firewalls Acting as Network Address Translators / 4. Firewall Policy",
+          "publisher": "NIST"
+        }
+      ]
+    },
+    {
+      "id": "network-segmentation",
+      "category": "ネットワークの基礎",
+      "question": "来客用Wi-Fiと、顧客データを扱う社内サーバーがあります。侵害の広がりを抑える設計はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "Wi-Fiの表示名だけを変え、両者の間の通信はすべて許可する。"
+        },
+        {
+          "id": "option-2",
+          "text": "ネットワークを分け、必要な通信だけを境界のアクセス制御で許可する。"
+        },
+        {
+          "id": "option-3",
+          "text": "社内という理由で、来客端末にもサーバーの管理権限を与える。"
+        },
+        {
+          "id": "option-4",
+          "text": "サーバー名を分かりにくくするだけで対策を完了する。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "分離したネットワーク間にも通信制御が必要です。来客端末から重要サーバーへ不要な経路を設けず、許可する通信を限定します。名前を変えるだけでは分離できず、分離しても認証や更新は必要です。",
+      "references": [
+        {
+          "title": "NIST SP 800-41 Rev. 1",
+          "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-41r1.pdf",
+          "section": "3. Firewalls and Network Architectures",
+          "publisher": "NIST"
+        }
+      ]
+    },
+    {
+      "id": "web-http",
+      "category": "Webとアクセス制御",
+      "question": "「GETのURLを開くだけで利用者を削除する」APIがありました。見直し方として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "URLを長くして、利用者から見えにくくする。"
+        },
+        {
+          "id": "option-2",
+          "text": "HTTPSにすれば、GETで削除しても問題ない。"
+        },
+        {
+          "id": "option-3",
+          "text": "GETは読み取りに使い、削除は適切な変更用メソッドと認証・認可・必要なCSRF対策で実装する。"
+        },
+        {
+          "id": "option-4",
+          "text": "Cookieに利用者名があれば、サーバーでの権限確認を省略する。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "GETは利用者が要求した状態変更を起こさない安全なメソッドとして扱います。リンクの先読みや巡回でも呼ばれ得るため、削除をGETに置きません。変更用メソッドに変えるだけでは足りず、認証・認可やCookie認証のCSRF対策を組み合わせます。",
+      "references": [
+        {
+          "title": "RFC 9110",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+          "section": "9.2.1 Safe Methods",
+          "publisher": "IETF / RFC Editor"
+        }
+      ]
+    },
+    {
+      "id": "web-authorization",
+      "category": "Webとアクセス制御",
+      "question": "ログイン済みの利用者が、URLの書類IDを変えると他人の書類を読めます。必要な修正はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "認証済みなので、利用者がIDを知っている書類なら読み取りを許可する。"
+        },
+        {
+          "id": "option-2",
+          "text": "書類IDを十分長いランダム値にして、その値を知っている利用者へ読み取りを許可する。"
+        },
+        {
+          "id": "option-3",
+          "text": "画面上で本人の書類だけリンクを表示し、書類を返すAPIではIDだけを確認する。"
+        },
+        {
+          "id": "option-4",
+          "text": "サーバーが各リクエストで、その利用者に対象書類を読む権限があるか確認する。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "認証は誰かを確認し、認可はその人に何を許可するかを決めます。ログイン済みでも他人の書類への権限は別です。画面上の非表示や推測しにくいIDだけに頼らず、対象データへの認可をサーバーで検証します。",
+      "references": [
+        {
+          "title": "Authorization",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+          "section": "Validate the Permissions on Every Request",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "web-session",
+      "category": "Webとアクセス制御",
+      "question": "退職者のアカウントを停止しましたが、その人のブラウザにはログイン済みのCookieがあります。アプリ側で必要なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "既存セッションを失効させ、停止後のアクセスを受け付けないことを確認する。"
+        },
+        {
+          "id": "option-2",
+          "text": "ログインボタンを隠すだけでよい。"
+        },
+        {
+          "id": "option-3",
+          "text": "CookieにSecure属性があれば、停止後も無期限に利用させてよい。"
+        },
+        {
+          "id": "option-4",
+          "text": "本人がブラウザを閉じるまで待てば、必ず安全に停止できる。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "アカウントの停止と、発行済みセッションの取り消しは両方必要です。サーバー側でセッションを無効化し、保護された各操作で停止状態やセッションの有効性を確認します。CookieのSecureやHttpOnlyは有用ですが、失効処理の代わりにはなりません。",
+      "references": [
+        {
+          "title": "Session Management",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+          "section": "Session Expiration / Manual Session Expiration",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "app-sql",
+      "category": "安全なWeb開発",
+      "question": "検索語を使ってデータベースを検索する機能を作ります。SQLインジェクションを防ぐ基本はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "検索語から空白だけを削除してSQL文字列へ連結する。"
+        },
+        {
+          "id": "option-2",
+          "text": "プレースホルダーを使うパラメータ化クエリで、SQLの命令と入力値を分ける。"
+        },
+        {
+          "id": "option-3",
+          "text": "検索画面に注意書きを出し、入力内容はそのままSQLへ連結する。"
+        },
+        {
+          "id": "option-4",
+          "text": "データベース名を非公開にし、入力値の扱いは変更しない。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "パラメータ化クエリは、SQLの構造と利用者の値を分けて扱います。単純な文字削除や手作業のエスケープに頼らず、保守されたライブラリを使います。テーブル名や並び順など、値として渡せない部分には許可リスト等が必要です。",
+      "references": [
+        {
+          "title": "SQL Injection Prevention",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
+          "section": "Primary Defenses / Prepared Statements (with Parameterized Queries)",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "app-xss",
+      "category": "安全なWeb開発",
+      "question": "利用者のコメントをWebページに表示します。XSSを防ぐ基本方針はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "コメントにHTTPSという文字があれば、そのままHTMLとして表示する。"
+        },
+        {
+          "id": "option-2",
+          "text": "入力時に一度だけ検査すれば、どの場所へ表示しても同じ扱いでよい。"
+        },
+        {
+          "id": "option-3",
+          "text": "表示する文脈に合う安全な出力方法を使い、文章なら文字列として表示する。HTMLが必要なら適切に無害化する。"
+        },
+        {
+          "id": "option-4",
+          "text": "ブラウザの開発者ツールを使わないよう利用者へ案内する。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "入力値はHTML本文・属性・URLなど、表示する場所に応じて安全に扱います。文章にはtextContentなどの安全な出力先を使います。HTMLを許す機能では、保守されたサニタイザーを使い、CSPだけを唯一の対策にはしません。",
+      "references": [
+        {
+          "title": "Cross Site Scripting Prevention",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+          "section": "Output Encoding / Safe Sinks / HTML Sanitization",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "app-csrf",
+      "category": "安全なWeb開発",
+      "question": "Cookieでログイン状態を保つWebアプリで、送金先を変更する機能があります。CSRF対策として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "変更をGETのリンクだけで実行できるようにする。"
+        },
+        {
+          "id": "option-2",
+          "text": "HTTPSを使っているので、外部サイトからの操作要求は必ず無害とみなす。"
+        },
+        {
+          "id": "option-3",
+          "text": "ログイン済みCookieが付いていれば、要求の出どころを確認しない。"
+        },
+        {
+          "id": "option-4",
+          "text": "フレームワークのCSRFトークン検証などを使い、SameSiteやOrigin検証も状況に合わせて組み合わせる。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "ブラウザは外部サイトを起点とする要求にもCookieを付ける場合があります。変更操作には標準のCSRF保護を使い、トークン・Origin等を検証します。SameSiteは補助になりますが、すべての構成で単独の対策にできるわけではありません。",
+      "references": [
+        {
+          "title": "Cross-Site Request Forgery Prevention",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+          "section": "Token-Based Mitigation / SameSite (Cookie Attribute)",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "app-ssrf",
+      "category": "安全なWeb開発",
+      "question": "利用者が指定したURLの画像を、サーバーが取得する機能を作ります。SSRFを防ぐ考え方はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "取得先を必要な範囲へ限定し、内部・メタデータへの到達やリダイレクト、名前解決後の接続先も制御する。"
+        },
+        {
+          "id": "option-2",
+          "text": "URLがhttpsで始まれば、接続先の確認は不要にする。"
+        },
+        {
+          "id": "option-3",
+          "text": "画面からURLの入力欄を隠し、APIの制限は設けない。"
+        },
+        {
+          "id": "option-4",
+          "text": "接続先のURLをログへ残すだけで、どこへでも取得できるようにする。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "SSRFではサーバーの通信権限が悪用されます。必要に応じた許可リスト、宛先の検証、外向き通信の制限を組み合わせます。HTTPSという形式だけでは内部サービスへの接続を防げず、リダイレクトやDNSによる接続先の変化にも注意が必要です。",
+      "references": [
+        {
+          "title": "Server Side Request Forgery Prevention",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html",
+          "section": "Application layer / Network layer",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "app-secret",
+      "category": "安全なWeb開発",
+      "question": "本物のAPIキーを公開リポジトリに入れてしまいました。最初の対応として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "最新コミットのキーを削除し、ソースを非公開に変えた後に同じキーで運用を続ける。"
+        },
+        {
+          "id": "option-2",
+          "text": "キーを失効・交換し、利用履歴や影響を確認する。そのうえで履歴や配布物の露出も処理する。"
+        },
+        {
+          "id": "option-3",
+          "text": "リポジトリの履歴からキーを消したことを確認してから、キーを失効させるか判断する。"
+        },
+        {
+          "id": "option-4",
+          "text": "APIのアクセス元IPを制限し、現在のキーを残したまま、不審な要求が来るか監視する。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "公開した秘密は、すでにコピーされた可能性があります。削除だけで安全になったとは判断せず、失効・新しいキーへの移行、利用状況の確認を優先します。以降は秘密の保管・権限制限・露出検知を整えます。",
+      "references": [
+        {
+          "title": "Secrets Management",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+          "section": "2.7.3 Revocation / 2.7.2 Rotation",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "app-password",
+      "category": "安全なWeb開発",
+      "question": "Webアプリでパスワード認証を提供します。データベースでの保存方法はどれが適切ですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "問い合わせで教えられるよう、平文を保存する。"
+        },
+        {
+          "id": "option-2",
+          "text": "Base64に変換した文字列を保存する。"
+        },
+        {
+          "id": "option-3",
+          "text": "保守されたライブラリで、固有のソルトと適切なコストを使うArgon2id等のパスワード用ハッシュを保存する。"
+        },
+        {
+          "id": "option-4",
+          "text": "SHA-256を1回だけ計算すれば、パスワードの長さや推測への対策は不要になる。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "パスワードは復号を前提とした保存ではなく、推測にコストをかける専用ハッシュを使います。ソルトやコストの管理は信頼できるライブラリを使い、設定を更新します。速い汎用ハッシュやBase64はパスワード保存の代用になりません。",
+      "references": [
+        {
+          "title": "Password Storage",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+          "section": "Introduction / Salting / Argon2id",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "ops-dependency",
+      "category": "運用と復旧",
+      "question": "利用中ライブラリに、実際に悪用されている脆弱性の情報が出ました。適切な進め方はどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "ライブラリ名が有名なので、影響の確認は不要にする。"
+        },
+        {
+          "id": "option-2",
+          "text": "警告表示だけを無効にし、リリースを続ける。"
+        },
+        {
+          "id": "option-3",
+          "text": "最新版という名前なら、配布元や変更内容を確認せず本番へ入れる。"
+        },
+        {
+          "id": "option-4",
+          "text": "利用箇所と影響を調べ、公式の修正版・緩和策を確認し、優先して検証・適用する。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "依存関係の一覧と通知を使い、利用中の版や到達可能性、公式アドバイザリを確認します。重要なものは優先し、修正版や緩和策を検証して適用します。更新後の動作と実際に修正されたことも確かめます。",
+      "references": [
+        {
+          "title": "Vulnerable Dependency Management",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html",
+          "section": "Cases / Remediation and maintained backports",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "ops-logs",
+      "category": "運用と復旧",
+      "question": "不正ログインの調査に備え、アプリのログを整えます。適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "ログイン失敗や権限変更などを時刻付きで記録・監視し、パスワードや生のトークンは記録しない。"
+        },
+        {
+          "id": "option-2",
+          "text": "後で便利なので、利用者全員のパスワードをログに記録する。"
+        },
+        {
+          "id": "option-3",
+          "text": "アクセス制御を設けず、誰でも監査ログを消せるようにする。"
+        },
+        {
+          "id": "option-4",
+          "text": "ログは取得するが、異常を確認する担当や通知は一切決めない。"
+        }
+      ],
+      "correctOptionId": "option-1",
+      "explanation": "調査や検知に役立つ出来事を、必要な識別情報と時刻とともに記録します。一方、パスワードやセッショントークン等の秘密はログに残しません。ログの閲覧・変更権限、保持期間、確認や通知の運用も必要です。",
+      "references": [
+        {
+          "title": "Logging",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+          "section": "Which events to log / Data to exclude",
+          "publisher": "OWASP"
+        }
+      ]
+    },
+    {
+      "id": "ops-backup",
+      "category": "運用と復旧",
+      "question": "本番データと同じ権限で消せる同期コピーしかありません。ランサムウェアへの備えとして、適切な見直しはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "同期に成功しているので、復旧テストは不要にする。"
+        },
+        {
+          "id": "option-2",
+          "text": "切り離した、または変更できないコピーを別に保護し、実際に復元できることも試す。"
+        },
+        {
+          "id": "option-3",
+          "text": "本番と同期コピーの両方で、すべての利用者へ削除権限を与える。"
+        },
+        {
+          "id": "option-4",
+          "text": "バックアップは作らず、暗号化されたら必ず身代金で戻せると考える。"
+        }
+      ],
+      "correctOptionId": "option-2",
+      "explanation": "同期は誤削除や暗号化も反映することがあります。隔離・変更不能なコピーと管理権限の分離で同時被害を抑え、復元手順を試します。バックアップは業務復旧のための備えで、盗まれた情報の公開まで取り消せるわけではありません。",
+      "references": [
+        {
+          "title": "CIS Control 11: Data Recovery",
+          "url": "https://cas.docs.cisecurity.org/en/latest/source/Controls11/",
+          "section": "11.4 / 11.5",
+          "publisher": "Center for Internet Security"
+        }
+      ]
+    },
+    {
+      "id": "ops-incident",
+      "category": "運用と復旧",
+      "question": "社内PCでランサムウェア感染が疑われます。担当者へ連絡した後の初動として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "原因を調べる前にすべてのログと端末を消去する。"
+        },
+        {
+          "id": "option-2",
+          "text": "周囲のPCにも接続し、同じ現象になるか試す。"
+        },
+        {
+          "id": "option-3",
+          "text": "組織の手順に沿って端末をネットワークから隔離し、証拠や影響範囲を確かめながら対応する。"
+        },
+        {
+          "id": "option-4",
+          "text": "連絡が来るまで、感染が疑われる端末で業務用アカウントへのログインを続ける。"
+        }
+      ],
+      "correctOptionId": "option-3",
+      "explanation": "被害を広げないため、組織の手順に従いネットワーク接続を切るなどの隔離を行います。拙速な消去は証拠を失うため、調査担当者と相談します。復旧時は侵入経路や資格情報の影響も確認し、単にファイルを戻すだけにしません。",
+      "references": [
+        {
+          "title": "Ransomware detection and response",
+          "url": "https://learn.microsoft.com/en-us/security/ransomware/protect-against-ransomware-phase2",
+          "section": "Ransomware detection and response",
+          "publisher": "Microsoft Learn"
+        }
+      ]
+    },
+    {
+      "id": "ops-least-privilege",
+      "category": "Webとアクセス制御",
+      "question": "注文検索だけを行うアプリからデータベースへ接続します。アプリ用アカウントの設計として適切なのはどれですか？",
+      "options": [
+        {
+          "id": "option-1",
+          "text": "ほかの業務アプリと、全権限を持つ管理者アカウントを共有する。"
+        },
+        {
+          "id": "option-2",
+          "text": "将来使うかもしれないので、すべてのDBの削除権限を付ける。"
+        },
+        {
+          "id": "option-3",
+          "text": "パスワードが長ければ、DBの権限は最大にしてよい。"
+        },
+        {
+          "id": "option-4",
+          "text": "必要な表と操作だけを許可した専用アカウントを使い、不要な管理権限を与えない。"
+        }
+      ],
+      "correctOptionId": "option-4",
+      "explanation": "最小権限は、アプリが侵害された場合の影響を限定します。用途ごとにアカウントを分け、必要なデータと操作に絞ります。パスワードや暗号化を強くしても、過大な権限の危険がなくなるわけではありません。",
+      "references": [
+        {
+          "title": "Authorization",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+          "section": "Enforce Least Privileges",
+          "publisher": "OWASP"
+        }
+      ]
+    }
+  ]
+}

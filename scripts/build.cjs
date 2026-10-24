@@ -10,6 +10,10 @@ const publicFiles = Object.freeze([
   "js/diagnostic.js",
   "data/questions.json",
   "data/sources.json",
+  "css/challenge.css",
+  "js/challenge-engine.js",
+  "js/challenge.js",
+  "data/challenge.json",
 ]);
 const maxAssetBytes = 25 * 1024 * 1024;
 
