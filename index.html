@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>セキュリティ & データプライバシー衛生診断（個人向け）</title>
+  <title>セキュリティ & データプライバシー衛生診断</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <div class="app-container">
@@ -16,25 +18,57 @@
         <span>完全ローカル処理 / データ送信 0バイト</span>
       </div>
       <h1>セキュリティ & データ衛生診断</h1>
-      <p class="subtitle">個人情報の扱い・決済・アカウント削除後のリスクを徹底チェック</p>
+      <p class="subtitle">立場に応じたリスク判定・ワンタップで簡単チェック</p>
     </header>
 
     <!-- メインコンテンツ領域 -->
     <main class="main-card">
-      
-      <!-- プログレスバー -->
-      <div class="progress-section">
-        <div class="progress-header">
-          <span id="progress-text">準備中...</span>
-          <span id="progress-percent">0%</span>
-        </div>
-        <div class="progress-bar-bg">
-          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+
+      <!-- ステップ0：立場（レーン）選択画面 -->
+      <div id="lane-select-card" class="card-content">
+        <h2 class="lane-title">あなたの立場・利用目的に合うモードを選択してください</h2>
+        <p class="lane-desc">選択した立場に最適化された専用の診断シナリオを開始します。</p>
+
+        <div class="lane-buttons">
+          <button class="lane-btn" onclick="selectLane('personal')">
+            <div class="lane-icon">👤</div>
+            <div class="lane-info">
+              <div class="lane-name">個人ユーザー向け</div>
+              <div class="lane-sub">クレカ・身分証・退会後の放置データ・パスワード衛生</div>
+            </div>
+          </button>
+
+          <button class="lane-btn" onclick="selectLane('admin')">
+            <div class="lane-icon">🏢</div>
+            <div class="lane-info">
+              <div class="lane-name">企業・非エンジニア管理者向け</div>
+              <div class="lane-sub">クラウド共有・退職者アカウント・フリーWi-Fi・SaaS管理</div>
+            </div>
+          </button>
+
+          <button class="lane-btn" onclick="selectLane('dev')">
+            <div class="lane-icon">🤖</div>
+            <div class="lane-info">
+              <div class="lane-name">個人・AI開発者向け</div>
+              <div class="lane-sub">APIキー/Git誤露出・CORS・プロンプト注入・認証設計</div>
+            </div>
+          </button>
         </div>
       </div>
 
-      <!-- 質問カード表示エリア -->
-      <div id="question-card" class="card-content">
+      <!-- 質問カード表示エリア（最初は非表示） -->
+      <div id="question-card" class="card-content hidden">
+        <!-- プログレスバー -->
+        <div class="progress-section">
+          <div class="progress-header">
+            <span id="progress-text">準備中...</span>
+            <span id="progress-percent">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="progress-bar-fill" class="progress-bar-fill"></div>
+          </div>
+        </div>
+
         <div class="category-tag" id="question-category">カテゴリ</div>
         <h2 id="question-text" class="question-title">質問を読み込んでいます...</h2>
         <p id="question-desc" class="question-desc"></p>
@@ -57,9 +91,9 @@
       <div id="result-card" class="result-content hidden">
         <div class="result-header">
           <span id="result-rank" class="rank-badge">ランク -</span>
-          <h2>診断完了レポート</h2>
+          <h2 id="result-title">診断完了レポート</h2>
         </div>
-        
+
         <div class="score-display">
           <div class="score-number" id="result-score">0</div>
           <div class="score-label">安心度スコア / 100点</div>
@@ -76,7 +110,7 @@
         <!-- アクションボタン -->
         <div class="result-actions">
           <button class="btn btn-primary" onclick="copyReport()">📋 診断レポートをコピー</button>
-          <button class="btn btn-secondary" onclick="restartDiagnostic()">🔄 再度診断する</button>
+          <button class="btn btn-secondary" onclick="restartDiagnostic()">🔄 モード選択に戻る</button>
         </div>
       </div>
 
@@ -90,4 +124,5 @@
 
   <script src="js/app.js"></script>
 </body>
+
 </html>

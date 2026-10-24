@@ -1,40 +1,62 @@
 // グローバル状態管理
-let masterQuestions = [];
+let allQuestions = [];
 let activeQueue = [];
 let currentStep = 0;
 let totalScore = 100;
 let userAdvices = [];
+let currentLane = "personal";
 
-// DOM要素の読み込み
+// 立場（レーン）の日本語ラベルマップ
+const laneLabels = {
+  personal: "個人ユーザー",
+  admin: "企業・非エンジニア管理者",
+  dev: "個人・AI開発者",
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   loadQuestions();
 });
 
-// JSONファイルの非同期読み込み（パターンB: data/フォルダ指定）
+// JSONの非同期読み込み
 async function loadQuestions() {
   try {
     const response = await fetch("data/questions.json");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    masterQuestions = await response.json();
-    initDiagnostic();
+    allQuestions = await response.json();
   } catch (error) {
     console.error("質問データの読み込みに失敗しました:", error);
-    document.getElementById("question-text").innerText = "エラー: data/questions.json の読み込みに失敗しました。パスやローカルサーバーの環境をご確認ください。";
   }
 }
 
-// 診断の初期化
-function initDiagnostic() {
-  activeQueue = [...masterQuestions];
+// レーンの選択と診断開始
+function selectLane(laneKey) {
+  currentLane = laneKey;
+
+  // 該当レーンの質問だけを抽出
+  activeQueue = allQuestions.filter((q) => q.lane === laneKey);
+
+  if (activeQueue.length === 0) {
+    alert(
+      "該当の質問が見つかりませんでした。questions.jsonを確認してください。",
+    );
+    return;
+  }
+
+  // 初期化
   currentStep = 0;
   totalScore = 100;
   userAdvices = [];
+
+  // 画面の切り替え
+  document.getElementById("lane-select-card").classList.add("hidden");
+  document.getElementById("question-card").classList.remove("hidden");
+
   renderQuestion();
 }
 
-// 質問のレンダリング
+// 質問の表示
 function renderQuestion() {
   if (currentStep >= activeQueue.length) {
     showResults();
@@ -42,14 +64,16 @@ function renderQuestion() {
   }
 
   const q = activeQueue[currentStep];
-  
-  // 進捗状況の更新
+
+  // 進捗更新
   const progressPercent = Math.round((currentStep / activeQueue.length) * 100);
   document.getElementById("progress-percent").innerText = `${progressPercent}%`;
-  document.getElementById("progress-bar-fill").style.width = `${progressPercent}%`;
-  document.getElementById("progress-text").innerText = `質問 ${currentStep + 1} / ${activeQueue.length}`;
+  document.getElementById("progress-bar-fill").style.width =
+    `${progressPercent}%`;
+  document.getElementById("progress-text").innerText =
+    `質問 ${currentStep + 1} / ${activeQueue.length}`;
 
-  // カード内容の挿入
+  // 質問カードのセット
   document.getElementById("question-category").innerText = q.category;
   document.getElementById("question-text").innerText = q.question;
   document.getElementById("question-desc").innerText = q.description;
@@ -59,65 +83,62 @@ function renderQuestion() {
 function answerQuestion(answer) {
   const q = activeQueue[currentStep];
 
-  // 1. 減点とアドバイスの判定
+  // 減点およびアドバイス収集
   if (answer === q.deductPointsOn || (answer === "UNKNOWN" && q.points > 0)) {
     totalScore -= q.points;
     if (q.adviceTitle) {
       userAdvices.push({
         title: q.adviceTitle,
         text: q.adviceText,
-        isHigh: q.points >= 20
+        isHigh: q.points >= 20,
       });
     }
   }
 
-  // 2. 連鎖質問（subQuestions）の動的差し込みトリガー
-  if (q.triggerSubOn && answer === q.triggerSubOn && q.subQuestions && q.subQuestions.length > 0) {
-    activeQueue.splice(currentStep + 1, 0, ...q.subQuestions);
-  }
-
-  // 次の質問へ
   currentStep++;
   renderQuestion();
 }
 
-// 結果画面の表示
+// 結果表示
 function showResults() {
   document.getElementById("question-card").classList.add("hidden");
   document.getElementById("result-card").classList.remove("hidden");
 
-  // スコアの丸め込み（0〜100点）
   const finalScore = Math.max(0, totalScore);
   document.getElementById("result-score").innerText = finalScore;
+  document.getElementById("result-title").innerText =
+    `${laneLabels[currentLane]}向け 診断レポート`;
 
-  // ランク付けと要約テキスト
   const rankBadge = document.getElementById("result-rank");
   const summaryText = document.getElementById("result-summary");
 
   if (finalScore >= 85) {
     rankBadge.innerText = "ランク A （優良セキュア）";
     rankBadge.className = "rank-badge rank-A";
-    summaryText.innerText = "素晴らしいセキュリティ衛生意識です！個人情報の管理や退会後のデータ消去に対するリテラシーが高く保たれています。";
+    summaryText.innerText =
+      "素晴らしい安全意識です！この立場に必要なセキュリティ・プライバシー衛生が高水準に保たれています。";
   } else if (finalScore >= 60) {
     rankBadge.innerText = "ランク B （注意・改善余地あり）";
     rankBadge.className = "rank-badge rank-B";
-    summaryText.innerText = "基本的な安全意識はありますが、一部の決済情報の扱いや放置アカウント等にリスクが潜んでいます。アドバイスを確認しましょう。";
+    summaryText.innerText =
+      "基本対策はできていますが、一部の運用・設定にリスクが潜んでいます。以下のアドバイスを確認してください。";
   } else {
     rankBadge.innerText = "ランク C （要警戒・危険）";
     rankBadge.className = "rank-badge rank-C";
-    summaryText.innerText = "個人情報の漏洩やアカウント乗っ取りの直接的なリスクが高い状態です。下のアドバイスを確認して直ちに対策を講じてください。";
+    summaryText.innerText =
+      "深刻な情報漏洩や攻撃を受ける直接的リスクが高い状態です。直ちにアドバイスのアクションを実施してください。";
   }
 
-  // アドバイス一覧のレンダリング
+  // アドバイスの表示
   const adviceListEl = document.getElementById("advice-list");
   adviceListEl.innerHTML = "";
 
   if (userAdvices.length === 0) {
-    adviceListEl.innerHTML = `<p style="color: #4ade80; font-size: 0.9rem;">🎉 特別な注意点やリスクは見つかりませんでした。この調子で安全なデジタル生活を維持しましょう！</p>`;
+    adviceListEl.innerHTML = `<p style="color: #4ade80; font-size: 0.9rem;">🎉 重大なリスクは見つかりませんでした。この高い衛生基準を維持しましょう！</p>`;
   } else {
-    userAdvices.forEach(item => {
+    userAdvices.forEach((item) => {
       const div = document.createElement("div");
-      div.className = `advice-item ${item.isHigh ? 'high' : ''}`;
+      div.className = `advice-item ${item.isHigh ? "high" : ""}`;
       div.innerHTML = `
         <div class="advice-title">${item.title}</div>
         <div class="advice-text">${item.text}</div>
@@ -127,10 +148,10 @@ function showResults() {
   }
 }
 
-// レポートのコピー機能
+// 結果コピー
 function copyReport() {
   const score = Math.max(0, totalScore);
-  let text = `【セキュリティ & データ衛生診断レポート（個人向け）】\n`;
+  let text = `【セキュリティ衛生診断レポート (${laneLabels[currentLane]})】\n`;
   text += `安心度スコア: ${score}点 / 100点\n\n`;
   text += `■ 発見された注意点と改善アクション:\n`;
 
@@ -141,19 +162,21 @@ function copyReport() {
       text += `${index + 1}. ${item.title}\n   ${item.text}\n`;
     });
   }
-  
-  text += `\n※この診断はブラウザ内（ローカル）でのみ処理されています。`;
 
-  navigator.clipboard.writeText(text).then(() => {
-    alert("診断レポートをクリップボードにコピーしました！");
-  }).catch(err => {
-    console.error("コピーに失敗しました:", err);
-  });
+  text += `\n※本診断はブラウザ内（ローカル）でのみ処理されています。`;
+
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      alert("診断レポートをクリップボードにコピーしました！");
+    })
+    .catch((err) => {
+      console.error("コピー失敗:", err);
+    });
 }
 
-// 診断のリセット
+// 再度選択画面へ
 function restartDiagnostic() {
   document.getElementById("result-card").classList.add("hidden");
-  document.getElementById("question-card").classList.remove("hidden");
-  initDiagnostic();
+  document.getElementById("lane-select-card").classList.remove("hidden");
 }

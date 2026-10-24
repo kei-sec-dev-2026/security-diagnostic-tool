@@ -1,99 +1,136 @@
 [
   {
-    "id": "q_https",
-    "category": "会員登録・通信の安全性",
-    "question": "Webサイトやアプリで個人情報を入力する際、アドレスバーの「鍵マーク（HTTPS）」を確認していますか？",
-    "description": "通信が暗号化されていないサイトで入力したデータは、途中で盗聴される危険性があります。",
+    "lane": "personal",
+    "id": "q_p_https",
+    "category": "通信の安全性",
+    "question": "Webサイト等で個人情報を入力する際、アドレスバーの「鍵マーク（HTTPS）」を確認していますか？",
+    "description": "暗号化されていないサイトでの入力は盗聴リスクがあります。",
     "deductPointsOn": "NO",
     "points": 10,
     "adviceTitle": "暗号化（HTTPS）の確認不足",
-    "adviceText": "「保護されていない通信」と表示されるサイトや鍵マークのないサイトでの個人情報入力は避けましょう。",
-    "subQuestions": []
+    "adviceText": "鍵マークのないサイトでの個人情報入力は避けましょう。"
   },
   {
-    "id": "q_card",
-    "category": "クレジットカード・決済情報",
-    "question": "ネットショッピングやアプリでクレジットカード情報を登録・保存して利用することがありますか？",
-    "description": "決済情報の保持方法やサイトの信頼性によって、情報漏洩時の被害規模が大きく変わります。",
-    "deductPointsOn": "NONE",
-    "points": 0,
-    "adviceTitle": "",
-    "adviceText": "",
-    "triggerSubOn": "YES",
-    "subQuestions": [
-      {
-        "id": "q_card_3ds",
-        "category": "クレジットカード・決済情報",
-        "question": "カード登録時や決済時に「3Dセキュア（ワンタイムパスワード等）」の本人確認画面が毎回出ますか？",
-        "description": "本人確認を行わない仕組みのサイトは、カード情報の不正利用やなりすまし登録のリスクが高まります。",
-        "deductPointsOn": "NO",
-        "points": 15,
-        "adviceTitle": "3Dセキュア（本人認証）非対応の決済リスク",
-        "adviceText": "本人確認が簡易なサイトへのカード保存は避け、ワンタイムパスワード等が確実に機能する安全なプラットフォームを利用しましょう。"
-      },
-      {
-        "id": "q_card_save",
-        "category": "クレジットカード・決済情報",
-        "question": "あまり利用頻度が高くない中小のECサイトやサービスでも、カード情報をサイト側に保存させていますか？",
-        "description": "マイナーなサービスがハッキングされた場合、保存されていたカード情報が一括して流出するリスクがあります。",
-        "deductPointsOn": "YES",
-        "points": 15,
-        "adviceTitle": "中小サイトへのクレジットカード情報常時保存",
-        "adviceText": "信頼性の低いサイトでは「カード情報を保存しない」を選択し、都度手入力するかApple Pay等の安全な決済手段を使いましょう。"
-      }
-    ]
-  },
-  {
-    "id": "q_id_upload",
-    "category": "身分証明書・個人データ",
-    "question": "アカウント認証や本人確認（eKYC等）のために、運転免許証やマイナンバーカードの画像をアップロードしたことがありますか？",
-    "description": "身分証明書はネット上で最も悪用リスクが高い最高機密の個人情報です。",
-    "deductPointsOn": "NONE",
-    "points": 0,
-    "adviceTitle": "",
-    "adviceText": "",
-    "triggerSubOn": "YES",
-    "subQuestions": [
-      {
-        "id": "q_id_cleanup",
-        "category": "身分証明書・個人データ",
-        "question": "利用目的が終了した過去の一時的なサービスやイベントに、自分の身分証画像データを預けっぱなしにしていませんか？",
-        "description": "使っていないサービスに身分証が残存し続けることは、将来のデータ漏洩事故に直結します。",
-        "deductPointsOn": "YES",
-        "points": 20,
-        "adviceTitle": "不要になったサービスへの身分証データの残存",
-        "adviceText": "すでに使っていないサービスや古いアカウントは、運営元に連絡して身分証データの完全消去（削除依頼）を行うか、アカウント自体を削除しましょう。"
-      }
-    ]
-  },
-  {
-    "id": "q_oauth",
-    "category": "SNS連携・アカウント管理",
-    "question": "「Googleアカウントでログイン」や「Appleでサインイン」を使って、見知らぬ外部アプリやサービスに手軽に連携していませんか？",
-    "description": "便利ですが、連携したアプリに過剰な権限（メール閲覧や連絡先アクセス等）を与えている場合があります。",
+    "lane": "personal",
+    "id": "q_p_card_save",
+    "category": "決済情報",
+    "question": "あまり利用頻度の高くないECサイトやアプリにクレジットカード情報を常時保存させていますか？",
+    "description": "サイトがハッキングされた際にカード情報が一括流出する危険があります。",
     "deductPointsOn": "YES",
-    "points": 10,
-    "adviceTitle": "外部サービスへの過剰な権限委任",
-    "adviceText": "定期的にGoogleやAppleの「アカウント設定 ＞ サードパーティ製アプリのアクセス権」を確認し、使っていない連携は解除しましょう。"
+    "points": 15,
+    "adviceTitle": "マイナーサイトへのカード情報常時保存",
+    "adviceText": "利用頻度の低いサイトでは保存せず、都度入力するかApple Pay等の安全な決済を使いましょう。"
   },
   {
-    "id": "q_delete_account",
-    "category": "アカウント退会・削除処理",
-    "question": "使わなくなったアプリや会員制サイトを「アプリをアンインストールするだけ（退会手続きなし）」で放置していませんか？",
-    "description": "アプリを消しても、運営企業のサーバー上にはあなたの個人情報や購入・行動履歴が永久に残り続けます。",
+    "lane": "personal",
+    "id": "q_p_zombie",
+    "category": "放置データ",
+    "question": "使わなくなったアプリやサイトを退会せずに「アプリ削除のみ」で放置していませんか？",
+    "description": "サーバー上にあなたの個人情報が残存し続けます。",
     "deductPointsOn": "YES",
     "points": 20,
-    "adviceTitle": "退会処理を行わない「ゾンビデータ」の放置",
-    "adviceText": "アプリを消す前に、必ず設定画面から「アカウント削除（退会）」の手続きを行い、サーバー上のデータが物理削除されるかを確認する習慣をつけましょう。"
+    "adviceTitle": "退会処理を行わない「放置アカウント」の存在",
+    "adviceText": "アプリ削除前に設定画面等から必ず「退会（アカウント物理削除）」を実行してください。"
   },
   {
-    "id": "q_password_reuse",
-    "category": "日常の衛生管理",
-    "question": "複数の異なるWebサービスやアプリで「同じパスワード」を使い回していますか？",
-    "description": "1つのマイナーなサイトからパスワードが漏洩しただけで、他のすべての主要サービスに不正ログインされる原因になります。",
+    "lane": "personal",
+    "id": "q_p_pass_reuse",
+    "category": "パスワード管理",
+    "question": "複数のサービスで同じパスワードを使い回していますか？",
+    "description": "1箇所から流出しただけで他のサービスにも不正ログインされる危険があります。",
     "deductPointsOn": "YES",
     "points": 25,
     "adviceTitle": "パスワードの使い回し（最高危険度）",
-    "adviceText": "使い回しは厳禁です。パスワード管理アプリを導入し、すべてのサイトで異なるランダムな強力なパスワードを設定してください。"
+    "adviceText": "パスワード管理ツールを活用し、すべてのサイトで異なるランダムなパスワードを設定してください。"
+  },
+
+  {
+    "lane": "admin",
+    "id": "q_a_cloud_share",
+    "category": "クラウド共有設定",
+    "question": "GoogleドライブやDropbox等で、顧客リストや社内資料の共有範囲を「リンクを知っている全員（パブリック）」にしていませんか？",
+    "description": "リンクが第三者に漏れた場合、検索エンジン経由等で社内機密が一括流出します。",
+    "deductPointsOn": "YES",
+    "points": 25,
+    "adviceTitle": "クラウドストレージの無制限アクセス権限",
+    "adviceText": "共有設定を「指定されたユーザーのみ」に変更し、不要になった過去の共有リンクは無効化してください。"
+  },
+  {
+    "lane": "admin",
+    "id": "q_a_retired_account",
+    "category": "退職者・外注アカウント管理",
+    "question": "退職した従業員や契約終了した外部委託先のSaaSアカウント（Slack, Google Workspace等）を削除せず放置していませんか？",
+    "description": "元従業員からの不正アクセスや不正データ持ち出しのリスクになります。",
+    "deductPointsOn": "YES",
+    "points": 20,
+    "adviceTitle": "退職者・契約終了者のアクセス権の放置",
+    "adviceText": "退職日や契約終了日当日に、アカウントの一括無効化・削除を管理フローとして徹底してください。"
+  },
+  {
+    "lane": "admin",
+    "id": "q_a_public_wifi",
+    "category": "リモートワーク・通信環境",
+    "question": "社員がカフェ等のフリーWi-Fi環境からVPN等を通さずに直接社内共有フォルダーや管理画面にアクセスしていますか？",
+    "description": "フリーWi-Fiの暗号化の隙をつかれ、通信が盗聴・改ざんされるおそれがあります。",
+    "deductPointsOn": "YES",
+    "points": 15,
+    "adviceTitle": "フリーWi-Fi利用時の安全対策不足",
+    "adviceText": "社外からの接続には必ず会社指定のVPNを使用させるか、テザリングの利用をルール化してください。"
+  },
+  {
+    "lane": "admin",
+    "id": "q_a_saas_2fa",
+    "category": "認証設定",
+    "question": "社内で利用している主要なクラウドサービス（メール、会計、顧客管理など）で二要素認証（2FA）を必須化していませんか？",
+    "description": "ID/PWが流出しただけで即座に社内システムに乗っ取られる原因になります。",
+    "deductPointsOn": "NO",
+    "points": 20,
+    "adviceTitle": "主要クラウドサービスの二要素認証（2FA）未適用",
+    "adviceText": "管理者権限および一般アカウント含め、すべてのクラウドサービスで2FAを強制適用に設定してください。"
+  },
+
+  {
+    "lane": "dev",
+    "id": "q_d_env_git",
+    "category": "ソースコード・認証情報管理",
+    "question": "APIキーやDB接続文字列をソースコード内に直接記述したり、.envファイルを誤ってGit（GitHub）にコミットした経験や危険性はありませんか？",
+    "description": "GitHub公開リポジトリからAPIキーが漏れると、高額請求や不正利用の原因になります。",
+    "deductPointsOn": "YES",
+    "points": 30,
+    "adviceTitle": ".env や SecretsのGit誤露出（最高危険度）",
+    "adviceText": ".gitignore に .env を確実に追加し、Secret Scanning ツール等を導入してビルド時に鍵を漏出させないパイプラインを構築してください。"
+  },
+  {
+    "lane": "dev",
+    "id": "q_d_prompt_injection",
+    "category": "AI/LLMシステム設計",
+    "question": "AIに入力されるプロンプト（ユーザー入力値やRAGデータ）をサニタイズ（エスケープ処理）せずに、そのままLLMやシステム命令に渡していませんか？",
+    "description": "プロンプトインジェクション攻撃により、システム内部の指示（System Prompt）や個人情報が不正抽出される危険があります。",
+    "deductPointsOn": "YES",
+    "points": 25,
+    "adviceTitle": "プロンプトインジェクション防御の欠如",
+    "adviceText": "入力値の検証・フィルタリング層（Guardrails）を挟み、システム命令とユーザー入力を完全に分離する設計を行ってください。"
+  },
+  {
+    "lane": "dev",
+    "id": "q_d_cors_auth",
+    "category": "Web API・アクセス制御",
+    "question": "APIのCORS設定で Access-Control-Allow-Origin を '*'（全許可）にしたまま本番運用していませんか？",
+    "description": "悪意あるサードパーティサイトのJavaScriptからAPIを不正に呼び出される脆弱性になります。",
+    "deductPointsOn": "YES",
+    "points": 20,
+    "adviceTitle": "CORSの過剰共有設定（'*' 許可）",
+    "adviceText": "本番環境では許可する信頼されたオリジン（ドメイン）のみを明示的に指定するようにCORSヘッダーを制限してください。"
+  },
+  {
+    "lane": "dev",
+    "id": "q_d_log_privacy",
+    "category": "データログ・プライバシー衛生",
+    "question": "ユーザーの入力データやAIへの送信ログ（プロンプト等）を、個人情報やAPIキーが含まれたままサーバーのプレーンテキストログに記録していませんか？",
+    "description": "ログファイルが漏洩した際に、二次被害として深刻な個人情報漏洩事故につながります。",
+    "deductPointsOn": "YES",
+    "points": 15,
+    "adviceTitle": "ログへの機密情報・個人情報のプレーン出力",
+    "adviceText": "ログ記録前にマスキング処理（難読化）を施すか、個人情報に該当するパラメータはログ出力から除外してください。"
   }
 ]
